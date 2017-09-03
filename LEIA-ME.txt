@@ -1,0 +1,2 @@
+1 - Sempre que uma classe, item ou propriedade contiver a palavra 'entidade' contida em si, 
+    significa que a mesma pode ser tratata como funcionario ou morador.
