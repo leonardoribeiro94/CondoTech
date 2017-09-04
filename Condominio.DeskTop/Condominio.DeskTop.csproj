@@ -49,11 +49,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Componentes\CaixaDeMensagem.cs" />
+    <Compile Include="Componentes\ConverteArquivo.cs" />
     <Compile Include="Componentes\LimparControles.cs" />
     <Compile Include="Componentes\MensagensDoSistemaDesktop.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MensagensDoSistemaDesktop.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AreaDeLazer\FrmAreaDeLazer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AreaDeLazer\FrmAreaDeLazer.Designer.cs">
+      <DependentUpon>FrmAreaDeLazer.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Fornecedor\FrmFornecedor.cs">
       <SubType>Form</SubType>
@@ -89,6 +96,9 @@
     <EmbeddedResource Include="Componentes\MensagensDoSistemaDesktop.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MensagensDoSistemaDesktop.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AreaDeLazer\FrmAreaDeLazer.resx">
+      <DependentUpon>FrmAreaDeLazer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Fornecedor\FrmFornecedor.resx">
       <DependentUpon>FrmFornecedor.cs</DependentUpon>

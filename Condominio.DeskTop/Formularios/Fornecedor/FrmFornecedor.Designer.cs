@@ -38,6 +38,8 @@
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
             this.tabFornecedorCadastro = new System.Windows.Forms.TabPage();
             this.groupBoxCadastrar = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.btnExcluirMorador = new System.Windows.Forms.Button();
             this.btnAtualizarMorador = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNomeFornecedor = new System.Windows.Forms.TextBox();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.tblCtrlMorador.SuspendLayout();
             this.tabFornecedorConsulta.SuspendLayout();
             this.grpPesquisa.SuspendLayout();
@@ -179,6 +179,23 @@
             this.groupBoxCadastrar.TabIndex = 0;
             this.groupBoxCadastrar.TabStop = false;
             this.groupBoxCadastrar.Text = "Cadastrar Morador";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 188);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 15);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Descrição";
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(14, 206);
+            this.txtDescricao.Multiline = true;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(594, 62);
+            this.txtDescricao.TabIndex = 17;
             // 
             // btnExcluirMorador
             // 
@@ -328,23 +345,6 @@
             this.txtNomeFornecedor.Size = new System.Drawing.Size(204, 23);
             this.txtNomeFornecedor.TabIndex = 3;
             // 
-            // txtDescricao
-            // 
-            this.txtDescricao.Location = new System.Drawing.Point(14, 206);
-            this.txtDescricao.Multiline = true;
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(594, 62);
-            this.txtDescricao.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 188);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 15);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Descrição";
-            // 
             // FrmFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,6 +356,7 @@
             this.Name = "FrmFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fornecedor";
+            this.Load += new System.EventHandler(this.FrmFornecedor_Load);
             this.tblCtrlMorador.ResumeLayout(false);
             this.tabFornecedorConsulta.ResumeLayout(false);
             this.grpPesquisa.ResumeLayout(false);

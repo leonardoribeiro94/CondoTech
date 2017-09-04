@@ -103,6 +103,7 @@
             this.áreaDeLazerToolStripMenuItem.Name = "áreaDeLazerToolStripMenuItem";
             this.áreaDeLazerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.áreaDeLazerToolStripMenuItem.Text = "Área de Lazer";
+            this.áreaDeLazerToolStripMenuItem.Click += new System.EventHandler(this.áreaDeLazerToolStripMenuItem_Click);
             // 
             // registosToolStripMenuItem
             // 

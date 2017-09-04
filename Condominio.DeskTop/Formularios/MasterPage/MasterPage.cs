@@ -1,4 +1,5 @@
-﻿using Condominio.DeskTop.Formularios.Fornecedor;
+﻿using Condominio.DeskTop.Formularios.AreaDeLazer;
+using Condominio.DeskTop.Formularios.Fornecedor;
 using Condominio.DeskTop.Formularios.Morador;
 using System.Windows.Forms;
 
@@ -39,6 +40,12 @@ namespace Condominio.DeskTop.Formularios.MasterPage
         {
             var frmFornecedor = new FrmFornecedor() { MdiParent = this };
             frmFornecedor.Show();
+        }
+
+        private void áreaDeLazerToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var frmAreaDeLazer = new FrmAreaDeLazer() { MdiParent = this };
+            frmAreaDeLazer.Show();
         }
     }
 }

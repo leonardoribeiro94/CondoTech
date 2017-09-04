@@ -60,7 +60,8 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection)
             {
-                return Connection.Query<Fornecedor>("SPSelect_Fornecedor", commandType: CommandStoredProcedure);
+                const string sqlComando = "select * from Fornecedor where Ativo = 0";
+                return Connection.Query<Fornecedor>(sqlComando);
             }
         }
     }

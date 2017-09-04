@@ -29,6 +29,10 @@ namespace Model
 
         public void ValidaDados()
         {
+            if (Imagem.Length < 1)
+            {
+                throw new Exception("Insira uma Imagem!");
+            }
             if (Nome.Length < 5)
             {
                 throw new Exception(MensagensDeValidacao.Nome);
