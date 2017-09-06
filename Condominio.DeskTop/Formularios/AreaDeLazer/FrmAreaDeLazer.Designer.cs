@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAreaDeLazer));
-            this.tblCtrlMorador = new System.Windows.Forms.TabControl();
+            this.tblCtrlAreaDeLazer = new System.Windows.Forms.TabControl();
             this.tabMoradorConsulta = new System.Windows.Forms.TabPage();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -48,12 +48,12 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.picAreaDeLazer = new System.Windows.Forms.PictureBox();
-            this.btnExcluirMorador = new System.Windows.Forms.Button();
-            this.btnAtualizarMorador = new System.Windows.Forms.Button();
+            this.btnExcluirAreaDeLazer = new System.Windows.Forms.Button();
+            this.btnAtualizarAreaDeLazer = new System.Windows.Forms.Button();
             this.btnExibirImagem = new System.Windows.Forms.Button();
-            this.btnInserirMorador = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.tblCtrlMorador.SuspendLayout();
+            this.btnInserirAreaDeLazer = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.tblCtrlAreaDeLazer.SuspendLayout();
             this.tabMoradorConsulta.SuspendLayout();
             this.grpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAreaDeLazer)).BeginInit();
@@ -63,16 +63,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.picAreaDeLazer)).BeginInit();
             this.SuspendLayout();
             // 
-            // tblCtrlMorador
+            // tblCtrlAreaDeLazer
             // 
-            this.tblCtrlMorador.Controls.Add(this.tabMoradorConsulta);
-            this.tblCtrlMorador.Controls.Add(this.tabMoradorCadastro);
-            this.tblCtrlMorador.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblCtrlMorador.Location = new System.Drawing.Point(0, 0);
-            this.tblCtrlMorador.Name = "tblCtrlMorador";
-            this.tblCtrlMorador.SelectedIndex = 0;
-            this.tblCtrlMorador.Size = new System.Drawing.Size(701, 444);
-            this.tblCtrlMorador.TabIndex = 1;
+            this.tblCtrlAreaDeLazer.Controls.Add(this.tabMoradorConsulta);
+            this.tblCtrlAreaDeLazer.Controls.Add(this.tabMoradorCadastro);
+            this.tblCtrlAreaDeLazer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblCtrlAreaDeLazer.Location = new System.Drawing.Point(0, 0);
+            this.tblCtrlAreaDeLazer.Name = "tblCtrlAreaDeLazer";
+            this.tblCtrlAreaDeLazer.SelectedIndex = 0;
+            this.tblCtrlAreaDeLazer.Size = new System.Drawing.Size(701, 444);
+            this.tblCtrlAreaDeLazer.TabIndex = 1;
+            this.tblCtrlAreaDeLazer.Click += new System.EventHandler(this.tblCtrlAreaDeLazer_Click);
             // 
             // tabMoradorConsulta
             // 
@@ -155,11 +156,13 @@
             // 
             // dgvAreaDeLazer
             // 
-            this.dgvAreaDeLazer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAreaDeLazer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvAreaDeLazer.Location = new System.Drawing.Point(12, 133);
             this.dgvAreaDeLazer.Name = "dgvAreaDeLazer";
+            this.dgvAreaDeLazer.RowTemplate.Height = 20;
             this.dgvAreaDeLazer.Size = new System.Drawing.Size(675, 251);
             this.dgvAreaDeLazer.TabIndex = 0;
+            this.dgvAreaDeLazer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAreaDeLazer_CellDoubleClick);
             // 
             // tabMoradorCadastro
             // 
@@ -176,10 +179,10 @@
             // 
             this.groupBoxCadastrar.Controls.Add(this.groupBoxDadosAreaDeLazer);
             this.groupBoxCadastrar.Controls.Add(this.picAreaDeLazer);
-            this.groupBoxCadastrar.Controls.Add(this.btnExcluirMorador);
-            this.groupBoxCadastrar.Controls.Add(this.btnAtualizarMorador);
+            this.groupBoxCadastrar.Controls.Add(this.btnExcluirAreaDeLazer);
+            this.groupBoxCadastrar.Controls.Add(this.btnAtualizarAreaDeLazer);
             this.groupBoxCadastrar.Controls.Add(this.btnExibirImagem);
-            this.groupBoxCadastrar.Controls.Add(this.btnInserirMorador);
+            this.groupBoxCadastrar.Controls.Add(this.btnInserirAreaDeLazer);
             this.groupBoxCadastrar.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.groupBoxCadastrar.Location = new System.Drawing.Point(23, 19);
@@ -258,7 +261,7 @@
             // 
             // picAreaDeLazer
             // 
-            this.picAreaDeLazer.Image = ((System.Drawing.Image)(resources.GetObject("picAreaDeLazer.Image")));
+            this.picAreaDeLazer.Image = global::Condominio.DeskTop.Properties.Resources.picture_2;
             this.picAreaDeLazer.Location = new System.Drawing.Point(11, 33);
             this.picAreaDeLazer.Name = "picAreaDeLazer";
             this.picAreaDeLazer.Size = new System.Drawing.Size(138, 126);
@@ -266,37 +269,39 @@
             this.picAreaDeLazer.TabIndex = 17;
             this.picAreaDeLazer.TabStop = false;
             // 
-            // btnExcluirMorador
+            // btnExcluirAreaDeLazer
             // 
-            this.btnExcluirMorador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(68)))));
-            this.btnExcluirMorador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExcluirMorador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirMorador.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnExcluirMorador.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirMorador.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirMorador.Image")));
-            this.btnExcluirMorador.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnExcluirMorador.Location = new System.Drawing.Point(335, 285);
-            this.btnExcluirMorador.Name = "btnExcluirMorador";
-            this.btnExcluirMorador.Size = new System.Drawing.Size(152, 40);
-            this.btnExcluirMorador.TabIndex = 16;
-            this.btnExcluirMorador.Text = " Excluir";
-            this.btnExcluirMorador.UseVisualStyleBackColor = false;
+            this.btnExcluirAreaDeLazer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(68)))));
+            this.btnExcluirAreaDeLazer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExcluirAreaDeLazer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluirAreaDeLazer.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnExcluirAreaDeLazer.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirAreaDeLazer.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirAreaDeLazer.Image")));
+            this.btnExcluirAreaDeLazer.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnExcluirAreaDeLazer.Location = new System.Drawing.Point(335, 285);
+            this.btnExcluirAreaDeLazer.Name = "btnExcluirAreaDeLazer";
+            this.btnExcluirAreaDeLazer.Size = new System.Drawing.Size(152, 40);
+            this.btnExcluirAreaDeLazer.TabIndex = 16;
+            this.btnExcluirAreaDeLazer.Text = " Excluir";
+            this.btnExcluirAreaDeLazer.UseVisualStyleBackColor = false;
+            this.btnExcluirAreaDeLazer.Click += new System.EventHandler(this.btnExcluirAreaDeLazer_Click);
             // 
-            // btnAtualizarMorador
+            // btnAtualizarAreaDeLazer
             // 
-            this.btnAtualizarMorador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(159)))));
-            this.btnAtualizarMorador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAtualizarMorador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarMorador.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnAtualizarMorador.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarMorador.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizarMorador.Image")));
-            this.btnAtualizarMorador.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnAtualizarMorador.Location = new System.Drawing.Point(173, 285);
-            this.btnAtualizarMorador.Name = "btnAtualizarMorador";
-            this.btnAtualizarMorador.Size = new System.Drawing.Size(152, 40);
-            this.btnAtualizarMorador.TabIndex = 15;
-            this.btnAtualizarMorador.Text = "  Atualizar";
-            this.btnAtualizarMorador.UseVisualStyleBackColor = false;
+            this.btnAtualizarAreaDeLazer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(159)))));
+            this.btnAtualizarAreaDeLazer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAtualizarAreaDeLazer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizarAreaDeLazer.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnAtualizarAreaDeLazer.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizarAreaDeLazer.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizarAreaDeLazer.Image")));
+            this.btnAtualizarAreaDeLazer.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnAtualizarAreaDeLazer.Location = new System.Drawing.Point(173, 285);
+            this.btnAtualizarAreaDeLazer.Name = "btnAtualizarAreaDeLazer";
+            this.btnAtualizarAreaDeLazer.Size = new System.Drawing.Size(152, 40);
+            this.btnAtualizarAreaDeLazer.TabIndex = 15;
+            this.btnAtualizarAreaDeLazer.Text = "  Atualizar";
+            this.btnAtualizarAreaDeLazer.UseVisualStyleBackColor = false;
+            this.btnAtualizarAreaDeLazer.Click += new System.EventHandler(this.btnAtualizarAreaDeLazer_Click);
             // 
             // btnExibirImagem
             // 
@@ -314,38 +319,38 @@
             this.btnExibirImagem.UseVisualStyleBackColor = false;
             this.btnExibirImagem.Click += new System.EventHandler(this.btnExibirImagem_Click);
             // 
-            // btnInserirMorador
+            // btnInserirAreaDeLazer
             // 
-            this.btnInserirMorador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(128)))), ((int)(((byte)(54)))));
-            this.btnInserirMorador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnInserirMorador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInserirMorador.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnInserirMorador.ForeColor = System.Drawing.Color.White;
-            this.btnInserirMorador.Image = ((System.Drawing.Image)(resources.GetObject("btnInserirMorador.Image")));
-            this.btnInserirMorador.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnInserirMorador.Location = new System.Drawing.Point(11, 285);
-            this.btnInserirMorador.Name = "btnInserirMorador";
-            this.btnInserirMorador.Size = new System.Drawing.Size(152, 40);
-            this.btnInserirMorador.TabIndex = 14;
-            this.btnInserirMorador.Text = " Inserir";
-            this.btnInserirMorador.UseVisualStyleBackColor = false;
-            this.btnInserirMorador.Click += new System.EventHandler(this.btnInserirMorador_Click);
+            this.btnInserirAreaDeLazer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(128)))), ((int)(((byte)(54)))));
+            this.btnInserirAreaDeLazer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnInserirAreaDeLazer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInserirAreaDeLazer.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnInserirAreaDeLazer.ForeColor = System.Drawing.Color.White;
+            this.btnInserirAreaDeLazer.Image = ((System.Drawing.Image)(resources.GetObject("btnInserirAreaDeLazer.Image")));
+            this.btnInserirAreaDeLazer.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnInserirAreaDeLazer.Location = new System.Drawing.Point(11, 285);
+            this.btnInserirAreaDeLazer.Name = "btnInserirAreaDeLazer";
+            this.btnInserirAreaDeLazer.Size = new System.Drawing.Size(152, 40);
+            this.btnInserirAreaDeLazer.TabIndex = 14;
+            this.btnInserirAreaDeLazer.Text = " Inserir";
+            this.btnInserirAreaDeLazer.UseVisualStyleBackColor = false;
+            this.btnInserirAreaDeLazer.Click += new System.EventHandler(this.btnInserirMorador_Click);
             // 
-            // openFileDialog1
+            // openFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // FrmAreaDeLazer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 444);
-            this.Controls.Add(this.tblCtrlMorador);
+            this.Controls.Add(this.tblCtrlAreaDeLazer);
             this.Name = "FrmAreaDeLazer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAreaDeLazer";
             this.Load += new System.EventHandler(this.FrmAreaDeLazer_Load);
-            this.tblCtrlMorador.ResumeLayout(false);
+            this.tblCtrlAreaDeLazer.ResumeLayout(false);
             this.tabMoradorConsulta.ResumeLayout(false);
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
@@ -361,7 +366,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tblCtrlMorador;
+        private System.Windows.Forms.TabControl tblCtrlAreaDeLazer;
         private System.Windows.Forms.TabPage tabMoradorConsulta;
         private System.Windows.Forms.GroupBox grpPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
@@ -372,12 +377,12 @@
         private System.Windows.Forms.DataGridView dgvAreaDeLazer;
         private System.Windows.Forms.TabPage tabMoradorCadastro;
         private System.Windows.Forms.GroupBox groupBoxCadastrar;
-        private System.Windows.Forms.Button btnExcluirMorador;
-        private System.Windows.Forms.Button btnAtualizarMorador;
-        private System.Windows.Forms.Button btnInserirMorador;
+        private System.Windows.Forms.Button btnExcluirAreaDeLazer;
+        private System.Windows.Forms.Button btnAtualizarAreaDeLazer;
+        private System.Windows.Forms.Button btnInserirAreaDeLazer;
         private System.Windows.Forms.Button btnExibirImagem;
         private System.Windows.Forms.PictureBox picAreaDeLazer;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.GroupBox groupBoxDadosAreaDeLazer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescricao;

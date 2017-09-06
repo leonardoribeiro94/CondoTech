@@ -198,6 +198,7 @@ namespace Condominio.DeskTop.Formularios.Morador
 
         private void LimparCampos()
         {
+            
             LimparControles.Limpar(grpPesquisa);
             LimparControles.Limpar(groupBoxCadastrar);
         }

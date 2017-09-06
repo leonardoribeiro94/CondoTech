@@ -2,28 +2,23 @@
 using DataAccessLayer.Conexao;
 using Model;
 using Model.Enum;
+using System.Data.SqlClient;
 
 namespace DataAccessLayer.Repositorios
 {
     public class UsuarioFuncionarioRepositorio : ConexaoSql
     {
-        private readonly DynamicParameters _parametros;
-
-        public UsuarioFuncionarioRepositorio()
-        {
-            _parametros = new DynamicParameters();
-        }
 
         public void Inserir(Funcionario funcionario)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
                 AbrirConexao();
-
-                _parametros.Add("@IdFuncionario", funcionario.Id);
-                _parametros.Add("@Login", funcionario.Cpf);
-                _parametros.Add("@Senha", "condominio@1");
-                _parametros.Add("@Ativo", EntidadeAtiva.Ativo);
+                var parameters = new DynamicParameters();
+                parameters.Add("@IdFuncionario", funcionario.Id);
+                parameters.Add("@Login", funcionario.Cpf);
+                parameters.Add("@Senha", "condominio@1");
+                parameters.Add("@Ativo", EntidadeAtiva.Ativo);
 
                 Connection.Execute("SPInsert_UsuarioFuncionario");
             }
@@ -31,14 +26,14 @@ namespace DataAccessLayer.Repositorios
 
         public void Atualizar(Funcionario funcionario)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
                 AbrirConexao();
-
-                _parametros.Add("@IdFuncionario", funcionario.Id);
-                _parametros.Add("@Login", funcionario.Cpf);
-                _parametros.Add("@Senha", funcionario.UsuarioFuncionario.Senha);
-                _parametros.Add("@Ativo", EntidadeAtiva.Ativo);
+                var parameters = new DynamicParameters();
+                parameters.Add("@IdFuncionario", funcionario.Id);
+                parameters.Add("@Login", funcionario.Cpf);
+                parameters.Add("@Senha", funcionario.UsuarioFuncionario.Senha);
+                parameters.Add("@Ativo", EntidadeAtiva.Ativo);
 
                 Connection.Execute("SPInsert_UsuarioFuncionario");
             }

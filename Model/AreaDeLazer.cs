@@ -17,7 +17,7 @@ namespace Model
 
         #region Propriedades
 
-        public int Id { get; set; }
+        public int IdAreaDeLazer { get; set; }
         public byte[] Imagem { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }

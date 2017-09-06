@@ -23,6 +23,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             try
             {
                 CarregaGridAreaDeLazer();
+                ConfiguraCabecalhoDataGrid();
             }
             catch (Exception exception)
             {
@@ -30,15 +31,14 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             }
         }
 
-        private void btnExibirImagem_Click(object sender, System.EventArgs e)
+        private void btnExibirImagem_Click(object sender, EventArgs e)
         {
             try
             {
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    var nomeDoArquivo = openFileDialog1.FileName;
+                    var nomeDoArquivo = openFileDialog.FileName;
                     var imagemBitMap = new Bitmap(nomeDoArquivo);
-
                     picAreaDeLazer.Image = imagemBitMap;
                 }
             }
@@ -52,14 +52,19 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
         {
             try
             {
-                var areaDeLazer = new Model.AreaDeLazer();
-                areaDeLazer.Imagem = ConverteArquivoDeImagem(openFileDialog1.FileName);
-                areaDeLazer.Nome = txtNome.Text;
-                areaDeLazer.Descricao = txtDescricao.Text;
+                var areaDeLazer = new Model.AreaDeLazer
+                {
+                    Imagem = ObterArrayDeImagemDoPictureBox(picAreaDeLazer),
+                    Nome = txtNome.Text.ToUpper().Trim(),
+                    Descricao = txtDescricao.Text.ToUpper().Trim()
+                };
 
                 areaDeLazer.ValidaDados();
                 _areaDeLazerCtrl.InserirAreaDeLazer(areaDeLazer);
 
+                LimpaCampos();
+                CarregaGridAreaDeLazer();
+                tblCtrlAreaDeLazer.SelectedIndex = 0;
             }
 
             catch (Exception exception)
@@ -68,23 +73,123 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             }
         }
 
-        #region Metodos
-        public byte[] ConverteArquivoDeImagem(string nomeArquivo)
+        private void btnExcluirAreaDeLazer_Click(object sender, EventArgs e)
         {
-            var arquivo = new Bitmap(nomeArquivo);
-            var memoryStream = new MemoryStream();
-            arquivo.Save(memoryStream, ImageFormat.Bmp);
-            var foto = memoryStream.ToArray();
-            return foto;
+            try
+            {
+                var idAreaDeLazer = Convert.ToInt32(txtCodigo.Text);
+
+                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistemaDesktop.Questao);
+
+                if (opcao == DialogResult.OK)
+                {
+                    _areaDeLazerCtrl.DeletarAreaDeLazer(idAreaDeLazer);
+
+                    LimpaCampos();
+                    CarregaGridAreaDeLazer();
+                    tblCtrlAreaDeLazer.SelectedIndex = 0;
+                }
+
+            }
+            catch (Exception exception)
+            {
+                CaixaDeMensagem.MensagemDeErro(exception.Message);
+            }
+        }
+
+        private void dgvAreaDeLazer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvAreaDeLazer.CurrentRow != null)
+                {
+                    var bytedaImagem = (byte[])dgvAreaDeLazer.CurrentRow.Cells[1].Value;
+                    var foto = new MemoryStream(bytedaImagem);
+
+                    picAreaDeLazer.Image = Image.FromStream(foto);
+                    txtCodigo.Text = dgvAreaDeLazer.CurrentRow.Cells[0].Value.ToString();
+                    txtNome.Text = dgvAreaDeLazer.CurrentRow.Cells[2].Value.ToString();
+                    txtDescricao.Text = dgvAreaDeLazer.CurrentRow.Cells[3].Value.ToString();
+                    tblCtrlAreaDeLazer.SelectedIndex = 1;
+                    btnInserirAreaDeLazer.Enabled = false;
+                    btnAtualizarAreaDeLazer.Enabled = true;
+                    btnExcluirAreaDeLazer.Enabled = true;
+                }
+            }
+            catch (Exception exception)
+            {
+                CaixaDeMensagem.MensagemDeErro(exception.Message);
+            }
+        }
+
+        private void tblCtrlAreaDeLazer_Click(object sender, EventArgs e)
+        {
+            LimpaCampos();
+            btnInserirAreaDeLazer.Enabled = true;
+            btnAtualizarAreaDeLazer.Enabled = false;
+            btnExcluirAreaDeLazer.Enabled = false;
+        }
+
+        private void btnAtualizarAreaDeLazer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var areaDeLazer = new Model.AreaDeLazer();
+                areaDeLazer.IdAreaDeLazer = Convert.ToInt32(txtCodigo.Text);
+                areaDeLazer.Nome = txtNome.Text;
+                areaDeLazer.Descricao = txtDescricao.Text;
+                areaDeLazer.Imagem = ObterArrayDeImagemDoPictureBox(picAreaDeLazer);
+                _areaDeLazerCtrl.AlterarAreaDeLazer(areaDeLazer);
+                CarregaGridAreaDeLazer();
+                tblCtrlAreaDeLazer.SelectedIndex = 0;
+            }
+            catch (Exception exception)
+            {
+                CaixaDeMensagem.MensagemDeErro(exception.Message);
+            }
+        }
+
+        #region Metodos
+
+        public byte[] ObterArrayDeImagemDoPictureBox(PictureBox picture)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                if (picture.Image != null)
+                {
+                    picture.Image.Save(memoryStream, ImageFormat.Bmp);
+                }
+
+                return memoryStream.ToArray();
+            }
         }
 
         public void CarregaGridAreaDeLazer()
         {
             dgvAreaDeLazer.DataSource = _areaDeLazerCtrl.ObterAreaDeLazer().ToList();
+            ConfiguraCabecalhoDataGrid();
 
         }
+
+        private void ConfiguraCabecalhoDataGrid()
+        {
+
+            dgvAreaDeLazer.Columns[0].HeaderText = @"Código";
+            dgvAreaDeLazer.Columns[1].HeaderText = @"Imagem";
+            dgvAreaDeLazer.Columns[1].Visible = false;
+            dgvAreaDeLazer.Columns[2].HeaderText = @"Nome";
+            dgvAreaDeLazer.Columns[3].HeaderText = @"Descrição";
+            dgvAreaDeLazer.Columns[4].HeaderText = @"Ativo";
+
+        }
+
+        public void LimpaCampos()
+        {
+            picAreaDeLazer.Image = Image.FromFile(@"C:\dev\CondoTech\Condominio.DeskTop\Resources\picture-2.png");
+            LimparControles.Limpar(groupBoxCadastrar);
+            LimparControles.Limpar(groupBoxDadosAreaDeLazer);
+        }
+
         #endregion
-
-
     }
 }

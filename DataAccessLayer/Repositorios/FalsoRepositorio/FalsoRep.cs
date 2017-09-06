@@ -1,6 +1,5 @@
 ﻿using Model;
 using Model.Agregador;
-using Model.Enum;
 using System.Collections.Generic;
 
 namespace DataAccessLayer.Repositorios.FalsoRepositorio
@@ -77,33 +76,33 @@ namespace DataAccessLayer.Repositorios.FalsoRepositorio
 
         #region AreaDeLazer
 
-        public ICollection<AreaDeLazer> AreasdeLazeres()
-        {
-            var areadeLazer = new List<AreaDeLazer>
-            {
-                new AreaDeLazer {Id = 1, Nome = "Churrascaria", Descricao = "Churrascaria do Condomínio", EntidadeAtiva = EntidadeAtiva.Ativo},
-                new AreaDeLazer {Id = 2, Nome = "Piscina", Descricao = "Piscina do Condomínio", EntidadeAtiva = EntidadeAtiva.Ativo},
-                new AreaDeLazer {Id = 3, Nome = "Salão de Festas", Descricao = "Salão de Festas do Condomínio", EntidadeAtiva = EntidadeAtiva.Ativo}
+        //public ICollection<AreaDeLazer> AreasdeLazeres()
+        //{
+        //    var areadeLazer = new List<AreaDeLazer>
+        //    {
+        //        new AreaDeLazer {Id = 1, Nome = "Churrascaria", Descricao = "Churrascaria do Condomínio", EntidadeAtiva = EntidadeAtiva.Ativo},
+        //        new AreaDeLazer {Id = 2, Nome = "Piscina", Descricao = "Piscina do Condomínio", EntidadeAtiva = EntidadeAtiva.Ativo},
+        //        new AreaDeLazer {Id = 3, Nome = "Salão de Festas", Descricao = "Salão de Festas do Condomínio", EntidadeAtiva = EntidadeAtiva.Ativo}
 
-            };
+        //    };
 
-            return areadeLazer;
-        }
+        //    return areadeLazer;
+        //}
 
         #endregion
 
         #region ReservaAreaDeLazer
 
-        public ICollection<ReservaAreaDeLazer> SelecionaReservaDeAreaDeLazers()
-        {
-            var reservaAreaDeLazer = new List<ReservaAreaDeLazer>
-            {
-                new ReservaAreaDeLazer {Id = 3, Morador = new Morador {Id = 1}, AreaDeLazer = new AreaDeLazer {Id = 1}, DisponibilidadeDaAreaDeLazer = DisponibilidadeDaAreaDeLazer.Disponivel},
-                new ReservaAreaDeLazer {Id = 2, Morador = new Morador {Id = 1}, AreaDeLazer = new AreaDeLazer {Id = 1}, DisponibilidadeDaAreaDeLazer = DisponibilidadeDaAreaDeLazer.Indisponivel}
+        //public ICollection<ReservaAreaDeLazer> SelecionaReservaDeAreaDeLazers()
+        //{
+        //    var reservaAreaDeLazer = new List<ReservaAreaDeLazer>
+        //    {
+        //        new ReservaAreaDeLazer {Id = 3, Morador = new Morador {Id = 1}, AreaDeLazer = new AreaDeLazer {Id = 1}, DisponibilidadeDaAreaDeLazer = DisponibilidadeDaAreaDeLazer.Disponivel},
+        //        new ReservaAreaDeLazer {Id = 2, Morador = new Morador {Id = 1}, AreaDeLazer = new AreaDeLazer {Id = 1}, DisponibilidadeDaAreaDeLazer = DisponibilidadeDaAreaDeLazer.Indisponivel}
 
-                };
-            return reservaAreaDeLazer;
-        }
+        //        };
+        //    return reservaAreaDeLazer;
+        //}
 
         #endregion
 

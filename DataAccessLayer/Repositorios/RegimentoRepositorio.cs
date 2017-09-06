@@ -2,27 +2,22 @@
 using DataAccessLayer.Conexao;
 using Model;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace DataAccessLayer.Repositorios
 {
     public class RegimentoRepositorio : ConexaoSql
     {
-        private readonly DynamicParameters _parametros;
-
-        public RegimentoRepositorio()
-        {
-            _parametros = new DynamicParameters();
-        }
 
         public void Inserir(Regimento regimento)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
                 AbrirConexao();
-
-                _parametros.Add("@IdFuncionario", regimento.Funcionario.Id);
-                _parametros.Add("@Nome", regimento.Nome);
-                _parametros.Add("@Descricao", regimento.Documento);
+                var parametros = new DynamicParameters();
+                parametros.Add("@IdFuncionario", regimento.Funcionario.Id);
+                parametros.Add("@Nome", regimento.Nome);
+                parametros.Add("@Descricao", regimento.Documento);
 
                 Connection.Execute("SPInsert_Regimento", commandType: CommandStoredProcedure);
             }
@@ -30,14 +25,14 @@ namespace DataAccessLayer.Repositorios
 
         public void Atualizar(Regimento regimento)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
 
-                _parametros.Add("@IdRegimento", regimento.Id);
-                _parametros.Add("@IdFuncionario", regimento.Funcionario.Id);
-                _parametros.Add("@Nome", regimento.Nome);
-                _parametros.Add("@Descricao", regimento.Documento);
+                var parametros = new DynamicParameters();
+                parametros.Add("@IdRegimento", regimento.Id);
+                parametros.Add("@IdFuncionario", regimento.Funcionario.Id);
+                parametros.Add("@Nome", regimento.Nome);
+                parametros.Add("@Descricao", regimento.Documento);
 
                 Connection.Execute("SPInsert_Regimento");
             }
@@ -45,20 +40,19 @@ namespace DataAccessLayer.Repositorios
 
         public void Excluir(int id)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
-                _parametros.Add("@IdFuncionario", id);
+                var parametros = new DynamicParameters();
+                parametros.Add("@IdFuncionario", id);
                 Connection.Execute("SPDelete_Regimento", commandType: CommandStoredProcedure);
             }
         }
 
         public IEnumerable<Regimento> ObteRegimentosRegimentos()
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
-                return Connection.Query<Regimento>("SPSelec_Regimento", commandType: CommandStoredProcedure);
+                return Connection.Query<Regimento>("SPSelect_Regimento", commandType: CommandStoredProcedure);
             }
         }
     }

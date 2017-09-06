@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using DataAccessLayer.Conexao;
 using Model;
+using Model.Enum;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,22 +10,16 @@ namespace DataAccessLayer.Repositorios
 {
     public class AreaDeLazerRepositorio : ConexaoSql
     {
-        private readonly DynamicParameters _parameters;
-
-        public AreaDeLazerRepositorio()
-        {
-            _parameters = new DynamicParameters();
-        }
-
         public void Inserir(AreaDeLazer areaDeLazer)
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                _parameters.Add("@Nome", areaDeLazer.Nome);
-                _parameters.Add("@Descricao", areaDeLazer.Descricao);
-                _parameters.Add("@Imagem", areaDeLazer.Imagem);
-                _parameters.Add("@Ativo", areaDeLazer.EntidadeAtiva);
-                Connection.Execute("SPInsert_AreaDeLazer", _parameters, commandType: CommandStoredProcedure);
+                var parameters = new DynamicParameters();
+                parameters.Add("@Nome", areaDeLazer.Nome);
+                parameters.Add("@Descricao", areaDeLazer.Descricao);
+                parameters.Add("@Imagem", areaDeLazer.Imagem);
+                parameters.Add("@Ativo", areaDeLazer.EntidadeAtiva);
+                Connection.Execute("SPInsert_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
             }
         }
 
@@ -32,11 +27,14 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                _parameters.Add("@IdAreaDeLazer", areaDeLazer.Id);
-                _parameters.Add("@Nome", areaDeLazer.Nome);
-                _parameters.Add("@Descricao", areaDeLazer.Descricao);
-                _parameters.Add("@Ativo", areaDeLazer.EntidadeAtiva);
-                Connection.Execute("SPUpdate_AreaDeLazer", _parameters, commandType: CommandStoredProcedure);
+                var parameters = new DynamicParameters();
+                parameters.Add("@IdAreaDeLazer", areaDeLazer.IdAreaDeLazer);
+                parameters.Add("@Nome", areaDeLazer.Nome);
+                parameters.Add("@Descricao", areaDeLazer.Descricao);
+                parameters.Add("@Imagem", areaDeLazer.Imagem);
+                parameters.Add("@Ativo", areaDeLazer.EntidadeAtiva);
+
+                Connection.Execute("SPUpdate_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
             }
         }
 
@@ -44,8 +42,10 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                _parameters.Add("@IdAreaDeLazer", id);
-                Connection.Execute("SPDelete_AreaDeLazer", _parameters, commandType: CommandStoredProcedure);
+                var parameters = new DynamicParameters();
+                parameters.Add("@IdAreaDeLazer", id);
+                parameters.Add("@Ativo", EntidadeAtiva.Inativo);
+                Connection.Execute("SPDelete_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
             }
         }
 
@@ -53,7 +53,7 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                string query = "Select  IdAreaDeLazer,imagem ,Nome, descricao from AreaDeLazer";
+                string query = "Select  IdAreaDeLazer,imagem ,Nome, descricao from AreaDeLazer where Ativo = 0";
                 return Connection.Query<AreaDeLazer>(query).OrderBy(x => x.Nome);
             }
         }

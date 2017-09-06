@@ -2,55 +2,54 @@
 using DataAccessLayer.Conexao;
 using Model;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace DataAccessLayer.Repositorios
 {
     public class CargoRepositorio : ConexaoSql
     {
-        private readonly DynamicParameters _parametros;
 
-        public CargoRepositorio()
-        {
-            _parametros = new DynamicParameters();
-        }
 
         public void Inserir(Cargo cargo)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
-                Connection.Open();
-                _parametros.Add("@Nome", cargo.Nome);
-                _parametros.Add("@Descricao", cargo.Descricao);
+                var parametros = new DynamicParameters();
+                parametros.Add("@Nome", cargo.Nome);
+                parametros.Add("@Descricao", cargo.Descricao);
 
-                Connection.Execute("SPInsert_Cargo", _parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("SPInsert_Cargo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
         public void Alterar(Cargo cargo)
         {
-            Connection.Open();
-            _parametros.Add("@Id", cargo.Id);
-            _parametros.Add("@Nome", cargo.Nome);
-            _parametros.Add("@Descricao", cargo.Descricao);
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                var parametros = new DynamicParameters();
+                parametros.Add("@Id", cargo.Id);
+                parametros.Add("@Nome", cargo.Nome);
+                parametros.Add("@Descricao", cargo.Descricao);
 
-            Connection.Execute("SPUpdate_Cargo", _parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("SPUpdate_Cargo", parametros, commandType: CommandStoredProcedure);
+            }
+
         }
 
         public void Excluir(int id)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
-                Connection.Open();
-                _parametros.Add("@IdCargo", id);
-                Connection.Execute("SPDelete_Cargo", _parametros, commandType: CommandStoredProcedure);
+                var parametros = new DynamicParameters();
+                parametros.Add("@IdCargo", id);
+                Connection.Execute("SPDelete_Cargo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
         public IEnumerable<Cargo> ObterCargos()
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
-                Connection.Open();
                 var listaCargos = Connection.Query<Cargo>("SPSelect_Cargo", commandType: CommandStoredProcedure);
 
                 return listaCargos;

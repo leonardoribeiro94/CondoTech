@@ -13,13 +13,6 @@ namespace DataAccessLayer.Repositorios
 {
     public class MoradorRepositorio : ConexaoSql
     {
-        private readonly DynamicParameters _parametros;
-
-        public MoradorRepositorio()
-        {
-            _parametros = new DynamicParameters();
-        }
-
         public void Inserir(Morador morador)
         {
             var moradorLista = ObterMoradores().Where(x => x.Cpf == morador.Cpf).ToList();
@@ -28,15 +21,16 @@ namespace DataAccessLayer.Repositorios
             {
                 if (moradorLista.Count == 0)
                 {
-                    _parametros.Add("@Nome", morador.Nome.Trim().ToUpper());
-                    _parametros.Add("@DataDeNascimento", morador.DataDeNascimento);
-                    _parametros.Add("@Telefone", morador.Telefone.Trim());
-                    _parametros.Add("@Celular", morador.Celular.Trim());
-                    _parametros.Add("@Email", morador.Email.Trim().ToUpper());
-                    _parametros.Add("@Cpf", morador.Cpf.Trim());
-                    _parametros.Add("@Ativo", EntidadeAtiva.Ativo);
+                    var parametros = new DynamicParameters();
+                    parametros.Add("@Nome", morador.Nome.Trim().ToUpper());
+                    parametros.Add("@DataDeNascimento", morador.DataDeNascimento);
+                    parametros.Add("@Telefone", morador.Telefone.Trim());
+                    parametros.Add("@Celular", morador.Celular.Trim());
+                    parametros.Add("@Email", morador.Email.Trim().ToUpper());
+                    parametros.Add("@Cpf", morador.Cpf.Trim());
+                    parametros.Add("@Ativo", EntidadeAtiva.Ativo);
 
-                    Connection.Execute("SPInsert_Morador", _parametros, commandType: CommandType.StoredProcedure);
+                    Connection.Execute("SPInsert_Morador", parametros, commandType: CommandType.StoredProcedure);
                 }
                 else
                 {
@@ -49,17 +43,17 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
-                _parametros.Add("@IdMorador", morador.Id);
-                _parametros.Add("@Nome", morador.Nome.Trim().ToUpper());
-                _parametros.Add("@DataDeNascimento", morador.DataDeNascimento);
-                _parametros.Add("@Telefone", morador.Telefone.Trim());
-                _parametros.Add("@Celular", morador.Celular.Trim());
-                _parametros.Add("@Email", morador.Email.Trim().ToUpper());
-                _parametros.Add("@Cpf", morador.Cpf.Trim());
-                _parametros.Add("@Ativo", EntidadeAtiva.Ativo);
+                var parametros = new DynamicParameters();
+                parametros.Add("@IdMorador", morador.Id);
+                parametros.Add("@Nome", morador.Nome.Trim().ToUpper());
+                parametros.Add("@DataDeNascimento", morador.DataDeNascimento);
+                parametros.Add("@Telefone", morador.Telefone.Trim());
+                parametros.Add("@Celular", morador.Celular.Trim());
+                parametros.Add("@Email", morador.Email.Trim().ToUpper());
+                parametros.Add("@Cpf", morador.Cpf.Trim());
+                parametros.Add("@Ativo", EntidadeAtiva.Ativo);
 
-                Connection.Execute("SPUpdate_Morador", _parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("SPUpdate_Morador", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -67,12 +61,11 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
-                var parameter = new DynamicParameters();
-                parameter.Add("@IdMorador", id);
-                parameter.Add("@Ativo", EntidadeAtiva.Inativo);
+                var parametros = new DynamicParameters();
+                parametros.Add("@IdMorador", id);
+                parametros.Add("@Ativo", EntidadeAtiva.Inativo);
 
-                Connection.Execute("SPDelete_Morador", parameter, commandType: CommandStoredProcedure);
+                Connection.Execute("SPDelete_Morador", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -104,7 +97,6 @@ namespace DataAccessLayer.Repositorios
                 return Connection.Query<ObterMorador>(sqlComando, new { nome }).ToList();
             }
         }
-
 
         public ICollection<ObterMorador> ObterMoradoresPorNomeEDataDeNascimento(string nome, DateTime nascimento)
         {

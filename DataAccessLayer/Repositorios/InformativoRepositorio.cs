@@ -2,58 +2,53 @@
 using DataAccessLayer.Conexao;
 using Model;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace DataAccessLayer.Repositorios
 {
     public class InformativoRepositorio : ConexaoSql
     {
-        private readonly DynamicParameters _parameters;
-
-        public InformativoRepositorio()
-        {
-            _parameters = new DynamicParameters();
-        }
 
         public void Inserir(Informativo informativo)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
-                _parameters.Add("@IdEntidade", informativo.IdEntidade);
-                _parameters.Add("@TipoInformante", informativo.TipoInformante);
-                _parameters.Add("@Descricao", informativo.Descricao);
+                var parametros = new DynamicParameters();
+                parametros.Add("@IdEntidade", informativo.IdEntidade);
+                parametros.Add("@TipoInformante", informativo.TipoInformante);
+                parametros.Add("@Descricao", informativo.Descricao);
 
-                Connection.Execute("SPInsert_Informativo", _parameters, commandType: CommandStoredProcedure);
+                Connection.Execute("SPInsert_Informativo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
         public void Atualizar(Informativo informativo)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
-                _parameters.Add("@IdInformativo", informativo.Id);
-                _parameters.Add("@IdEntidade", informativo.IdEntidade);
-                _parameters.Add("@TipoInformante", informativo.TipoInformante);
-                _parameters.Add("@Descricao", informativo.Descricao);
+                var parametros = new DynamicParameters();
+                parametros.Add("@IdInformativo", informativo.Id);
+                parametros.Add("@IdEntidade", informativo.IdEntidade);
+                parametros.Add("@TipoInformante", informativo.TipoInformante);
+                parametros.Add("@Descricao", informativo.Descricao);
 
-                Connection.Execute("SPInsert_Informativo", _parameters, commandType: CommandStoredProcedure);
+                Connection.Execute("SPInsert_Informativo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
         public void Excluir(int id)
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
-                _parameters.Add("@IdInformativo", id);
-                Connection.Execute("SPDeletar_Informativo", _parameters, commandType: CommandStoredProcedure);
+                var parametros = new DynamicParameters();
+                parametros.Add("@IdInformativo", id);
+                Connection.Execute("SPDeletar_Informativo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
         public IEnumerable<Informativo> ObterInformativo()
         {
-            using (Connection)
+            using (Connection = new SqlConnection(StringConnection))
             {
                 AbrirConexao();
 
