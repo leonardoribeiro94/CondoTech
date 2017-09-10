@@ -23,7 +23,6 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             try
             {
                 CarregaGridAreaDeLazer();
-                ConfiguraCabecalhoDataGrid();
             }
             catch (Exception exception)
             {
@@ -149,6 +148,22 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             }
         }
 
+        private void txtNomeConsulta_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                var nomeValor = txtNomeConsulta.Text.ToLower();
+                var listaFiltro = _areaDeLazerCtrl.ObterAreaDeLazer()
+                    .Where(x => x.Nome.ToLower().Contains(nomeValor)).ToList();
+
+                dgvAreaDeLazer.DataSource = listaFiltro;
+            }
+            catch (Exception exception)
+            {
+                CaixaDeMensagem.MensagemDeErro(exception.Message);
+            }
+        }
+
         #region Metodos
 
         public byte[] ObterArrayDeImagemDoPictureBox(PictureBox picture)
@@ -167,12 +182,6 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
         public void CarregaGridAreaDeLazer()
         {
             dgvAreaDeLazer.DataSource = _areaDeLazerCtrl.ObterAreaDeLazer().ToList();
-            ConfiguraCabecalhoDataGrid();
-
-        }
-
-        private void ConfiguraCabecalhoDataGrid()
-        {
 
             dgvAreaDeLazer.Columns[0].HeaderText = @"Código";
             dgvAreaDeLazer.Columns[1].HeaderText = @"Imagem";

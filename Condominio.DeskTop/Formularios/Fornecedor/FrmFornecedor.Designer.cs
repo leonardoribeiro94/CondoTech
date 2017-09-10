@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFornecedor));
-            this.tblCtrlMorador = new System.Windows.Forms.TabControl();
+            this.tblCtrlFornecedor = new System.Windows.Forms.TabControl();
             this.tabFornecedorConsulta = new System.Windows.Forms.TabPage();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -40,22 +40,22 @@
             this.groupBoxCadastrar = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.btnExcluirMorador = new System.Windows.Forms.Button();
-            this.btnAtualizarMorador = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnInserirMorador = new System.Windows.Forms.Button();
-            this.txtEmailMorador = new System.Windows.Forms.TextBox();
-            this.txtTelefoneCelularMorador = new System.Windows.Forms.MaskedTextBox();
+            this.btnInserir = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtTelefoneCelular = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTelefoneFixoMorador = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefoneFixo = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtCpfMorador = new System.Windows.Forms.MaskedTextBox();
+            this.txtCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtNomeFornecedor = new System.Windows.Forms.TextBox();
-            this.tblCtrlMorador.SuspendLayout();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.tblCtrlFornecedor.SuspendLayout();
             this.tabFornecedorConsulta.SuspendLayout();
             this.grpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
@@ -63,16 +63,17 @@
             this.groupBoxCadastrar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tblCtrlMorador
+            // tblCtrlFornecedor
             // 
-            this.tblCtrlMorador.Controls.Add(this.tabFornecedorConsulta);
-            this.tblCtrlMorador.Controls.Add(this.tabFornecedorCadastro);
-            this.tblCtrlMorador.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblCtrlMorador.Location = new System.Drawing.Point(0, 0);
-            this.tblCtrlMorador.Name = "tblCtrlMorador";
-            this.tblCtrlMorador.SelectedIndex = 0;
-            this.tblCtrlMorador.Size = new System.Drawing.Size(701, 444);
-            this.tblCtrlMorador.TabIndex = 1;
+            this.tblCtrlFornecedor.Controls.Add(this.tabFornecedorConsulta);
+            this.tblCtrlFornecedor.Controls.Add(this.tabFornecedorCadastro);
+            this.tblCtrlFornecedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblCtrlFornecedor.Location = new System.Drawing.Point(0, 0);
+            this.tblCtrlFornecedor.Name = "tblCtrlFornecedor";
+            this.tblCtrlFornecedor.SelectedIndex = 0;
+            this.tblCtrlFornecedor.Size = new System.Drawing.Size(701, 444);
+            this.tblCtrlFornecedor.TabIndex = 1;
+            this.tblCtrlFornecedor.Click += new System.EventHandler(this.tblCtrlFornecedor_Click);
             // 
             // tabFornecedorConsulta
             // 
@@ -132,6 +133,7 @@
             this.txtNomeConsulta.Name = "txtNomeConsulta";
             this.txtNomeConsulta.Size = new System.Drawing.Size(260, 23);
             this.txtNomeConsulta.TabIndex = 0;
+            this.txtNomeConsulta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNomeConsulta_KeyUp);
             // 
             // dgvFornecedor
             // 
@@ -140,6 +142,7 @@
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.Size = new System.Drawing.Size(675, 251);
             this.dgvFornecedor.TabIndex = 0;
+            this.dgvFornecedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellDoubleClick);
             // 
             // tabFornecedorCadastro
             // 
@@ -156,21 +159,21 @@
             // 
             this.groupBoxCadastrar.Controls.Add(this.label2);
             this.groupBoxCadastrar.Controls.Add(this.txtDescricao);
-            this.groupBoxCadastrar.Controls.Add(this.btnExcluirMorador);
-            this.groupBoxCadastrar.Controls.Add(this.btnAtualizarMorador);
+            this.groupBoxCadastrar.Controls.Add(this.btnExcluir);
+            this.groupBoxCadastrar.Controls.Add(this.btnAtualizar);
             this.groupBoxCadastrar.Controls.Add(this.label8);
-            this.groupBoxCadastrar.Controls.Add(this.btnInserirMorador);
-            this.groupBoxCadastrar.Controls.Add(this.txtEmailMorador);
-            this.groupBoxCadastrar.Controls.Add(this.txtTelefoneCelularMorador);
+            this.groupBoxCadastrar.Controls.Add(this.btnInserir);
+            this.groupBoxCadastrar.Controls.Add(this.txtEmail);
+            this.groupBoxCadastrar.Controls.Add(this.txtTelefoneCelular);
             this.groupBoxCadastrar.Controls.Add(this.label6);
-            this.groupBoxCadastrar.Controls.Add(this.txtTelefoneFixoMorador);
+            this.groupBoxCadastrar.Controls.Add(this.txtTelefoneFixo);
             this.groupBoxCadastrar.Controls.Add(this.label5);
-            this.groupBoxCadastrar.Controls.Add(this.txtCpfMorador);
+            this.groupBoxCadastrar.Controls.Add(this.txtCNPJ);
             this.groupBoxCadastrar.Controls.Add(this.label7);
             this.groupBoxCadastrar.Controls.Add(this.label9);
             this.groupBoxCadastrar.Controls.Add(this.label3);
             this.groupBoxCadastrar.Controls.Add(this.txtCodigo);
-            this.groupBoxCadastrar.Controls.Add(this.txtNomeFornecedor);
+            this.groupBoxCadastrar.Controls.Add(this.txtNome);
             this.groupBoxCadastrar.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.groupBoxCadastrar.Location = new System.Drawing.Point(23, 19);
@@ -178,7 +181,7 @@
             this.groupBoxCadastrar.Size = new System.Drawing.Size(631, 336);
             this.groupBoxCadastrar.TabIndex = 0;
             this.groupBoxCadastrar.TabStop = false;
-            this.groupBoxCadastrar.Text = "Cadastrar Morador";
+            this.groupBoxCadastrar.Text = "Cadastrar Fornecedor";
             // 
             // label2
             // 
@@ -197,37 +200,39 @@
             this.txtDescricao.Size = new System.Drawing.Size(594, 62);
             this.txtDescricao.TabIndex = 17;
             // 
-            // btnExcluirMorador
+            // btnExcluir
             // 
-            this.btnExcluirMorador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(68)))));
-            this.btnExcluirMorador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExcluirMorador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirMorador.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnExcluirMorador.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirMorador.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirMorador.Image")));
-            this.btnExcluirMorador.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnExcluirMorador.Location = new System.Drawing.Point(335, 285);
-            this.btnExcluirMorador.Name = "btnExcluirMorador";
-            this.btnExcluirMorador.Size = new System.Drawing.Size(152, 40);
-            this.btnExcluirMorador.TabIndex = 16;
-            this.btnExcluirMorador.Text = " Excluir";
-            this.btnExcluirMorador.UseVisualStyleBackColor = false;
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(68)))));
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(335, 285);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(152, 40);
+            this.btnExcluir.TabIndex = 16;
+            this.btnExcluir.Text = " Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // btnAtualizarMorador
+            // btnAtualizar
             // 
-            this.btnAtualizarMorador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(159)))));
-            this.btnAtualizarMorador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAtualizarMorador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarMorador.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnAtualizarMorador.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarMorador.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizarMorador.Image")));
-            this.btnAtualizarMorador.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnAtualizarMorador.Location = new System.Drawing.Point(173, 285);
-            this.btnAtualizarMorador.Name = "btnAtualizarMorador";
-            this.btnAtualizarMorador.Size = new System.Drawing.Size(152, 40);
-            this.btnAtualizarMorador.TabIndex = 15;
-            this.btnAtualizarMorador.Text = "  Atualizar";
-            this.btnAtualizarMorador.UseVisualStyleBackColor = false;
+            this.btnAtualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(159)))));
+            this.btnAtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizar.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnAtualizar.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
+            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnAtualizar.Location = new System.Drawing.Point(173, 285);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(152, 40);
+            this.btnAtualizar.TabIndex = 15;
+            this.btnAtualizar.Text = "  Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // label8
             // 
@@ -238,36 +243,37 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "E-mail*";
             // 
-            // btnInserirMorador
+            // btnInserir
             // 
-            this.btnInserirMorador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(128)))), ((int)(((byte)(54)))));
-            this.btnInserirMorador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnInserirMorador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInserirMorador.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnInserirMorador.ForeColor = System.Drawing.Color.White;
-            this.btnInserirMorador.Image = ((System.Drawing.Image)(resources.GetObject("btnInserirMorador.Image")));
-            this.btnInserirMorador.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnInserirMorador.Location = new System.Drawing.Point(11, 285);
-            this.btnInserirMorador.Name = "btnInserirMorador";
-            this.btnInserirMorador.Size = new System.Drawing.Size(152, 40);
-            this.btnInserirMorador.TabIndex = 14;
-            this.btnInserirMorador.Text = " Inserir";
-            this.btnInserirMorador.UseVisualStyleBackColor = false;
+            this.btnInserir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(128)))), ((int)(((byte)(54)))));
+            this.btnInserir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInserir.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnInserir.ForeColor = System.Drawing.Color.White;
+            this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
+            this.btnInserir.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnInserir.Location = new System.Drawing.Point(11, 285);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(152, 40);
+            this.btnInserir.TabIndex = 14;
+            this.btnInserir.Text = " Inserir";
+            this.btnInserir.UseVisualStyleBackColor = false;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserirMorador_Click);
             // 
-            // txtEmailMorador
+            // txtEmail
             // 
-            this.txtEmailMorador.Location = new System.Drawing.Point(237, 150);
-            this.txtEmailMorador.Name = "txtEmailMorador";
-            this.txtEmailMorador.Size = new System.Drawing.Size(372, 23);
-            this.txtEmailMorador.TabIndex = 13;
+            this.txtEmail.Location = new System.Drawing.Point(237, 150);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(372, 23);
+            this.txtEmail.TabIndex = 13;
             // 
-            // txtTelefoneCelularMorador
+            // txtTelefoneCelular
             // 
-            this.txtTelefoneCelularMorador.Location = new System.Drawing.Point(11, 150);
-            this.txtTelefoneCelularMorador.Mask = "(00)00000-0000";
-            this.txtTelefoneCelularMorador.Name = "txtTelefoneCelularMorador";
-            this.txtTelefoneCelularMorador.Size = new System.Drawing.Size(201, 23);
-            this.txtTelefoneCelularMorador.TabIndex = 11;
+            this.txtTelefoneCelular.Location = new System.Drawing.Point(11, 150);
+            this.txtTelefoneCelular.Mask = "(00)00000-0000";
+            this.txtTelefoneCelular.Name = "txtTelefoneCelular";
+            this.txtTelefoneCelular.Size = new System.Drawing.Size(201, 23);
+            this.txtTelefoneCelular.TabIndex = 11;
             // 
             // label6
             // 
@@ -278,13 +284,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Telefone Celular";
             // 
-            // txtTelefoneFixoMorador
+            // txtTelefoneFixo
             // 
-            this.txtTelefoneFixoMorador.Location = new System.Drawing.Point(430, 97);
-            this.txtTelefoneFixoMorador.Mask = "(00)0000-0000";
-            this.txtTelefoneFixoMorador.Name = "txtTelefoneFixoMorador";
-            this.txtTelefoneFixoMorador.Size = new System.Drawing.Size(179, 23);
-            this.txtTelefoneFixoMorador.TabIndex = 9;
+            this.txtTelefoneFixo.Location = new System.Drawing.Point(430, 97);
+            this.txtTelefoneFixo.Mask = "(00)0000-0000";
+            this.txtTelefoneFixo.Name = "txtTelefoneFixo";
+            this.txtTelefoneFixo.Size = new System.Drawing.Size(179, 23);
+            this.txtTelefoneFixo.TabIndex = 9;
             // 
             // label5
             // 
@@ -295,13 +301,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Telefone Fixo";
             // 
-            // txtCpfMorador
+            // txtCNPJ
             // 
-            this.txtCpfMorador.Location = new System.Drawing.Point(237, 97);
-            this.txtCpfMorador.Mask = "000000000-00";
-            this.txtCpfMorador.Name = "txtCpfMorador";
-            this.txtCpfMorador.Size = new System.Drawing.Size(154, 23);
-            this.txtCpfMorador.TabIndex = 7;
+            this.txtCNPJ.Location = new System.Drawing.Point(237, 97);
+            this.txtCNPJ.Mask = "00000000/0000-00";
+            this.txtCNPJ.Name = "txtCNPJ";
+            this.txtCNPJ.Size = new System.Drawing.Size(154, 23);
+            this.txtCNPJ.TabIndex = 7;
             // 
             // label7
             // 
@@ -338,26 +344,26 @@
             this.txtCodigo.Size = new System.Drawing.Size(95, 23);
             this.txtCodigo.TabIndex = 1;
             // 
-            // txtNomeFornecedor
+            // txtNome
             // 
-            this.txtNomeFornecedor.Location = new System.Drawing.Point(11, 97);
-            this.txtNomeFornecedor.Name = "txtNomeFornecedor";
-            this.txtNomeFornecedor.Size = new System.Drawing.Size(204, 23);
-            this.txtNomeFornecedor.TabIndex = 3;
+            this.txtNome.Location = new System.Drawing.Point(11, 97);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(204, 23);
+            this.txtNome.TabIndex = 3;
             // 
             // FrmFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 444);
-            this.Controls.Add(this.tblCtrlMorador);
+            this.Controls.Add(this.tblCtrlFornecedor);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fornecedor";
             this.Load += new System.EventHandler(this.FrmFornecedor_Load);
-            this.tblCtrlMorador.ResumeLayout(false);
+            this.tblCtrlFornecedor.ResumeLayout(false);
             this.tabFornecedorConsulta.ResumeLayout(false);
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
@@ -371,7 +377,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tblCtrlMorador;
+        private System.Windows.Forms.TabControl tblCtrlFornecedor;
         private System.Windows.Forms.TabPage tabFornecedorConsulta;
         private System.Windows.Forms.GroupBox grpPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
@@ -380,21 +386,21 @@
         private System.Windows.Forms.DataGridView dgvFornecedor;
         private System.Windows.Forms.TabPage tabFornecedorCadastro;
         private System.Windows.Forms.GroupBox groupBoxCadastrar;
-        private System.Windows.Forms.Button btnExcluirMorador;
-        private System.Windows.Forms.Button btnAtualizarMorador;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnInserirMorador;
-        private System.Windows.Forms.TextBox txtEmailMorador;
-        private System.Windows.Forms.MaskedTextBox txtTelefoneCelularMorador;
+        private System.Windows.Forms.Button btnInserir;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.MaskedTextBox txtTelefoneCelular;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox txtTelefoneFixoMorador;
+        private System.Windows.Forms.MaskedTextBox txtTelefoneFixo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox txtCpfMorador;
+        private System.Windows.Forms.MaskedTextBox txtCNPJ;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigo;
-        private System.Windows.Forms.TextBox txtNomeFornecedor;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDescricao;
     }

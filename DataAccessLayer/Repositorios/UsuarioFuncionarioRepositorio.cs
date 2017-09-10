@@ -20,7 +20,7 @@ namespace DataAccessLayer.Repositorios
                 parameters.Add("@Senha", "condominio@1");
                 parameters.Add("@Ativo", EntidadeAtiva.Ativo);
 
-                Connection.Execute("SPInsert_UsuarioFuncionario");
+                Connection.Execute("Insert_UsuarioFuncionario");
             }
         }
 
@@ -35,7 +35,7 @@ namespace DataAccessLayer.Repositorios
                 parameters.Add("@Senha", funcionario.UsuarioFuncionario.Senha);
                 parameters.Add("@Ativo", EntidadeAtiva.Ativo);
 
-                Connection.Execute("SPInsert_UsuarioFuncionario");
+                Connection.Execute("Update_UsuarioFuncionario");
             }
         }
     }

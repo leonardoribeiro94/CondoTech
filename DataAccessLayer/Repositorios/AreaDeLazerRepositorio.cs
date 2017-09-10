@@ -2,6 +2,7 @@
 using DataAccessLayer.Conexao;
 using Model;
 using Model.Enum;
+using Model.QueryModel;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace DataAccessLayer.Repositorios
                 parameters.Add("@Descricao", areaDeLazer.Descricao);
                 parameters.Add("@Imagem", areaDeLazer.Imagem);
                 parameters.Add("@Ativo", areaDeLazer.EntidadeAtiva);
-                Connection.Execute("SPInsert_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
+                Connection.Execute("Insert_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
             }
         }
 
@@ -34,7 +35,7 @@ namespace DataAccessLayer.Repositorios
                 parameters.Add("@Imagem", areaDeLazer.Imagem);
                 parameters.Add("@Ativo", areaDeLazer.EntidadeAtiva);
 
-                Connection.Execute("SPUpdate_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
+                Connection.Execute("Update_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
             }
         }
 
@@ -45,16 +46,16 @@ namespace DataAccessLayer.Repositorios
                 var parameters = new DynamicParameters();
                 parameters.Add("@IdAreaDeLazer", id);
                 parameters.Add("@Ativo", EntidadeAtiva.Inativo);
-                Connection.Execute("SPDelete_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
+                Connection.Execute("Delete_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
             }
         }
 
-        public IEnumerable<AreaDeLazer> ObterAreasDeLazer()
+        public IEnumerable<ObterAreaDeLazer> ObterAreasDeLazer()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                string query = "Select  IdAreaDeLazer,imagem ,Nome, descricao from AreaDeLazer where Ativo = 0";
-                return Connection.Query<AreaDeLazer>(query).OrderBy(x => x.Nome);
+                string query = "Select IdAreaDeLazer,imagem ,Nome, descricao from AreaDeLazer where Ativo = 0";
+                return Connection.Query<ObterAreaDeLazer>(query).OrderBy(x => x.IdAreaDeLazer);
             }
         }
     }

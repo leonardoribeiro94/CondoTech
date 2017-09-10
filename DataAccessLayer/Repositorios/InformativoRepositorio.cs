@@ -18,7 +18,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@TipoInformante", informativo.TipoInformante);
                 parametros.Add("@Descricao", informativo.Descricao);
 
-                Connection.Execute("SPInsert_Informativo", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Insert_Informativo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -32,7 +32,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@TipoInformante", informativo.TipoInformante);
                 parametros.Add("@Descricao", informativo.Descricao);
 
-                Connection.Execute("SPInsert_Informativo", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Update_Informativo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -42,7 +42,7 @@ namespace DataAccessLayer.Repositorios
             {
                 var parametros = new DynamicParameters();
                 parametros.Add("@IdInformativo", id);
-                Connection.Execute("SPDeletar_Informativo", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Deletar_Informativo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -52,7 +52,7 @@ namespace DataAccessLayer.Repositorios
             {
                 AbrirConexao();
 
-                return Connection.Query<Informativo>("SPSelect_Informativo", commandType: CommandStoredProcedure);
+                return Connection.Query<Informativo>("Select_Informativo", commandType: CommandStoredProcedure);
             }
         }
     }

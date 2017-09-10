@@ -18,7 +18,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@Nome", cargo.Nome);
                 parametros.Add("@Descricao", cargo.Descricao);
 
-                Connection.Execute("SPInsert_Cargo", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Insert_Cargo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -31,7 +31,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@Nome", cargo.Nome);
                 parametros.Add("@Descricao", cargo.Descricao);
 
-                Connection.Execute("SPUpdate_Cargo", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Update_Cargo", parametros, commandType: CommandStoredProcedure);
             }
 
         }
@@ -42,7 +42,7 @@ namespace DataAccessLayer.Repositorios
             {
                 var parametros = new DynamicParameters();
                 parametros.Add("@IdCargo", id);
-                Connection.Execute("SPDelete_Cargo", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Delete_Cargo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -50,7 +50,7 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                var listaCargos = Connection.Query<Cargo>("SPSelect_Cargo", commandType: CommandStoredProcedure);
+                var listaCargos = Connection.Query<Cargo>("Select_Cargo", commandType: CommandStoredProcedure);
 
                 return listaCargos;
             }

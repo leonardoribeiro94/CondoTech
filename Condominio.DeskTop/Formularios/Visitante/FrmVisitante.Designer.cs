@@ -1,6 +1,6 @@
-﻿namespace Condominio.DeskTop.Formularios.AreaDeLazer
+﻿namespace Condominio.DeskTop.Formularios.Visitante
 {
-    partial class FrmAreaDeLazer
+    partial class FrmVisitante
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAreaDeLazer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisitante));
             this.tblCtrlAreaDeLazer = new System.Windows.Forms.TabControl();
             this.tabMoradorConsulta = new System.Windows.Forms.TabPage();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNomeConsulta = new System.Windows.Forms.TextBox();
-            this.dgvAreaDeLazer = new System.Windows.Forms.DataGridView();
+            this.dgvVisitante = new System.Windows.Forms.DataGridView();
             this.tabMoradorCadastro = new System.Windows.Forms.TabPage();
             this.groupBoxCadastrar = new System.Windows.Forms.GroupBox();
             this.groupBoxDadosAreaDeLazer = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -50,11 +50,16 @@
             this.btnAtualizarAreaDeLazer = new System.Windows.Forms.Button();
             this.btnExibirImagem = new System.Windows.Forms.Button();
             this.btnInserirAreaDeLazer = new System.Windows.Forms.Button();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTelefoneFixo = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tblCtrlAreaDeLazer.SuspendLayout();
             this.tabMoradorConsulta.SuspendLayout();
             this.grpPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAreaDeLazer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).BeginInit();
             this.tabMoradorCadastro.SuspendLayout();
             this.groupBoxCadastrar.SuspendLayout();
             this.groupBoxDadosAreaDeLazer.SuspendLayout();
@@ -70,13 +75,12 @@
             this.tblCtrlAreaDeLazer.Name = "tblCtrlAreaDeLazer";
             this.tblCtrlAreaDeLazer.SelectedIndex = 0;
             this.tblCtrlAreaDeLazer.Size = new System.Drawing.Size(701, 444);
-            this.tblCtrlAreaDeLazer.TabIndex = 1;
-            this.tblCtrlAreaDeLazer.Click += new System.EventHandler(this.tblCtrlAreaDeLazer_Click);
+            this.tblCtrlAreaDeLazer.TabIndex = 2;
             // 
             // tabMoradorConsulta
             // 
             this.tabMoradorConsulta.Controls.Add(this.grpPesquisa);
-            this.tabMoradorConsulta.Controls.Add(this.dgvAreaDeLazer);
+            this.tabMoradorConsulta.Controls.Add(this.dgvVisitante);
             this.tabMoradorConsulta.Location = new System.Drawing.Point(4, 22);
             this.tabMoradorConsulta.Name = "tabMoradorConsulta";
             this.tabMoradorConsulta.Padding = new System.Windows.Forms.Padding(3);
@@ -98,7 +102,7 @@
             this.grpPesquisa.Size = new System.Drawing.Size(633, 92);
             this.grpPesquisa.TabIndex = 1;
             this.grpPesquisa.TabStop = false;
-            this.grpPesquisa.Text = "Consultar Área de Lazer";
+            this.grpPesquisa.Text = "Consultar Visitantes";
             // 
             // btnPesquisar
             // 
@@ -121,9 +125,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 15);
+            this.label1.Size = new System.Drawing.Size(126, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nome do Local de Lazer";
+            this.label1.Text = "Nome do Visitante";
             // 
             // txtNomeConsulta
             // 
@@ -131,17 +135,15 @@
             this.txtNomeConsulta.Name = "txtNomeConsulta";
             this.txtNomeConsulta.Size = new System.Drawing.Size(346, 23);
             this.txtNomeConsulta.TabIndex = 0;
-            this.txtNomeConsulta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNomeConsulta_KeyUp);
             // 
-            // dgvAreaDeLazer
+            // dgvVisitante
             // 
-            this.dgvAreaDeLazer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvAreaDeLazer.Location = new System.Drawing.Point(12, 133);
-            this.dgvAreaDeLazer.Name = "dgvAreaDeLazer";
-            this.dgvAreaDeLazer.RowTemplate.Height = 20;
-            this.dgvAreaDeLazer.Size = new System.Drawing.Size(675, 251);
-            this.dgvAreaDeLazer.TabIndex = 0;
-            this.dgvAreaDeLazer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAreaDeLazer_CellDoubleClick);
+            this.dgvVisitante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvVisitante.Location = new System.Drawing.Point(12, 133);
+            this.dgvVisitante.Name = "dgvVisitante";
+            this.dgvVisitante.RowTemplate.Height = 20;
+            this.dgvVisitante.Size = new System.Drawing.Size(675, 251);
+            this.dgvVisitante.TabIndex = 0;
             // 
             // tabMoradorCadastro
             // 
@@ -169,12 +171,18 @@
             this.groupBoxCadastrar.Size = new System.Drawing.Size(631, 336);
             this.groupBoxCadastrar.TabIndex = 0;
             this.groupBoxCadastrar.TabStop = false;
-            this.groupBoxCadastrar.Text = "Cadastrar Área de Lazer";
+            this.groupBoxCadastrar.Text = "Cadastrar Visitante";
             // 
             // groupBoxDadosAreaDeLazer
             // 
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label3);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtDescricao);
+            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtCpf);
+            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label7);
+            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtCelular);
+            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label6);
+            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtTelefoneFixo);
+            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label5);
+            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label8);
+            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtEmail);
             this.groupBoxDadosAreaDeLazer.Controls.Add(this.label9);
             this.groupBoxDadosAreaDeLazer.Controls.Add(this.label4);
             this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtCodigo);
@@ -183,32 +191,31 @@
             this.groupBoxDadosAreaDeLazer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.groupBoxDadosAreaDeLazer.Location = new System.Drawing.Point(173, 33);
             this.groupBoxDadosAreaDeLazer.Name = "groupBoxDadosAreaDeLazer";
-            this.groupBoxDadosAreaDeLazer.Size = new System.Drawing.Size(442, 233);
+            this.groupBoxDadosAreaDeLazer.Size = new System.Drawing.Size(423, 216);
             this.groupBoxDadosAreaDeLazer.TabIndex = 18;
             this.groupBoxDadosAreaDeLazer.TabStop = false;
             this.groupBoxDadosAreaDeLazer.Text = "Dados";
             // 
-            // label3
+            // label8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 15);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Descrição";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 150);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 15);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "E-mail*";
             // 
-            // txtDescricao
+            // txtEmail
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(23, 103);
-            this.txtDescricao.Multiline = true;
-            this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(372, 112);
-            this.txtDescricao.TabIndex = 17;
+            this.txtEmail.Location = new System.Drawing.Point(26, 168);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(369, 23);
+            this.txtEmail.TabIndex = 24;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 28);
+            this.label9.Location = new System.Drawing.Point(22, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 15);
             this.label9.TabIndex = 0;
@@ -217,7 +224,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(148, 28);
+            this.label4.Location = new System.Drawing.Point(148, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 15);
             this.label4.TabIndex = 2;
@@ -226,21 +233,21 @@
             // txtCodigo
             // 
             this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(24, 46);
+            this.txtCodigo.Location = new System.Drawing.Point(24, 42);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(95, 23);
             this.txtCodigo.TabIndex = 1;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(151, 46);
+            this.txtNome.Location = new System.Drawing.Point(151, 42);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(244, 23);
             this.txtNome.TabIndex = 3;
             // 
             // picAreaDeLazer
             // 
-            this.picAreaDeLazer.Image = global::Condominio.DeskTop.Properties.Resources.picture_2;
+            this.picAreaDeLazer.Image = ((System.Drawing.Image)(resources.GetObject("picAreaDeLazer.Image")));
             this.picAreaDeLazer.Location = new System.Drawing.Point(11, 33);
             this.picAreaDeLazer.Name = "picAreaDeLazer";
             this.picAreaDeLazer.Size = new System.Drawing.Size(138, 126);
@@ -263,7 +270,6 @@
             this.btnExcluirAreaDeLazer.TabIndex = 16;
             this.btnExcluirAreaDeLazer.Text = " Excluir";
             this.btnExcluirAreaDeLazer.UseVisualStyleBackColor = false;
-            this.btnExcluirAreaDeLazer.Click += new System.EventHandler(this.btnExcluirAreaDeLazer_Click);
             // 
             // btnAtualizarAreaDeLazer
             // 
@@ -280,7 +286,6 @@
             this.btnAtualizarAreaDeLazer.TabIndex = 15;
             this.btnAtualizarAreaDeLazer.Text = "  Atualizar";
             this.btnAtualizarAreaDeLazer.UseVisualStyleBackColor = false;
-            this.btnAtualizarAreaDeLazer.Click += new System.EventHandler(this.btnAtualizarAreaDeLazer_Click);
             // 
             // btnExibirImagem
             // 
@@ -296,7 +301,6 @@
             this.btnExibirImagem.TabIndex = 14;
             this.btnExibirImagem.Text = "   Selecionar";
             this.btnExibirImagem.UseVisualStyleBackColor = false;
-            this.btnExibirImagem.Click += new System.EventHandler(this.btnExibirImagem_Click);
             // 
             // btnInserirAreaDeLazer
             // 
@@ -313,27 +317,72 @@
             this.btnInserirAreaDeLazer.TabIndex = 14;
             this.btnInserirAreaDeLazer.Text = " Inserir";
             this.btnInserirAreaDeLazer.UseVisualStyleBackColor = false;
-            this.btnInserirAreaDeLazer.Click += new System.EventHandler(this.btnInserirMorador_Click);
             // 
-            // openFileDialog
+            // txtCpf
             // 
-            this.openFileDialog.FileName = "openFileDialog";
+            this.txtCpf.Location = new System.Drawing.Point(262, 103);
+            this.txtCpf.Mask = "000000000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(133, 23);
+            this.txtCpf.TabIndex = 32;
             // 
-            // FrmAreaDeLazer
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(261, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 15);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Cpf*";
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(24, 103);
+            this.txtCelular.Mask = "(00)00000-0000";
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(106, 23);
+            this.txtCelular.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 15);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Telefone Celular";
+            // 
+            // txtTelefoneFixo
+            // 
+            this.txtTelefoneFixo.Location = new System.Drawing.Point(146, 103);
+            this.txtTelefoneFixo.Mask = "(00)0000-0000";
+            this.txtTelefoneFixo.Name = "txtTelefoneFixo";
+            this.txtTelefoneFixo.Size = new System.Drawing.Size(110, 23);
+            this.txtTelefoneFixo.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(146, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 15);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Telefone Fixo";
+            // 
+            // FrmVisitante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 444);
             this.Controls.Add(this.tblCtrlAreaDeLazer);
-            this.Name = "FrmAreaDeLazer";
+            this.Name = "FrmVisitante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Área de Lazer";
-            this.Load += new System.EventHandler(this.FrmAreaDeLazer_Load);
+            this.Text = "Visitante";
             this.tblCtrlAreaDeLazer.ResumeLayout(false);
             this.tabMoradorConsulta.ResumeLayout(false);
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAreaDeLazer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).EndInit();
             this.tabMoradorCadastro.ResumeLayout(false);
             this.groupBoxCadastrar.ResumeLayout(false);
             this.groupBoxDadosAreaDeLazer.ResumeLayout(false);
@@ -351,21 +400,26 @@
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNomeConsulta;
-        private System.Windows.Forms.DataGridView dgvAreaDeLazer;
+        private System.Windows.Forms.DataGridView dgvVisitante;
         private System.Windows.Forms.TabPage tabMoradorCadastro;
         private System.Windows.Forms.GroupBox groupBoxCadastrar;
-        private System.Windows.Forms.Button btnExcluirAreaDeLazer;
-        private System.Windows.Forms.Button btnAtualizarAreaDeLazer;
-        private System.Windows.Forms.Button btnInserirAreaDeLazer;
-        private System.Windows.Forms.Button btnExibirImagem;
-        private System.Windows.Forms.PictureBox picAreaDeLazer;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.GroupBox groupBoxDadosAreaDeLazer;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.PictureBox picAreaDeLazer;
+        private System.Windows.Forms.Button btnExcluirAreaDeLazer;
+        private System.Windows.Forms.Button btnAtualizarAreaDeLazer;
+        private System.Windows.Forms.Button btnExibirImagem;
+        private System.Windows.Forms.Button btnInserirAreaDeLazer;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MaskedTextBox txtCelular;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MaskedTextBox txtTelefoneFixo;
+        private System.Windows.Forms.Label label5;
     }
 }

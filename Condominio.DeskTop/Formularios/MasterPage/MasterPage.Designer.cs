@@ -32,13 +32,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visitantesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.áreaDeLazerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.registosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visitantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informativoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visitantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.senhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -62,10 +63,11 @@
             // 
             this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.moradoresToolStripMenuItem,
-            this.toolStripSeparator1,
             this.fornecedorToolStripMenuItem,
+            this.visitantesToolStripMenuItem1,
             this.toolStripSeparator3,
-            this.áreaDeLazerToolStripMenuItem});
+            this.áreaDeLazerToolStripMenuItem,
+            this.toolStripSeparator1});
             this.cadastrarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastrarToolStripMenuItem.Image")));
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
@@ -79,11 +81,6 @@
             this.moradoresToolStripMenuItem.Text = "Moradores";
             this.moradoresToolStripMenuItem.Click += new System.EventHandler(this.moradoresToolStripMenuItem_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
             // fornecedorToolStripMenuItem
             // 
             this.fornecedorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fornecedorToolStripMenuItem.Image")));
@@ -91,6 +88,14 @@
             this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fornecedorToolStripMenuItem.Text = "Fornecedores";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
+            // 
+            // visitantesToolStripMenuItem1
+            // 
+            this.visitantesToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("visitantesToolStripMenuItem1.Image")));
+            this.visitantesToolStripMenuItem1.Name = "visitantesToolStripMenuItem1";
+            this.visitantesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.visitantesToolStripMenuItem1.Text = "Visitantes";
+            this.visitantesToolStripMenuItem1.Click += new System.EventHandler(this.visitantesToolStripMenuItem1_Click);
             // 
             // toolStripSeparator3
             // 
@@ -105,29 +110,34 @@
             this.áreaDeLazerToolStripMenuItem.Text = "Área de Lazer";
             this.áreaDeLazerToolStripMenuItem.Click += new System.EventHandler(this.áreaDeLazerToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
             // registosToolStripMenuItem
             // 
             this.registosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visitantesToolStripMenuItem,
-            this.informativoToolStripMenuItem});
+            this.informativoToolStripMenuItem,
+            this.visitantesToolStripMenuItem});
             this.registosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("registosToolStripMenuItem.Image")));
             this.registosToolStripMenuItem.Name = "registosToolStripMenuItem";
             this.registosToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.registosToolStripMenuItem.Text = "Registros";
             // 
-            // visitantesToolStripMenuItem
-            // 
-            this.visitantesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("visitantesToolStripMenuItem.Image")));
-            this.visitantesToolStripMenuItem.Name = "visitantesToolStripMenuItem";
-            this.visitantesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.visitantesToolStripMenuItem.Text = "Visitantes";
-            // 
             // informativoToolStripMenuItem
             // 
             this.informativoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("informativoToolStripMenuItem.Image")));
             this.informativoToolStripMenuItem.Name = "informativoToolStripMenuItem";
-            this.informativoToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.informativoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.informativoToolStripMenuItem.Text = "Informativos";
+            // 
+            // visitantesToolStripMenuItem
+            // 
+            this.visitantesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("visitantesToolStripMenuItem.Image")));
+            this.visitantesToolStripMenuItem.Name = "visitantesToolStripMenuItem";
+            this.visitantesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.visitantesToolStripMenuItem.Text = "Historico de Visitas";
             // 
             // senhaToolStripMenuItem
             // 
@@ -184,6 +194,7 @@
         private System.Windows.Forms.ToolStripMenuItem informativoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem senhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visitantesToolStripMenuItem1;
     }
 }
 

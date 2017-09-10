@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Repositorios;
 using Model;
+using Model.QueryModel;
 using System.Collections.Generic;
 
 namespace Controller
@@ -14,7 +15,7 @@ namespace Controller
 
         public void DeletarAreaDeLazer(int codigoAreaDeLazer) => _areaDeLazerRepositorio.Excluir(codigoAreaDeLazer);
 
-        public IEnumerable<AreaDeLazer> ObterAreaDeLazer() => _areaDeLazerRepositorio.ObterAreasDeLazer();
+        public IEnumerable<ObterAreaDeLazer> ObterAreaDeLazer() => _areaDeLazerRepositorio.ObterAreasDeLazer();
     }
 
 }

@@ -22,7 +22,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@Cpf", funcionario.Cpf.Trim());
                 parametros.Add("@Ativo", funcionario.EntidadeAtiva == EntidadeAtiva.Ativo);
 
-                Connection.Execute("SPInsert_Funcionario", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Insert_Funcionario", parametros, commandType: CommandStoredProcedure);
             }
 
         }
@@ -39,7 +39,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@Email", funcionario.Email.Trim().ToUpper());
                 parametros.Add("@Cpf", funcionario.Cpf.Trim());
 
-                Connection.Execute("SPUpdate_Funcionario", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Update_Funcionario", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -50,7 +50,7 @@ namespace DataAccessLayer.Repositorios
                 var parametros = new DynamicParameters();
                 parametros.Add("@IdFuncionario", id);
                 parametros.Add("@Ativo", EntidadeAtiva.Inativo);
-                Connection.Execute("SPDelete_Funcionario", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Delete_Funcionario", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -58,7 +58,7 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                return Connection.Query<Funcionario>("SPSelect_Funcionario", commandType: CommandStoredProcedure);
+                return Connection.Query<Funcionario>("Select_Funcionario", commandType: CommandStoredProcedure);
             }
         }
     }

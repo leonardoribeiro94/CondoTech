@@ -22,6 +22,7 @@ namespace DataAccessLayer.Repositorios
                 if (moradorLista.Count == 0)
                 {
                     var parametros = new DynamicParameters();
+
                     parametros.Add("@Nome", morador.Nome.Trim().ToUpper());
                     parametros.Add("@DataDeNascimento", morador.DataDeNascimento);
                     parametros.Add("@Telefone", morador.Telefone.Trim());
@@ -30,7 +31,7 @@ namespace DataAccessLayer.Repositorios
                     parametros.Add("@Cpf", morador.Cpf.Trim());
                     parametros.Add("@Ativo", EntidadeAtiva.Ativo);
 
-                    Connection.Execute("SPInsert_Morador", parametros, commandType: CommandType.StoredProcedure);
+                    Connection.Execute("Insert_Morador", parametros, commandType: CommandType.StoredProcedure);
                 }
                 else
                 {
@@ -53,7 +54,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@Cpf", morador.Cpf.Trim());
                 parametros.Add("@Ativo", EntidadeAtiva.Ativo);
 
-                Connection.Execute("SPUpdate_Morador", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Update_Morador", parametros, commandType: CommandStoredProcedure);
             }
         }
 
@@ -65,7 +66,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@IdMorador", id);
                 parametros.Add("@Ativo", EntidadeAtiva.Inativo);
 
-                Connection.Execute("SPDelete_Morador", parametros, commandType: CommandStoredProcedure);
+                Connection.Execute("Delete_Morador", parametros, commandType: CommandStoredProcedure);
             }
         }
 

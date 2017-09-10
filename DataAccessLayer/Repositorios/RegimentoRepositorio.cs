@@ -19,7 +19,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@Nome", regimento.Nome);
                 parametros.Add("@Descricao", regimento.Documento);
 
-                Connection.Execute("SPInsert_Regimento", commandType: CommandStoredProcedure);
+                Connection.Execute("Insert_Regimento", commandType: CommandStoredProcedure);
             }
         }
 
@@ -34,7 +34,7 @@ namespace DataAccessLayer.Repositorios
                 parametros.Add("@Nome", regimento.Nome);
                 parametros.Add("@Descricao", regimento.Documento);
 
-                Connection.Execute("SPInsert_Regimento");
+                Connection.Execute("Update_Regimento");
             }
         }
 
@@ -44,7 +44,7 @@ namespace DataAccessLayer.Repositorios
             {
                 var parametros = new DynamicParameters();
                 parametros.Add("@IdFuncionario", id);
-                Connection.Execute("SPDelete_Regimento", commandType: CommandStoredProcedure);
+                Connection.Execute("Delete_Regimento", commandType: CommandStoredProcedure);
             }
         }
 
@@ -52,7 +52,7 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                return Connection.Query<Regimento>("SPSelect_Regimento", commandType: CommandStoredProcedure);
+                return Connection.Query<Regimento>("Select_Regimento", commandType: CommandStoredProcedure);
             }
         }
     }

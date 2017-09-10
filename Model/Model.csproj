@@ -57,6 +57,8 @@
     <Compile Include="Morador.cs" />
     <Compile Include="Pessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryModel\ObterAreaDeLazer.cs" />
+    <Compile Include="QueryModel\ObterFornecedores.cs" />
     <Compile Include="QueryModel\ObterMorador.cs" />
     <Compile Include="Regimento.cs" />
     <Compile Include="ReservaAreaDeLazer.cs" />

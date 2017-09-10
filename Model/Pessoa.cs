@@ -41,6 +41,10 @@ namespace Model
             {
                 throw new Exception(MensagensDeValidacao.Email);
             }
+
+            Nome = Nome.ToUpper().Trim();
+            Telefone = Telefone.Replace("(", "").Replace(")", "").Replace("-", "");
+            Celular = Celular.Replace("(", "").Replace(")", "").Replace("-", "");
         }
 
         private bool ValidaCpf(string cpf)

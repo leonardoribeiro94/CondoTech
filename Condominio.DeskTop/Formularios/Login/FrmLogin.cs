@@ -1,6 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Condominio.DeskTop.Componentes;
 using Condominio.DeskTop.Formularios.MasterPage;
+using System;
+using System.Windows.Forms;
 
 namespace Condominio.DeskTop.Formularios.Login
 {
@@ -71,6 +72,11 @@ namespace Condominio.DeskTop.Formularios.Login
                     Hide();
                     var frmMasterPage = new FrmMaster();
                     frmMasterPage.Show();
+                }
+
+                else
+                {
+                    CaixaDeMensagem.MensagemDeErro("Erro de autenticação");
                 }
             }
             catch (Exception exception)

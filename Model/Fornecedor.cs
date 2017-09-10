@@ -6,19 +6,9 @@ namespace Model
 {
     public class Fornecedor : Entidade
     {
-        #region Construtor
-
-        public Fornecedor()
-        {
-            EntidadeAtivo = new EntidadeAtiva();
-            Funcionario = new Funcionario();
-        }
-
-        #endregion
 
         #region Propriedades
 
-        public Funcionario Funcionario { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public string TelefoneCelular { get; set; }
@@ -32,6 +22,11 @@ namespace Model
         #region Metodos
         public void ValidaDados()
         {
+            Nome = Nome.ToUpper().Trim();
+            Telefone = Telefone.Replace("(", "").Replace(")", "").Replace("-", "");
+            TelefoneCelular = TelefoneCelular.Replace("(", "").Replace(")", "").Replace("-", "");
+            Cnpj = Cnpj.Replace("/", "").Replace("-", "");
+
             if (Nome.Length < 3)
             {
                 throw new Exception("Nome informado inválido!");
@@ -58,7 +53,8 @@ namespace Model
                 throw new Exception("O CNPJ informado inválido!");
             }
         }
-        public bool ValidaCnpj(string cnpj)
+
+        private bool ValidaCnpj(string cnpj)
         {
             var multiplicador1 = new[] { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -85,10 +81,10 @@ namespace Model
                 resto = 0;
             else
                 resto = 11 - resto;
-            digito = digito + resto.ToString();
+            digito = digito + resto;
             return cnpj.EndsWith(digito);
         }
-        protected bool ValidaEmail(string email)
+        private bool ValidaEmail(string email)
         {
             return
             Regex.IsMatch(email,
