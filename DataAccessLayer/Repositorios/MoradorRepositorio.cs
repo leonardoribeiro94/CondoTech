@@ -74,7 +74,7 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                var sqlComando = $"Select * from Morador where Ativo = 0";
+                var sqlComando = "Select * from Morador where Ativo = 0";
                 var lista = Connection.Query<ObterMorador>(sqlComando).ToList();
                 return lista;
             }

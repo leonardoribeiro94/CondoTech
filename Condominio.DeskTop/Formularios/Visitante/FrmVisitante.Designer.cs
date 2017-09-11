@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisitante));
-            this.tblCtrlAreaDeLazer = new System.Windows.Forms.TabControl();
+            this.tblCtrlVisitante = new System.Windows.Forms.TabControl();
             this.tabMoradorConsulta = new System.Windows.Forms.TabPage();
             this.grpPesquisa = new System.Windows.Forms.GroupBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
@@ -38,44 +38,46 @@
             this.dgvVisitante = new System.Windows.Forms.DataGridView();
             this.tabMoradorCadastro = new System.Windows.Forms.TabPage();
             this.groupBoxCadastrar = new System.Windows.Forms.GroupBox();
-            this.groupBoxDadosAreaDeLazer = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.picAreaDeLazer = new System.Windows.Forms.PictureBox();
-            this.btnExcluirAreaDeLazer = new System.Windows.Forms.Button();
-            this.btnAtualizarAreaDeLazer = new System.Windows.Forms.Button();
-            this.btnExibirImagem = new System.Windows.Forms.Button();
-            this.btnInserirAreaDeLazer = new System.Windows.Forms.Button();
+            this.groupBoxDados = new System.Windows.Forms.GroupBox();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTelefoneFixo = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tblCtrlAreaDeLazer.SuspendLayout();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.picVisitante = new System.Windows.Forms.PictureBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnExibirImagem = new System.Windows.Forms.Button();
+            this.btnInserir = new System.Windows.Forms.Button();
+            this.openFileVisitante = new System.Windows.Forms.OpenFileDialog();
+            this.tblCtrlVisitante.SuspendLayout();
             this.tabMoradorConsulta.SuspendLayout();
             this.grpPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).BeginInit();
             this.tabMoradorCadastro.SuspendLayout();
             this.groupBoxCadastrar.SuspendLayout();
-            this.groupBoxDadosAreaDeLazer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAreaDeLazer)).BeginInit();
+            this.groupBoxDados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVisitante)).BeginInit();
             this.SuspendLayout();
             // 
-            // tblCtrlAreaDeLazer
+            // tblCtrlVisitante
             // 
-            this.tblCtrlAreaDeLazer.Controls.Add(this.tabMoradorConsulta);
-            this.tblCtrlAreaDeLazer.Controls.Add(this.tabMoradorCadastro);
-            this.tblCtrlAreaDeLazer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblCtrlAreaDeLazer.Location = new System.Drawing.Point(0, 0);
-            this.tblCtrlAreaDeLazer.Name = "tblCtrlAreaDeLazer";
-            this.tblCtrlAreaDeLazer.SelectedIndex = 0;
-            this.tblCtrlAreaDeLazer.Size = new System.Drawing.Size(701, 444);
-            this.tblCtrlAreaDeLazer.TabIndex = 2;
+            this.tblCtrlVisitante.Controls.Add(this.tabMoradorConsulta);
+            this.tblCtrlVisitante.Controls.Add(this.tabMoradorCadastro);
+            this.tblCtrlVisitante.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblCtrlVisitante.Location = new System.Drawing.Point(0, 0);
+            this.tblCtrlVisitante.Name = "tblCtrlVisitante";
+            this.tblCtrlVisitante.SelectedIndex = 0;
+            this.tblCtrlVisitante.Size = new System.Drawing.Size(701, 444);
+            this.tblCtrlVisitante.TabIndex = 2;
+            this.tblCtrlVisitante.Click += new System.EventHandler(this.tblCtrlAreaDeLazer_Click);
             // 
             // tabMoradorConsulta
             // 
@@ -135,6 +137,7 @@
             this.txtNomeConsulta.Name = "txtNomeConsulta";
             this.txtNomeConsulta.Size = new System.Drawing.Size(346, 23);
             this.txtNomeConsulta.TabIndex = 0;
+            this.txtNomeConsulta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNomeConsulta_KeyUp);
             // 
             // dgvVisitante
             // 
@@ -144,6 +147,7 @@
             this.dgvVisitante.RowTemplate.Height = 20;
             this.dgvVisitante.Size = new System.Drawing.Size(675, 251);
             this.dgvVisitante.TabIndex = 0;
+            this.dgvVisitante.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitante_CellDoubleClick);
             // 
             // tabMoradorCadastro
             // 
@@ -158,12 +162,12 @@
             // 
             // groupBoxCadastrar
             // 
-            this.groupBoxCadastrar.Controls.Add(this.groupBoxDadosAreaDeLazer);
-            this.groupBoxCadastrar.Controls.Add(this.picAreaDeLazer);
-            this.groupBoxCadastrar.Controls.Add(this.btnExcluirAreaDeLazer);
-            this.groupBoxCadastrar.Controls.Add(this.btnAtualizarAreaDeLazer);
+            this.groupBoxCadastrar.Controls.Add(this.groupBoxDados);
+            this.groupBoxCadastrar.Controls.Add(this.picVisitante);
+            this.groupBoxCadastrar.Controls.Add(this.btnExcluir);
+            this.groupBoxCadastrar.Controls.Add(this.btnAtualizar);
             this.groupBoxCadastrar.Controls.Add(this.btnExibirImagem);
-            this.groupBoxCadastrar.Controls.Add(this.btnInserirAreaDeLazer);
+            this.groupBoxCadastrar.Controls.Add(this.btnInserir);
             this.groupBoxCadastrar.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.groupBoxCadastrar.Location = new System.Drawing.Point(23, 19);
@@ -173,44 +177,95 @@
             this.groupBoxCadastrar.TabStop = false;
             this.groupBoxCadastrar.Text = "Cadastrar Visitante";
             // 
-            // groupBoxDadosAreaDeLazer
+            // groupBoxDados
             // 
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtCpf);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label7);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtCelular);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label6);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtTelefoneFixo);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label5);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label8);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtEmail);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label9);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.label4);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtCodigo);
-            this.groupBoxDadosAreaDeLazer.Controls.Add(this.txtNome);
-            this.groupBoxDadosAreaDeLazer.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDadosAreaDeLazer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.groupBoxDadosAreaDeLazer.Location = new System.Drawing.Point(173, 33);
-            this.groupBoxDadosAreaDeLazer.Name = "groupBoxDadosAreaDeLazer";
-            this.groupBoxDadosAreaDeLazer.Size = new System.Drawing.Size(423, 216);
-            this.groupBoxDadosAreaDeLazer.TabIndex = 18;
-            this.groupBoxDadosAreaDeLazer.TabStop = false;
-            this.groupBoxDadosAreaDeLazer.Text = "Dados";
+            this.groupBoxDados.Controls.Add(this.txtCpf);
+            this.groupBoxDados.Controls.Add(this.label7);
+            this.groupBoxDados.Controls.Add(this.txtCelular);
+            this.groupBoxDados.Controls.Add(this.label6);
+            this.groupBoxDados.Controls.Add(this.txtTelefoneFixo);
+            this.groupBoxDados.Controls.Add(this.label5);
+            this.groupBoxDados.Controls.Add(this.label8);
+            this.groupBoxDados.Controls.Add(this.txtEmail);
+            this.groupBoxDados.Controls.Add(this.label9);
+            this.groupBoxDados.Controls.Add(this.label4);
+            this.groupBoxDados.Controls.Add(this.txtCodigo);
+            this.groupBoxDados.Controls.Add(this.txtNome);
+            this.groupBoxDados.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxDados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.groupBoxDados.Location = new System.Drawing.Point(173, 33);
+            this.groupBoxDados.Name = "groupBoxDados";
+            this.groupBoxDados.Size = new System.Drawing.Size(423, 201);
+            this.groupBoxDados.TabIndex = 0;
+            this.groupBoxDados.TabStop = false;
+            this.groupBoxDados.Text = "Dados";
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(262, 95);
+            this.txtCpf.Mask = "000000000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(133, 23);
+            this.txtCpf.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(261, 77);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 15);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Cpf*";
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(24, 95);
+            this.txtCelular.Mask = "(00)00000-0000";
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(106, 23);
+            this.txtCelular.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(119, 15);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Telefone Celular";
+            // 
+            // txtTelefoneFixo
+            // 
+            this.txtTelefoneFixo.Location = new System.Drawing.Point(146, 95);
+            this.txtTelefoneFixo.Mask = "(00)0000-0000";
+            this.txtTelefoneFixo.Name = "txtTelefoneFixo";
+            this.txtTelefoneFixo.Size = new System.Drawing.Size(110, 23);
+            this.txtTelefoneFixo.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(146, 77);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 15);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Telefone Fixo";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 150);
+            this.label8.Location = new System.Drawing.Point(22, 129);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 15);
-            this.label8.TabIndex = 23;
+            this.label8.TabIndex = 10;
             this.label8.Text = "E-mail*";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(26, 168);
+            this.txtEmail.Location = new System.Drawing.Point(24, 147);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(369, 23);
-            this.txtEmail.TabIndex = 24;
+            this.txtEmail.TabIndex = 11;
             // 
             // label9
             // 
@@ -245,47 +300,49 @@
             this.txtNome.Size = new System.Drawing.Size(244, 23);
             this.txtNome.TabIndex = 3;
             // 
-            // picAreaDeLazer
+            // picVisitante
             // 
-            this.picAreaDeLazer.Image = ((System.Drawing.Image)(resources.GetObject("picAreaDeLazer.Image")));
-            this.picAreaDeLazer.Location = new System.Drawing.Point(11, 33);
-            this.picAreaDeLazer.Name = "picAreaDeLazer";
-            this.picAreaDeLazer.Size = new System.Drawing.Size(138, 126);
-            this.picAreaDeLazer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAreaDeLazer.TabIndex = 17;
-            this.picAreaDeLazer.TabStop = false;
+            this.picVisitante.Image = ((System.Drawing.Image)(resources.GetObject("picVisitante.Image")));
+            this.picVisitante.Location = new System.Drawing.Point(11, 33);
+            this.picVisitante.Name = "picVisitante";
+            this.picVisitante.Size = new System.Drawing.Size(138, 126);
+            this.picVisitante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picVisitante.TabIndex = 17;
+            this.picVisitante.TabStop = false;
             // 
-            // btnExcluirAreaDeLazer
+            // btnExcluir
             // 
-            this.btnExcluirAreaDeLazer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(68)))));
-            this.btnExcluirAreaDeLazer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnExcluirAreaDeLazer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluirAreaDeLazer.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnExcluirAreaDeLazer.ForeColor = System.Drawing.Color.White;
-            this.btnExcluirAreaDeLazer.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluirAreaDeLazer.Image")));
-            this.btnExcluirAreaDeLazer.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnExcluirAreaDeLazer.Location = new System.Drawing.Point(335, 285);
-            this.btnExcluirAreaDeLazer.Name = "btnExcluirAreaDeLazer";
-            this.btnExcluirAreaDeLazer.Size = new System.Drawing.Size(152, 40);
-            this.btnExcluirAreaDeLazer.TabIndex = 16;
-            this.btnExcluirAreaDeLazer.Text = " Excluir";
-            this.btnExcluirAreaDeLazer.UseVisualStyleBackColor = false;
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(57)))), ((int)(((byte)(68)))));
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(335, 285);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(152, 40);
+            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.Text = " Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluirAreaDeLazer_Click);
             // 
-            // btnAtualizarAreaDeLazer
+            // btnAtualizar
             // 
-            this.btnAtualizarAreaDeLazer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(159)))));
-            this.btnAtualizarAreaDeLazer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAtualizarAreaDeLazer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtualizarAreaDeLazer.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnAtualizarAreaDeLazer.ForeColor = System.Drawing.Color.White;
-            this.btnAtualizarAreaDeLazer.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizarAreaDeLazer.Image")));
-            this.btnAtualizarAreaDeLazer.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnAtualizarAreaDeLazer.Location = new System.Drawing.Point(173, 285);
-            this.btnAtualizarAreaDeLazer.Name = "btnAtualizarAreaDeLazer";
-            this.btnAtualizarAreaDeLazer.Size = new System.Drawing.Size(152, 40);
-            this.btnAtualizarAreaDeLazer.TabIndex = 15;
-            this.btnAtualizarAreaDeLazer.Text = "  Atualizar";
-            this.btnAtualizarAreaDeLazer.UseVisualStyleBackColor = false;
+            this.btnAtualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(104)))), ((int)(((byte)(159)))));
+            this.btnAtualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualizar.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnAtualizar.ForeColor = System.Drawing.Color.White;
+            this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
+            this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnAtualizar.Location = new System.Drawing.Point(173, 285);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(152, 40);
+            this.btnAtualizar.TabIndex = 2;
+            this.btnAtualizar.Text = "  Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizarAreaDeLazer_Click);
             // 
             // btnExibirImagem
             // 
@@ -301,100 +358,56 @@
             this.btnExibirImagem.TabIndex = 14;
             this.btnExibirImagem.Text = "   Selecionar";
             this.btnExibirImagem.UseVisualStyleBackColor = false;
+            this.btnExibirImagem.Click += new System.EventHandler(this.btnExibirImagem_Click);
             // 
-            // btnInserirAreaDeLazer
+            // btnInserir
             // 
-            this.btnInserirAreaDeLazer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(128)))), ((int)(((byte)(54)))));
-            this.btnInserirAreaDeLazer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnInserirAreaDeLazer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInserirAreaDeLazer.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
-            this.btnInserirAreaDeLazer.ForeColor = System.Drawing.Color.White;
-            this.btnInserirAreaDeLazer.Image = ((System.Drawing.Image)(resources.GetObject("btnInserirAreaDeLazer.Image")));
-            this.btnInserirAreaDeLazer.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnInserirAreaDeLazer.Location = new System.Drawing.Point(11, 285);
-            this.btnInserirAreaDeLazer.Name = "btnInserirAreaDeLazer";
-            this.btnInserirAreaDeLazer.Size = new System.Drawing.Size(152, 40);
-            this.btnInserirAreaDeLazer.TabIndex = 14;
-            this.btnInserirAreaDeLazer.Text = " Inserir";
-            this.btnInserirAreaDeLazer.UseVisualStyleBackColor = false;
+            this.btnInserir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(128)))), ((int)(((byte)(54)))));
+            this.btnInserir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInserir.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold);
+            this.btnInserir.ForeColor = System.Drawing.Color.White;
+            this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
+            this.btnInserir.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnInserir.Location = new System.Drawing.Point(11, 285);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(152, 40);
+            this.btnInserir.TabIndex = 1;
+            this.btnInserir.Text = " Inserir";
+            this.btnInserir.UseVisualStyleBackColor = false;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserirAreaDeLazer_Click);
             // 
-            // txtCpf
+            // openFileVisitante
             // 
-            this.txtCpf.Location = new System.Drawing.Point(262, 103);
-            this.txtCpf.Mask = "000000000-00";
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(133, 23);
-            this.txtCpf.TabIndex = 32;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(261, 85);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 15);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Cpf*";
-            // 
-            // txtCelular
-            // 
-            this.txtCelular.Location = new System.Drawing.Point(24, 103);
-            this.txtCelular.Mask = "(00)00000-0000";
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(106, 23);
-            this.txtCelular.TabIndex = 30;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 15);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Telefone Celular";
-            // 
-            // txtTelefoneFixo
-            // 
-            this.txtTelefoneFixo.Location = new System.Drawing.Point(146, 103);
-            this.txtTelefoneFixo.Mask = "(00)0000-0000";
-            this.txtTelefoneFixo.Name = "txtTelefoneFixo";
-            this.txtTelefoneFixo.Size = new System.Drawing.Size(110, 23);
-            this.txtTelefoneFixo.TabIndex = 28;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(146, 85);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 15);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Telefone Fixo";
+            this.openFileVisitante.FileName = "openFileVisitante";
             // 
             // FrmVisitante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 444);
-            this.Controls.Add(this.tblCtrlAreaDeLazer);
+            this.Controls.Add(this.tblCtrlVisitante);
             this.Name = "FrmVisitante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visitante";
-            this.tblCtrlAreaDeLazer.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FrmVisitante_Load);
+            this.tblCtrlVisitante.ResumeLayout(false);
             this.tabMoradorConsulta.ResumeLayout(false);
             this.grpPesquisa.ResumeLayout(false);
             this.grpPesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).EndInit();
             this.tabMoradorCadastro.ResumeLayout(false);
             this.groupBoxCadastrar.ResumeLayout(false);
-            this.groupBoxDadosAreaDeLazer.ResumeLayout(false);
-            this.groupBoxDadosAreaDeLazer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAreaDeLazer)).EndInit();
+            this.groupBoxDados.ResumeLayout(false);
+            this.groupBoxDados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picVisitante)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tblCtrlAreaDeLazer;
+        private System.Windows.Forms.TabControl tblCtrlVisitante;
         private System.Windows.Forms.TabPage tabMoradorConsulta;
         private System.Windows.Forms.GroupBox grpPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
@@ -403,16 +416,16 @@
         private System.Windows.Forms.DataGridView dgvVisitante;
         private System.Windows.Forms.TabPage tabMoradorCadastro;
         private System.Windows.Forms.GroupBox groupBoxCadastrar;
-        private System.Windows.Forms.GroupBox groupBoxDadosAreaDeLazer;
+        private System.Windows.Forms.GroupBox groupBoxDados;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.PictureBox picAreaDeLazer;
-        private System.Windows.Forms.Button btnExcluirAreaDeLazer;
-        private System.Windows.Forms.Button btnAtualizarAreaDeLazer;
+        private System.Windows.Forms.PictureBox picVisitante;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnExibirImagem;
-        private System.Windows.Forms.Button btnInserirAreaDeLazer;
+        private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.MaskedTextBox txtCpf;
@@ -421,5 +434,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox txtTelefoneFixo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.OpenFileDialog openFileVisitante;
     }
 }

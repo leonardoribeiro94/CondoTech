@@ -55,10 +55,12 @@
     <Compile Include="Repositorios\FalsoRepositorio\MoradorFalsoRepositorio.cs" />
     <Compile Include="Repositorios\FornecedorRepositorio.cs" />
     <Compile Include="Repositorios\FuncionarioRepositorio.cs" />
+    <Compile Include="Repositorios\HistoricoVisitaRepositorio.cs" />
     <Compile Include="Repositorios\InformativoRepositorio.cs" />
     <Compile Include="Repositorios\MoradorRepositorio.cs" />
     <Compile Include="Repositorios\RegimentoRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioFuncionarioRepositorio.cs" />
+    <Compile Include="Repositorios\VisitanteRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

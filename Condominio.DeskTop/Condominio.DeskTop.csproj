@@ -56,6 +56,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MensagensDoSistemaDesktop.resx</DependentUpon>
     </Compile>
+    <Compile Include="Componentes\ObterArray.cs" />
     <Compile Include="Formularios\AreaDeLazer\FrmAreaDeLazer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +93,12 @@
     <Compile Include="Formularios\Visitante\FrmVisitante.Designer.cs">
       <DependentUpon>FrmVisitante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Visitante\NovaVisita\FrmNovaVisita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Visitante\NovaVisita\FrmNovaVisita.Designer.cs">
+      <DependentUpon>FrmNovaVisita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -120,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Visitante\FrmVisitante.resx">
       <DependentUpon>FrmVisitante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Visitante\NovaVisita\FrmNovaVisita.resx">
+      <DependentUpon>FrmNovaVisita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

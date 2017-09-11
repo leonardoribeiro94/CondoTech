@@ -2,7 +2,6 @@
 using Controller;
 using System;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -53,7 +52,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             {
                 var areaDeLazer = new Model.AreaDeLazer
                 {
-                    Imagem = ObterArrayDeImagemDoPictureBox(picAreaDeLazer),
+                    Imagem = ObterArray.PictureBox(picAreaDeLazer),
                     Nome = txtNome.Text.ToUpper().Trim(),
                     Descricao = txtDescricao.Text.ToUpper().Trim()
                 };
@@ -137,7 +136,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
                 areaDeLazer.IdAreaDeLazer = Convert.ToInt32(txtCodigo.Text);
                 areaDeLazer.Nome = txtNome.Text;
                 areaDeLazer.Descricao = txtDescricao.Text;
-                areaDeLazer.Imagem = ObterArrayDeImagemDoPictureBox(picAreaDeLazer);
+                areaDeLazer.Imagem = ObterArray.PictureBox(picAreaDeLazer);
                 _areaDeLazerCtrl.AlterarAreaDeLazer(areaDeLazer);
                 CarregaGridAreaDeLazer();
                 tblCtrlAreaDeLazer.SelectedIndex = 0;
@@ -165,19 +164,6 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
         }
 
         #region Metodos
-
-        public byte[] ObterArrayDeImagemDoPictureBox(PictureBox picture)
-        {
-            using (var memoryStream = new MemoryStream())
-            {
-                if (picture.Image != null)
-                {
-                    picture.Image.Save(memoryStream, ImageFormat.Bmp);
-                }
-
-                return memoryStream.ToArray();
-            }
-        }
 
         public void CarregaGridAreaDeLazer()
         {

@@ -34,6 +34,7 @@
             this.moradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visitantesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.novaVisitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.áreaDeLazerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -91,11 +92,21 @@
             // 
             // visitantesToolStripMenuItem1
             // 
+            this.visitantesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novaVisitaToolStripMenuItem});
             this.visitantesToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("visitantesToolStripMenuItem1.Image")));
             this.visitantesToolStripMenuItem1.Name = "visitantesToolStripMenuItem1";
             this.visitantesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.visitantesToolStripMenuItem1.Text = "Visitantes";
             this.visitantesToolStripMenuItem1.Click += new System.EventHandler(this.visitantesToolStripMenuItem1_Click);
+            // 
+            // novaVisitaToolStripMenuItem
+            // 
+            this.novaVisitaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("novaVisitaToolStripMenuItem.Image")));
+            this.novaVisitaToolStripMenuItem.Name = "novaVisitaToolStripMenuItem";
+            this.novaVisitaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.novaVisitaToolStripMenuItem.Text = "Nova Visita";
+            this.novaVisitaToolStripMenuItem.Click += new System.EventHandler(this.novaVisitaToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -195,6 +206,7 @@
         private System.Windows.Forms.ToolStripMenuItem senhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visitantesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem novaVisitaToolStripMenuItem;
     }
 }
 

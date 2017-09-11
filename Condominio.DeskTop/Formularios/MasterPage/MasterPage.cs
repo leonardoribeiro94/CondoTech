@@ -2,6 +2,7 @@
 using Condominio.DeskTop.Formularios.Fornecedor;
 using Condominio.DeskTop.Formularios.Morador;
 using Condominio.DeskTop.Formularios.Visitante;
+using Condominio.DeskTop.Formularios.Visitante.NovaVisita;
 using System.Windows.Forms;
 
 namespace Condominio.DeskTop.Formularios.MasterPage
@@ -51,6 +52,13 @@ namespace Condominio.DeskTop.Formularios.MasterPage
         {
             var frmVisitante = new FrmVisitante { MdiParent = this };
             frmVisitante.Show();
+        }
+
+        private void novaVisitaToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var frmNovaVisita = new FrmNovaVisita() { MdiParent = this };
+
+            frmNovaVisita.Show();
         }
     }
 }

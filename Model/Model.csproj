@@ -48,6 +48,7 @@
     <Compile Include="Enum\TipoUsuario.cs" />
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Funcionario.cs" />
+    <Compile Include="HistoricoVisita.cs" />
     <Compile Include="Informativo.cs" />
     <Compile Include="Componentes\MensagensDeValidacao.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -60,10 +61,12 @@
     <Compile Include="QueryModel\ObterAreaDeLazer.cs" />
     <Compile Include="QueryModel\ObterFornecedores.cs" />
     <Compile Include="QueryModel\ObterMorador.cs" />
+    <Compile Include="QueryModel\ObterVisitante.cs" />
     <Compile Include="Regimento.cs" />
     <Compile Include="ReservaAreaDeLazer.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="UsuarioFuncionario.cs" />
+    <Compile Include="Visitante.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaDeLazer.cs" />

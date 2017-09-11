@@ -23,6 +23,14 @@ namespace Model
         #region Metodos
         public void ValidaDados()
         {
+            Nome = Nome.ToUpper().Trim();
+
+            Telefone = Telefone.Replace("(", "").Replace(")", "").Replace("-", "");
+
+            Celular = Celular.Replace("(", "").Replace(")", "").Replace("-", "");
+
+            Cpf = Cpf.Replace("-", "").Replace(".", "");
+
             if (Nome.Length < 3)
             {
                 throw new Exception(MensagensDeValidacao.Nome);
@@ -41,10 +49,6 @@ namespace Model
             {
                 throw new Exception(MensagensDeValidacao.Email);
             }
-
-            Nome = Nome.ToUpper().Trim();
-            Telefone = Telefone.Replace("(", "").Replace(")", "").Replace("-", "");
-            Celular = Celular.Replace("(", "").Replace(")", "").Replace("-", "");
         }
 
         private bool ValidaCpf(string cpf)
