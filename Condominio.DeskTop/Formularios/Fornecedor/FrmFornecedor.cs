@@ -159,7 +159,6 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
         }
 
         #region Metodos
-
         private void CarregarFornecedores()
         {
             dgvFornecedor.DataSource = _fornecedorController.ObterFornecedores();
@@ -171,8 +170,6 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
         {
             LimparControles.Limpar(groupBoxCadastrar);
         }
-
-
 
         #endregion
     }

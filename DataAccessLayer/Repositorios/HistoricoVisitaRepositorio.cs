@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using DataAccessLayer.Conexao;
 using Model;
+using Model.QueryModel;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -37,17 +38,24 @@ namespace DataAccessLayer.Repositorios
                 parametro.Add("@IdVisitante", historicoVisita.IdVisitante);
                 parametro.Add("@DataEntrada", historicoVisita.DataEntrada);
                 parametro.Add("@DataSaida", historicoVisita.DataSaida);
+                parametro.Add("@Descricao", historicoVisita.Descricao);
 
                 Connection.Execute("Update_HistoricoVisita", parametro, commandType: CommandType.StoredProcedure);
             }
         }
 
-        public IEnumerable<HistoricoVisita> ObterHistoricos()
+        public IEnumerable<ObterHistoricoVisita> ObterHistoricos()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string sqlcomando = "select * from HistoricoVisita";
-                return Connection.Query<HistoricoVisita>(sqlcomando).OrderBy(x => x.DataEntrada).ToList();
+                const string sqlcomando = "select h.IdHistoricoVisita, m.IdMorador, v.IdVisitante," +
+                                          "v.Nome as 'Visitante', m.Nome as 'Morador', " +
+                                          "h.DataEntrada, h.DataSaida, h.Descricao " +
+                                          "from HistoricoVisita h " +
+                                          "inner join Morador m on h.IdMorador = m.IdMorador " +
+                                          "inner join Visitante v on h.IdMorador = v.IdVisitante";
+
+                return Connection.Query<ObterHistoricoVisita>(sqlcomando).OrderBy(x => x.DataEntrada);
             }
         }
     }

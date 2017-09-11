@@ -1,7 +1,7 @@
 ﻿using DataAccessLayer.Repositorios;
 using Model;
+using Model.QueryModel;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Controller
 {
@@ -18,10 +18,10 @@ namespace Controller
             => _historicoVisitaRepositorio.Inserir(historicoVisita);
 
         public void AlterarHistoricoVisita(HistoricoVisita historicoVisita)
-            => _historicoVisitaRepositorio.Inserir(historicoVisita);
+            => _historicoVisitaRepositorio.Alterar(historicoVisita);
 
-        public IEnumerable<HistoricoVisita> ObterHistoricoVisitas()
-        => _historicoVisitaRepositorio.ObterHistoricos().ToList();
+        public IEnumerable<ObterHistoricoVisita> ObterHistoricoVisitas()
+        => _historicoVisitaRepositorio.ObterHistoricos();
 
     }
 }
