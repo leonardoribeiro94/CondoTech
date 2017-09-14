@@ -160,6 +160,7 @@
             this.senhaToolStripMenuItem.Name = "senhaToolStripMenuItem";
             this.senhaToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
             this.senhaToolStripMenuItem.Text = "Alterar Senha";
+            this.senhaToolStripMenuItem.Click += new System.EventHandler(this.senhaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 

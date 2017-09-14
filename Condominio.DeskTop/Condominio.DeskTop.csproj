@@ -57,6 +57,12 @@
       <DependentUpon>MensagensDoSistemaDesktop.resx</DependentUpon>
     </Compile>
     <Compile Include="Componentes\ObterArray.cs" />
+    <Compile Include="Formularios\AlterarSenha\FrmAlterarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AlterarSenha\FrmAlterarSenha.Designer.cs">
+      <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\AreaDeLazer\FrmAreaDeLazer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <EmbeddedResource Include="Componentes\MensagensDoSistemaDesktop.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MensagensDoSistemaDesktop.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AlterarSenha\FrmAlterarSenha.resx">
+      <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\AreaDeLazer\FrmAreaDeLazer.resx">
       <DependentUpon>FrmAreaDeLazer.cs</DependentUpon>

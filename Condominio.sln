@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{149F5120-DF71-4860-BCD5-83699DBA6EE5}"
 	ProjectSection(SolutionItems) = preProject
 		LEIA-ME.txt = LEIA-ME.txt
+		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "View", "View", "{2B6635D3-E07D-4093-B46D-F5BCD2C7845C}"

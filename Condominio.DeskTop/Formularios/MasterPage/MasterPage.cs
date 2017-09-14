@@ -1,4 +1,5 @@
-﻿using Condominio.DeskTop.Formularios.AreaDeLazer;
+﻿using Condominio.DeskTop.Formularios.AlterarSenha;
+using Condominio.DeskTop.Formularios.AreaDeLazer;
 using Condominio.DeskTop.Formularios.Fornecedor;
 using Condominio.DeskTop.Formularios.Login;
 using Condominio.DeskTop.Formularios.Morador;
@@ -11,20 +12,23 @@ namespace Condominio.DeskTop.Formularios.MasterPage
 {
     public partial class FrmMaster : Form
     {
+        private readonly ObterUsuarioFuncionario _obterUsuarioFucnionario;
         public FrmMaster(ObterUsuarioFuncionario usuarioFuncionario)
         {
             InitializeComponent();
 
             ConfiguraAcesso(usuarioFuncionario.Cargo);
-
             toolStripStatusNome.Text = $@"USUARIO: {usuarioFuncionario.Nome}";
             toolStripStatusCargo.Text = $@"PERFIL: {usuarioFuncionario.Cargo}";
+
+            _obterUsuarioFucnionario = usuarioFuncionario;
         }
 
         private void sairToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             var resultado = MessageBox.Show(@"Deseja sair da Aplicação?", @"Confirmação", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
+
             if (resultado == DialogResult.Yes)
             {
                 Hide();
@@ -67,6 +71,13 @@ namespace Condominio.DeskTop.Formularios.MasterPage
             var frmNovaVisita = new FrmNovaVisita() { MdiParent = this };
 
             frmNovaVisita.Show();
+        }
+
+        private void senhaToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var frmAlterarSenha = new FrmAlterarSenha(_obterUsuarioFucnionario) { MdiParent = this };
+
+            frmAlterarSenha.Show();
         }
 
         #region Metodos do formulario
@@ -118,8 +129,7 @@ namespace Condominio.DeskTop.Formularios.MasterPage
         }
 
 
+
         #endregion
-
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Repositorios;
+using Model;
 using Model.QueryModel;
 using System.Collections.Generic;
 
@@ -12,6 +13,9 @@ namespace Controller
         {
             _usuarioFuncionarioRep = new UsuarioFuncionarioRepositorio();
         }
+
+        public void AlterarUsuario(UsuarioFuncionario usuarioFuncionario) =>
+            _usuarioFuncionarioRep.Atualizar(usuarioFuncionario);
 
         public IEnumerable<ObterUsuarioFuncionario> ObterUsuarioFuncionarios()
             => _usuarioFuncionarioRep.ObterUsuarioFuncionarios();

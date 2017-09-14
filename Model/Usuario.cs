@@ -1,4 +1,5 @@
 ﻿using Model.Enum;
+using System;
 
 namespace Model
 {
@@ -9,5 +10,22 @@ namespace Model
         public string ConfirmarSenha { get; set; }
         public EntidadeAtiva EntidadeAtiva { get; set; }
         public SenhaTemporaria SenhaTemporaria { get; set; }
+
+        public void ConfirmaSenha(string novaSenha, string confirmarSenha)
+        {
+            if (!string.Equals(novaSenha, confirmarSenha))
+            {
+                throw new Exception("As senhas informadas não coincidem!");
+            }
+
+        }
+
+        public void ValidaSenhaAntiga(string senhaAntiga, string senhaDoBanco)
+        {
+            if (!string.Equals(senhaAntiga, senhaDoBanco))
+            {
+                throw new Exception("A senha anterior informada não existe  na base de dados!");
+            }
+        }
     }
 }
