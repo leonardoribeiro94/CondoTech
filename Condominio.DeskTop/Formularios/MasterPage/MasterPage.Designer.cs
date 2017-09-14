@@ -33,17 +33,21 @@
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visitantesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.visitantesTsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.novaVisitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.áreaDeLazerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.areaDeLazerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.registosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informativoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visitantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.senhaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusNome = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusCargo = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -65,9 +69,9 @@
             this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.moradoresToolStripMenuItem,
             this.fornecedorToolStripMenuItem,
-            this.visitantesToolStripMenuItem1,
+            this.visitantesTsmi,
             this.toolStripSeparator3,
-            this.áreaDeLazerToolStripMenuItem,
+            this.areaDeLazerToolStripMenuItem,
             this.toolStripSeparator1});
             this.cadastrarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastrarToolStripMenuItem.Image")));
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
@@ -78,7 +82,7 @@
             // 
             this.moradoresToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("moradoresToolStripMenuItem.Image")));
             this.moradoresToolStripMenuItem.Name = "moradoresToolStripMenuItem";
-            this.moradoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.moradoresToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.moradoresToolStripMenuItem.Text = "Moradores";
             this.moradoresToolStripMenuItem.Click += new System.EventHandler(this.moradoresToolStripMenuItem_Click);
             // 
@@ -86,45 +90,45 @@
             // 
             this.fornecedorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fornecedorToolStripMenuItem.Image")));
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.fornecedorToolStripMenuItem.Text = "Fornecedores";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
-            // visitantesToolStripMenuItem1
+            // visitantesTsmi
             // 
-            this.visitantesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visitantesTsmi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novaVisitaToolStripMenuItem});
-            this.visitantesToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("visitantesToolStripMenuItem1.Image")));
-            this.visitantesToolStripMenuItem1.Name = "visitantesToolStripMenuItem1";
-            this.visitantesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.visitantesToolStripMenuItem1.Text = "Visitantes";
-            this.visitantesToolStripMenuItem1.Click += new System.EventHandler(this.visitantesToolStripMenuItem1_Click);
+            this.visitantesTsmi.Image = ((System.Drawing.Image)(resources.GetObject("visitantesTsmi.Image")));
+            this.visitantesTsmi.Name = "visitantesTsmi";
+            this.visitantesTsmi.Size = new System.Drawing.Size(145, 22);
+            this.visitantesTsmi.Text = "Visitantes";
+            this.visitantesTsmi.Click += new System.EventHandler(this.visitantesToolStripMenuItem1_Click);
             // 
             // novaVisitaToolStripMenuItem
             // 
             this.novaVisitaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("novaVisitaToolStripMenuItem.Image")));
             this.novaVisitaToolStripMenuItem.Name = "novaVisitaToolStripMenuItem";
-            this.novaVisitaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.novaVisitaToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.novaVisitaToolStripMenuItem.Text = "Nova Visita";
             this.novaVisitaToolStripMenuItem.Click += new System.EventHandler(this.novaVisitaToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(142, 6);
             // 
-            // áreaDeLazerToolStripMenuItem
+            // areaDeLazerToolStripMenuItem
             // 
-            this.áreaDeLazerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("áreaDeLazerToolStripMenuItem.Image")));
-            this.áreaDeLazerToolStripMenuItem.Name = "áreaDeLazerToolStripMenuItem";
-            this.áreaDeLazerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.áreaDeLazerToolStripMenuItem.Text = "Área de Lazer";
-            this.áreaDeLazerToolStripMenuItem.Click += new System.EventHandler(this.áreaDeLazerToolStripMenuItem_Click);
+            this.areaDeLazerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("areaDeLazerToolStripMenuItem.Image")));
+            this.areaDeLazerToolStripMenuItem.Name = "areaDeLazerToolStripMenuItem";
+            this.areaDeLazerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.areaDeLazerToolStripMenuItem.Text = "Área de Lazer";
+            this.areaDeLazerToolStripMenuItem.Click += new System.EventHandler(this.áreaDeLazerToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
             // 
             // registosToolStripMenuItem
             // 
@@ -140,15 +144,15 @@
             // 
             this.informativoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("informativoToolStripMenuItem.Image")));
             this.informativoToolStripMenuItem.Name = "informativoToolStripMenuItem";
-            this.informativoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.informativoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.informativoToolStripMenuItem.Text = "Informativos";
             // 
             // visitantesToolStripMenuItem
             // 
             this.visitantesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("visitantesToolStripMenuItem.Image")));
             this.visitantesToolStripMenuItem.Name = "visitantesToolStripMenuItem";
-            this.visitantesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.visitantesToolStripMenuItem.Text = "Historico de Visitas";
+            this.visitantesToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.visitantesToolStripMenuItem.Text = "Reclamações\\Denúncias";
             // 
             // senhaToolStripMenuItem
             // 
@@ -165,6 +169,31 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusNome,
+            this.toolStripStatusCargo});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 619);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1054, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusNome
+            // 
+            this.toolStripStatusNome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusNome.Name = "toolStripStatusNome";
+            this.toolStripStatusNome.Size = new System.Drawing.Size(103, 17);
+            this.toolStripStatusNome.Text = "Nome do Usuario";
+            // 
+            // toolStripStatusCargo
+            // 
+            this.toolStripStatusCargo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusCargo.Name = "toolStripStatusCargo";
+            this.toolStripStatusCargo.Size = new System.Drawing.Size(101, 17);
+            this.toolStripStatusCargo.Text = "Cargo do Usuario";
+            // 
             // FrmMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +202,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1054, 641);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -186,6 +216,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMaster_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,14 +231,17 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem fornecedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem áreaDeLazerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem areaDeLazerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visitantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informativoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem senhaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visitantesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem visitantesTsmi;
         private System.Windows.Forms.ToolStripMenuItem novaVisitaToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusNome;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusCargo;
     }
 }
 

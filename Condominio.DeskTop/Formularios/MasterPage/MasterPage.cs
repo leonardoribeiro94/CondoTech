@@ -1,19 +1,25 @@
 ﻿using Condominio.DeskTop.Formularios.AreaDeLazer;
 using Condominio.DeskTop.Formularios.Fornecedor;
+using Condominio.DeskTop.Formularios.Login;
 using Condominio.DeskTop.Formularios.Morador;
 using Condominio.DeskTop.Formularios.Visitante;
 using Condominio.DeskTop.Formularios.Visitante.NovaVisita;
+using Model.QueryModel;
 using System.Windows.Forms;
 
 namespace Condominio.DeskTop.Formularios.MasterPage
 {
     public partial class FrmMaster : Form
     {
-        public FrmMaster()
+        public FrmMaster(ObterUsuarioFuncionario usuarioFuncionario)
         {
             InitializeComponent();
-        }
 
+            ConfiguraAcesso(usuarioFuncionario.Cargo);
+
+            toolStripStatusNome.Text = $@"USUARIO: {usuarioFuncionario.Nome}";
+            toolStripStatusCargo.Text = $@"PERFIL: {usuarioFuncionario.Cargo}";
+        }
 
         private void sairToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
@@ -21,7 +27,9 @@ namespace Condominio.DeskTop.Formularios.MasterPage
                 MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                Application.Exit();
+                Hide();
+                var frmLogin = new FrmLogin();
+                frmLogin.Show();
             }
         }
 
@@ -60,5 +68,58 @@ namespace Condominio.DeskTop.Formularios.MasterPage
 
             frmNovaVisita.Show();
         }
+
+        #region Metodos do formulario
+
+        private void ConfiguraAcesso(string cargo)
+        {
+
+            if (cargo.ToLower().Equals("sindico"))
+            {
+                HabilitaItemsMenu();
+            }
+
+            else if (cargo.ToLower().Equals("porteiro"))
+            {
+                DesabilitaItemsMenu();
+                visitantesTsmi.Enabled = true;
+            }
+
+            else if (cargo.ToLower().Equals("recepcionista"))
+            {
+                DesabilitaItemsMenu();
+                moradoresToolStripMenuItem.Enabled = true;
+                areaDeLazerToolStripMenuItem.Enabled = true;
+            }
+
+            else if (cargo.ToLower().Equals("zelador"))
+            {
+                HabilitaItemsMenu();
+            }
+        }
+
+        private void HabilitaItemsMenu()
+        {
+            foreach (var item in menuStrip1.Items)
+            {
+                if (item is ToolStripMenuItem)
+                {
+                    ((ToolStripMenuItem)item).Enabled = true;
+                }
+            }
+        }
+
+        private void DesabilitaItemsMenu()
+        {
+            visitantesTsmi.Enabled = false;
+            moradoresToolStripMenuItem.Enabled = false;
+            areaDeLazerToolStripMenuItem.Enabled = false;
+            fornecedorToolStripMenuItem.Enabled = false;
+        }
+
+
+        #endregion
+
+
     }
 }

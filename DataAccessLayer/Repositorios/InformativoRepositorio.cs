@@ -50,8 +50,6 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
-
                 return Connection.Query<Informativo>("Select_Informativo", commandType: CommandStoredProcedure);
             }
         }

@@ -8,5 +8,6 @@ namespace Model
         public string Senha { get; set; }
         public string ConfirmarSenha { get; set; }
         public EntidadeAtiva EntidadeAtiva { get; set; }
+        public SenhaTemporaria SenhaTemporaria { get; set; }
     }
 }

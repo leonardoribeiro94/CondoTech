@@ -13,7 +13,6 @@ namespace DataAccessLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                AbrirConexao();
                 var parametros = new DynamicParameters();
                 parametros.Add("@IdFuncionario", regimento.Funcionario.Id);
                 parametros.Add("@Nome", regimento.Nome);

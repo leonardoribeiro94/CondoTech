@@ -44,7 +44,7 @@
     <Compile Include="Entidade.cs" />
     <Compile Include="Enum\AreaDeLazerReservado.cs" />
     <Compile Include="Enum\EntidadeAtiva.cs" />
-    <Compile Include="Agregador\TipoInformante.cs" />
+    <Compile Include="Enum\SenhaTemporaria.cs" />
     <Compile Include="Enum\TipoUsuario.cs" />
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Funcionario.cs" />
@@ -62,11 +62,13 @@
     <Compile Include="QueryModel\ObterFornecedores.cs" />
     <Compile Include="QueryModel\ObterHistoricoVisita.cs" />
     <Compile Include="QueryModel\ObterMorador.cs" />
+    <Compile Include="QueryModel\ObterUsuarioFuncionario.cs" />
     <Compile Include="QueryModel\ObterVisitante.cs" />
     <Compile Include="Regimento.cs" />
     <Compile Include="ReservaAreaDeLazer.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="UsuarioFuncionario.cs" />
+    <Compile Include="UsuarioMorador.cs" />
     <Compile Include="Visitante.cs" />
   </ItemGroup>
   <ItemGroup>

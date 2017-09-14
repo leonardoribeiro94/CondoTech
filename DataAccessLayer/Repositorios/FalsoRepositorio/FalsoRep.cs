@@ -1,5 +1,4 @@
 ﻿using Model;
-using Model.Agregador;
 using System.Collections.Generic;
 
 namespace DataAccessLayer.Repositorios.FalsoRepositorio
@@ -124,20 +123,6 @@ namespace DataAccessLayer.Repositorios.FalsoRepositorio
 
         #endregion
 
-        #region Informativo
 
-        public ICollection<Informativo> SelecionaInformativos()
-        {
-            var informativos = new List<Informativo>
-            {
-                new Informativo{ Id = 1,IdEntidade = 0, TipoInformante = TipoInformante.Anonimo, Descricao = "Crianças usando maconha no bloco C"},
-                new Informativo{ Id = 2,IdEntidade = 2, TipoInformante = TipoInformante.Morador, Descricao = "Parque central com a balança quebrada, cuidado!"},
-                new Informativo{ Id = 3,IdEntidade = 1, TipoInformante = TipoInformante.Funcionario, Descricao = "Manutenção eletrica nas casas da rua 1 e 2"}
-            };
-
-            return informativos;
-        }
-
-        #endregion
     }
 }
