@@ -30,8 +30,8 @@ namespace Condominio.DeskTop.Formularios.AlterarSenha
                 var novaSenha = txtNovaSenha.Text;
                 var confirmarSenha = txtConfirmarSenha.Text;
 
-                var senhaDoBanco = usuarioFuncionarioCtrl.ObterUsuarioFuncionarios()
-                        .Where(x => x.IdUsuario == _obterUsuarioFuncionario.IdUsuario).Select(x => x.Senha).FirstOrDefault();
+                var senhaDoBanco = usuarioFuncionarioCtrl.
+                    ObterPorIdObterUsuarioFuncionarios(_obterUsuarioFuncionario.IdUsuario).Select(x => x.Senha).FirstOrDefault();
 
                 usuarioFuncionario.ValidaSenhaAntiga(senhaAntiga, senhaDoBanco);
                 usuarioFuncionario.ConfirmaSenha(novaSenha, confirmarSenha);
@@ -39,10 +39,9 @@ namespace Condominio.DeskTop.Formularios.AlterarSenha
                 usuarioFuncionario.Id = _obterUsuarioFuncionario.IdUsuario;
                 usuarioFuncionario.Senha = novaSenha;
                 usuarioFuncionarioCtrl.AlterarUsuario(usuarioFuncionario);
-
                 CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
-                Hide();
 
+                Hide();
             }
             catch (Exception exception)
             {

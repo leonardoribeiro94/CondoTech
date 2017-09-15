@@ -61,6 +61,7 @@
     <Compile Include="QueryModel\ObterAreaDeLazer.cs" />
     <Compile Include="QueryModel\ObterFornecedores.cs" />
     <Compile Include="QueryModel\ObterHistoricoVisita.cs" />
+    <Compile Include="QueryModel\ObterInformativo.cs" />
     <Compile Include="QueryModel\ObterMorador.cs" />
     <Compile Include="QueryModel\ObterUsuarioFuncionario.cs" />
     <Compile Include="QueryModel\ObterVisitante.cs" />

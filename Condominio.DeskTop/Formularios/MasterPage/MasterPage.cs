@@ -1,6 +1,7 @@
 ﻿using Condominio.DeskTop.Formularios.AlterarSenha;
 using Condominio.DeskTop.Formularios.AreaDeLazer;
 using Condominio.DeskTop.Formularios.Fornecedor;
+using Condominio.DeskTop.Formularios.Informativo;
 using Condominio.DeskTop.Formularios.Login;
 using Condominio.DeskTop.Formularios.Morador;
 using Condominio.DeskTop.Formularios.Visitante;
@@ -13,6 +14,7 @@ namespace Condominio.DeskTop.Formularios.MasterPage
     public partial class FrmMaster : Form
     {
         private readonly ObterUsuarioFuncionario _obterUsuarioFucnionario;
+
         public FrmMaster(ObterUsuarioFuncionario usuarioFuncionario)
         {
             InitializeComponent();
@@ -80,6 +82,12 @@ namespace Condominio.DeskTop.Formularios.MasterPage
             frmAlterarSenha.Show();
         }
 
+        private void informativoToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var frmInformativo = new FrmInformativo(_obterUsuarioFucnionario.IdFuncionario) { MdiParent = this };
+            frmInformativo.Show();
+        }
+
         #region Metodos do formulario
 
         private void ConfiguraAcesso(string cargo)
@@ -128,8 +136,8 @@ namespace Condominio.DeskTop.Formularios.MasterPage
             fornecedorToolStripMenuItem.Enabled = false;
         }
 
-
-
         #endregion
+
+
     }
 }

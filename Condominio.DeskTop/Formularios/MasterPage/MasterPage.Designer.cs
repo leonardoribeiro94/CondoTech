@@ -82,7 +82,7 @@
             // 
             this.moradoresToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("moradoresToolStripMenuItem.Image")));
             this.moradoresToolStripMenuItem.Name = "moradoresToolStripMenuItem";
-            this.moradoresToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.moradoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.moradoresToolStripMenuItem.Text = "Moradores";
             this.moradoresToolStripMenuItem.Click += new System.EventHandler(this.moradoresToolStripMenuItem_Click);
             // 
@@ -90,7 +90,7 @@
             // 
             this.fornecedorToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fornecedorToolStripMenuItem.Image")));
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fornecedorToolStripMenuItem.Text = "Fornecedores";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
@@ -100,7 +100,7 @@
             this.novaVisitaToolStripMenuItem});
             this.visitantesTsmi.Image = ((System.Drawing.Image)(resources.GetObject("visitantesTsmi.Image")));
             this.visitantesTsmi.Name = "visitantesTsmi";
-            this.visitantesTsmi.Size = new System.Drawing.Size(145, 22);
+            this.visitantesTsmi.Size = new System.Drawing.Size(152, 22);
             this.visitantesTsmi.Text = "Visitantes";
             this.visitantesTsmi.Click += new System.EventHandler(this.visitantesToolStripMenuItem1_Click);
             // 
@@ -115,20 +115,20 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
             // 
             // areaDeLazerToolStripMenuItem
             // 
             this.areaDeLazerToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("areaDeLazerToolStripMenuItem.Image")));
             this.areaDeLazerToolStripMenuItem.Name = "areaDeLazerToolStripMenuItem";
-            this.areaDeLazerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.areaDeLazerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.areaDeLazerToolStripMenuItem.Text = "Área de Lazer";
             this.areaDeLazerToolStripMenuItem.Click += new System.EventHandler(this.áreaDeLazerToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // registosToolStripMenuItem
             // 
@@ -146,6 +146,7 @@
             this.informativoToolStripMenuItem.Name = "informativoToolStripMenuItem";
             this.informativoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.informativoToolStripMenuItem.Text = "Informativos";
+            this.informativoToolStripMenuItem.Click += new System.EventHandler(this.informativoToolStripMenuItem_Click);
             // 
             // visitantesToolStripMenuItem
             // 

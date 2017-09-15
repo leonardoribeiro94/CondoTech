@@ -6,14 +6,14 @@ namespace Model
     {
         public Informativo()
         {
-
+            Funcionario = new Funcionario();
         }
 
         #region Propriedades
 
         public int Id { get; set; }
-        public int IdEntidade { get; set; }
-        public string TipoInformante;
+        public Funcionario Funcionario { get; set; }
+        public string Titulo { get; set; }
         public string Descricao { get; set; }
 
         #endregion

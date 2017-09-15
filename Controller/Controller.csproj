@@ -44,6 +44,7 @@
     <Compile Include="FornecedorController.cs" />
     <Compile Include="FuncionarioController.cs" />
     <Compile Include="HistoricoVisitaController.cs" />
+    <Compile Include="InformativoController.cs" />
     <Compile Include="MoradorController.cs" />
     <Compile Include="UsuarioFuncionarioController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

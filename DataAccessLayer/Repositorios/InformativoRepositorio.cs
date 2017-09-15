@@ -1,6 +1,9 @@
 ﻿using Dapper;
 using DataAccessLayer.Conexao;
 using Model;
+using Model.Enum;
+using Model.QueryModel;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -14,9 +17,11 @@ namespace DataAccessLayer.Repositorios
             using (Connection = new SqlConnection(StringConnection))
             {
                 var parametros = new DynamicParameters();
-                parametros.Add("@IdEntidade", informativo.IdEntidade);
-                parametros.Add("@TipoInformante", informativo.TipoInformante);
+                parametros.Add("@IdFuncionario", informativo.Funcionario.Id);
+                parametros.Add("@Titulo", informativo.Titulo);
                 parametros.Add("@Descricao", informativo.Descricao);
+                parametros.Add("@DataCadastro", DateTime.Now);
+                parametros.Add("@Ativo", EntidadeAtiva.Ativo);
 
                 Connection.Execute("Insert_Informativo", parametros, commandType: CommandStoredProcedure);
             }
@@ -28,9 +33,9 @@ namespace DataAccessLayer.Repositorios
             {
                 var parametros = new DynamicParameters();
                 parametros.Add("@IdInformativo", informativo.Id);
-                parametros.Add("@IdEntidade", informativo.IdEntidade);
-                parametros.Add("@TipoInformante", informativo.TipoInformante);
+                parametros.Add("@Titulo", informativo.Titulo);
                 parametros.Add("@Descricao", informativo.Descricao);
+                parametros.Add("@Ativo", EntidadeAtiva.Ativo);
 
                 Connection.Execute("Update_Informativo", parametros, commandType: CommandStoredProcedure);
             }
@@ -42,15 +47,24 @@ namespace DataAccessLayer.Repositorios
             {
                 var parametros = new DynamicParameters();
                 parametros.Add("@IdInformativo", id);
+                parametros.Add("@Ativo", EntidadeAtiva.Inativo);
                 Connection.Execute("Deletar_Informativo", parametros, commandType: CommandStoredProcedure);
             }
         }
 
-        public IEnumerable<Informativo> ObterInformativo()
+        public IEnumerable<ObterInformativo> ObterInformativo()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                return Connection.Query<Informativo>("Select_Informativo", commandType: CommandStoredProcedure);
+                const string sqlQuery = "select i.IdInformativo, " +
+                                        "f.Nome, " +
+                                        "c.Nome as 'Cargo', " +
+                                        "i.Titulo, " +
+                                        "i.DataCadastro from Funcionario f " +
+                                        "join Cargo c on c.IdCargo = f.IdCargo " +
+                                        "join Informativo i on i.IdFuncionario = f.IdFuncionario";
+
+                return Connection.Query<ObterInformativo>(sqlQuery);
             }
         }
     }

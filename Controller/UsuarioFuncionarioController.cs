@@ -2,6 +2,7 @@
 using Model;
 using Model.QueryModel;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Controller
 {
@@ -22,5 +23,10 @@ namespace Controller
 
         public IEnumerable<ObterUsuarioFuncionario> ObterPorLoginFuncionariosUsuarios(string login, string senha)
             => _usuarioFuncionarioRep.ObterPorLoginUsuarioFuncionario(login, senha);
+
+        public IEnumerable<ObterUsuarioFuncionario> ObterPorIdObterUsuarioFuncionarios(int idUsuarioFuncionario)
+            =>
+                ObterUsuarioFuncionarios().Where(x => x.IdUsuario == idUsuarioFuncionario);
+
     }
 }
