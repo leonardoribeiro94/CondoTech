@@ -42,7 +42,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             }
             catch (Exception exception)
             {
-                CaixaDeMensagem.MensagemDeErro("Verifique se o arquivo escolhido é realmente uma imagem \n Erro:" + exception.Message);
+                CaixaDeMensagem.MensagemDeErro($"{MensagensDoSistemaDesktop.ImagemInvalida} \n Erro:" + exception.Message);
             }
         }
 

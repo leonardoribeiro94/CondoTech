@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cargo.cs" />
+    <Compile Include="Denuncia.cs" />
     <Compile Include="Entidade.cs" />
     <Compile Include="Enum\AreaDeLazerReservado.cs" />
     <Compile Include="Enum\EntidadeAtiva.cs" />

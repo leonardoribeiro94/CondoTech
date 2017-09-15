@@ -79,6 +79,15 @@ namespace Condominio.DeskTop.Componentes {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Verifique se o arquivo escolhido é realmente uma imagem.
+        /// </summary>
+        internal static string ImagemInvalida {
+            get {
+                return ResourceManager.GetString("ImagemInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deseja realmente executar esta função!.
         /// </summary>
         internal static string Questao {

@@ -64,7 +64,7 @@
             this.tblCtrlInformativo.Name = "tblCtrlInformativo";
             this.tblCtrlInformativo.SelectedIndex = 0;
             this.tblCtrlInformativo.Size = new System.Drawing.Size(701, 444);
-            this.tblCtrlInformativo.TabIndex = 3;
+            this.tblCtrlInformativo.TabIndex = 0;
             this.tblCtrlInformativo.Click += new System.EventHandler(this.tblCtrlInformativo_Click);
             // 
             // tabMoradorConsulta
@@ -183,7 +183,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(14, 43);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(78, 23);
-            this.txtCodigo.TabIndex = 17;
+            this.txtCodigo.TabIndex = 0;
             // 
             // label8
             // 
@@ -200,7 +200,7 @@
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(614, 118);
-            this.txtDescricao.TabIndex = 15;
+            this.txtDescricao.TabIndex = 2;
             // 
             // label4
             // 
@@ -216,7 +216,7 @@
             this.txtTitulo.Location = new System.Drawing.Point(14, 97);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(313, 23);
-            this.txtTitulo.TabIndex = 13;
+            this.txtTitulo.TabIndex = 1;
             // 
             // btnExcluir
             // 
@@ -230,7 +230,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(337, 290);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(152, 40);
-            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = " Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -247,7 +247,7 @@
             this.btnAtualizar.Location = new System.Drawing.Point(175, 290);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(152, 40);
-            this.btnAtualizar.TabIndex = 2;
+            this.btnAtualizar.TabIndex = 4;
             this.btnAtualizar.Text = "  Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
@@ -264,7 +264,7 @@
             this.btnInserir.Location = new System.Drawing.Point(13, 290);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(152, 40);
-            this.btnInserir.TabIndex = 1;
+            this.btnInserir.TabIndex = 3;
             this.btnInserir.Text = " Inserir";
             this.btnInserir.UseVisualStyleBackColor = false;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
@@ -275,8 +275,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 444);
             this.Controls.Add(this.tblCtrlInformativo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmInformativo";
-            this.Text = "FrmInformativo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Informativo";
+            this.Load += new System.EventHandler(this.FrmInformativo_Load);
             this.tblCtrlInformativo.ResumeLayout(false);
             this.tabMoradorConsulta.ResumeLayout(false);
             this.grpPesquisa.ResumeLayout(false);

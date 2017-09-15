@@ -51,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\CargoRepositorio.cs" />
     <Compile Include="Repositorios\AreaDeLazerRepositorio.cs" />
+    <Compile Include="Repositorios\DenunciaRepositorio.cs" />
     <Compile Include="Repositorios\FalsoRepositorio\FalsoRep.cs" />
     <Compile Include="Repositorios\FalsoRepositorio\FuncionarioFalsoRepositorio.cs" />
     <Compile Include="Repositorios\FalsoRepositorio\MoradorFalsoRepositorio.cs" />

@@ -1,5 +1,6 @@
 ﻿using Condominio.DeskTop.Formularios.AlterarSenha;
 using Condominio.DeskTop.Formularios.AreaDeLazer;
+using Condominio.DeskTop.Formularios.Denuncia;
 using Condominio.DeskTop.Formularios.Fornecedor;
 using Condominio.DeskTop.Formularios.Informativo;
 using Condominio.DeskTop.Formularios.Login;
@@ -88,6 +89,12 @@ namespace Condominio.DeskTop.Formularios.MasterPage
             frmInformativo.Show();
         }
 
+        private void visitantesToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var frmDenuncia = new FrmDenuncia { MdiParent = this };
+            frmDenuncia.Show();
+        }
+
         #region Metodos do formulario
 
         private void ConfiguraAcesso(string cargo)
@@ -136,8 +143,7 @@ namespace Condominio.DeskTop.Formularios.MasterPage
             fornecedorToolStripMenuItem.Enabled = false;
         }
 
+
         #endregion
-
-
     }
 }

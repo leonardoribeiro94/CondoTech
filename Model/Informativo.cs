@@ -21,12 +21,25 @@ namespace Model
 
         #region Metodos
 
-        public void ValidaDescricao()
+        public void ValidaDados()
         {
+            if (Titulo.Length < 5)
+            {
+                throw new Exception("O título possui caracteres insuficientes!");
+            }
+
             if (Descricao.Length < 10)
             {
                 throw new Exception("A descrição possui caracteres insuficientes!");
             }
+
+            CamposTextosMaiusculos();
+        }
+
+        private void CamposTextosMaiusculos()
+        {
+            Titulo = Titulo.ToUpper();
+            Descricao = Descricao.ToUpper();
         }
 
         #endregion

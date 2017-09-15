@@ -69,6 +69,12 @@
     <Compile Include="Formularios\AreaDeLazer\FrmAreaDeLazer.Designer.cs">
       <DependentUpon>FrmAreaDeLazer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Denuncia\frmDenuncia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Denuncia\frmDenuncia.Designer.cs">
+      <DependentUpon>frmDenuncia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Fornecedor\FrmFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     <EmbeddedResource Include="Formularios\AreaDeLazer\FrmAreaDeLazer.resx">
       <DependentUpon>FrmAreaDeLazer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Denuncia\frmDenuncia.resx">
+      <DependentUpon>frmDenuncia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Fornecedor\FrmFornecedor.resx">
       <DependentUpon>FrmFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +179,7 @@
   <ItemGroup>
     <None Include="Resources\picture-2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

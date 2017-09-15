@@ -117,24 +117,54 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Atencao" xml:space="preserve">
-    <value>Atenção usuário!</value>
-    <comment>Mensagem exibida quando é necessário que o usuario se atente a uma ação.</comment>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnExibirImagem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
+        owAAB6MBMC+yxQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAARSSURBVFhHxZfd
+        TxRXGMb5A/ov9NabVlRgAVFY2C9wV1jXnQXke3ddpCxf1sVQi8sQRDE2lCtD22DSNNoPE2PakNSmjZWa
+        kBDrRaPG2po0TdrUi8bEG73y6XkOzGRm9gxSE9eLHznzvu/zvO/Mzjm7lAB4rSiDxUQZLCbKoJNEn74m
+        ePY/WVN5OVEGrcRTeoUww8tArcrTiu2i0h/bVhVorvaEom8asURS/0hlviWE1uqvwnaxO3TganUwCsEc
+        rxOD+hvC6EmB8dZ5Qg9rDye2C+cAWlI/rDBFvHsSYW0UvkhKwjVjqlp6WHs4kX/aknpZom961B9Nf+GN
+        dN5oPDjwidanjwmDO1azUHQAO6uCeGtXLXZ4/CivCUu4Zow51lg1gjv0ssJe7CkHSPTqeYeggFjXCVR7
+        YyitaEBNg4b6pm74wn02GGOONaylRuVlQ/TmFntUkLDQ0j4uTXmnzsbB5ozEGmMNa6mh1urVlckjk7UN
+        9ogDWAM2tN4paVZV12JpehixTsNkegPxlESMOaOOGmrpwXx2bAJ/rTbj31sRzJ8d2tDr8pAxL5w07OvF
+        zsqAMOyVpuH4MFqT00iNLWEkv4xjM9clXDPGHGvWh1jX0oNe5+ffwePbYckPlzvNHq4DHOiYwNtlXtQF
+        D0nDUPQI2lIzmPzgJsZnb8jG7878iEz+FrL6qowxxxrWUkMtPeiVHnwfv1zT8MdPUUzlj5p9XAfg27yr
+        KiSN/JGkuLsZ0XQZ5y48wNWVxzj/+QNo7/2GUO4fydDcfZz5+L6sYS011NLDujNak/Y+rgPUBjvg2bt/
+        4+4H0NF/VjZY+Owhvr/9FFe+/RtL7V+ic/hXOUD39J8yT1hLDbX0oJeqB3EdoEIIaxri0iSsjSBzbMls
+        MP/p77gwdBnXmxdwIr2CRjFA7sOHZp611FBLD3qpehDXAXaIF2hvoE2atLTlMDz5ldmATJ65ibnc18hO
+        rSI3t2bLsZYaaulBL1UP4jpAZZ04kutj609AvNmp0UVbk+OnV8xdwLU1x1pjN9CDXqoexHWA+qYeVOyJ
+        SJNQSz/a07OYXbwrG5xevGc2N2CMOdawlhpq6UEvVQ/iOkBTLCsfHU0ID5TBiYuySX7h54IBGGOONaw1
+        dPSgl6oHcR3goPh2K/X45PlOo4A45XjQjJy8gtwpe3PCGHOsYS018rtBeNBL1YO4DkA4+XZxphvfAXys
+        vLuO/nM4Mn5JvGzfSLhmjDnj0VND7WZ3TzYdgPAuynfvk0cqjX3igOEWs37bcS233cbhw1pqqLV6qXjh
+        AHx83Mf8LGsD7etDbAJrWEvNZo/e4IUDGPj3p7G93AuPeKtrfBq8jV1mU64ZY441rFV5qOAAz51BN6KH
+        jmOPvxVl1U3iF1Cd/IwJ14wxxxqV1oXnHOA7R3BLxHtOIpI4KuFaVbMFrpXEe/RSsVgWPBWo/sF4FbDX
+        MnsX/EotNspgMVEGiwdK/gPBUoHhR+PEcAAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="Erro" xml:space="preserve">
-    <value>Ops! Algo inesperado aconteceu</value>
-    <comment>Mensagem exibida quando uma operação inesperada do sistema ocorre ou quando o usuário opera o sistema de maneira indevida.</comment>
+  <data name="btnEnviar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAH
+        oQAAB6EBT9FxTAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAN2SURBVFhHxZZd
+        bAxRFMfrIxIi4QGPPAnCg8QLr31YhLDVTrfF2t30Sz92dWdnVVTrztzRoEGaSIVIRQhJSSgaqerMtKoR
+        iiCCSCqVtES0aVotbek6d7/MzJ6tihgPv9nc/z33/M+duffuTQmFQv8VVLQSVLQSVLQSVLQSVPzXwGNa
+        oEpdXnKgYUtC578gILcsCVA1IyBpRwKyqnjLr3cWCBc7ePHuWXTA3yCQpkXCIWWTQFUiUK0Rfj+BeYhR
+        Un7j7fa86vZc/nw7awdpiw1NMlXKDjfPE2hLKpiUCZJ6ladad8xMj7fiVld2XvV9h0d65atofBfRtR5C
+        yHQ0MYb/eMdsQdLWCbLiA8MLkOQ1MBEzwfBVNnazGXNu8fvO3SdaeanlW7wfPgfLi5oRos4MHlJXwyvM
+        46lyBgY8Bcbjg3+D7+Dtnh0Fx9o4DxnPdIv9BcHLD8wxfklZybzCK3IvVZbxkrqTl7Qa6OwARvTBU2UP
+        afrIZsq5ySgQcuTIz/ZAMUhsZ2yyKcwYhA+mgD+ilDR9chbWaGD6lRkDP1zFJ9UAVb5j8ewzxgtgD0Ju
+        zmELCTr7zcGTUUru9DmLwsbDUeNQpkf8WLjvyhMsPsqYt6ptoaGAGJFVrcoQ9MU0yAAvNg+wGXIuMhQz
+        ZmTlVD2Ct/EZG/MLrUHvaSggBtvLkfWgjeoH+8XmIXdJrQqrekBvDO0xj/e0BjGT7goGLyvpei+DsZky
+        0rwYvmMdbJ9Bt/eUxnnEPqMxvHK3+L5k/7WXmFkiWh8h9bP0HgbDZICxbDZmZOcfZcfpIG6WiECVWnNu
+        QyMZUIDDaC6O5PrPtWEmk8HL6lpzbkMjGQ4nXaEvIGMXuQUz/3WqTQVJe4PlThAwOK5+BhiH93i6s6LX
+        tjU/tN5e2JUvXHqGmiHwVC3HcicIyQDzTlbA5kz+HisgykTajvJWv3hn0m0LTLAFjeVNEJKR6SJ1rIAN
+        absf6wpgvHC4qA3Oj9uIcQS4A2A5GaiIkeEmpemuymEwHI0ajwMyx3HxbRWQNSfbauYC4Lh363PpQUUM
+        +GdL3ZIVfBg1f26z567B4sIXEqrWx82pNlxE1LlYLAMVMbLzyYKN24rbbfY8qp91MsDcDvSyuwPWHwMV
+        k7HJ4VuF6ckoJer8IG1divXFQEUrQUUrQUUrQUUrQUXrCKX8BOfhEMZ/dwkPAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="ImagemInvalida" xml:space="preserve">
-    <value>Verifique se o arquivo escolhido é realmente uma imagem</value>
-    <comment>Mensagem exibida quando o usuário insere um conteúdo que não seja uma imagem válida.</comment>
-  </data>
-  <data name="Questao" xml:space="preserve">
-    <value>Deseja realmente executar esta função!</value>
-    <comment>Mensagem exibida quando é necessário questionar o usuário a sobre alguma ação.</comment>
-  </data>
-  <data name="Sucesso" xml:space="preserve">
-    <value>Operação realizada!</value>
-    <comment>Mensagem exibida quando a operação executada pelo usuário é bem sucedida!</comment>
-  </data>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

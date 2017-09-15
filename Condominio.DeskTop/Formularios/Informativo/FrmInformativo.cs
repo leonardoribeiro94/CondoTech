@@ -19,6 +19,18 @@ namespace Condominio.DeskTop.Formularios.Informativo
             _informativoController = new InformativoController();
         }
 
+        private void FrmInformativo_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                CarregaGridView();
+            }
+            catch (Exception exception)
+            {
+                CaixaDeMensagem.MensagemDeErro(exception.Message);
+            }
+        }
+
         private void btnInserir_Click(object sender, EventArgs e)
         {
             try
@@ -30,11 +42,10 @@ namespace Condominio.DeskTop.Formularios.Informativo
                     Descricao = txtDescricao.Text
                 };
 
+                informativo.ValidaDados();
                 _informativoController.InserirInformativo(informativo);
 
-                LimparCampos();
-                CarregaGridView();
-                tblCtrlInformativo.SelectedIndex = 0;
+                VoltarParaTelaDeConsulta();
             }
             catch (Exception exception)
             {
@@ -49,15 +60,15 @@ namespace Condominio.DeskTop.Formularios.Informativo
                 var informativo = new Model.Informativo
                 {
                     Id = Convert.ToInt32(txtCodigo.Text),
+                    Funcionario = { Id = _idFuncionario },
                     Titulo = txtTitulo.Text,
                     Descricao = txtDescricao.Text
                 };
 
+                informativo.ValidaDados();
                 _informativoController.AtualizarInformativo(informativo);
 
-                LimparCampos();
-                CarregaGridView();
-                tblCtrlInformativo.SelectedIndex = 0;
+                VoltarParaTelaDeConsulta();
             }
             catch (Exception exception)
             {
@@ -69,8 +80,15 @@ namespace Condominio.DeskTop.Formularios.Informativo
         {
             try
             {
-                var idInformativo = Convert.ToInt32(txtCodigo.Text);
-                _informativoController.DeletarInformativo(idInformativo);
+                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistemaDesktop.Questao);
+
+                if (opcao == DialogResult.OK)
+                {
+                    var idInformativo = Convert.ToInt32(txtCodigo.Text);
+                    _informativoController.DeletarInformativo(idInformativo);
+                    VoltarParaTelaDeConsulta();
+                }
+
             }
             catch (Exception exception)
             {
@@ -91,6 +109,7 @@ namespace Condominio.DeskTop.Formularios.Informativo
                     btnInserir.Enabled = false;
                     btnAtualizar.Enabled = true;
                     btnExcluir.Enabled = true;
+                    tblCtrlInformativo.SelectedIndex = 1;
                 }
             }
             catch (Exception exception)
@@ -115,7 +134,7 @@ namespace Condominio.DeskTop.Formularios.Informativo
 
         #region Metodos
 
-        public void CarregaGridView()
+        private void CarregaGridView()
         {
             dgvInformativo.DataSource = _informativoController.ObterInformativos().ToList();
         }
@@ -125,6 +144,14 @@ namespace Condominio.DeskTop.Formularios.Informativo
             LimparControles.Limpar(groupBoxCadastrar);
         }
 
+        private void VoltarParaTelaDeConsulta()
+        {
+            LimparCampos();
+            CarregaGridView();
+            tblCtrlInformativo.SelectedIndex = 0;
+        }
+
         #endregion
+
     }
 }
