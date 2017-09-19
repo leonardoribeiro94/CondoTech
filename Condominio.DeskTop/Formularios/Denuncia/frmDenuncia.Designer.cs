@@ -163,7 +163,7 @@
             // 
             // picDenuncia
             // 
-            this.picDenuncia.Image = global::Condominio.DeskTop.Properties.Resources.picture_2;
+            this.picDenuncia.Image = ((System.Drawing.Image)(resources.GetObject("picDenuncia.Image")));
             this.picDenuncia.Location = new System.Drawing.Point(11, 33);
             this.picDenuncia.Name = "picDenuncia";
             this.picDenuncia.Size = new System.Drawing.Size(138, 126);

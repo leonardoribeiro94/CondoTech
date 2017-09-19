@@ -240,7 +240,6 @@
             // 
             // picAreaDeLazer
             // 
-            this.picAreaDeLazer.Image = global::Condominio.DeskTop.Properties.Resources.picture_2;
             this.picAreaDeLazer.Location = new System.Drawing.Point(11, 33);
             this.picAreaDeLazer.Name = "picAreaDeLazer";
             this.picAreaDeLazer.Size = new System.Drawing.Size(138, 126);

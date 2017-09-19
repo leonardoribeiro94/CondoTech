@@ -33,6 +33,8 @@ namespace DataAccessLayer.Repositorios
                 const string sqlQuery = "select u.IdUsuario, " +
                                         "f.IdFuncionario, " +
                                         "f.Nome, " +
+                                        "f.Cpf, " +
+                                        "f.Email, " +
                                         "c.Nome as 'Cargo', " +
                                         "u.Senha," +
                                         "u.SenhaTemporaria, " +

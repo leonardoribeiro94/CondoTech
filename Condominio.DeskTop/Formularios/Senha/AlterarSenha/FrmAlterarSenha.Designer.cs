@@ -1,4 +1,4 @@
-﻿namespace Condominio.DeskTop.Formularios.AlterarSenha
+﻿namespace Condominio.DeskTop.Formularios.Senha.AlterarSenha
 {
     partial class FrmAlterarSenha
     {

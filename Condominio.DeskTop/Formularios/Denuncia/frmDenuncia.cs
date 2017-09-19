@@ -13,7 +13,6 @@ namespace Condominio.DeskTop.Formularios.Denuncia
             InitializeComponent();
         }
 
-
         private void btnExibirImagem_Click(object sender, EventArgs e)
         {
             try
@@ -86,6 +85,7 @@ namespace Condominio.DeskTop.Formularios.Denuncia
 
         private void LimparCampos()
         {
+            picDenuncia.Image = Image.FromFile(@"../PictureImages/picture-2.png");
             LimparControles.Limpar(groupBoxDados);
         }
     }

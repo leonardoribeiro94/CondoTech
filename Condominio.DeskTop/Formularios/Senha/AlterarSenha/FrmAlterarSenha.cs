@@ -1,12 +1,12 @@
-﻿using Condominio.DeskTop.Componentes;
+﻿using System;
+using System.Linq;
+using System.Windows.Forms;
+using Condominio.DeskTop.Componentes;
 using Controller;
 using Model;
 using Model.QueryModel;
-using System;
-using System.Linq;
-using System.Windows.Forms;
 
-namespace Condominio.DeskTop.Formularios.AlterarSenha
+namespace Condominio.DeskTop.Formularios.Senha.AlterarSenha
 {
     public partial class FrmAlterarSenha : Form
     {

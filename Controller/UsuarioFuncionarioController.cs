@@ -28,5 +28,7 @@ namespace Controller
             =>
                 ObterUsuarioFuncionarios().Where(x => x.IdUsuario == idUsuarioFuncionario);
 
+        public IEnumerable<ObterUsuarioFuncionario> ObterPorCpfUsuarioFuncionarios(string cpf)
+            => _usuarioFuncionarioRep.ObterUsuarioFuncionarios().Where(x => x.Cpf == cpf.Replace("-", ""));
     }
 }

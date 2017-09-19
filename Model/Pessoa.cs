@@ -51,7 +51,7 @@ namespace Model
             }
         }
 
-        private bool ValidaCpf(string cpf)
+        public bool ValidaCpf(string cpf)
         {
             var multiplicador1 = new[] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             var multiplicador2 = new[] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };

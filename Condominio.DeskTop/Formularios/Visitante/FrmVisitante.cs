@@ -194,7 +194,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
 
         private void LimparCampos()
         {
-            picVisitante.Image = Image.FromFile(@"C:\dev\CondoTech\pngIcons\users.png");
+            picVisitante.Image = Image.FromFile(@"../PictureImages/users.png");
             LimparControles.Limpar(groupBoxDados);
         }
 

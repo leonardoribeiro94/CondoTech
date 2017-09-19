@@ -1,5 +1,6 @@
 ﻿using Condominio.DeskTop.Componentes;
 using Condominio.DeskTop.Formularios.MasterPage;
+using Condominio.DeskTop.Formularios.Senha.RecuperacaoSenha;
 using Controller;
 using Model.Enum;
 using System;
@@ -50,6 +51,19 @@ namespace Condominio.DeskTop.Formularios.Login
             }
         }
 
+        private void lblRecuperaSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                var frmRevuperaSenha = new FrmRecuperaSenha();
+                frmRevuperaSenha.ShowDialog();
+            }
+            catch (Exception exception)
+            {
+                CaixaDeMensagem.MensagemDeErro(exception.Message);
+            }
+        }
+
         #region Fields de Posições dos formularios
 
         private bool _drag;
@@ -96,5 +110,29 @@ namespace Condominio.DeskTop.Formularios.Login
 
         #endregion
 
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

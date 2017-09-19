@@ -57,11 +57,18 @@
       <DependentUpon>MensagensDoSistemaDesktop.resx</DependentUpon>
     </Compile>
     <Compile Include="Componentes\ObterArray.cs" />
-    <Compile Include="Formularios\AlterarSenha\FrmAlterarSenha.cs">
+    <Compile Include="Componentes\ServicoDeEmail.cs" />
+    <Compile Include="Formularios\Senha\AlterarSenha\FrmAlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\AlterarSenha\FrmAlterarSenha.Designer.cs">
+    <Compile Include="Formularios\Senha\AlterarSenha\FrmAlterarSenha.Designer.cs">
       <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Senha\RecuperacaoSenha\FrmRecuperaSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Senha\RecuperacaoSenha\FrmRecuperaSenha.Designer.cs">
+      <DependentUpon>FrmRecuperaSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\AreaDeLazer\FrmAreaDeLazer.cs">
       <SubType>Form</SubType>
@@ -128,8 +135,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>MensagensDoSistemaDesktop.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\AlterarSenha\FrmAlterarSenha.resx">
+    <EmbeddedResource Include="Formularios\Senha\AlterarSenha\FrmAlterarSenha.resx">
       <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Senha\RecuperacaoSenha\FrmRecuperaSenha.resx">
+      <DependentUpon>FrmRecuperaSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\AreaDeLazer\FrmAreaDeLazer.resx">
       <DependentUpon>FrmAreaDeLazer.cs</DependentUpon>
@@ -175,9 +185,6 @@
       <Project>{d5882775-6636-4ca5-9771-5fd192d984e9}</Project>
       <Name>Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picture-2.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

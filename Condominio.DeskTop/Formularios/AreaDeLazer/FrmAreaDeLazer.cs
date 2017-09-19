@@ -180,7 +180,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
 
         public void LimpaCampos()
         {
-            picAreaDeLazer.Image = Image.FromFile(@"C:\dev\CondoTech\Condominio.DeskTop\Resources\picture-2.png");
+            picAreaDeLazer.Image = Image.FromFile(@"../PictureImages/picture-2.png");
             LimparControles.Limpar(groupBoxCadastrar);
             LimparControles.Limpar(groupBoxDadosAreaDeLazer);
         }

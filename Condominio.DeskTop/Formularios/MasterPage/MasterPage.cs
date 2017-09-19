@@ -1,5 +1,4 @@
-﻿using Condominio.DeskTop.Formularios.AlterarSenha;
-using Condominio.DeskTop.Formularios.AreaDeLazer;
+﻿using Condominio.DeskTop.Formularios.AreaDeLazer;
 using Condominio.DeskTop.Formularios.Denuncia;
 using Condominio.DeskTop.Formularios.Fornecedor;
 using Condominio.DeskTop.Formularios.Informativo;
@@ -9,6 +8,7 @@ using Condominio.DeskTop.Formularios.Visitante;
 using Condominio.DeskTop.Formularios.Visitante.NovaVisita;
 using Model.QueryModel;
 using System.Windows.Forms;
+using Condominio.DeskTop.Formularios.Senha.AlterarSenha;
 
 namespace Condominio.DeskTop.Formularios.MasterPage
 {
