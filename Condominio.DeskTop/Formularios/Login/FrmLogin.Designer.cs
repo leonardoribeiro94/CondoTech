@@ -65,7 +65,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // picAjuda
             // 
@@ -90,7 +89,7 @@
             this.label4.Size = new System.Drawing.Size(70, 24);
             this.label4.TabIndex = 2;
             this.label4.Text = "Login";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+
             // 
             // label5
             // 
@@ -103,7 +102,6 @@
             this.label5.Size = new System.Drawing.Size(70, 24);
             this.label5.TabIndex = 4;
             this.label5.Text = "Senha";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtSenha
             // 
@@ -112,7 +110,6 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(129, 20);
             this.txtSenha.TabIndex = 5;
-            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // txtLogin
             // 
@@ -122,7 +119,6 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(129, 20);
             this.txtLogin.TabIndex = 3;
-            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // btnLogin
             // 

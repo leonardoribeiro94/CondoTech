@@ -20,7 +20,11 @@ namespace Condominio.DeskTop.Formularios.Login
 
         private void picAjuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(@"Ajuda");
+            CaixaDeMensagem.MensagemDeSucesso("Insira seu login e senha, em seguida clique no botão 'login' para prosseguir. " +
+                                              "\n\n" +
+                                              "Caso tenha esquecido sua senha clique no link 'Esqueceu sua senha?' para recuperá-la. " +
+                                              "\n\n" +
+                                              "Caso tenha dúvidas procure o responsável pelo sistema em seu condomínio!");
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -110,29 +114,6 @@ namespace Condominio.DeskTop.Formularios.Login
 
         #endregion
 
-        private void txtLogin_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void txtSenha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
