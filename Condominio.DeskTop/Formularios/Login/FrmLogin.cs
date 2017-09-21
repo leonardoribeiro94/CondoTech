@@ -67,6 +67,13 @@ namespace Condominio.DeskTop.Formularios.Login
                 CaixaDeMensagem.MensagemDeErro(exception.Message);
             }
         }
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnLogin_Click(null, null);
+            }
+        }
 
         #region Fields de Posições dos formularios
 
@@ -117,12 +124,6 @@ namespace Condominio.DeskTop.Formularios.Login
 
         #endregion
 
-        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 13)
-            {
-                btnLogin_Click(null, null);
-            }
-        }
+
     }
 }

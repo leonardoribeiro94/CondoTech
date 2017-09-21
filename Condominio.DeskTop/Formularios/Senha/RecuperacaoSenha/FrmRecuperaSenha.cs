@@ -21,7 +21,7 @@ namespace Condominio.DeskTop.Formularios.Senha.RecuperacaoSenha
             txtCpf.Focus();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnRecuperarSenha_Click(object sender, EventArgs e)
         {
             try
             {
@@ -73,6 +73,14 @@ namespace Condominio.DeskTop.Formularios.Senha.RecuperacaoSenha
             else
             {
                 CaixaDeMensagem.MensagemDeAlerta("CPF INVÁLIDO!");
+            }
+        }
+
+        private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnRecuperarSenha_Click(null, null);
             }
         }
     }

@@ -47,7 +47,7 @@
             this.btnRecuperarSenha.TabIndex = 12;
             this.btnRecuperarSenha.Text = "Recuperar Senha";
             this.btnRecuperarSenha.UseVisualStyleBackColor = false;
-            this.btnRecuperarSenha.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnRecuperarSenha.Click += new System.EventHandler(this.btnRecuperarSenha_Click);
             // 
             // label5
             // 
@@ -80,6 +80,7 @@
             this.txtCpf.Size = new System.Drawing.Size(177, 20);
             this.txtCpf.TabIndex = 13;
             this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
             // 
             // FrmRecuperaSenha
             // 
