@@ -110,10 +110,19 @@ namespace Condominio.DeskTop.Formularios.Login
             txtLogin.Select();
         }
 
-        #endregion
+
+
 
         #endregion
 
+        #endregion
 
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnLogin_Click(null, null);
+            }
+        }
     }
 }

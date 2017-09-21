@@ -89,7 +89,6 @@
             this.label4.Size = new System.Drawing.Size(70, 24);
             this.label4.TabIndex = 2;
             this.label4.Text = "Login";
-
             // 
             // label5
             // 
@@ -110,6 +109,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(129, 20);
             this.txtSenha.TabIndex = 5;
+            this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
             // 
             // txtLogin
             // 
