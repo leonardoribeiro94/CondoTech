@@ -53,8 +53,8 @@ namespace Condominio.DeskTop.Formularios.Morador
                 _moradorController.InserirMorador(morador);
 
                 CaixaDeMensagem.MensagemDeSucesso($"Morador inserido com sucesso! \n Usuario: {morador.Cpf} Senha: morador@123");
-                LimparCampos();
                 CarregaGridViewMorador();
+                LimparCampos();
                 tblCtrlMorador.SelectedIndex = 0;
             }
             catch (Exception exception)
@@ -198,7 +198,7 @@ namespace Condominio.DeskTop.Formularios.Morador
 
         private void LimparCampos()
         {
-            
+
             LimparControles.Limpar(grpPesquisa);
             LimparControles.Limpar(groupBoxCadastrar);
         }
