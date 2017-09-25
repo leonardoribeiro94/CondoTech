@@ -59,6 +59,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
 
                 areaDeLazer.ValidaDados();
                 _areaDeLazerCtrl.InserirAreaDeLazer(areaDeLazer);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                 LimpaCampos();
                 CarregaGridAreaDeLazer();
@@ -82,6 +83,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
                 if (opcao == DialogResult.OK)
                 {
                     _areaDeLazerCtrl.DeletarAreaDeLazer(idAreaDeLazer);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                     LimpaCampos();
                     CarregaGridAreaDeLazer();
@@ -120,14 +122,6 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             }
         }
 
-        private void tblCtrlAreaDeLazer_Click(object sender, EventArgs e)
-        {
-            LimpaCampos();
-            btnInserirAreaDeLazer.Enabled = true;
-            btnAtualizarAreaDeLazer.Enabled = false;
-            btnExcluirAreaDeLazer.Enabled = false;
-        }
-
         private void btnAtualizarAreaDeLazer_Click(object sender, EventArgs e)
         {
             try
@@ -138,6 +132,9 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
                 areaDeLazer.Descricao = txtDescricao.Text;
                 areaDeLazer.Imagem = ObterArray.PictureBox(picAreaDeLazer);
                 _areaDeLazerCtrl.AlterarAreaDeLazer(areaDeLazer);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+
+                LimpaCampos();
                 CarregaGridAreaDeLazer();
                 tblCtrlAreaDeLazer.SelectedIndex = 0;
             }
@@ -145,6 +142,14 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             {
                 CaixaDeMensagem.MensagemDeErro(exception.Message);
             }
+        }
+
+        private void tblCtrlAreaDeLazer_Click(object sender, EventArgs e)
+        {
+            LimpaCampos();
+            btnInserirAreaDeLazer.Enabled = true;
+            btnAtualizarAreaDeLazer.Enabled = false;
+            btnExcluirAreaDeLazer.Enabled = false;
         }
 
         private void txtNomeConsulta_KeyUp(object sender, KeyEventArgs e)

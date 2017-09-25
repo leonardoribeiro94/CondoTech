@@ -25,9 +25,11 @@ namespace Model
         {
             Nome = Nome.ToUpper().Trim();
 
-            Telefone = Telefone.Replace("(", "").Replace(")", "").Replace("-", "");
+            Telefone = Telefone.Replace("(", "").Replace(")", "")
+                .Replace("-", "").Replace(" ", "");
 
-            Celular = Celular.Replace("(", "").Replace(")", "").Replace("-", "");
+            Celular = Celular.Replace("(", "").Replace(")", "")
+                .Replace("-", "").Replace(" ", "");
 
             Cpf = Cpf.Replace("-", "").Replace(".", "");
 
@@ -49,10 +51,29 @@ namespace Model
             {
                 throw new Exception(MensagensDeValidacao.Email);
             }
+
+            if (DataDeNascimento.Year > DateTime.Now.Year)
+            {
+                throw new Exception("Data de Nascimento inválida!");
+            }
+
+            if (string.IsNullOrEmpty(Telefone)
+                && string.IsNullOrEmpty(Celular))
+            {
+                throw new Exception("Informe ao menos um telefone para contato!");
+            }
         }
 
         public bool ValidaCpf(string cpf)
         {
+            if (cpf.Equals("00000000000") || cpf.Equals("11111111111") ||
+                cpf.Equals("22222222222") || cpf.Equals("33333333333") ||
+                cpf.Equals("44444444444") || cpf.Equals("55555555555") ||
+                cpf.Equals("66666666666") || cpf.Equals("77777777777") ||
+                cpf.Equals("88888888888") || cpf.Equals("99999999999") ||
+                cpf.Length != 11)
+                return (false);
+
             var multiplicador1 = new[] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             var multiplicador2 = new[] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             cpf = cpf.Trim();

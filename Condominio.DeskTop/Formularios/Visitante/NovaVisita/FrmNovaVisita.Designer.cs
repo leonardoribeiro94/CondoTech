@@ -97,7 +97,7 @@
             this.grpPesquisa.Size = new System.Drawing.Size(633, 92);
             this.grpPesquisa.TabIndex = 1;
             this.grpPesquisa.TabStop = false;
-            this.grpPesquisa.Text = "Consultar Visitantes";
+            this.grpPesquisa.Text = "Consultar Visitas";
             // 
             // btnPesquisar
             // 
@@ -176,7 +176,7 @@
             this.groupBoxCadastrar.Size = new System.Drawing.Size(634, 364);
             this.groupBoxCadastrar.TabIndex = 0;
             this.groupBoxCadastrar.TabStop = false;
-            this.groupBoxCadastrar.Text = "Cadastrar Visitante";
+            this.groupBoxCadastrar.Text = "Cadastrar Visita";
             // 
             // label2
             // 
@@ -198,7 +198,7 @@
             // cmbVisitante
             // 
             this.cmbVisitante.FormattingEnabled = true;
-            this.cmbVisitante.Location = new System.Drawing.Point(326, 110);
+            this.cmbVisitante.Location = new System.Drawing.Point(326, 101);
             this.cmbVisitante.Name = "cmbVisitante";
             this.cmbVisitante.Size = new System.Drawing.Size(282, 23);
             this.cmbVisitante.TabIndex = 25;
@@ -206,7 +206,7 @@
             // cmbMorador
             // 
             this.cmbMorador.FormattingEnabled = true;
-            this.cmbMorador.Location = new System.Drawing.Point(11, 110);
+            this.cmbMorador.Location = new System.Drawing.Point(11, 101);
             this.cmbMorador.Name = "cmbMorador";
             this.cmbMorador.Size = new System.Drawing.Size(282, 23);
             this.cmbMorador.TabIndex = 25;
@@ -268,7 +268,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 92);
+            this.label9.Location = new System.Drawing.Point(12, 83);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 15);
             this.label9.TabIndex = 12;
@@ -277,7 +277,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(323, 92);
+            this.label4.Location = new System.Drawing.Point(323, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 15);
             this.label4.TabIndex = 14;
@@ -292,7 +292,7 @@
             this.btnAtualizar.ForeColor = System.Drawing.Color.White;
             this.btnAtualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnAtualizar.Image")));
             this.btnAtualizar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnAtualizar.Location = new System.Drawing.Point(173, 285);
+            this.btnAtualizar.Location = new System.Drawing.Point(173, 293);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(152, 40);
             this.btnAtualizar.TabIndex = 2;
@@ -309,7 +309,7 @@
             this.btnInserir.ForeColor = System.Drawing.Color.White;
             this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
             this.btnInserir.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnInserir.Location = new System.Drawing.Point(11, 285);
+            this.btnInserir.Location = new System.Drawing.Point(11, 293);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(152, 40);
             this.btnInserir.TabIndex = 1;

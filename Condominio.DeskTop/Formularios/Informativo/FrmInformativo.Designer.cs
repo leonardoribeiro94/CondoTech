@@ -92,7 +92,7 @@
             this.grpPesquisa.Size = new System.Drawing.Size(633, 92);
             this.grpPesquisa.TabIndex = 1;
             this.grpPesquisa.TabStop = false;
-            this.grpPesquisa.Text = "Consultar Visitantes";
+            this.grpPesquisa.Text = "Consultar Informativos";
             // 
             // btnPesquisar
             // 

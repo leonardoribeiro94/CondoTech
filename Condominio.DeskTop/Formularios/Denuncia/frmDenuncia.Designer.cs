@@ -60,9 +60,9 @@
             this.groupBoxCadastrar.Location = new System.Drawing.Point(12, 12);
             this.groupBoxCadastrar.Name = "groupBoxCadastrar";
             this.groupBoxCadastrar.Size = new System.Drawing.Size(677, 401);
-            this.groupBoxCadastrar.TabIndex = 1;
+            this.groupBoxCadastrar.TabIndex = 0;
             this.groupBoxCadastrar.TabStop = false;
-            this.groupBoxCadastrar.Text = "Cadastrar Área de Lazer";
+            this.groupBoxCadastrar.Text = "Cadastrar Denúncias";
             // 
             // groupBoxDados
             // 
@@ -109,7 +109,7 @@
             this.txtEmail.Location = new System.Drawing.Point(24, 135);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(423, 23);
-            this.txtEmail.TabIndex = 24;
+            this.txtEmail.TabIndex = 2;
             // 
             // txtCelular
             // 
@@ -117,7 +117,7 @@
             this.txtCelular.Mask = "(00)00000-0000";
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(204, 23);
-            this.txtCelular.TabIndex = 22;
+            this.txtCelular.TabIndex = 1;
             // 
             // label6
             // 
@@ -143,7 +143,7 @@
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(423, 102);
-            this.txtDescricao.TabIndex = 17;
+            this.txtDescricao.TabIndex = 3;
             // 
             // label4
             // 
@@ -159,7 +159,7 @@
             this.txtNome.Location = new System.Drawing.Point(24, 74);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(204, 23);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 0;
             // 
             // picDenuncia
             // 
@@ -199,7 +199,7 @@
             this.btnEnviar.Location = new System.Drawing.Point(465, 347);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(186, 48);
-            this.btnEnviar.TabIndex = 14;
+            this.btnEnviar.TabIndex = 0;
             this.btnEnviar.Text = " Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
@@ -218,7 +218,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmDenuncia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Denuncia";
+            this.Text = "Denúncia";
             this.groupBoxCadastrar.ResumeLayout(false);
             this.groupBoxDados.ResumeLayout(false);
             this.groupBoxDados.PerformLayout();

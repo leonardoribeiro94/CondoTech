@@ -77,6 +77,8 @@ namespace Condominio.DeskTop.Formularios.Visitante.NovaVisita
                     ? historicoVisita.DataSaida : Convert.ToDateTime(txtSaida.Text);
 
                 _historicoVisitaController.InserirHistoricoVisita(historicoVisita);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+
                 LimpaCampos();
                 CarregaDataGrid();
                 tblCtrlNovaVisita.SelectedIndex = 0;
@@ -104,6 +106,7 @@ namespace Condominio.DeskTop.Formularios.Visitante.NovaVisita
                     ? historicoVisita.DataSaida : Convert.ToDateTime(txtSaida.Text);
 
                 _historicoVisitaController.AlterarHistoricoVisita(historicoVisita);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                 LimpaCampos();
                 CarregaDataGrid();

@@ -23,11 +23,6 @@ namespace Model
         {
             Descricao = Descricao.ToUpper();
 
-            if (Celular.Length > 0)
-            {
-                Celular = Celular.Replace("(", "").Replace(")", "").Replace("-", "");
-            }
-
             if (Descricao.Length < 5)
             {
                 throw new Exception("A quantidade de caracteres informados na descrição é inválida!");

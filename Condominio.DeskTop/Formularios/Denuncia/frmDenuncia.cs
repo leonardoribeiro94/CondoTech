@@ -56,6 +56,8 @@ namespace Condominio.DeskTop.Formularios.Denuncia
                 if (opcao == DialogResult.OK)
                 {
                     denunciaController.InserirDenuncia(denuncia);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+
                     LimparCampos();
                 }
             }

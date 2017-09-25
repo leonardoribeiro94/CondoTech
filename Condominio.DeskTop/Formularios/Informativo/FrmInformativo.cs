@@ -44,6 +44,7 @@ namespace Condominio.DeskTop.Formularios.Informativo
 
                 informativo.ValidaDados();
                 _informativoController.InserirInformativo(informativo);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                 VoltarParaTelaDeConsulta();
             }
@@ -67,6 +68,7 @@ namespace Condominio.DeskTop.Formularios.Informativo
 
                 informativo.ValidaDados();
                 _informativoController.AtualizarInformativo(informativo);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                 VoltarParaTelaDeConsulta();
             }
@@ -86,6 +88,8 @@ namespace Condominio.DeskTop.Formularios.Informativo
                 {
                     var idInformativo = Convert.ToInt32(txtCodigo.Text);
                     _informativoController.DeletarInformativo(idInformativo);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+
                     VoltarParaTelaDeConsulta();
                 }
 

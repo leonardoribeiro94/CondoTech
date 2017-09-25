@@ -36,14 +36,14 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
                     Nome = txtNome.Text,
                     Cnpj = txtCNPJ.Text,
                     Telefone = txtTelefoneFixo.Text,
-                    TelefoneCelular = txtTelefoneFixo.Text,
+                    TelefoneCelular = txtTelefoneCelular.Text,
                     Email = txtEmail.Text,
                     Descricao = txtDescricao.Text
                 };
 
                 fornecedor.ValidaDados();
                 _fornecedorController.InserirFornecedor(fornecedor);
-
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
                 LimparCampos();
                 CarregarFornecedores();
 
@@ -72,6 +72,7 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
 
                 fornecedor.ValidaDados();
                 _fornecedorController.AlterarFornecedor(fornecedor);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                 LimparCampos();
                 CarregarFornecedores();
@@ -130,6 +131,7 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
                 {
                     var idFornecedor = Convert.ToInt32(txtCodigo.Text);
                     _fornecedorController.ExcluirFornecedor(idFornecedor);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                     LimparCampos();
                     CarregarFornecedores();

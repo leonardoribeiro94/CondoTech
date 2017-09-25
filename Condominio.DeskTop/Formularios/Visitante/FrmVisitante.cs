@@ -48,6 +48,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
                 visitante.ValidaImagem();
                 visitante.ValidaDados();
                 _visitanteController.InserirVisitante(visitante);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                 LimparCampos();
                 CarregaDataGrid();
@@ -75,6 +76,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
                 visitante.ValidaImagem();
                 visitante.ValidaDados();
                 _visitanteController.AlterarVisitante(visitante);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                 LimparCampos();
                 CarregaDataGrid();
@@ -96,6 +98,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
                 {
                     var idVisitante = Convert.ToInt32(txtCodigo.Text);
                     _visitanteController.DeletarVisitante(idVisitante);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                     LimparCampos();
                     CarregaDataGrid();
@@ -141,7 +144,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
                 var nomeValor = txtNomeConsulta.Text.ToLower();
 
                 var lista = _visitanteController.ObterVisitantes()
-                             .Where(x => x.Nome.ToLower().Contains(nomeValor));
+                             .Where(x => x.Nome.ToLower().Contains(nomeValor)).ToList();
 
                 dgvVisitante.DataSource = lista;
             }
@@ -194,8 +197,16 @@ namespace Condominio.DeskTop.Formularios.Visitante
 
         private void LimparCampos()
         {
-            picVisitante.Image = Image.FromFile(@"../PictureImages/users.png");
-            LimparControles.Limpar(groupBoxDados);
+            try
+            {
+                picVisitante.Image = Image.FromFile(@"../PictureImages/users.png");
+                LimparControles.Limpar(groupBoxDados);
+            }
+            catch (Exception exception)
+            {
+                CaixaDeMensagem.MensagemDeErro(exception.Message);
+            }
+
         }
 
 

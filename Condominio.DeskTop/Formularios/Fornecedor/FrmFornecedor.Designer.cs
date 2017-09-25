@@ -198,7 +198,7 @@
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(594, 62);
-            this.txtDescricao.TabIndex = 17;
+            this.txtDescricao.TabIndex = 6;
             // 
             // btnExcluir
             // 
@@ -212,7 +212,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(335, 285);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(152, 40);
-            this.btnExcluir.TabIndex = 16;
+            this.btnExcluir.TabIndex = 9;
             this.btnExcluir.Text = " Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -229,7 +229,7 @@
             this.btnAtualizar.Location = new System.Drawing.Point(173, 285);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(152, 40);
-            this.btnAtualizar.TabIndex = 15;
+            this.btnAtualizar.TabIndex = 8;
             this.btnAtualizar.Text = "  Atualizar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
@@ -255,7 +255,7 @@
             this.btnInserir.Location = new System.Drawing.Point(11, 285);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(152, 40);
-            this.btnInserir.TabIndex = 14;
+            this.btnInserir.TabIndex = 7;
             this.btnInserir.Text = " Inserir";
             this.btnInserir.UseVisualStyleBackColor = false;
             this.btnInserir.Click += new System.EventHandler(this.btnInserirMorador_Click);
@@ -265,7 +265,7 @@
             this.txtEmail.Location = new System.Drawing.Point(237, 150);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(372, 23);
-            this.txtEmail.TabIndex = 13;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtTelefoneCelular
             // 
@@ -273,7 +273,7 @@
             this.txtTelefoneCelular.Mask = "(00)00000-0000";
             this.txtTelefoneCelular.Name = "txtTelefoneCelular";
             this.txtTelefoneCelular.Size = new System.Drawing.Size(201, 23);
-            this.txtTelefoneCelular.TabIndex = 11;
+            this.txtTelefoneCelular.TabIndex = 4;
             // 
             // label6
             // 
@@ -290,7 +290,7 @@
             this.txtTelefoneFixo.Mask = "(00)0000-0000";
             this.txtTelefoneFixo.Name = "txtTelefoneFixo";
             this.txtTelefoneFixo.Size = new System.Drawing.Size(179, 23);
-            this.txtTelefoneFixo.TabIndex = 9;
+            this.txtTelefoneFixo.TabIndex = 3;
             // 
             // label5
             // 
@@ -307,7 +307,7 @@
             this.txtCNPJ.Mask = "00000000/0000-00";
             this.txtCNPJ.Name = "txtCNPJ";
             this.txtCNPJ.Size = new System.Drawing.Size(154, 23);
-            this.txtCNPJ.TabIndex = 7;
+            this.txtCNPJ.TabIndex = 2;
             // 
             // label7
             // 
@@ -342,14 +342,14 @@
             this.txtCodigo.Location = new System.Drawing.Point(14, 46);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(95, 23);
-            this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(11, 97);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(204, 23);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 1;
             // 
             // FrmFornecedor
             // 

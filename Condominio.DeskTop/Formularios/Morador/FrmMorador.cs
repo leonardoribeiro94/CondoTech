@@ -48,7 +48,17 @@ namespace Condominio.DeskTop.Formularios.Morador
         {
             try
             {
-                var morador = ObtemValorDoMorador();
+                var morador = new Model.Morador();
+
+                morador.Nome = txtNomeMorador.Text.ToUpper();
+                morador.DataDeNascimento = Convert.ToDateTime(txtDataNascimentoMorador.Text);
+                morador.Cpf = txtCpfMorador.Text.Replace("-", "");
+                morador.Telefone = txtTelefoneFixoMorador.Text;
+                morador.Celular = txtTelefoneCelularMorador.Text;
+                morador.Email = txtEmailMorador.Text.ToUpper();
+                morador.EntidadeAtiva = EntidadeAtiva.Ativo;
+
+                morador.ValidaDados();
 
                 _moradorController.InserirMorador(morador);
 
@@ -68,8 +78,21 @@ namespace Condominio.DeskTop.Formularios.Morador
         {
             try
             {
-                var morador = ObtemValorDoMorador();
+                var morador = new Model.Morador
+                {
+                    Id = string.IsNullOrEmpty(txtCodigo.Text) ? 0 : Convert.ToInt32(txtCodigo.Text.ToUpper()),
+                    Nome = txtNomeMorador.Text.ToUpper(),
+                    DataDeNascimento = Convert.ToDateTime(txtDataNascimentoMorador.Text),
+                    Cpf = txtCpfMorador.Text.Replace("-", ""),
+                    Telefone = txtTelefoneFixoMorador.Text.Replace("(", "").Replace(")", "").Replace("-", ""),
+                    Celular = txtTelefoneCelularMorador.Text.Replace("(", "").Replace(")", "").Replace("-", ""),
+                    Email = txtEmailMorador.Text.ToUpper(),
+                    EntidadeAtiva = EntidadeAtiva.Ativo
+                };
+
+                morador.ValidaDados();
                 _moradorController.AlterarMorador(morador);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                 LimparCampos();
                 CarregaGridViewMorador();
@@ -91,6 +114,7 @@ namespace Condominio.DeskTop.Formularios.Morador
                 {
                     var codigoMorador = Convert.ToInt32(txtCodigo.Text);
                     _moradorController.ExcluirMorador(codigoMorador);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
 
                     LimparCampos();
                     CarregaGridViewMorador();
@@ -152,32 +176,6 @@ namespace Condominio.DeskTop.Formularios.Morador
 
         #region Metodos 
 
-        private Model.Morador ObtemValorDoMorador()
-        {
-            var morador = new Model.Morador();
-
-            try
-            {
-
-                morador.Id = string.IsNullOrEmpty(txtCodigo.Text) ? 0 : Convert.ToInt32(txtCodigo.Text.ToUpper());
-                morador.Nome = txtNomeMorador.Text.ToUpper();
-                morador.DataDeNascimento = Convert.ToDateTime(txtDataNascimentoMorador.Text);
-                morador.Cpf = txtCpfMorador.Text.Replace("-", "");
-                morador.Telefone = txtTelefoneFixoMorador.Text.Replace("(", "").Replace(")", "").Replace("-", "");
-                morador.Celular = txtTelefoneCelularMorador.Text.Replace("(", "").Replace(")", "").Replace("-", "");
-                morador.Email = txtEmailMorador.Text.ToUpper();
-                morador.EntidadeAtiva = EntidadeAtiva.Ativo;
-
-                morador.ValidaDados();
-            }
-            catch (Exception exception)
-            {
-                CaixaDeMensagem.MensagemDeErro(exception.Message);
-            }
-
-            return morador;
-        }
-
         private void CarregaGridViewMorador()
         {
             dgvMorador.DataSource = _moradorController.ObterMorador().ToList();
@@ -204,7 +202,5 @@ namespace Condominio.DeskTop.Formularios.Morador
         }
 
         #endregion
-
-
     }
 }
