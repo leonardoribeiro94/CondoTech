@@ -20,7 +20,7 @@ namespace Condominio.DeskTop.Formularios.Login
 
         private void picAjuda_Click(object sender, EventArgs e)
         {
-            CaixaDeMensagem.MensagemDeSucesso("Insira seu login e senha, em seguida clique no botão 'login' para prosseguir. " +
+            CaixaDeMensagem.MensagemDeSucesso("Insira seu login e senha, em seguida clique no botão 'login'. " +
                                               "\n\n" +
                                               "Caso tenha esquecido sua senha clique no link 'Esqueceu sua senha?' para recuperá-la. " +
                                               "\n\n" +
