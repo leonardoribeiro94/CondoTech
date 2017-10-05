@@ -1,0 +1,49 @@
+﻿@model List<Condominio.Model.QueryModel.ObterFuncionario>
+
+@{
+    ViewBag.Title = "Consultar Funcionario";
+}
+
+<h2>ConsultarFuncionario</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Cargo</th>
+                        <th>Nome</th>
+                        <th>Nascimento</th>
+                        <th>Telefone</th>
+                        <th>Celular</th>
+                        <th>Email</th>
+                        <th>Cpf</th>
+                        <th>Ativo</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @foreach (var funcionario in Model)
+                    {
+                        <tr>
+                            <td>@funcionario.IdFuncionario</td>
+                            <td>@funcionario.Cargo</td>
+                            <td>@funcionario.Nome</td>
+                            <td>
+                                @funcionario.DataDeNascimento.ToString("dd/MM/yyyy")
+                            </td>
+                            <td>@funcionario.Telefone</td>
+                            <td>@funcionario.Celular</td>
+                            <td>@funcionario.Email</td>
+                            <td>@funcionario.Cpf</td>
+                            <td>@funcionario.Ativo</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

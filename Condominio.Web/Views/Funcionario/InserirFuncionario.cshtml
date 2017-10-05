@@ -1,0 +1,63 @@
+﻿@model Condominio.Web.ViewModels.Funcionario.FuncionarioViewModel
+@{
+    ViewBag.Title = "Inserir Funcionario";
+}
+
+<h2>Inserir Funcionario</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            @using (Html.BeginForm("Inserir", "Funcionario"))
+            {
+                <div class="form-group">
+                    @Html.Label("txtNome", "Nome", new { @class = "col-md-3 control-label" })
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(x => x.Nome, null, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("txtDataNascimento", "Data de Nascimento", new { @class = "col-md-3 control-label" })
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(x => x.DataDeNascimento, null, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("txtTelefone", "Telefone", new { @class = "col-md-3 control-label" })
+                    <div class="col-md-3">
+                        @Html.TextBox("txtTelefone", null, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("txtCelular", "Celular", new { @class = "col-md-3 control-label" })
+                    <div class="col-md-3">
+                        @Html.TextBox("txtCelular", null, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("txtEmail", "E-mail", new { @class = "col-md-3 control-label" })
+                    <div class="col-md-3">
+                        @Html.TextBox("txtEmail", null, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("txtCpf", "CPF", new { @class = "col-md-3 control-label" })
+                    <div class="col-md-3">
+                        @Html.TextBox("txtCpf", null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <input type="submit" value="Inserir" class="btn btn-success" />
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>

@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Condominio.Controllers;
+using Condominio.DeskTop.Componentes;
+using Condominio.Model;
+using Condominio.Model.QueryModel;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using Condominio.DeskTop.Componentes;
-using Controller;
-using Model;
-using Model.QueryModel;
 
 namespace Condominio.DeskTop.Formularios.Senha.AlterarSenha
 {
@@ -23,7 +23,7 @@ namespace Condominio.DeskTop.Formularios.Senha.AlterarSenha
         {
             try
             {
-                var usuarioFuncionarioCtrl = new UsuarioFuncionarioController();
+                var usuarioFuncionarioCtrl = new UsuarioFuncionarioControl();
                 var usuarioFuncionario = new UsuarioFuncionario();
 
                 var senhaAntiga = txtSenhaAnterior.Text;

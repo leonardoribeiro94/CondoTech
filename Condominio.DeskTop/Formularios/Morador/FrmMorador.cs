@@ -1,9 +1,9 @@
 ﻿using Condominio.DeskTop.Componentes;
-using Controller;
-using Model.Enum;
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using Condominio.Controllers;
+using Condominio.Model.Enum;
 
 namespace Condominio.DeskTop.Formularios.Morador
 {
@@ -14,7 +14,7 @@ namespace Condominio.DeskTop.Formularios.Morador
             InitializeComponent();
         }
 
-        private readonly MoradorController _moradorController = new MoradorController();
+        private readonly MoradorControl _moradorController = new MoradorControl();
 
 
         private void FrmMorador_Load(object sender, EventArgs e)

@@ -1,5 +1,5 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
+﻿using Condominio.Controllers;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Drawing;
 using System.IO;
@@ -15,7 +15,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             InitializeComponent();
         }
 
-        private readonly AreaDeLazerController _areaDeLazerCtrl = new AreaDeLazerController();
+        private readonly AreaDeLazerControl _areaDeLazerCtrl = new AreaDeLazerControl();
 
         private void FrmAreaDeLazer_Load(object sender, EventArgs e)
         {

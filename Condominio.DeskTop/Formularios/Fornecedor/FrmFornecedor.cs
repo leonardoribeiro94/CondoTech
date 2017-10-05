@@ -1,5 +1,5 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
+﻿using Condominio.Controllers;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,7 +8,7 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
 {
     public partial class FrmFornecedor : Form
     {
-        private readonly FornecedorController _fornecedorController = new FornecedorController();
+        private readonly FornecedorControl _fornecedorController = new FornecedorControl();
 
         public FrmFornecedor()
         {

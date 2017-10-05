@@ -1,6 +1,6 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
-using Model;
+﻿using Condominio.Controllers;
+using Condominio.DeskTop.Componentes;
+using Condominio.Model;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,12 +9,12 @@ namespace Condominio.DeskTop.Formularios.Senha.RecuperacaoSenha
 {
     public partial class FrmRecuperaSenha : Form
     {
-        private readonly UsuarioFuncionarioController _usuarioFuncionarioCtrl;
+        private readonly UsuarioFuncionarioControl _usuarioFuncionarioCtrl;
 
         public FrmRecuperaSenha()
         {
             InitializeComponent();
-            _usuarioFuncionarioCtrl = new UsuarioFuncionarioController();
+            _usuarioFuncionarioCtrl = new UsuarioFuncionarioControl();
         }
         private void FrmRecuperaSenha_Load(object sender, EventArgs e)
         {

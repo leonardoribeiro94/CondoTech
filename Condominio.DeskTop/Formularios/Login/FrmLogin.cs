@@ -1,8 +1,8 @@
-﻿using Condominio.DeskTop.Componentes;
+﻿using Condominio.Controllers;
+using Condominio.DeskTop.Componentes;
 using Condominio.DeskTop.Formularios.MasterPage;
 using Condominio.DeskTop.Formularios.Senha.RecuperacaoSenha;
-using Controller;
-using Model.Enum;
+using Condominio.Model.Enum;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,11 +11,11 @@ namespace Condominio.DeskTop.Formularios.Login
 {
     public partial class FrmLogin : Form
     {
-        private readonly UsuarioFuncionarioController _usuarioFuncionarioCtrl;
+        private readonly UsuarioFuncionarioControl _usuarioFuncionarioCtrl;
         public FrmLogin()
         {
             InitializeComponent();
-            _usuarioFuncionarioCtrl = new UsuarioFuncionarioController();
+            _usuarioFuncionarioCtrl = new UsuarioFuncionarioControl();
         }
 
         private void picAjuda_Click(object sender, EventArgs e)

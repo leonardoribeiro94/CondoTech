@@ -1,5 +1,5 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
+﻿using Condominio.Controllers;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -35,7 +35,7 @@ namespace Condominio.DeskTop.Formularios.Denuncia
             try
             {
                 var denuncia = new Model.Denuncia();
-                var denunciaController = new DenunciaController();
+                var denunciaController = new DenunciaControl();
 
                 if (!ckbAnonimo.Checked)
                 {

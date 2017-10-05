@@ -1,5 +1,5 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
+﻿using Condominio.Controllers;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,14 +9,14 @@ namespace Condominio.DeskTop.Formularios.Informativo
     public partial class FrmInformativo : Form
     {
         private readonly int _idFuncionario;
-        private readonly InformativoController _informativoController;
+        private readonly InformativoControl _informativoController;
 
         public FrmInformativo(int idFuncionario)
         {
             InitializeComponent();
 
             _idFuncionario = idFuncionario;
-            _informativoController = new InformativoController();
+            _informativoController = new InformativoControl();
         }
 
         private void FrmInformativo_Load(object sender, EventArgs e)

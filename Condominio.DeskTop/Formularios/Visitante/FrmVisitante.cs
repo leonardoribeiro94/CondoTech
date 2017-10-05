@@ -1,5 +1,5 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
+﻿using Condominio.Controllers;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Drawing;
 using System.IO;
@@ -12,7 +12,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
 {
     public partial class FrmVisitante : Form
     {
-        private readonly VisitanteController _visitanteController = new VisitanteController();
+        private readonly VisitanteControl _visitanteController = new VisitanteControl();
 
         public FrmVisitante()
         {
