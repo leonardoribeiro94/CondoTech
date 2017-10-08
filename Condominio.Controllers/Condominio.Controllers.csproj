@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaDeLazerControl.cs" />
+    <Compile Include="CargoControl.cs" />
     <Compile Include="DenunciaControl.cs" />
     <Compile Include="FornecedorControl.cs" />
     <Compile Include="FuncionarioControl.cs" />

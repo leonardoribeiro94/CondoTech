@@ -4,13 +4,15 @@
     ViewBag.Title = "Consultar Funcionario";
 }
 
-<h2>ConsultarFuncionario</h2>
+<h3>Consultar Funcionario</h3>
 
 <div class="container">
     <div class="row">
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
+        
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
                     <tr>
                         <th>Código</th>
                         <th>Cargo</th>
@@ -23,8 +25,8 @@
                         <th>Ativo</th>
                     </tr>
 
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
 
                     @foreach (var funcionario in Model)
                     {
@@ -40,10 +42,17 @@
                             <td>@funcionario.Email</td>
                             <td>@funcionario.Cpf</td>
                             <td>@funcionario.Ativo</td>
+                            <td>
+                                <input type="button" class="btn btn-warning" value="Editar"/>
+                                <input type="button" class="btn btn-danger" value="Excluir"/>
+                            </td>
                         </tr>
                     }
-                </tbody>
-            </table>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
+
     </div>
 </div>

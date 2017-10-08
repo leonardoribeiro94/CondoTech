@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Data.SqlClient;
-using Condominio.DataAccesLayer.Conexao;
+﻿using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
 using Dapper;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Condominio.DataAccesLayer.Repositorios
 {
@@ -50,7 +50,8 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                var listaCargos = Connection.Query<Cargo>("Select_Cargo", commandType: CommandStoredProcedure);
+                const string queryString = "Select * from Cargo";
+                var listaCargos = Connection.Query<Cargo>(queryString);
 
                 return listaCargos;
             }
