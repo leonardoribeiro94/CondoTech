@@ -5,6 +5,7 @@ using Condominio.Model.QueryModel;
 using Dapper;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace Condominio.DataAccesLayer.Repositorios
 {
@@ -73,6 +74,28 @@ namespace Condominio.DataAccesLayer.Repositorios
                                                     "on f.IdCargo = c.IdCargo";
 
                 return Connection.Query<ObterFuncionario>(queryString);
+            }
+        }
+
+        public ObterFuncionario ObterFuncionariosPorId(int id)
+        {
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                const string queryString = "select [f].[IdFuncionario]," +
+                                           "[f].[Nome]," +
+                                           "[f].[DataDeNascimento]," +
+                                           "[f].[Telefone]," +
+                                           "[f].[Celular]," +
+                                           "[f].[Email]," +
+                                           "[f].[Cpf]," +
+                                           "[f].[Ativo]," +
+                                           "[c].[Nome] AS 'Cargo'" +
+                                           "from Funcionario f " +
+                                           "inner join Cargo c " +
+                                           "on f.IdCargo = c.IdCargo " +
+                                           "where IdFuncionario = @id";
+
+                return Connection.Query<ObterFuncionario>(queryString, new { id }).FirstOrDefault();
             }
         }
     }

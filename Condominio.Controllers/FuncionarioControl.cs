@@ -14,5 +14,7 @@ namespace Condominio.Controllers
         public void AlterarFuncionario(Funcionario funcionario) => _funcionarioRepositorio.Alterar(funcionario);
 
         public IEnumerable<ObterFuncionario> ListarFuncionarios() => _funcionarioRepositorio.ObterFuncionarios();
+
+        public ObterFuncionario ListarFuncionariosPorId(int id) => _funcionarioRepositorio.ObterFuncionariosPorId(id);
     }
 }

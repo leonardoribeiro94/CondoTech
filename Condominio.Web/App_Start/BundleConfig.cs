@@ -13,6 +13,9 @@ namespace Condominio.Web
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/funcionario-modal").Include(
+                "~/Scripts/site/funcionario/funcionario-modal.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -22,13 +25,15 @@ namespace Condominio.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrapwatch/css").Include(
                 "~/Content/bootstrapwatch/bootstrap.min.css"));
+
+
+
         }
     }
 }

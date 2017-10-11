@@ -30,7 +30,8 @@ namespace Condominio.Web.Controllers
         // GET: Funcionario/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var funcionarioViewModel = Mapper.Map<ObterFuncionario, FuncionarioViewModel>(_funcionarioControl.ListarFuncionariosPorId(id));
+            return View(funcionarioViewModel);
         }
 
         // GET: Funcionario/Create

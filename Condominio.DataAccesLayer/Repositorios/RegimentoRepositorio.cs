@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Data.SqlClient;
-using Condominio.DataAccesLayer.Conexao;
+﻿using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
 using Dapper;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Condominio.DataAccesLayer.Repositorios
 {
