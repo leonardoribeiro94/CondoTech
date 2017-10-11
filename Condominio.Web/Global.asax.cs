@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using Condominio.Web.AutoMapper;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -13,6 +14,9 @@ namespace Condominio.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //Automapper
+            AutoMapperConfig.RegisterMappings();
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿using Condominio.Controllers;
+﻿using AutoMapper;
+using Condominio.Controllers;
 using Condominio.Model;
+using Condominio.Model.QueryModel;
 using Condominio.Web.ViewModels.Funcionario;
-using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -15,43 +17,94 @@ namespace Condominio.Web.Controllers
         {
             _funcionarioControl = new FuncionarioControl();
         }
-        // GET: Funcionario
-        public ActionResult ConsultarFuncionario()
-        {
-            try
-            {
-                var lista = _funcionarioControl.ListarFuncionarios();
-                return View(lista.ToList());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
 
+        // GET: Funcionario
+        public ActionResult Index()
+        {
+            var funcionarioViewModel = Mapper.Map<IEnumerable<ObterFuncionario>,
+                IEnumerable<FuncionarioViewModel>>(_funcionarioControl.ListarFuncionarios());
+
+            var cargos = new CargoControl();
+            ViewBag.ListadeCargos = new SelectList(cargos.ObterCargo().ToList(), "Id", "Nome");
+
+            return View(funcionarioViewModel);
         }
 
-        public ActionResult InserirFuncionario()
+        // GET: Funcionario/Details/5
+        public ActionResult Details(int id)
         {
-            var cargoControl = new CargoControl();
-            ViewBag.ListadeCargos = new SelectList(cargoControl.ObterCargo().ToList(), "id", "Nome");
-
             return View();
         }
 
-
-        [HttpPost]
-        public ActionResult Inserir(FuncionarioViewModel funcionarioVm)
+        // GET: Funcionario/Create
+        public ActionResult Create()
         {
-            var funcionario = new Funcionario
-            {
-                Nome = funcionarioVm.Nome,
-                Cpf = funcionarioVm.Cpf,
-                Telefone = funcionarioVm.Telefone,
-            };
-
-            return Json($"{funcionario.Nome} - {funcionario.DataDeNascimento}");
+            return View();
         }
 
+        // POST: Funcionario/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(FuncionarioViewModel funcionario)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var funcionarioModel = Mapper.Map<FuncionarioViewModel, Funcionario>(funcionario);
+                    _funcionarioControl.InserirFuncionario(funcionarioModel);
+
+                }
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Funcionario/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        // POST: Funcionario/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: Funcionario/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: Funcionario/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add Delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
