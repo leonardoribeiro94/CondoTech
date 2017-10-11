@@ -24,9 +24,6 @@ namespace Condominio.Web.Controllers
             var funcionarioViewModel = Mapper.Map<IEnumerable<ObterFuncionario>,
                 IEnumerable<FuncionarioViewModel>>(_funcionarioControl.ListarFuncionarios());
 
-            var cargos = new CargoControl();
-            ViewBag.ListadeCargos = new SelectList(cargos.ObterCargo().ToList(), "Id", "Nome");
-
             return View(funcionarioViewModel);
         }
 
@@ -39,6 +36,9 @@ namespace Condominio.Web.Controllers
         // GET: Funcionario/Create
         public ActionResult Create()
         {
+            var cargos = new CargoControl();
+            ViewBag.ListadeCargos = new SelectList(cargos.ObterCargo().ToList(), "Id", "Nome");
+
             return View();
         }
 
