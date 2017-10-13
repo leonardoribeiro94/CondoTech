@@ -29,11 +29,8 @@ namespace Condominio.Web
                       "~/Content/bootstrap.min.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/bootstrapwatch/css").Include(
+            bundles.Add(new StyleBundle("~/Content/bootstrapwatch").Include(
                 "~/Content/bootstrapwatch/bootstrap.min.css"));
-
-
-
         }
     }
 }

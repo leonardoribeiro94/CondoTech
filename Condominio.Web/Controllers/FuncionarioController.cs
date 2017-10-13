@@ -30,15 +30,16 @@ namespace Condominio.Web.Controllers
         // GET: Funcionario/Details/5
         public ActionResult Details(int id)
         {
-            var funcionarioViewModel = Mapper.Map<ObterFuncionario, FuncionarioViewModel>(_funcionarioControl.ListarFuncionariosPorId(id));
+            var funcionarioViewModel = Mapper.Map<ObterFuncionario,
+                FuncionarioViewModel>(_funcionarioControl.ListarFuncionariosPorId(id));
+
             return View(funcionarioViewModel);
         }
 
         // GET: Funcionario/Create
         public ActionResult Create()
         {
-            var cargos = new CargoControl();
-            ViewBag.ListadeCargos = new SelectList(cargos.ObterCargo().ToList(), "Id", "Nome");
+            ViewBag.ListadeCargos = CarregaDropDownListCargo();
 
             return View();
         }
@@ -67,16 +68,25 @@ namespace Condominio.Web.Controllers
         // GET: Funcionario/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var funcionarioViewModel = Mapper.Map<ObterFuncionario,
+                FuncionarioViewModel>(_funcionarioControl.ListarFuncionariosPorId(id));
+
+            ViewBag.ListadeCargos = CarregaDropDownListCargo();
+
+            return View(funcionarioViewModel);
         }
 
         // POST: Funcionario/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(FuncionarioViewModel funcionario)
         {
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    var funcionarioModel = Mapper.Map<FuncionarioViewModel, Funcionario>(funcionario);
+                    _funcionarioControl.AlterarFuncionario(funcionarioModel);
+                }
 
                 return RedirectToAction("Index");
             }
@@ -106,6 +116,13 @@ namespace Condominio.Web.Controllers
             {
                 return View();
             }
+        }
+
+
+        public static SelectList CarregaDropDownListCargo()
+        {
+            var cargos = new CargoControl();
+            return new SelectList(cargos.ObterCargo().ToList(), "Id", "Nome");
         }
     }
 }

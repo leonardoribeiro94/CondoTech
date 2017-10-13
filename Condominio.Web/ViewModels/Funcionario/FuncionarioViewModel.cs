@@ -30,7 +30,7 @@ namespace Condominio.Web.ViewModels.Funcionario
         [DisplayName("E-mail")]
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Preencha o Campo E-mail")]
-        [MinLength(150, ErrorMessage = "Mínimo {0} caracteres")]
+        [MaxLength(150, ErrorMessage = "Máximo {0} caracteres")]
         public string Email { get; set; }
 
 

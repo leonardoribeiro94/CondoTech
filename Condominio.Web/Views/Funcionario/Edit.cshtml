@@ -1,0 +1,80 @@
+﻿@model Condominio.Web.ViewModels.Funcionario.FuncionarioViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Funcionario</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label" })
+
+                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-5">
+                    <label class="control-label">Cargo:</label>
+                    @Html.DropDownList("ListadeCargos", null, "Selecione", new { @class = "form-control" })
+                </div>
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label" })
+
+                    @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Celular, htmlAttributes: new { @class = "control-label" })
+
+                    @Html.EditorFor(model => model.Celular, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Celular, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label" })
+
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-5">
+                    @Html.LabelFor(model => model.Cpf, htmlAttributes: new { @class = "control-label" })
+
+                    @Html.EditorFor(model => model.Cpf, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Cpf, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="col-md-10" style="margin-top: 10px">
+                    <input type="submit" value="Editar" class="btn btn-default" />
+                </div>
+
+            </div>
+        </div>
+       
+    </div>
+}
+
+<div style="margin-top: 10px">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
