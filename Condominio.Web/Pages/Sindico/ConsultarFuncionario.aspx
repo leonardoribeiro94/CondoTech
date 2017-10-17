@@ -21,7 +21,7 @@
                                 </div>
 
                                 <div class="col-md-4" style="margin-top: 15px">
-                                    <asp:LinkButton runat="server" ID="lkbPesquisar" Text="<span class='btn-label'><i class='glyphicon glyphicon-search'></i></span><b>Pesquisar</b>"
+                                    <asp:LinkButton runat="server" ID="lkbPesquisar" OnClick="LkbPesquisar_OnClick" Text="<span class='btn-label'><i class='glyphicon glyphicon-search'></i></span><b>Pesquisar</b>"
                                         CssClass="btn btn-labeled btn-primary"></asp:LinkButton>
                                 </div>
                             </div>

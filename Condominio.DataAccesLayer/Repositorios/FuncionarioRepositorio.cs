@@ -77,6 +77,11 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
+        public IEnumerable<ObterFuncionario> ObterFuncionariosPorNome(string nome)
+        {
+            return ObterFuncionarios().Where(x => x.Nome.ToLower().Contains(nome));
+        }
+
         public ObterFuncionario ObterFuncionariosPorId(int id)
         {
             using (Connection = new SqlConnection(StringConnection))

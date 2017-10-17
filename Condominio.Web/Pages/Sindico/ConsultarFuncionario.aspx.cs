@@ -1,5 +1,6 @@
 ﻿using Condominio.Controllers;
 using System;
+using System.Linq;
 
 namespace Condominio.Web.Pages.Sindico
 {
@@ -15,6 +16,13 @@ namespace Condominio.Web.Pages.Sindico
         protected void Page_Load(object sender, EventArgs e)
         {
             grvFuncionario.DataSource = _funcionarioControl.ListarFuncionarios();
+            grvFuncionario.DataBind();
+        }
+
+        protected void LkbPesquisar_OnClick(object sender, EventArgs e)
+        {
+            var nome = txtNomeFuncionario.Text;
+            grvFuncionario.DataSource = _funcionarioControl.ListarFuncionariosPorNome(nome).ToList();
             grvFuncionario.DataBind();
         }
     }

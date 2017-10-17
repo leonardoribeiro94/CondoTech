@@ -15,6 +15,10 @@ namespace Condominio.Controllers
 
         public IEnumerable<ObterFuncionario> ListarFuncionarios() => _funcionarioRepositorio.ObterFuncionarios();
 
+        public IEnumerable<ObterFuncionario> ListarFuncionariosPorNome(string nome)
+            => _funcionarioRepositorio.ObterFuncionariosPorNome(nome.ToLower());
+
         public ObterFuncionario ListarFuncionariosPorId(int id) => _funcionarioRepositorio.ObterFuncionariosPorId(id);
+
     }
 }
