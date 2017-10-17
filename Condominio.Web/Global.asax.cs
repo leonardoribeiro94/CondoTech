@@ -1,22 +1,17 @@
-﻿using Condominio.Web.AutoMapper;
+﻿using System;
 using System.Web;
-using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace Condominio.Web
 {
-    public class MvcApplication : HttpApplication
+    public class Global : HttpApplication
     {
-        protected void Application_Start()
+        void Application_Start(object sender, EventArgs e)
         {
-            AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            //Automapper
-            AutoMapperConfig.RegisterMappings();
         }
     }
 }

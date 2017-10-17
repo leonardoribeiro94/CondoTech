@@ -13,13 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "View", "View", "{2B6635D3-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.DeskTop", "Condominio.DeskTop\Condominio.DeskTop.csproj", "{F35C6E99-E92B-423B-B638-650C641ED069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Web", "Condominio.Web\Condominio.Web.csproj", "{9358AB0F-181D-456B-91F6-6105FDD402C8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.DataAccesLayer", "Condominio.DataAccesLayer\Condominio.DataAccesLayer.csproj", "{ECA1F239-4D8B-47CB-A5CF-935F057A4F3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Model", "Condominio.Model\Condominio.Model.csproj", "{D3B049E5-42F5-461C-830A-1C585D0A118A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Controllers", "Condominio.Controllers\Condominio.Controllers.csproj", "{FEB2E690-78A8-4163-9ADE-93365AD8F819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Web", "Condominio.Web\Condominio.Web.csproj", "{A98B306C-98EE-45DE-ADA8-2C6F7D41062A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,6 @@ Global
 		{F35C6E99-E92B-423B-B638-650C641ED069}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F35C6E99-E92B-423B-B638-650C641ED069}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F35C6E99-E92B-423B-B638-650C641ED069}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9358AB0F-181D-456B-91F6-6105FDD402C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9358AB0F-181D-456B-91F6-6105FDD402C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9358AB0F-181D-456B-91F6-6105FDD402C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9358AB0F-181D-456B-91F6-6105FDD402C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECA1F239-4D8B-47CB-A5CF-935F057A4F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECA1F239-4D8B-47CB-A5CF-935F057A4F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECA1F239-4D8B-47CB-A5CF-935F057A4F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,13 +43,17 @@ Global
 		{FEB2E690-78A8-4163-9ADE-93365AD8F819}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEB2E690-78A8-4163-9ADE-93365AD8F819}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEB2E690-78A8-4163-9ADE-93365AD8F819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A98B306C-98EE-45DE-ADA8-2C6F7D41062A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A98B306C-98EE-45DE-ADA8-2C6F7D41062A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A98B306C-98EE-45DE-ADA8-2C6F7D41062A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A98B306C-98EE-45DE-ADA8-2C6F7D41062A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F35C6E99-E92B-423B-B638-650C641ED069} = {2B6635D3-E07D-4093-B46D-F5BCD2C7845C}
-		{9358AB0F-181D-456B-91F6-6105FDD402C8} = {2B6635D3-E07D-4093-B46D-F5BCD2C7845C}
+		{A98B306C-98EE-45DE-ADA8-2C6F7D41062A} = {2B6635D3-E07D-4093-B46D-F5BCD2C7845C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BFEAC80D-780D-41B1-87D0-7D160C62CE8F}
