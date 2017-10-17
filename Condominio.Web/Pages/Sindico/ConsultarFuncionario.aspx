@@ -9,22 +9,24 @@
         <ContentTemplate>
             <div class="container">
                 <div class="row">
-                    <div class="well">
+                    <div class="col-md-12 well">
                         <fieldset>
                             <legend><b>Consultar</b> Funcionários</legend>
                         </fieldset>
                         <div class="row">
-                            <div class="col-md-5">
-                                <asp:Label runat="server" for="txtEventoTipoNomeGrid" class="control-label"><b>Nome: </b></asp:Label>
-                                <asp:TextBox runat="server" ID="txtNomeFuncionario" CssClass="form-control" placeholder="Insira o nome do funcionário"></asp:TextBox>
-                            </div>
+                            <div class="col-md-10">
+                                <div class="col-md-5">
+                                    <asp:Label runat="server" for="txtEventoTipoNomeGrid" class="control-label"><b>Nome: </b></asp:Label>
+                                    <asp:TextBox runat="server" ID="txtNomeFuncionario" CssClass="form-control" placeholder="Insira o nome do funcionário"></asp:TextBox>
+                                </div>
 
-                            <div class="col-md-4" style="margin-top: 15px">
-                                <asp:LinkButton runat="server" ID="lkbPesquisar" Text="<span class='btn-label'><i class='glyphicon glyphicon-search'></i></span><b>Pesquisar</b>"
-                                    CssClass="btn btn-labeled btn-primary"></asp:LinkButton>
+                                <div class="col-md-4" style="margin-top: 15px">
+                                    <asp:LinkButton runat="server" ID="lkbPesquisar" Text="<span class='btn-label'><i class='glyphicon glyphicon-search'></i></span><b>Pesquisar</b>"
+                                        CssClass="btn btn-labeled btn-primary"></asp:LinkButton>
+                                </div>
                             </div>
                         </div>
-
+                        <hr />
                         <div class="row">
                             <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
                                 <asp:UpdatePanel runat="server">
@@ -43,7 +45,7 @@
                                                 <asp:BoundField DataField="Telefone" HeaderText="Horario Início" />
                                                 <asp:BoundField DataField="Celular" HeaderText="Horário Fim" />
                                                 <asp:BoundField DataField="Email" HeaderText="Descrição" />
-                                                <asp:BoundField DataField="Ativo" HeaderText="Ativo"/>
+                                                <asp:BoundField DataField="Ativo" HeaderText="Ativo" />
 
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
