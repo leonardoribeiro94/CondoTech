@@ -33,7 +33,7 @@
                                     <ContentTemplate>
                                         <asp:GridView ID="grvFuncionario" runat="server" DataKeyNames="IdFuncionario" CssClass="table table-responsive  bs-pagination"
                                             PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
-                                            GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5">
+                                            GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="GrvFuncionario_PageIndexChanging">
                                             <Columns>
                                                 <asp:BoundField DataField="IdFuncionario" HeaderText="Código">
                                                     <ItemStyle CssClass="HideColumnGridView"></ItemStyle>
@@ -50,7 +50,7 @@
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnEditar" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnEditar" OnClick="lbtnEditar_Click" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 
