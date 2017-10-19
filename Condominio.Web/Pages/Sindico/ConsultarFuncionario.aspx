@@ -10,7 +10,7 @@
         <ContentTemplate>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 well">
+                    <div class="col-md-12 well formulario">
                         <fieldset>
                             <legend><b>Consultar</b> Funcionários</legend>
                         </fieldset>
