@@ -59,11 +59,17 @@ namespace Condominio.Web.Pages.Sindico
 
         private void PreencherGridFuncionarios()
         {
-            grvFuncionario.DataSource = _funcionarioControl.ListarFuncionarios();
-            grvFuncionario.DataBind();
+            try
+            {
+                grvFuncionario.DataSource = _funcionarioControl.ListarFuncionarios();
+                grvFuncionario.DataBind();
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
         }
 
         #endregion
-        
     }
 }
