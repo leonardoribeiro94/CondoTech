@@ -8,10 +8,12 @@ namespace Condominio.Web.Pages.Sindico
     public partial class ConsultarFuncionario : System.Web.UI.Page
     {
         private readonly FuncionarioControl _funcionarioControl;
+        private readonly Mensagens _mensagens;
 
         public ConsultarFuncionario()
         {
             _funcionarioControl = new FuncionarioControl();
+            _mensagens = new Mensagens();
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,17 +23,37 @@ namespace Condominio.Web.Pages.Sindico
 
         protected void LkbPesquisar_OnClick(object sender, EventArgs e)
         {
-            var nome = txtNomeFuncionario.Text;
-            grvFuncionario.DataSource = _funcionarioControl.ListarFuncionariosPorNome(nome).ToList();
-            grvFuncionario.DataBind();
+            try
+            {
+                var nome = txtNomeFuncionario.Text;
+                grvFuncionario.DataSource = _funcionarioControl.ListarFuncionariosPorNome(nome).ToList();
+                grvFuncionario.DataBind();
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
         }
 
         protected void GrvFuncionario_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
         {
-            grvFuncionario.PageIndex = e.NewPageIndex;
-            PreencherGridFuncionarios();
+            try
+            {
+                grvFuncionario.PageIndex = e.NewPageIndex;
+                PreencherGridFuncionarios();
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
         }
 
+        protected void LbtnEditar_Click(object sender, EventArgs e)
+        {
+            var datakey = Services.AddSession(sender, grvFuncionario);
+            Session.Add("IdFuncionario", datakey["IdFuncionario"]);
+            Response.Redirect("~/Pages/Sindico/InserirFuncionario.aspx", false);
+        }
 
         #region Metodos
 
@@ -41,14 +63,7 @@ namespace Condominio.Web.Pages.Sindico
             grvFuncionario.DataBind();
         }
 
-        protected void LbtnEditar_Click(object sender, EventArgs e)
-        {
-            var datakey = Services.AddSession(sender, grvFuncionario);
-            Session.Add("IdFuncionario", datakey["IdFuncionario"]);
-            Response.Redirect("~/Pages/Protetor/IncProtetor.aspx", false);
-        }
         #endregion
-
-
+        
     }
 }
