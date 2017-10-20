@@ -2,10 +2,11 @@
 using Condominio.Web.Components;
 using System;
 using System.Linq;
+using System.Web.UI;
 
 namespace Condominio.Web.Pages.Sindico
 {
-    public partial class ConsultarFuncionario : System.Web.UI.Page
+    public partial class ConsultarFuncionario : Page
     {
         private readonly FuncionarioControl _funcionarioControl;
         private readonly Mensagens _mensagens;
@@ -35,7 +36,8 @@ namespace Condominio.Web.Pages.Sindico
             }
         }
 
-        protected void GrvFuncionario_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
+        protected void GrvFuncionario_PageIndexChanging(object sender,
+            System.Web.UI.WebControls.GridViewPageEventArgs e)
         {
             try
             {
@@ -48,11 +50,40 @@ namespace Condominio.Web.Pages.Sindico
             }
         }
 
+        protected void LkbInserir_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/Sindico/InserirFuncionario.aspx", false);
+        }
+
         protected void LbtnEditar_Click(object sender, EventArgs e)
         {
             var datakey = Services.AddSession(sender, grvFuncionario);
             Session.Add("IdFuncionario", datakey["IdFuncionario"]);
             Response.Redirect("~/Pages/Sindico/InserirFuncionario.aspx", false);
+        }
+
+        protected void LbtnExcluir_OnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridViewRow = Services.ObterLinhaDeDados(sender, grvFuncionario);
+                var dataKey = grvFuncionario.DataKeys[gridViewRow.RowIndex];
+
+                if (dataKey != null)
+                {
+                    var idFuncionario = Convert.ToInt32(dataKey["IdFuncionario"]);
+                    ViewState.Add("IdFuncionario", Convert.ToInt32(idFuncionario));
+                    ScriptManager.RegisterClientScriptBlock(Page, GetType(), "", "deletarFuncionario()", true);
+                }
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
+
+        private void Deletar()
+        {
         }
 
         #region Metodos

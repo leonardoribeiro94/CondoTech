@@ -12,10 +12,14 @@
                 <div class="row">
                     <div class="col-md-12 well formulario">
                         <fieldset>
-                            <legend><b>Consultar</b> Funcionários</legend>
+                            <legend><b>Consultar</b> Funcionários &nbsp;
+                                <asp:LinkButton runat="server" ID="lkbInserir" OnClick="LkbInserir_OnClick"
+                                    Text="<span class='btn-label'></span><b>Inserir</b>"
+                                    CssClass="btn btn-default"></asp:LinkButton>
+                            </legend>
                         </fieldset>
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-8">
                                 <div class="col-md-5">
                                     <asp:Label runat="server" for="txtEventoTipoNomeGrid" class="control-label"><b>Nome: </b></asp:Label>
                                     <asp:TextBox runat="server" ID="txtNomeFuncionario" CssClass="form-control" placeholder="Insira o nome do funcionário"></asp:TextBox>
@@ -27,12 +31,12 @@
                                 </div>
                             </div>
                         </div>
-                        <hr />
+                        <br />
                         <div class="row">
                             <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
-                                        <asp:GridView ID="grvFuncionario" runat="server" DataKeyNames="IdFuncionario" CssClass="table table-responsive  bs-pagination"
+                                        <asp:GridView ID="grvFuncionario" runat="server" DataKeyNames="IdFuncionario" CssClass="table table-responsive bs-pagination"
                                             PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
                                             GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="GrvFuncionario_PageIndexChanging">
                                             <Columns>
@@ -58,7 +62,7 @@
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" OnClientClick="fn_excluir()" OnClick="LbtnExcluir_OnClick" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
@@ -75,13 +79,13 @@
                                 </asp:UpdatePanel>
                             </div>
                         </div>
-                        <asp:UpdateProgress ID="UpdateProgress1" runat="server" DynamicLayout="false" DisplayAfter="1">
-                            <ProgressTemplate>
-                                <div class="text-muted navbar-fixed-bottom" style="margin-bottom: 50px; margin-left: 10px">
-                                    <h2><i class="fa fa-cog fa-spin fa-2x"></i>&nbsp; Processando ...</h2>
-                                </div>
-                            </ProgressTemplate>
-                        </asp:UpdateProgress>
+                    <asp:UpdateProgress ID="UpdateProgress1" runat="server" DynamicLayout="false" DisplayAfter="1">
+                        <ProgressTemplate>
+                            <div class="text-muted navbar-fixed-bottom" style="margin-bottom: 50px; margin-left: 10px">
+                                <h2><i class="fa fa-cog fa-spin fa-2x"></i>&nbsp; Processando ...</h2>
+                            </div>
+                        </ProgressTemplate>
+                    </asp:UpdateProgress>
                     </div>
                 </div>
             </div>

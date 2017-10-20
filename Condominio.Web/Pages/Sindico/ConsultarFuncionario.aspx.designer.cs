@@ -7,13 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Condominio.Web.Pages.Sindico
-{
-
-
-    public partial class ConsultarFuncionario
-    {
-
+namespace Condominio.Web.Pages.Sindico {
+    
+    
+    public partial class ConsultarFuncionario {
+        
+        /// <summary>
+        /// lkbInserir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lkbInserir;
+        
         /// <summary>
         /// txtNomeFuncionario control.
         /// </summary>
@@ -22,7 +29,7 @@ namespace Condominio.Web.Pages.Sindico
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNomeFuncionario;
-
+        
         /// <summary>
         /// lkbPesquisar control.
         /// </summary>
@@ -31,7 +38,7 @@ namespace Condominio.Web.Pages.Sindico
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkbPesquisar;
-
+        
         /// <summary>
         /// grvFuncionario control.
         /// </summary>
@@ -40,7 +47,7 @@ namespace Condominio.Web.Pages.Sindico
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvFuncionario;
-
+        
         /// <summary>
         /// UpdateProgress1 control.
         /// </summary>
