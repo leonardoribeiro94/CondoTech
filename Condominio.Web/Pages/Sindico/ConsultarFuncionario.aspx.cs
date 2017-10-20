@@ -2,6 +2,8 @@
 using Condominio.Web.Components;
 using System;
 using System.Linq;
+using System.Web.Script.Serialization;
+using System.Web.Services;
 using System.Web.UI;
 
 namespace Condominio.Web.Pages.Sindico
@@ -9,6 +11,7 @@ namespace Condominio.Web.Pages.Sindico
     public partial class ConsultarFuncionario : Page
     {
         private readonly FuncionarioControl _funcionarioControl;
+        private static readonly FuncionarioControl _staticFuncionarioControl = new FuncionarioControl();
         private readonly Mensagens _mensagens;
 
         public ConsultarFuncionario()
@@ -66,14 +69,19 @@ namespace Condominio.Web.Pages.Sindico
         {
             try
             {
+                var javascript = new JavaScriptSerializer();
                 var gridViewRow = Services.ObterLinhaDeDados(sender, grvFuncionario);
                 var dataKey = grvFuncionario.DataKeys[gridViewRow.RowIndex];
 
                 if (dataKey != null)
                 {
                     var idFuncionario = Convert.ToInt32(dataKey["IdFuncionario"]);
-                    ViewState.Add("IdFuncionario", Convert.ToInt32(idFuncionario));
-                    ScriptManager.RegisterClientScriptBlock(Page, GetType(), "", "deletarFuncionario()", true);
+                    var idSerializado = javascript.Serialize(idFuncionario);
+
+                    ViewState.Add("IdFuncionario", Convert.ToInt32(idSerializado));
+
+                    ScriptManager.RegisterClientScriptBlock(Page, GetType(),
+                        "modaldeleteFuncionario", "confirmarExcluir(\"" + idSerializado + "\")", true);
                 }
             }
             catch (Exception exception)
@@ -82,8 +90,12 @@ namespace Condominio.Web.Pages.Sindico
             }
         }
 
-        private void Deletar()
+        [WebMethod]
+        public static void Deletar(string id)
         {
+
+            _staticFuncionarioControl.ExcluirFuncionario(Convert.ToInt32(id));
+
         }
 
         #region Metodos

@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <script src="<%=ResolveClientUrl("~/Scripts/bootstrap-pagination/bs.pagination.min.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/funcionario-consulta-validacao.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/funcionario-controller.js")%>"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -62,7 +64,7 @@
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" OnClientClick="fn_excluir()" OnClick="LbtnExcluir_OnClick" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnExcluir"  OnClick="LbtnExcluir_OnClick" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
@@ -79,13 +81,13 @@
                                 </asp:UpdatePanel>
                             </div>
                         </div>
-                    <asp:UpdateProgress ID="UpdateProgress1" runat="server" DynamicLayout="false" DisplayAfter="1">
-                        <ProgressTemplate>
-                            <div class="text-muted navbar-fixed-bottom" style="margin-bottom: 50px; margin-left: 10px">
-                                <h2><i class="fa fa-cog fa-spin fa-2x"></i>&nbsp; Processando ...</h2>
-                            </div>
-                        </ProgressTemplate>
-                    </asp:UpdateProgress>
+                        <asp:UpdateProgress ID="UpdateProgress1" runat="server" DynamicLayout="false" DisplayAfter="1">
+                            <ProgressTemplate>
+                                <div class="text-muted navbar-fixed-bottom" style="margin-bottom: 50px; margin-left: 10px">
+                                    <h2><i class="fa fa-cog fa-spin fa-2x"></i>&nbsp; Processando ...</h2>
+                                </div>
+                            </ProgressTemplate>
+                        </asp:UpdateProgress>
                     </div>
                 </div>
             </div>
