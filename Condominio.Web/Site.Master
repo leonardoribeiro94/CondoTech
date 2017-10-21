@@ -16,6 +16,7 @@
     <script src="<%=ResolveClientUrl("Scripts/jquery-1.10.2.min.js")%>"></script>
     <script src="<%=ResolveClientUrl("Scripts/bootstrap.min.js")%>"></script>
     <script src="<%=ResolveClientUrl("Scripts/bootstrap-dialog.js")%>"></script>
+    <script src="<%=ResolveClientUrl("Scripts/modais-genericas/modais-genericas.js")%>"></script>
     
     <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>

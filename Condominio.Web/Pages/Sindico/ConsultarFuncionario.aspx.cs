@@ -93,9 +93,7 @@ namespace Condominio.Web.Pages.Sindico
         [WebMethod]
         public static void Deletar(string id)
         {
-
             _staticFuncionarioControl.ExcluirFuncionario(Convert.ToInt32(id));
-
         }
 
         #region Metodos

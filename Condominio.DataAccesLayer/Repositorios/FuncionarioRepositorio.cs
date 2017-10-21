@@ -60,7 +60,7 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string queryString = "select [f].[IdFuncionario]," +
+                const string queryString = "SELECT [f].[IdFuncionario]," +
                                                   "[f].[Nome]," +
                                                   "[f].[DataDeNascimento]," +
                                                   "[f].[Telefone]," +
@@ -69,9 +69,10 @@ namespace Condominio.DataAccesLayer.Repositorios
                                                   "[f].[Cpf]," +
                                                   "[f].[Ativo]," +
                                                   "[c].[Nome] AS 'Cargo'" +
-                                                  "from Funcionario f " +
-                                                    "inner join Cargo c " +
-                                                    "on f.IdCargo = c.IdCargo";
+                                                  "FROM Funcionario f " +
+                                                  "INNER JOIN Cargo c " +
+                                                  "ON f.IdCargo = c.IdCargo " +
+                                                  "AND f.Ativo = 0";
 
                 return Connection.Query<ObterFuncionario>(queryString);
             }
@@ -86,21 +87,7 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string queryString = "select [f].[IdFuncionario]," +
-                                           "[f].[Nome]," +
-                                           "[f].[DataDeNascimento]," +
-                                           "[f].[Telefone]," +
-                                           "[f].[Celular]," +
-                                           "[f].[Email]," +
-                                           "[f].[Cpf]," +
-                                           "[f].[Ativo]," +
-                                           "[c].[Nome] AS 'Cargo'" +
-                                           "from Funcionario f " +
-                                           "inner join Cargo c " +
-                                           "on f.IdCargo = c.IdCargo " +
-                                           "where IdFuncionario = @id";
-
-                return Connection.Query<ObterFuncionario>(queryString, new { id }).FirstOrDefault();
+                return ObterFuncionarios().FirstOrDefault(x => x.IdFuncionario == id);
             }
         }
     }

@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
+using System.Web.Routing;
 
 namespace Condominio.Web
 {
@@ -11,7 +8,7 @@ namespace Condominio.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             var settings = new FriendlyUrlSettings();
-            settings.AutoRedirectMode = RedirectMode.Permanent;
+            settings.AutoRedirectMode = RedirectMode.Off;//alterar para off para funcionamento do ajax
             routes.EnableFriendlyUrls(settings);
         }
     }
