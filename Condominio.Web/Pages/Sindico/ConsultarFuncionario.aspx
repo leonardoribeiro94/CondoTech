@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <script src="<%=ResolveClientUrl("~/Scripts/bootstrap-pagination/bs.pagination.min.js")%>"></script>
     <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/funcionario-consulta-validacao.js")%>"></script>
-    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/funcionario-controller.js")%>"></script>
+    
+    <script>
+        var btnDeletarFuncionario ="#<%=btnDeletarFuncionario.ClientID%>";
+    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -64,7 +67,7 @@
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnExcluir"  OnClick="LbtnExcluir_OnClick" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" OnClick="LbtnExcluir_OnClick" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
@@ -92,6 +95,11 @@
                 </div>
             </div>
             </div>
+            
+            <div class="hidden">
+                <asp:Button runat="server" ID="btnDeletarFuncionario" OnClick="DeletarFuncionario" />
+            </div>
         </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
+

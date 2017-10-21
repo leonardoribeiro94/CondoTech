@@ -3,7 +3,6 @@ using Condominio.Web.Components;
 using System;
 using System.Linq;
 using System.Web.Script.Serialization;
-using System.Web.Services;
 using System.Web.UI;
 
 namespace Condominio.Web.Pages.Sindico
@@ -11,7 +10,6 @@ namespace Condominio.Web.Pages.Sindico
     public partial class ConsultarFuncionario : Page
     {
         private readonly FuncionarioControl _funcionarioControl;
-        private static readonly FuncionarioControl _staticFuncionarioControl = new FuncionarioControl();
         private readonly Mensagens _mensagens;
 
         public ConsultarFuncionario()
@@ -90,12 +88,20 @@ namespace Condominio.Web.Pages.Sindico
             }
         }
 
-        [WebMethod]
-        public static void Deletar(string id)
+        protected void DeletarFuncionario(object sender, EventArgs e)
         {
-            _staticFuncionarioControl.ExcluirFuncionario(Convert.ToInt32(id));
-        }
+            try
+            {
+                var idFuncionario = Convert.ToInt32(ViewState["IdFuncionario"]);
+                _funcionarioControl.ExcluirFuncionario(idFuncionario);
 
+                Response.Redirect("~/Pages/Sindico/ConsultarFuncionario.aspx", false);
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
         #region Metodos
 
         private void PreencherGridFuncionarios()

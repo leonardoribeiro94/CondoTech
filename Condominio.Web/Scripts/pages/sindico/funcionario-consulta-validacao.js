@@ -1,4 +1,4 @@
-﻿function confirmarExcluir(id) {
+﻿function confirmarExcluir() {
 
     new BootstrapDialog({
         type: BootstrapDialog.TYPE_DANGER,
@@ -11,7 +11,8 @@
             icon: "fa fa-check-square-o",
             cssClass: "btn btn-primary",
             action: function () {
-                excluirFuncionario(id);
+                dialog.close();
+                $(window.btnDeletarFuncionario).click();
             }
         },
         {
@@ -19,7 +20,6 @@
             cssClass: "btn-default",
             action: function (dialog) {
                 dialog.close();
-                return false;
             }
         }]
 

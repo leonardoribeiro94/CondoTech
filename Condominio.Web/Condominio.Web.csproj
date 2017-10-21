@@ -247,7 +247,6 @@
     <Content Include="Scripts\modais-genericas\modais-genericas.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\pages\sindico\funcionario-consulta-validacao.js" />
-    <Content Include="Scripts\pages\sindico\funcionario-controller.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
