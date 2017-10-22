@@ -1,16 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InserirFuncionario.aspx.cs" Inherits="Condominio.Web.Pages.Sindico.InserirFuncionario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+   <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/InserirFuncionario/funcionario-Inserir-mask.js")%>"></script>
+   
+    <script>
+        var txtNome = "#<%=txtNome.ClientID%>";
+        var txtDataNascimento = "#<%=txtDataNascimento.ClientID%>";
+        var txtTelefone = "#<%=txtTelefone.ClientID%>";
+        var txtCelular = "#<%=txtCelular.ClientID%>";
+        var txtEmail = "#<%=txtEmail.ClientID%>";
+        var txtCpf   = "#<%=txtCpf.ClientID%>";
+        var ddlCargo = "#<%=ddlCargo.ClientID%>";
+    </script>
+    
+     
+    
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager runat="server" EnablePageMethods="True"></asp:ScriptManager>
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
-            <div class="col-md-10 well formulario">
-                <div class="container">
+           <div class="container">
                     <div class="row">
-                        
+                        <div class="col-md-10 well formulario">             
                         <fieldset>
                             <legend>
                                 <asp:LinkButton runat="server" ID="lkbVoltar"
@@ -20,7 +33,7 @@
                         </fieldset>
 
                         <div class="row">
-                            <div class=" col-md-4" id="laboratorioNome">
+                            <div class=" col-md-4" id="Nome">
                                 <asp:Label runat="server"><b>Nome</b></asp:Label>
                                 <asp:TextBox runat="server" ID="txtNome" CssClass="form-control" placeholder="Nome do Laboratório"></asp:TextBox>
                             </div>
@@ -43,6 +56,11 @@
                             <div class="col-md-4" id="email">
                                 <asp:Label runat="server"><b>email</b></asp:Label>
                                 <asp:TextBox runat="server" ID="txtEmail" placeholder="exemplo@outlook.com" CssClass="form-control"></asp:TextBox>
+                            </div>
+                            
+                            <div class="col-md-4" id="cpf">
+                                <asp:Label runat="server"><b>CPF</b></asp:Label>
+                                <asp:TextBox runat="server" ID="txtCpf"  placeholder="000000000-00" CssClass="form-control"></asp:TextBox>
                             </div>
 
                             <div class="col-md-4" id="cargo">
