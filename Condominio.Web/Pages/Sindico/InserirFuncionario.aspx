@@ -29,7 +29,7 @@
                         <fieldset>
                             <legend>
                                 <asp:LinkButton runat="server" ID="lkbVoltar"
-                                    Text="<span class='btn-label'><i class='fa fa-arrow-left' aria-hidden='true'></i></span><b>Voltar</b>" CssClass="btn btn-default"></asp:LinkButton>
+                                    OnClick="lkbVoltar_OnClick" Text="<span class='btn-label'><i class='fa fa-arrow-left' aria-hidden='true'></i></span><b>Voltar</b>" CssClass="btn btn-default"></asp:LinkButton>
                                 <b>Inserir</b> Funcionário
                             </legend>
                         </fieldset>

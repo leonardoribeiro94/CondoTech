@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using Condominio.DataAccesLayer.Conexao;
+﻿using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
 using Condominio.Model.Enum;
 using Condominio.Model.QueryModel;
 using Dapper;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Condominio.DataAccesLayer.Repositorios
 {
@@ -59,7 +59,9 @@ namespace Condominio.DataAccesLayer.Repositorios
                                         "u.Ativo " +
                                         "from Funcionario f join Cargo c on c.IdCargo = f.IdCargo " +
                                         "join UsuarioFuncionario u on u.IdFuncionario = f.IdFuncionario " +
-                                        "Where u.Login = @login and u.Senha = @senha";
+                                        "Where u.Login = @login " +
+                                        "and u.Senha = @senha " +
+                                        "and f.Ativo = 0";
 
                 return Connection.Query<ObterUsuarioFuncionario>(sqlQuery, new { login, senha });
             }

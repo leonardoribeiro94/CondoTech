@@ -24,6 +24,7 @@ namespace Condominio.Web.Pages.Sindico
         {
             try
             {
+                CarregaDadosDaSessao();
                 CarregarDropDownListCargo();
             }
             catch (Exception exception)
@@ -44,21 +45,56 @@ namespace Condominio.Web.Pages.Sindico
         {
             try
             {
-                var funcionario = new Funcionario();
-                funcionario.Nome = txtNome.Text;
-                funcionario.DataDeNascimento = Convert.ToDateTime(txtDataNascimento.Text).Date;
-                funcionario.Telefone = txtTelefone.Text;
-                funcionario.Celular = txtCelular.Text;
-                funcionario.Cpf = txtCpf.Text;
-                funcionario.Email = txtEmail.Text;
-                funcionario.IdCargo = Convert.ToInt32(ddlCargo.SelectedValue);
+                var funcionario = new Funcionario
+                {
+                    Nome = txtNome.Text,
+                    DataDeNascimento = Convert.ToDateTime(txtDataNascimento.Text).Date,
+                    Telefone = txtTelefone.Text,
+                    Celular = txtCelular.Text,
+                    Cpf = txtCpf.Text,
+                    Email = txtEmail.Text,
+                    IdCargo = Convert.ToInt32(ddlCargo.SelectedValue)
+                };
+
                 funcionario.ValidaDados();
-                _funcionarioControl.InserirFuncionario(funcionario);
+
+                if (ViewState["IdFuncionario"].Equals(null))
+                {
+                    _funcionarioControl.InserirFuncionario(funcionario);
+                }
+                else
+                {
+                    funcionario.Id = Convert.ToInt32(ViewState["IdFuncionario"]);
+                    _funcionarioControl.AlterarFuncionario(funcionario);
+                }
                 Response.Redirect("~/Pages/Sindico/ConsultarFuncionario.aspx", false);
             }
             catch (Exception exception)
             {
                 _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
+
+        protected void lkbVoltar_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/Sindico/ConsultarFuncionario.aspx", false);
+        }
+
+        private void CarregaDadosDaSessao()
+        {
+            if (!Session["IdFuncionario"].Equals(null))
+            {
+                ViewState.Add("IdFuncionario", Session["IdFuncionario"]);
+                Session.Clear();
+
+                var idFuncionario = Convert.ToInt32(ViewState["IdFuncionario"]);
+                var data = _funcionarioControl.ListarFuncionariosPorId(idFuncionario);
+                txtNome.Text = data.Nome;
+                txtDataNascimento.Text = data.DataDeNascimento.Date.ToShortDateString();
+                txtTelefone.Text = data.Telefone;
+                txtCelular.Text = data.Celular;
+                txtCpf.Text = data.Cpf;
+                txtEmail.Text = data.Email;
             }
         }
     }
