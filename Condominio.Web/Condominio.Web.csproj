@@ -250,6 +250,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\pages\sindico\ConsultarFuncionario\funcionario-consulta-validacao.js" />
     <Content Include="Scripts\pages\sindico\InserirFuncionario\funcionario-Inserir-mask.js" />
+    <Content Include="Scripts\pages\sindico\InserirFuncionario\funcionario-inserir-validacao.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />

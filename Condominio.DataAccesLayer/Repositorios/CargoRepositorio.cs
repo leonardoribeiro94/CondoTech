@@ -1,5 +1,6 @@
 ﻿using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
+using Condominio.Model.QueryModel;
 using Dapper;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -46,12 +47,12 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<Cargo> ObterCargos()
+        public IEnumerable<ObterCargos> ObterCargos()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
                 const string queryString = "Select * from Cargo";
-                var listaCargos = Connection.Query<Cargo>(queryString);
+                var listaCargos = Connection.Query<ObterCargos>(queryString);
 
                 return listaCargos;
             }

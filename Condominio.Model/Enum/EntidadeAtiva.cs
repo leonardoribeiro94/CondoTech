@@ -2,7 +2,7 @@
 {
     public enum EntidadeAtiva
     {
-        Ativo,
-        Inativo
+        Ativo = 0,
+        Inativo = 1
     }
 }

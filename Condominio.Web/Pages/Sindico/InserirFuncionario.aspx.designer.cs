@@ -85,12 +85,12 @@ namespace Condominio.Web.Pages.Sindico {
         protected global::System.Web.UI.WebControls.DropDownList ddlCargo;
         
         /// <summary>
-        /// btnLaboratorioCadastrar control.
+        /// lbtnInserirFuncionario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLaboratorioCadastrar;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnInserirFuncionario;
     }
 }

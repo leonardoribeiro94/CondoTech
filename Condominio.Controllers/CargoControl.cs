@@ -1,7 +1,6 @@
 ﻿using Condominio.DataAccesLayer.Repositorios;
-using Condominio.Model;
+using Condominio.Model.QueryModel;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Condominio.Controllers
 {
@@ -14,6 +13,6 @@ namespace Condominio.Controllers
             _cargoRepositorio = new CargoRepositorio();
         }
 
-        public IEnumerable<Cargo> ObterCargo() => _cargoRepositorio.ObterCargos();
+        public IEnumerable<ObterCargos> ObterCargo() => _cargoRepositorio.ObterCargos();
     }
 }

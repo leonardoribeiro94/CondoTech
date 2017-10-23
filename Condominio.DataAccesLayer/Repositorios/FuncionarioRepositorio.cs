@@ -16,6 +16,7 @@ namespace Condominio.DataAccesLayer.Repositorios
             using (Connection = new SqlConnection(StringConnection))
             {
                 var parametros = new DynamicParameters();
+                parametros.Add("@IdCargo", funcionario.IdCargo);
                 parametros.Add("@Nome", funcionario.Nome.Trim().ToUpper());
                 parametros.Add("@DataDeNascimento", funcionario.DataDeNascimento);
                 parametros.Add("@Telefone", funcionario.Telefone.Trim());
