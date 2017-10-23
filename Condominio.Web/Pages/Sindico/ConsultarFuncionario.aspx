@@ -50,11 +50,11 @@
                                                     <HeaderStyle CssClass="HideColumnGridView"></HeaderStyle>
                                                 </asp:BoundField>
                                                 <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                                                <asp:BoundField DataField="Cargo" HeaderText="Bairro" />
-                                                <asp:BoundField DataField="DataDeNascimento" HeaderText="Data" DataFormatString="{0:dd/MM/yyyy}" />
-                                                <asp:BoundField DataField="Telefone" HeaderText="Horario Início" />
-                                                <asp:BoundField DataField="Celular" HeaderText="Horário Fim" />
-                                                <asp:BoundField DataField="Email" HeaderText="Descrição" />
+                                                <asp:BoundField DataField="Cargo" HeaderText="Cargo" />
+                                                <asp:BoundField DataField="DataDeNascimento" HeaderText="Nascimento" DataFormatString="{0:dd/MM/yyyy}" />
+                                                <asp:BoundField DataField="Telefone" HeaderText="Telefone" />
+                                                <asp:BoundField DataField="Celular" HeaderText="Celular" />
+                                                <asp:BoundField DataField="Email" HeaderText="E-mail" />
                                                 <asp:BoundField DataField="Ativo" HeaderText="Ativo" />
 
                                                 <asp:TemplateField>
