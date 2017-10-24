@@ -49,7 +49,7 @@ namespace Condominio.DeskTop.Formularios.Denuncia
 
                 denuncia.ValidaDados();
 
-                const string mensagem = "O conteúdo informado será enviado e análizado pelos administradores do condomínio. " +
+                const string mensagem = "O conteúdo informado será enviado e analizado pelos administradores do condomínio. " +
                                "\n deseja continuar?";
 
                 var opcao = CaixaDeMensagem.MensagemDeQuestao(mensagem);

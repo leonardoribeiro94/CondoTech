@@ -1,11 +1,11 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿/* Mova o conteúdo porque temos uma barra de navegação fixa de 50px de altura */
 body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
+/* Elemento de acondicionamento */
+/* Define um preenchimento básico para evitar que o conteúdo atinja as bordas */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -19,7 +19,7 @@ textarea {
 }
 
 
-/* Responsive: Portrait tablets and up */
+/* Responsive: Comprimidos para retrato e para cima */
 @media screen and (min-width: 768px) {
     .jumbotron {
         margin-top: 20px;
