@@ -1,10 +1,9 @@
 ﻿using Condominio.Controllers;
-using Condominio.Model;
 using Condominio.Web.Components;
 using System;
 using System.Linq;
 
-namespace Condominio.Web.Pages.Sindico
+namespace Condominio.Web.Pages.Sindico.Funcionario
 {
     public partial class InserirFuncionario : System.Web.UI.Page
     {
@@ -45,7 +44,7 @@ namespace Condominio.Web.Pages.Sindico
         {
             try
             {
-                var funcionario = new Funcionario
+                var funcionario = new Model.Funcionario
                 {
                     Nome = txtNome.Text,
                     DataDeNascimento = Convert.ToDateTime(txtDataNascimento.Text).Date,

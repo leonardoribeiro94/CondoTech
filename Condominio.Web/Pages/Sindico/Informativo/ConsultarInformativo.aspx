@@ -19,12 +19,12 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="col-md-5">
-                                    <asp:Label runat="server" for="txtEventoTipoNomeGrid" class="control-label"><b>Código: </b></asp:Label>
-                                    <asp:TextBox runat="server" ID="txtCodigoInformativo" CssClass="form-control" placeholder="Insira o código do Informativo"></asp:TextBox>
+                                    <asp:Label runat="server" for="txtEventoTipoNomeGrid" class="control-label"><b>título: </b></asp:Label>
+                                    <asp:TextBox runat="server" ID="txtValorInformativo" CssClass="form-control" placeholder="Insira o título do Informativo"></asp:TextBox>
                                 </div>
 
                                 <div class="col-md-4" style="margin-top: 15px">
-                                    <asp:LinkButton runat="server" ID="lkbPesquisar" Text="<span class='btn-label'><i class='glyphicon glyphicon-search'></i></span><b>Pesquisar</b>"
+                                    <asp:LinkButton runat="server" ID="lkbPesquisar" OnClick="lkbPesquisar_OnClick" Text="<span class='btn-label'><i class='glyphicon glyphicon-search'></i></span><b>Pesquisar</b>"
                                         CssClass="btn btn-labeled btn-primary"></asp:LinkButton>
                                 </div>
                             </div>
@@ -34,16 +34,15 @@
                             <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
-                                        <asp:GridView ID="grvFuncionario" runat="server" DataKeyNames="IdInformativo" CssClass="table table-responsive bs-pagination"
+                                        <asp:GridView ID="grvInformativo" runat="server" DataKeyNames="IdInformativo" CssClass="table table-responsive bs-pagination"
                                             PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
-                                            GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5">
+                                            GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="grvInformativo_OnPageIndexChanging">
                                             <Columns>
                                                 <asp:BoundField DataField="IdInformativo" HeaderText="Código" />
                                                 <asp:BoundField DataField="Titulo" HeaderText="Título" />
                                                 <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
                                                 <asp:BoundField DataField="DataCadastro" HeaderText="Cadastro" DataFormatString="{0:dd/MM/yyyy}" />
                                                 <asp:BoundField DataField="Nome" HeaderText="Informante" />
-                                                <asp:BoundField DataField="Ativo" HeaderText="Ativo" />
 
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>

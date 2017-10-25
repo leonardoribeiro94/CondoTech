@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web.Script.Serialization;
 using System.Web.UI;
 
-namespace Condominio.Web.Pages.Sindico
+namespace Condominio.Web.Pages.Sindico.Funcionario
 {
     public partial class ConsultarFuncionario : Page
     {
@@ -53,14 +53,14 @@ namespace Condominio.Web.Pages.Sindico
 
         protected void LkbInserir_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pages/Sindico/InserirFuncionario.aspx", false);
+            Response.Redirect("~/Pages/Sindico/Funcionario/InserirFuncionario.aspx", false);
         }
 
         protected void LbtnEditar_Click(object sender, EventArgs e)
         {
             var datakey = Services.AddSession(sender, grvFuncionario);
             Session.Add("IdFuncionario", datakey["IdFuncionario"]);
-            Response.Redirect("~/Pages/Sindico/InserirFuncionario.aspx", false);
+            Response.Redirect("~/Pages/Sindico/Funcionario/InserirFuncionario.aspx", false);
         }
 
         protected void LbtnExcluir_OnClick(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace Condominio.Web.Pages.Sindico
                 var idFuncionario = Convert.ToInt32(ViewState["IdFuncionario"]);
                 _funcionarioControl.ExcluirFuncionario(idFuncionario);
 
-                Response.Redirect("~/Pages/Sindico/ConsultarFuncionario.aspx", false);
+                Response.Redirect("~/Pages/Sindico/Funcionario/ConsultarFuncionario.aspx", false);
             }
             catch (Exception exception)
             {

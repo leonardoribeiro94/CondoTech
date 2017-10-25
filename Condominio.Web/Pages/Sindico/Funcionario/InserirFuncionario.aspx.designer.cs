@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Condominio.Web.Pages.Sindico {
-    
-    
-    public partial class InserirFuncionario {
-        
+namespace Condominio.Web.Pages.Sindico.Funcionario
+{
+
+
+    public partial class InserirFuncionario
+    {
+
         /// <summary>
         /// lkbVoltar control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Condominio.Web.Pages.Sindico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkbVoltar;
-        
+
         /// <summary>
         /// txtNome control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Condominio.Web.Pages.Sindico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNome;
-        
+
         /// <summary>
         /// txtDataNascimento control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Condominio.Web.Pages.Sindico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDataNascimento;
-        
+
         /// <summary>
         /// txtTelefone control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Condominio.Web.Pages.Sindico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefone;
-        
+
         /// <summary>
         /// txtCelular control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Condominio.Web.Pages.Sindico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCelular;
-        
+
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Condominio.Web.Pages.Sindico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
+
         /// <summary>
         /// txtCpf control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Condominio.Web.Pages.Sindico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCpf;
-        
+
         /// <summary>
         /// ddlCargo control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Condominio.Web.Pages.Sindico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCargo;
-        
+
         /// <summary>
         /// lbtnInserirFuncionario control.
         /// </summary>

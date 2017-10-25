@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InserirFuncionario.aspx.cs" Inherits="Condominio.Web.Pages.Sindico.InserirFuncionario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InserirFuncionario.aspx.cs" Inherits="Condominio.Web.Pages.Sindico.Funcionario.InserirFuncionario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/InserirFuncionario/funcionario-Inserir-mask.js")%>"></script>

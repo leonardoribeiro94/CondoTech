@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Condominio.Model.Enum;
+using System;
 
 namespace Condominio.Model.QueryModel
 {
@@ -10,5 +11,6 @@ namespace Condominio.Model.QueryModel
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public DateTime DataCadastro { get; set; }
+        public EntidadeAtiva Ativo { get; set; }
     }
 }

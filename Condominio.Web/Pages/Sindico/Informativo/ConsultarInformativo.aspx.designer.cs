@@ -22,13 +22,13 @@ namespace Condominio.Web.Pages.Sindico.Informativo {
         protected global::System.Web.UI.WebControls.LinkButton lkbInserir;
         
         /// <summary>
-        /// txtCodigoInformativo control.
+        /// txtValorInformativo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodigoInformativo;
+        protected global::System.Web.UI.WebControls.TextBox txtValorInformativo;
         
         /// <summary>
         /// lkbPesquisar control.
@@ -40,13 +40,13 @@ namespace Condominio.Web.Pages.Sindico.Informativo {
         protected global::System.Web.UI.WebControls.LinkButton lkbPesquisar;
         
         /// <summary>
-        /// grvFuncionario control.
+        /// grvInformativo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvFuncionario;
+        protected global::System.Web.UI.WebControls.GridView grvInformativo;
         
         /// <summary>
         /// UpdateProgress1 control.

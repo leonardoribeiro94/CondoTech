@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using Condominio.DataAccesLayer.Repositorios;
+﻿using Condominio.DataAccesLayer.Repositorios;
 using Condominio.Model;
 using Condominio.Model.QueryModel;
+using System.Collections.Generic;
 
 namespace Condominio.Controllers
 {
@@ -22,5 +22,10 @@ namespace Condominio.Controllers
 
         public IEnumerable<ObterInformativo> ObterInformativos() => _informativo.ObterInformativo();
 
+        public IEnumerable<ObterInformativo> ObterInformativosPorId(int valor) =>
+            _informativo.ObterInformativoPorId(valor);
+
+        public IEnumerable<ObterInformativo> ObterInformativoPorTitulo(string titulo) =>
+            _informativo.ObterInformativoPorTitulo(titulo);
     }
 }

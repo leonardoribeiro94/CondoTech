@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using Condominio.DataAccesLayer.Conexao;
+﻿using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
 using Condominio.Model.Enum;
 using Condominio.Model.QueryModel;
 using Dapper;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace Condominio.DataAccesLayer.Repositorios
 {
@@ -62,6 +63,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                                         "c.Nome as 'Cargo', " +
                                         "i.Titulo, " +
                                         "i.Descricao, " +
+                                        "i.Ativo," +
                                         "i.DataCadastro from Funcionario f " +
                                         "join Cargo c on c.IdCargo = f.IdCargo " +
                                         "join Informativo i on i.IdFuncionario = f.IdFuncionario " +
@@ -69,6 +71,16 @@ namespace Condominio.DataAccesLayer.Repositorios
 
                 return Connection.Query<ObterInformativo>(sqlQuery);
             }
+        }
+
+        public IEnumerable<ObterInformativo> ObterInformativoPorId(int id)
+        {
+            return ObterInformativo().Where(x => x.IdInformativo.Equals(id));
+        }
+
+        public IEnumerable<ObterInformativo> ObterInformativoPorTitulo(string valor)
+        {
+            return ObterInformativo().Where(x => x.Titulo.ToLower().Contains(valor.ToLower()));
         }
     }
 }
