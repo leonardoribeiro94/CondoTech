@@ -2,6 +2,7 @@
 using Condominio.Web.Components;
 using System;
 using System.Linq;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -56,6 +57,31 @@ namespace Condominio.Web.Pages.Sindico.Informativo
             {
                 grvInformativo.PageIndex = e.NewPageIndex;
                 PreencherGridInformativo();
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
+
+        protected void lbtnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var javascript = new JavaScriptSerializer();
+                var gridViewRow = Services.ObterLinhaDeDados(sender, grvInformativo);
+                var dataKey = grvInformativo.DataKeys[gridViewRow.RowIndex];
+
+                if (dataKey != null)
+                {
+                    var idFuncionario = Convert.ToInt32(dataKey["IdFuncionario"]);
+                    var idSerializado = javascript.Serialize(idFuncionario);
+
+                    ViewState.Add("IdFuncionario", Convert.ToInt32(idSerializado));
+
+                    ScriptManager.RegisterClientScriptBlock(Page, GetType(),
+                        "modaldeleteFuncionario", "confirmarExcluir(\"" + idSerializado + "\")", true);
+                }
             }
             catch (Exception exception)
             {

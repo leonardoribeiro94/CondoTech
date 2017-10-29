@@ -179,6 +179,7 @@
     <Content Include="Scripts\bootstrap-pagination\bs.pagination.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\compartilhado\validacao-de-campos.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.maskedinput.js" />
