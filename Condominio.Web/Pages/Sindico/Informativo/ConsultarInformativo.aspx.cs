@@ -1,5 +1,6 @@
 ﻿using Condominio.Controllers;
 using Condominio.Web.Components;
+using Condominio.Web.Handler;
 using System;
 using System.Linq;
 using System.Web.Script.Serialization;
@@ -74,14 +75,82 @@ namespace Condominio.Web.Pages.Sindico.Informativo
 
                 if (dataKey != null)
                 {
-                    var idFuncionario = Convert.ToInt32(dataKey["IdFuncionario"]);
+                    var idFuncionario = Convert.ToInt32(dataKey["IdInformativo"]);
                     var idSerializado = javascript.Serialize(idFuncionario);
 
                     ViewState.Add("IdFuncionario", Convert.ToInt32(idSerializado));
 
                     ScriptManager.RegisterClientScriptBlock(Page, GetType(),
-                        "modaldeleteFuncionario", "confirmarExcluir(\"" + idSerializado + "\")", true);
+                        "modaldeleteFuncionario", "confirmarExcluir()", true);
                 }
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
+
+        protected void lbtnEditar_OnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridViewRow = Services.ObterLinhaDeDados(sender, grvInformativo);
+                var dataKey = grvInformativo.DataKeys[gridViewRow.RowIndex];
+
+                if (dataKey != null) Session.Add("IdInformativo", dataKey["IdInformativo"]);
+
+                AtualizaPagina();
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
+
+        protected void btnDeletarInformativo_OnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var idInformativo = Convert.ToInt32(ViewState["IdFuncionario"]);
+                _informativoControl.DeletarInformativo(idInformativo);
+                Response.Redirect("~/Pages/Sindico/Informativo/ConsultarInformativo.aspx.", false);
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
+
+        private void AtualizaPagina()
+        {
+            Response.Redirect("~/Pages/Sindico/Informativo/InserirInformativo.aspx", false);
+        }
+
+        protected void lblDownload_OnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var gridViewRow = Services.ObterLinhaDeDados(sender, grvInformativo);
+                var dataKey = grvInformativo.DataKeys[gridViewRow.RowIndex];
+
+                if (dataKey != null)
+                {
+                    var idInformativo = Convert.ToInt32(dataKey["IdInformativo"]);
+                    var funcionario = _informativoControl.ObterInformativosPorId(idInformativo);
+
+                    if (funcionario.Documento != null)
+                    {
+                        VisualizacaoDeDocumento.DocumentArray = funcionario.Documento;
+                        VisualizacaoDeDocumento.TipoOpcaoHandler = VisualizacaoDeDocumento.OpcaoHandler.Show;
+                        ScriptManager.RegisterStartupScript(Page, GetType(), "abrirDocumentoWeb", "abrirDocumento()",
+                            true);
+                    }
+                    else
+                    {
+                        _mensagens.MensagemDeExcessao("Anexo de documento inexistente!", Page);
+                    }
+                }
+
             }
             catch (Exception exception)
             {

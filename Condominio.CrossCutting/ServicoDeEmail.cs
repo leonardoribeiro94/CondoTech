@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Mail;
 
-namespace Condominio.DeskTop.Componentes
+namespace Condominio.CrossCutting
 {
     public static class ServicoDeEmail
     {

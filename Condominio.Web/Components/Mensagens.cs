@@ -9,8 +9,6 @@ namespace Condominio.Web.Components
         {
             var javascriptSerialize = new JavaScriptSerializer().Serialize(excessao);
             ScriptManager.RegisterClientScriptBlock(nomeDoFormulario.Page, GetType(), "modalExcessao", $"fn_ModalError({javascriptSerialize});", true);
-            //ScriptManager.RegisterClientScriptBlock(nomeDoFormulario.Page, GetType(), "modalExcessao", "fn_ModalError(\" " + excessao.Replace("\'", string.Empty).Replace(Environment.NewLine, string.Empty) + "\");", true);
         }
-
     }
 }

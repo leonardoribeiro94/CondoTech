@@ -22,7 +22,7 @@ namespace Condominio.Controllers
 
         public IEnumerable<ObterInformativo> ObterInformativos() => _informativo.ObterInformativo();
 
-        public IEnumerable<ObterInformativo> ObterInformativosPorId(int valor) =>
+        public ObterInformativo ObterInformativosPorId(int valor) =>
             _informativo.ObterInformativoPorId(valor);
 
         public IEnumerable<ObterInformativo> ObterInformativoPorTitulo(string titulo) =>

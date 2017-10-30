@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{149F5120-DF71-4860-BCD5-83699DBA6EE5}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Controllers", "Condominio.Controllers\Condominio.Controllers.csproj", "{FEB2E690-78A8-4163-9ADE-93365AD8F819}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Web", "Condominio.Web\Condominio.Web.csproj", "{A98B306C-98EE-45DE-ADA8-2C6F7D41062A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.CrossCutting", "Condominio.CrossCutting\Condominio.CrossCutting.csproj", "{249506A6-D024-4BD8-B82B-9C4359297335}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{A98B306C-98EE-45DE-ADA8-2C6F7D41062A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A98B306C-98EE-45DE-ADA8-2C6F7D41062A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A98B306C-98EE-45DE-ADA8-2C6F7D41062A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{249506A6-D024-4BD8-B82B-9C4359297335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{249506A6-D024-4BD8-B82B-9C4359297335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{249506A6-D024-4BD8-B82B-9C4359297335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{249506A6-D024-4BD8-B82B-9C4359297335}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <script src="<%=ResolveClientUrl("~/Scripts/bootstrap-pagination/bs.pagination.min.js")%>"></script>
-    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/ConsultarFuncionario/funcionario-consulta-validacao.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/funcionario/funcionario-consulta-validacao.js")%>"></script>
     
     <script>
         var btnDeletarFuncionario ="#<%=btnDeletarFuncionario.ClientID%>";

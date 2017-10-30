@@ -1,4 +1,5 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting;
 using Condominio.DeskTop.Componentes;
 using Condominio.Model;
 using System;

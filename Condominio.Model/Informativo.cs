@@ -15,7 +15,8 @@ namespace Condominio.Model
         public Funcionario Funcionario { get; set; }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
-
+        public byte[] Documento { get; set; }
+        public string TipoDocumento { get; set; }
         #endregion
 
 
@@ -33,6 +34,13 @@ namespace Condominio.Model
                 throw new Exception("A descrição possui caracteres insuficientes!");
             }
 
+            if (Documento != null)
+            {
+                if (!TipoDocumento.ToLower().Equals(".pdf"))
+                {
+                    throw new Exception("O documento deve ser de formato PDF!");
+                }
+            }
             CamposTextosMaiusculos();
         }
 

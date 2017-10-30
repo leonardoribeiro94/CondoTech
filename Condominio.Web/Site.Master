@@ -19,6 +19,7 @@
     <script src="<%=ResolveClientUrl("Scripts/bootstrap-dialog.js")%>"></script>
     <script src="<%=ResolveClientUrl("Scripts/modais-genericas/modais-genericas.js")%>"></script>
     <script src="<%=ResolveClientUrl("Scripts/compartilhado/validacao-de-campos.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/compartilhado/visualizacao-documento.js")%>"></script>
    
     
     <asp:ContentPlaceHolder ID="Head" runat="server">

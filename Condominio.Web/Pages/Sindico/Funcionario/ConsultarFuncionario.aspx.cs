@@ -79,7 +79,7 @@ namespace Condominio.Web.Pages.Sindico.Funcionario
                     ViewState.Add("IdFuncionario", Convert.ToInt32(idSerializado));
 
                     ScriptManager.RegisterClientScriptBlock(Page, GetType(),
-                        "modaldeleteFuncionario", "confirmarExcluir(\"" + idSerializado + "\")", true);
+                        "modaldeleteFuncionario", "confirmarExcluir()", true);
                 }
             }
             catch (Exception exception)

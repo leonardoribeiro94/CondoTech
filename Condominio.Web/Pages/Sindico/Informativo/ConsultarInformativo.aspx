@@ -2,7 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <script src="<%=ResolveClientUrl("~/Scripts/bootstrap-pagination/bs.pagination.min.js")%>"></script>
-
+    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/informativo/informativo-consulta-validacao.js")%>"></script>
+    
+    <script>
+        var btnDeletarInformativo = "#<%=btnDeletarInformativo.ClientID%>";
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager runat="server" EnablePageMethods="True"></asp:ScriptManager>
@@ -45,11 +49,17 @@
                                                 <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
                                                 <asp:BoundField DataField="DataCadastro" HeaderText="Cadastro" DataFormatString="{0:dd/MM/yyyy}" />
                                                 <asp:BoundField DataField="Nome" HeaderText="Informante" />
-
+                                                
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnEditar" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lblDownload" OnClick="lblDownload_OnClick" Text="<span class='btn-label-'><i class='fa fa-download' aria-hidden='true'></i>"></asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                <asp:TemplateField>
+                                                    <ItemStyle Width="20px"></ItemStyle>
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton runat="server" ID="lbtnEditar" OnClick="lbtnEditar_OnClick" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 
@@ -85,7 +95,7 @@
             </div>
 
             <div class="hidden">
-                <asp:Button runat="server" ID="btnDeletarInformativo" />
+                <asp:Button runat="server" ID="btnDeletarInformativo" OnClick="btnDeletarInformativo_OnClick"/>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

@@ -21,6 +21,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                 parametros.Add("@Titulo", informativo.Titulo);
                 parametros.Add("@Descricao", informativo.Descricao);
                 parametros.Add("@DataCadastro", DateTime.Now);
+                parametros.Add("@Documento", informativo.Documento);
                 parametros.Add("@Ativo", EntidadeAtiva.Ativo);
 
                 Connection.Execute("Insert_Informativo", parametros, commandType: CommandStoredProcedure);
@@ -38,6 +39,12 @@ namespace Condominio.DataAccesLayer.Repositorios
                 parametros.Add("@Descricao", informativo.Descricao);
                 parametros.Add("@DataCadastro", DateTime.Now);
                 parametros.Add("@Ativo", EntidadeAtiva.Ativo);
+
+                if (informativo.Documento != null)
+                {
+                    parametros.Add("@Documento", informativo.Documento);
+                }
+
 
                 Connection.Execute("Update_Informativo", parametros, commandType: CommandStoredProcedure);
             }
@@ -64,7 +71,9 @@ namespace Condominio.DataAccesLayer.Repositorios
                                         "i.Titulo, " +
                                         "i.Descricao, " +
                                         "i.Ativo," +
-                                        "i.DataCadastro from Funcionario f " +
+                                        "i.DataCadastro, " +
+                                        "i.Documento " +
+                                        "from Funcionario f " +
                                         "join Cargo c on c.IdCargo = f.IdCargo " +
                                         "join Informativo i on i.IdFuncionario = f.IdFuncionario " +
                                         "where i.Ativo = 0";
@@ -73,9 +82,9 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<ObterInformativo> ObterInformativoPorId(int id)
+        public ObterInformativo ObterInformativoPorId(int id)
         {
-            return ObterInformativo().Where(x => x.IdInformativo.Equals(id));
+            return ObterInformativo().FirstOrDefault(x => x.IdInformativo.Equals(id));
         }
 
         public IEnumerable<ObterInformativo> ObterInformativoPorTitulo(string valor)

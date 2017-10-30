@@ -66,7 +66,7 @@ namespace Condominio.Web.Pages.Sindico.Funcionario
                     funcionario.Id = Convert.ToInt32(ViewState["IdFuncionario"]);
                     _funcionarioControl.AlterarFuncionario(funcionario);
                 }
-                Response.Redirect("~/Pages/Sindico/ConsultarFuncionario.aspx", false);
+                Response.Redirect("~/Pages/Sindico/funcionario/ConsultarFuncionario.aspx", false);
             }
             catch (Exception exception)
             {
@@ -76,12 +76,12 @@ namespace Condominio.Web.Pages.Sindico.Funcionario
 
         protected void lkbVoltar_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pages/Sindico/ConsultarFuncionario.aspx", false);
+            Response.Redirect("~/Pages/Sindico/funcionario/ConsultarFuncionario.aspx", false);
         }
 
         private void CarregaDadosDaSessao()
         {
-            if (!Session["IdFuncionario"].Equals(null))
+            if (Session["IdFuncionario"] != null)
             {
                 ViewState.Add("IdFuncionario", Session["IdFuncionario"]);
                 Session.Clear();

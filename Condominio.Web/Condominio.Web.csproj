@@ -46,6 +46,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -167,6 +171,7 @@
     <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
     <Content Include="Content\bootstrap-datepicker.min.css.map" />
     <Content Include="Content\bootstrap-datepicker.css.map" />
+    <Content Include="Handler\VisualizacaoDeDocumento.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\Sindico\Funcionario\ConsultarFuncionario.aspx" />
     <Content Include="Pages\Sindico\Funcionario\InserirFuncionario.aspx" />
@@ -180,6 +185,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\compartilhado\validacao-de-campos.js" />
+    <Content Include="Scripts\compartilhado\visualizacao-documento.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.maskedinput.js" />
@@ -253,9 +259,11 @@
     <Content Include="Scripts\modais-genericas\modais-genericas.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\pages\default.js" />
-    <Content Include="Scripts\pages\sindico\ConsultarFuncionario\funcionario-consulta-validacao.js" />
-    <Content Include="Scripts\pages\sindico\InserirFuncionario\funcionario-Inserir-mask.js" />
-    <Content Include="Scripts\pages\sindico\InserirFuncionario\funcionario-inserir-validacao.js" />
+    <Content Include="Scripts\pages\sindico\funcionario\funcionario-consulta-validacao.js" />
+    <Content Include="Scripts\pages\sindico\funcionario\funcionario-Inserir-mask.js" />
+    <Content Include="Scripts\pages\sindico\funcionario\funcionario-inserir-validacao.js" />
+    <Content Include="Scripts\pages\sindico\informativo\informativo-inserir-validacao.js" />
+    <Content Include="Scripts\pages\sindico\informativo\informativo-consulta-validacao.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
@@ -297,6 +305,9 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\VisualizacaoDeDocumento.ashx.cs">
+      <DependentUpon>VisualizacaoDeDocumento.ashx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Sindico\Funcionario\ConsultarFuncionario.aspx.cs">
       <DependentUpon>ConsultarFuncionario.aspx</DependentUpon>
@@ -354,6 +365,10 @@
     <ProjectReference Include="..\Condominio.Controllers\Condominio.Controllers.csproj">
       <Project>{feb2e690-78a8-4163-9ade-93365ad8f819}</Project>
       <Name>Condominio.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Condominio.CrossCutting\Condominio.CrossCutting.csproj">
+      <Project>{249506a6-d024-4bd8-b82b-9c4359297335}</Project>
+      <Name>Condominio.CrossCutting</Name>
     </ProjectReference>
     <ProjectReference Include="..\Condominio.Model\Condominio.Model.csproj">
       <Project>{d3b049e5-42f5-461c-830a-1c585d0a118a}</Project>

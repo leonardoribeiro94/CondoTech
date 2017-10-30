@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InserirFuncionario.aspx.cs" Inherits="Condominio.Web.Pages.Sindico.Funcionario.InserirFuncionario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-   <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/InserirFuncionario/funcionario-Inserir-mask.js")%>"></script>
-    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/InserirFuncionario/funcionario-inserir-validacao.js")%>"></script>
+   <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/funcionario/funcionario-Inserir-mask.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/funcionario/funcionario-inserir-validacao.js")%>"></script>
 
     <script>
         var txtNome = "#<%=txtNome.ClientID%>";
