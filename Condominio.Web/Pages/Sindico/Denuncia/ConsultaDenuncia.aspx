@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConsultaDenuncia.aspx.cs" Inherits="Condominio.Web.Pages.Sindico.Denuncia.ConsultaDenuncia" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <script src="<%=ResolveClientUrl("~/Scripts/bootstrap-pagination/bs.pagination.min.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/denuncia/denuncia-consultar-mask.js")%>"></script>
+    
+    <script>
+        var txtDataInicio = "#<%=txtDataInicio.ClientID%>";
+        var txtDataFim = "#<%=txtDataFim.ClientID%>";
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager runat="server" EnablePageMethods="True"></asp:ScriptManager>
@@ -14,12 +21,16 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="col-md-5">
-                                    <asp:Label runat="server" for="txtEventoTipoNomeGrid" class="control-label"><b>Nome: </b></asp:Label>
-                                    <asp:TextBox runat="server" ID="txtNomeFuncionario" CssClass="form-control" placeholder="Insira o nome do funcionário"></asp:TextBox>
+                                    <asp:Label runat="server" for="txtDataInicio" class="control-label"><b>Data Início: </b></asp:Label>
+                                    <asp:TextBox runat="server" ID="txtDataInicio" CssClass="form-control" placeholder="00/00/00000"></asp:TextBox>
+                                </div>
+                                <div class="col-md-5">
+                                    <asp:Label runat="server" for="txtDataFim" class="control-label"><b>Data Fim: </b></asp:Label>
+                                    <asp:TextBox runat="server" ID="txtDataFim" CssClass="form-control" placeholder="00/00/00000"></asp:TextBox>
                                 </div>
 
                                 <div class="col-md-4" style="margin-top: 15px">
-                                    <asp:LinkButton runat="server" ID="lkbPesquisar" OnClick="LkbPesquisar_OnClick" Text="<span class='btn-label'><i class='glyphicon glyphicon-search'></i></span><b>Pesquisar</b>"
+                                    <asp:LinkButton runat="server" ID="lkbPesquisar" OnClick="lkbPesquisar_OnClick" Text="<span class='btn-label'><i class='glyphicon glyphicon-search'></i></span><b>Pesquisar</b>"
                                                     CssClass="btn btn-labeled btn-primary"></asp:LinkButton>
                                 </div>
                             </div>
@@ -29,33 +40,25 @@
                             <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
-                                        <asp:GridView ID="grvFuncionario" runat="server" DataKeyNames="IdFuncionario" CssClass="table table-responsive bs-pagination"
+                                        <asp:GridView ID="grvDenuncia" runat="server" DataKeyNames="IdDenuncia" CssClass="table table-responsive bs-pagination"
                                                       PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
-                                                      GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="GrvFuncionario_PageIndexChanging">
+                                                      GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="grvDenuncia_OnPageIndexChanging">
                                             <Columns>
-                                                <asp:BoundField DataField="IdFuncionario" HeaderText="Código">
+                                                <asp:BoundField DataField="IdDenuncia" HeaderText="Código">
                                                     <ItemStyle CssClass="HideColumnGridView"></ItemStyle>
                                                     <HeaderStyle CssClass="HideColumnGridView"></HeaderStyle>
                                                 </asp:BoundField>
                                                 <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                                                <asp:BoundField DataField="Cargo" HeaderText="Cargo" />
-                                                <asp:BoundField DataField="DataDeNascimento" HeaderText="Nascimento" DataFormatString="{0:dd/MM/yyyy}" />
-                                                <asp:BoundField DataField="Telefone" HeaderText="Telefone" />
                                                 <asp:BoundField DataField="Celular" HeaderText="Celular" />
-                                                <asp:BoundField DataField="Email" HeaderText="E-mail" />
+                                                <asp:BoundField DataField="Email" HeaderText="Email"/>
+                                                <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
+                                                <asp:BoundField DataField="DataDenuncia" HeaderText="Data da Denúncia" DataFormatString="{0:dd/MM/yyyy}"/>
                                                 <asp:BoundField DataField="Ativo" HeaderText="Ativo" />
 
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnEditar" OnClick="LbtnEditar_Click" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
-
-                                                <asp:TemplateField>
-                                                    <ItemStyle Width="20px"></ItemStyle>
-                                                    <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" OnClick="LbtnExcluir_OnClick" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnDetalhe" OnClick="lbtnDetalhe_OnClick" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
@@ -81,10 +84,6 @@
                         </asp:UpdateProgress>
                     </div>
                 </div>
-            </div>
-            
-            <div class="hidden">
-                <asp:Button runat="server" ID="btnDeletarFuncionario" OnClick="DeletarFuncionario" />
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

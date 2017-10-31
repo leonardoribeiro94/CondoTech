@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using Condominio.DataAccesLayer.Conexao;
+﻿using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
 using Condominio.Model.Enum;
+using Condominio.Model.QueryModel;
 using Dapper;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace Condominio.DataAccesLayer.Repositorios
 {
@@ -26,6 +28,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                 Connection.Execute("Insert_Denuncia", parametros, commandType: CommandStoredProcedure);
             }
         }
+
 
         public void Atualizar(Denuncia denuncia)
         {
@@ -53,13 +56,24 @@ namespace Condominio.DataAccesLayer.Repositorios
             Connection.Execute("Delete_Denuncia", parametros, commandType: CommandStoredProcedure);
         }
 
-        public IEnumerable<Denuncia> ObterDenuncias()
+        public IEnumerable<QueryDenuncia> ObterDenuncias()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string sqlComando = "select * from Denuncia where Ativo = 1";
+                const string sqlComando = "select * from Denuncia where Ativo = 0 order by DataDenuncia desc";
 
-                return Connection.Query<Denuncia>(sqlComando);
+                return Connection.Query<QueryDenuncia>(sqlComando);
+            }
+        }
+
+
+        public IEnumerable<QueryDenuncia> ObterDenunciasPorData(DateTime dataInicial, DateTime dataFinal)
+        {
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                return ObterDenuncias()
+                    .Where(x => x.DataDenuncia.Date >= dataInicial.Date
+                    && x.DataDenuncia <= dataFinal.Date);
             }
         }
     }

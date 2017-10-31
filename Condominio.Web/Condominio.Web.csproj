@@ -260,6 +260,7 @@
     <Content Include="Scripts\modais-genericas\modais-genericas.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\pages\default.js" />
+    <Content Include="Scripts\pages\sindico\denuncia\denuncia-consultar-mask.js" />
     <Content Include="Scripts\pages\sindico\funcionario\funcionario-consulta-validacao.js" />
     <Content Include="Scripts\pages\sindico\funcionario\funcionario-Inserir-mask.js" />
     <Content Include="Scripts\pages\sindico\funcionario\funcionario-inserir-validacao.js" />

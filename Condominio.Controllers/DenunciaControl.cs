@@ -1,5 +1,7 @@
 ﻿using Condominio.DataAccesLayer.Repositorios;
 using Condominio.Model;
+using Condominio.Model.QueryModel;
+using System;
 using System.Collections.Generic;
 
 namespace Condominio.Controllers
@@ -19,6 +21,9 @@ namespace Condominio.Controllers
 
         public void DeletarDelnuncia(int id) => _denunciaRepositorio.Excluir(id);
 
-        public IEnumerable<Denuncia> ObterDenuncias() => _denunciaRepositorio.ObterDenuncias();
+        public IEnumerable<QueryDenuncia> ObterDenuncias() => _denunciaRepositorio.ObterDenuncias();
+
+        public IEnumerable<QueryDenuncia> ObterDenunciasPorData(DateTime dataInicial, DateTime dataFinal)
+            => _denunciaRepositorio.ObterDenunciasPorData(dataInicial, dataFinal);
     }
 }

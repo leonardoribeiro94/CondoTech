@@ -13,13 +13,22 @@ namespace Condominio.Web.Pages.Sindico.Denuncia {
     public partial class ConsultaDenuncia {
         
         /// <summary>
-        /// txtNomeFuncionario control.
+        /// txtDataInicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeFuncionario;
+        protected global::System.Web.UI.WebControls.TextBox txtDataInicio;
+        
+        /// <summary>
+        /// txtDataFim control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDataFim;
         
         /// <summary>
         /// lkbPesquisar control.
@@ -31,13 +40,13 @@ namespace Condominio.Web.Pages.Sindico.Denuncia {
         protected global::System.Web.UI.WebControls.LinkButton lkbPesquisar;
         
         /// <summary>
-        /// grvFuncionario control.
+        /// grvDenuncia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvFuncionario;
+        protected global::System.Web.UI.WebControls.GridView grvDenuncia;
         
         /// <summary>
         /// UpdateProgress1 control.
@@ -47,14 +56,5 @@ namespace Condominio.Web.Pages.Sindico.Denuncia {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdateProgress UpdateProgress1;
-        
-        /// <summary>
-        /// btnDeletarFuncionario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeletarFuncionario;
     }
 }
