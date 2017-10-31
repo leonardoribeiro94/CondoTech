@@ -24,7 +24,10 @@ namespace Condominio.Web.Pages.Sindico.Informativo
         {
             try
             {
-                PreencherGridInformativo();
+                if (!IsPostBack)
+                {
+                    PreencherGridInformativo();
+                }
             }
             catch (Exception exception)
             {
@@ -150,12 +153,16 @@ namespace Condominio.Web.Pages.Sindico.Informativo
                         _mensagens.MensagemDeExcessao("Anexo de documento inexistente!", Page);
                     }
                 }
-
             }
             catch (Exception exception)
             {
                 _mensagens.MensagemDeExcessao(exception.Message, Page);
             }
+        }
+
+        protected void lkbInserir_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/Sindico/Informativo/InserirInformativo.aspx", false);
         }
     }
 }

@@ -23,8 +23,11 @@ namespace Condominio.Web.Pages.Sindico.Funcionario
         {
             try
             {
-                CarregaDadosDaSessao();
-                CarregarDropDownListCargo();
+                if (!IsPostBack)
+                {
+                    CarregaDadosDaSessao();
+                    CarregarDropDownListCargo();
+                }
             }
             catch (Exception exception)
             {

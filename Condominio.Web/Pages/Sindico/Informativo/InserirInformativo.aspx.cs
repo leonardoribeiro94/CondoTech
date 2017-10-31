@@ -22,7 +22,10 @@ namespace Condominio.Web.Pages.Sindico.Informativo
         {
             try
             {
-                CarregaDadosDaSessao();
+                if (!IsPostBack)
+                {
+                    CarregaDadosDaSessao();
+                }
             }
             catch (Exception exception)
             {
@@ -69,7 +72,7 @@ namespace Condominio.Web.Pages.Sindico.Informativo
 
                 informativo.ValidaDados();
 
-                if (ViewState["IdInformativo"].Equals(null))
+                if (ViewState["IdInformativo"] == null)
                 {
                     _informativoControl.InserirInformativo(informativo);
                 }

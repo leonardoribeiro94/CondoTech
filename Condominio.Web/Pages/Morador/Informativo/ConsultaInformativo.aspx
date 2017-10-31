@@ -1,12 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConsultarInformativo.aspx.cs" Inherits="Condominio.Web.Pages.Sindico.Informativo.ConsultarInformativo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConsultaInformativo.aspx.cs" Inherits="Condominio.Web.Pages.Morador.Informativo.ConsultaInformativo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-    <script src="<%=ResolveClientUrl("~/Scripts/bootstrap-pagination/bs.pagination.min.js")%>"></script>
-    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/informativo/informativo-consulta-validacao.js")%>"></script>
-    
-    <script>
-        var btnDeletarInformativo = "#<%=btnDeletarInformativo.ClientID%>";
-    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager runat="server" EnablePageMethods="True"></asp:ScriptManager>
@@ -17,9 +11,6 @@
                     <div class="col-md-12 well formulario">
                         <fieldset>
                             <legend><b>Consultar</b> Informativos &nbsp;
-                                <asp:LinkButton runat="server" ID="lkbInserir"
-                                    Text="<span class='btn-label'></span><b>Inserir</b>"
-                                    CssClass="btn btn-default" OnClick="lkbInserir_OnClick"></asp:LinkButton>
                             </legend>
                         </fieldset>
                         <div class="row">
@@ -40,35 +31,23 @@
                             <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
-                                        <asp:GridView ID="grvInformativo" runat="server" DataKeyNames="IdInformativo" CssClass="table table-responsive bs-pagination"
+                                        <asp:GridView ID="grvInformativoMorador" runat="server" DataKeyNames="IdInformativo" CssClass="table table-responsive bs-pagination"
                                             PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
-                                            GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="grvInformativo_OnPageIndexChanging">
+                                            GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="grvInformativoMorador_OnPageIndexChanging">
                                             <Columns>
                                                 <asp:BoundField DataField="IdInformativo" HeaderText="Código" />
                                                 <asp:BoundField DataField="Titulo" HeaderText="Título" />
                                                 <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
                                                 <asp:BoundField DataField="DataCadastro" HeaderText="Cadastro" DataFormatString="{0:dd/MM/yyyy}" />
                                                 <asp:BoundField DataField="Nome" HeaderText="Informante" />
-                                                
+
                                                 <asp:TemplateField>
-                                                    <ItemStyle Width="20px"></ItemStyle>
+                                                    <ItemStyle></ItemStyle>
                                                     <ItemTemplate>
                                                         <asp:LinkButton runat="server" ID="lblDownload" title="Download de Anexo" OnClick="lblDownload_OnClick" Text="<span class='btn-label-'><i class='fa fa-download' aria-hidden='true'></i>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
-                                                <asp:TemplateField>
-                                                    <ItemStyle Width="20px"></ItemStyle>
-                                                    <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnEditar" title="Editar" OnClick="lbtnEditar_OnClick" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
 
-                                                <asp:TemplateField>
-                                                    <ItemStyle Width="20px"></ItemStyle>
-                                                    <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" title="Excluir" OnClick="lbtnExcluir_Click" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
                                             </Columns>
 
                                             <EmptyDataTemplate>
@@ -92,10 +71,6 @@
                         </asp:UpdateProgress>
                     </div>
                 </div>
-            </div>
-
-            <div class="hidden">
-                <asp:Button runat="server" ID="btnDeletarInformativo" OnClick="btnDeletarInformativo_OnClick"/>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

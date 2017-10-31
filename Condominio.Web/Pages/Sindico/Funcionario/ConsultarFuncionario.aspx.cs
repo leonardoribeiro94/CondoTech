@@ -20,7 +20,10 @@ namespace Condominio.Web.Pages.Sindico.Funcionario
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            PreencherGridFuncionarios();
+            if (!IsPostBack)
+            {
+                PreencherGridFuncionarios();
+            }
         }
 
         protected void LkbPesquisar_OnClick(object sender, EventArgs e)
