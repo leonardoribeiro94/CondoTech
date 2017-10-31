@@ -16,3 +16,26 @@
 
     });
 }
+
+
+function fn_ModalExibirImagem(imagem) {
+    BootstrapDialog.show({
+        type: BootstrapDialog.TYPE_PRIMARY,
+        title: "<h4><b>Visualização da Imagem</b></h4>",
+        message:
+        "</hr>" +
+        "<div style='margin-left:100px'>" +
+        "<img src='" + imagem + "'class='img-thumbnail center-block'/>" +
+        "</div>" +
+        "</br>",
+        buttons:
+        [
+            {
+                label: "Close",
+                action: function (dialog) {
+                    dialog.close();
+                }
+            }
+        ]
+    });
+}

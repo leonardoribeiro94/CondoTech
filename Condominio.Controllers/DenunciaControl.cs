@@ -25,5 +25,9 @@ namespace Condominio.Controllers
 
         public IEnumerable<QueryDenuncia> ObterDenunciasPorData(DateTime dataInicial, DateTime dataFinal)
             => _denunciaRepositorio.ObterDenunciasPorData(dataInicial, dataFinal);
+
+        public QueryDenuncia ObterDenunciaPorId(int idDenuncia)
+            => _denunciaRepositorio.ObterDenunciaPorId(idDenuncia);
+
     }
 }

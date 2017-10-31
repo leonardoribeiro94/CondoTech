@@ -1,12 +1,14 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting;
 using Condominio.Web.Components;
 using System;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Condominio.Web.Pages.Sindico.Denuncia
 {
-    public partial class ConsultaDenuncia : System.Web.UI.Page
+    public partial class ConsultaDenuncia : Page
     {
         private readonly DenunciaControl _denunciaControl;
         private readonly Mensagens _mensagens;
@@ -35,7 +37,24 @@ namespace Condominio.Web.Pages.Sindico.Denuncia
 
         protected void lbtnDetalhe_OnClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var denuncia = new Model.Denuncia();
+
+                var gridViewRow = Services.ObterLinhaDeDados(sender, grvDenuncia);
+                var dataKey = grvDenuncia.DataKeys[gridViewRow.RowIndex];
+                var idDenuncia = Convert.ToInt32(dataKey["IdDenuncia"]);
+
+                denuncia.Imagem = _denunciaControl.ObterDenunciaPorId(idDenuncia).Imagem;
+                var novaImagem = ConverteArquivo.ParaImagem(denuncia.Imagem);
+
+                ScriptManager.RegisterClientScriptBlock(Page, GetType(),
+                    "modalExibirImagem", $"fn_ModalExibirImagem({novaImagem})", true);
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
         }
 
         protected void lkbPesquisar_OnClick(object sender, EventArgs e)
@@ -64,7 +83,8 @@ namespace Condominio.Web.Pages.Sindico.Denuncia
 
         protected void grvDenuncia_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-
+            grvDenuncia.PageIndex = e.NewPageIndex;
+            CarregaGridDenuncia();
         }
 
         private void CarregaGridDenuncia()

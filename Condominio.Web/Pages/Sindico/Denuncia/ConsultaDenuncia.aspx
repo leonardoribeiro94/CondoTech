@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-md-12 well formulario">
                         <fieldset>
-                            <legend><b>Consultar</b> Denúncias;</legend>
+                            <legend><b>Consultar</b> Denúncias</legend>
                         </fieldset>
                         <div class="row">
                             <div class="col-md-8">
@@ -56,9 +56,10 @@
                                                 <asp:BoundField DataField="Ativo" HeaderText="Ativo" />
 
                                                 <asp:TemplateField>
-                                                    <ItemStyle Width="20px"></ItemStyle>
+                                                    <ItemStyle></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnDetalhe" OnClick="lbtnDetalhe_OnClick" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnDetalhe" title="Anexo de Imagem" OnClick="lbtnDetalhe_OnClick" 
+                                                            Text="<span class='btn-label-'><i class='fa fa-picture-o' aria-hidden='true'></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>

@@ -76,5 +76,14 @@ namespace Condominio.DataAccesLayer.Repositorios
                     && x.DataDenuncia <= dataFinal.Date);
             }
         }
+
+        public QueryDenuncia ObterDenunciaPorId(int id)
+        {
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                return ObterDenuncias()
+                    .FirstOrDefault(x => x.IdDenuncia.Equals(id));
+            }
+        }
     }
 }

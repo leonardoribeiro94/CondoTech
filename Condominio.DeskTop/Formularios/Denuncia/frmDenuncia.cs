@@ -1,8 +1,8 @@
-﻿using Condominio.Controllers;
-using Condominio.DeskTop.Componentes;
+﻿using Condominio.DeskTop.Componentes;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Condominio.Controllers;
 
 namespace Condominio.DeskTop.Formularios.Denuncia
 {
@@ -87,8 +87,16 @@ namespace Condominio.DeskTop.Formularios.Denuncia
 
         private void LimparCampos()
         {
-            picDenuncia.Image = Image.FromFile(@"../PictureImages/picture-2.png");
-            LimparControles.Limpar(groupBoxDados);
+            try
+            {
+                picDenuncia.Image = Image.FromFile(@"../PictureImages/picture-2.png");
+                LimparControles.Limpar(groupBoxDados);
+            }
+            catch (Exception exception)
+            {
+                CaixaDeMensagem.MensagemDeErro(exception.Message);
+            }
+
         }
     }
 }
