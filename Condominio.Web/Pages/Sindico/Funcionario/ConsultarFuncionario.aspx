@@ -60,14 +60,14 @@
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnEditar" OnClick="LbtnEditar_Click" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnEditar" title="Editar" OnClick="LbtnEditar_Click" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" OnClick="LbtnExcluir_OnClick" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" title="Excluir" OnClick="LbtnExcluir_OnClick" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>

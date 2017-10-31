@@ -53,20 +53,20 @@
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lblDownload" OnClick="lblDownload_OnClick" Text="<span class='btn-label-'><i class='fa fa-download' aria-hidden='true'></i>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lblDownload" title="Download de Anexo" OnClick="lblDownload_OnClick" Text="<span class='btn-label-'><i class='fa fa-download' aria-hidden='true'></i>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnEditar" OnClick="lbtnEditar_OnClick" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnEditar" title="Editar" OnClick="lbtnEditar_OnClick" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
 
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" OnClick="lbtnExcluir_Click" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnExcluir" title="Excluir" OnClick="lbtnExcluir_Click" Text="<span class='btn-label-'><i class='fa fa-times'></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>

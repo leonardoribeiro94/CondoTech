@@ -58,7 +58,7 @@
                                                 <asp:TemplateField>
                                                     <ItemStyle></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnDetalhe" title="Anexo de Imagem" OnClick="lbtnDetalhe_OnClick" 
+                                                        <asp:LinkButton runat="server" ID="lbtnDetalhe" title="Visualizar Anexo de Imagem" OnClick="lbtnDetalhe_OnClick" 
                                                             Text="<span class='btn-label-'><i class='fa fa-picture-o' aria-hidden='true'></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
