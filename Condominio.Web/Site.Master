@@ -44,14 +44,25 @@
                             <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Cadastrar &nbsp;<span class="caret"></span></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="~/Pages/Sindico/ConsultarFuncionario.aspx" runat="server">Funcionário</a>
+                                    <a href="~/Pages/Sindico/Funcionario/ConsultarFuncionario.aspx" runat="server">
+                                        Funcionário
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#">Informativo</a>
+                                    <a href="~/Pages/Sindico/Informativo/ConsultarInformativo.aspx" runat="server">
+                                        Informativo
+                                    </a>
                                 </li>
                             </ul>
                         </li>
-                        <li><a runat="server" href="#">Denúncias</a></li>
+                        <li>
+                            <a runat="server" href="#">Consultas</a>
+                            <ul class="dropdown-menu"> 
+                                <li href="~/Pages/Sindico/Denuncia/ConsultaDenuncia.aspx" runat="server">
+                                    <a>Denúncia</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li><a runat="server" href="#">Área de Lazer</a></li>
                     </ul>
                     
