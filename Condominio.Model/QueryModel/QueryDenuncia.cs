@@ -1,16 +1,22 @@
 ﻿using Condominio.Model.Enum;
+using System;
 
 namespace Condominio.Model.QueryModel
 {
-    public class ObterFornecedores
+    public class QueryDenuncia
     {
-        public int IdFornecedor { get; set; }
+        #region Propriedades
+
+        public int IdDenuncia { get; set; }
         public string Nome { get; set; }
-        public string Cnpj { get; set; }
-        public string Telefone { get; set; }
         public string Celular { get; set; }
         public string Email { get; set; }
+        public byte[] Imagem { get; set; }
         public string Descricao { get; set; }
+        public DateTime DataDenuncia { get; set; }
         public EntidadeAtiva Ativo { get; set; }
+        public bool Anonimo { get; }
+
+        #endregion
     }
 }

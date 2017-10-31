@@ -2,7 +2,7 @@
 
 namespace Condominio.Model.QueryModel
 {
-    public class ObterHistoricoVisita
+    public class QueryHistoricoVisita
     {
         public int IdHistoricoVisita { get; set; }
         public int IdMorador { get; set; }

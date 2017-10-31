@@ -59,7 +59,7 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<ObterFuncionario> ObterFuncionarios()
+        public IEnumerable<QueryFuncionario> ObterFuncionarios()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
@@ -77,16 +77,16 @@ namespace Condominio.DataAccesLayer.Repositorios
                                                   "ON f.IdCargo = c.IdCargo " +
                                                   "AND f.Ativo = 0";
 
-                return Connection.Query<ObterFuncionario>(queryString);
+                return Connection.Query<QueryFuncionario>(queryString);
             }
         }
 
-        public IEnumerable<ObterFuncionario> ObterFuncionariosPorNome(string nome)
+        public IEnumerable<QueryFuncionario> ObterFuncionariosPorNome(string nome)
         {
             return ObterFuncionarios().Where(x => x.Nome.ToLower().Contains(nome));
         }
 
-        public ObterFuncionario ObterFuncionariosPorId(int id)
+        public QueryFuncionario ObterFuncionariosPorId(int id)
         {
             using (Connection = new SqlConnection(StringConnection))
             {

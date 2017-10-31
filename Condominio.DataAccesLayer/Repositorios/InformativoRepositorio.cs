@@ -61,7 +61,7 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<ObterInformativo> ObterInformativo()
+        public IEnumerable<QueryInformativo> ObterInformativo()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
@@ -78,16 +78,16 @@ namespace Condominio.DataAccesLayer.Repositorios
                                         "join Informativo i on i.IdFuncionario = f.IdFuncionario " +
                                         "where i.Ativo = 0";
 
-                return Connection.Query<ObterInformativo>(sqlQuery);
+                return Connection.Query<QueryInformativo>(sqlQuery);
             }
         }
 
-        public ObterInformativo ObterInformativoPorId(int id)
+        public QueryInformativo ObterInformativoPorId(int id)
         {
             return ObterInformativo().FirstOrDefault(x => x.IdInformativo.Equals(id));
         }
 
-        public IEnumerable<ObterInformativo> ObterInformativoPorTitulo(string valor)
+        public IEnumerable<QueryInformativo> ObterInformativoPorTitulo(string valor)
         {
             return ObterInformativo().Where(x => x.Titulo.ToLower().Contains(valor.ToLower()));
         }

@@ -70,41 +70,41 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<ObterMorador> ObterMoradores()
+        public IEnumerable<QueryMorador> ObterMoradores()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
                 var sqlComando = "Select * from Morador where Ativo = 0";
-                var lista = Connection.Query<ObterMorador>(sqlComando).ToList();
+                var lista = Connection.Query<QueryMorador>(sqlComando).ToList();
                 return lista;
             }
         }
 
-        public ICollection<ObterMorador> ObterMoradoresPorId(int id)
+        public ICollection<QueryMorador> ObterMoradoresPorId(int id)
         {
             using (Connection = new SqlConnection(StringConnection))
             {
                 var sqlComando = $"Select * from Morador where Nome like '%@id%' and Ativo = 0";
-                return Connection.Query<ObterMorador>(sqlComando, new { id }).ToList();
+                return Connection.Query<QueryMorador>(sqlComando, new { id }).ToList();
             }
         }
 
-        public ICollection<ObterMorador> ObterMoradoresPorNome(string nome)
+        public ICollection<QueryMorador> ObterMoradoresPorNome(string nome)
         {
             using (Connection = new SqlConnection(StringConnection))
             {
                 var sqlComando = $"Select * from Morador where Nome like '%'+@nome+'%' and ativo = 0";
 
-                return Connection.Query<ObterMorador>(sqlComando, new { nome }).ToList();
+                return Connection.Query<QueryMorador>(sqlComando, new { nome }).ToList();
             }
         }
 
-        public ICollection<ObterMorador> ObterMoradoresPorNomeEDataDeNascimento(string nome, DateTime nascimento)
+        public ICollection<QueryMorador> ObterMoradoresPorNomeEDataDeNascimento(string nome, DateTime nascimento)
         {
             using (Connection = new SqlConnection(StringConnection))
             {
                 const string sqlComando = "Select * from Morador where Nome like '%'+@nome+'%' or datadenascimento  = @nascimento and Ativo = 0";
-                return Connection.Query<ObterMorador>(sqlComando, new { nome, nascimento }).ToList();
+                return Connection.Query<QueryMorador>(sqlComando, new { nome, nascimento }).ToList();
             }
 
         }

@@ -20,12 +20,12 @@ namespace Condominio.Controllers
 
         public void DeletarInformativo(int idInformativo) => _informativo.Excluir(idInformativo);
 
-        public IEnumerable<ObterInformativo> ObterInformativos() => _informativo.ObterInformativo();
+        public IEnumerable<QueryInformativo> ObterInformativos() => _informativo.ObterInformativo();
 
-        public ObterInformativo ObterInformativosPorId(int valor) =>
+        public QueryInformativo ObterInformativosPorId(int valor) =>
             _informativo.ObterInformativoPorId(valor);
 
-        public IEnumerable<ObterInformativo> ObterInformativoPorTitulo(string titulo) =>
+        public IEnumerable<QueryInformativo> ObterInformativoPorTitulo(string titulo) =>
             _informativo.ObterInformativoPorTitulo(titulo);
     }
 }

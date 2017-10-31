@@ -2,7 +2,7 @@
 
 namespace Condominio.Model.QueryModel
 {
-    public class ObterAreaDeLazer
+    public class QueryAreaDeLazer
     {
         public int IdAreaDeLazer { get; set; }
         public byte[] Imagem { get; set; }

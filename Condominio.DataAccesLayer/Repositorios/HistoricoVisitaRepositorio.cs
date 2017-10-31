@@ -44,7 +44,7 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<ObterHistoricoVisita> ObterHistoricos()
+        public IEnumerable<QueryHistoricoVisita> ObterHistoricos()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
@@ -55,7 +55,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                                           "inner join Morador m on h.IdMorador = m.IdMorador " +
                                           "inner join Visitante v on h.IdMorador = v.IdVisitante";
 
-                return Connection.Query<ObterHistoricoVisita>(sqlcomando).OrderBy(x => x.DataEntrada);
+                return Connection.Query<QueryHistoricoVisita>(sqlcomando).OrderBy(x => x.DataEntrada);
             }
         }
     }

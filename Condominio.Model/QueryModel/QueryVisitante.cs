@@ -2,7 +2,7 @@
 
 namespace Condominio.Model.QueryModel
 {
-    public class ObterVisitante
+    public class QueryVisitante
     {
         public int IdVisitante { get; set; }
         public byte[] Imagem { get; set; }

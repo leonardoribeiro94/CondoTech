@@ -47,12 +47,12 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<ObterCargos> ObterCargos()
+        public IEnumerable<QueryCargos> ObterCargos()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
                 const string queryString = "Select * from Cargo";
-                var listaCargos = Connection.Query<ObterCargos>(queryString);
+                var listaCargos = Connection.Query<QueryCargos>(queryString);
 
                 return listaCargos;
             }

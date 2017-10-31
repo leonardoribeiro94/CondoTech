@@ -1,6 +1,6 @@
 ﻿namespace Condominio.Model.QueryModel
 {
-    public class ObterCargos
+    public class QueryCargos
     {
         #region Propriedades
 

@@ -2,7 +2,7 @@
 
 namespace Condominio.Model.QueryModel
 {
-    public class ObterUsuarioFuncionario
+    public class QueryUsuarioFuncionario
     {
         public int IdUsuario { get; set; }
         public int IdFuncionario { get; set; }

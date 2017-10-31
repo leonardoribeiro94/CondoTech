@@ -10,9 +10,9 @@ namespace Condominio.DeskTop.Formularios.Senha.AlterarSenha
 {
     public partial class FrmAlterarSenha : Form
     {
-        private readonly ObterUsuarioFuncionario _obterUsuarioFuncionario;
+        private readonly QueryUsuarioFuncionario _obterUsuarioFuncionario;
 
-        public FrmAlterarSenha(ObterUsuarioFuncionario obterUsuarioFuncionario)
+        public FrmAlterarSenha(QueryUsuarioFuncionario obterUsuarioFuncionario)
         {
             InitializeComponent();
 

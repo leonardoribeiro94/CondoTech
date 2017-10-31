@@ -61,13 +61,13 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<ObterVisitante> ObterVisitantes()
+        public IEnumerable<QueryVisitante> ObterVisitantes()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
                 const string comandoSql = "Select * from visitante where Ativo = 0";
 
-                return Connection.Query<ObterVisitante>(comandoSql).OrderBy(x => x.Nome).ToList();
+                return Connection.Query<QueryVisitante>(comandoSql).OrderBy(x => x.Nome).ToList();
             }
 
         }

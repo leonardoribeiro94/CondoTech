@@ -15,7 +15,7 @@ namespace Condominio.Controllers
 
         public void DeletarAreaDeLazer(int codigoAreaDeLazer) => _areaDeLazerRepositorio.Excluir(codigoAreaDeLazer);
 
-        public IEnumerable<ObterAreaDeLazer> ObterAreaDeLazer() => _areaDeLazerRepositorio.ObterAreasDeLazer();
+        public IEnumerable<QueryAreaDeLazer> ObterAreaDeLazer() => _areaDeLazerRepositorio.ObterAreasDeLazer();
     }
 
 }

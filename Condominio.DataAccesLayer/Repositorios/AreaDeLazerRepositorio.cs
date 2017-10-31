@@ -50,12 +50,12 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<ObterAreaDeLazer> ObterAreasDeLazer()
+        public IEnumerable<QueryAreaDeLazer> ObterAreasDeLazer()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
                 string query = "Select IdAreaDeLazer,imagem ,Nome, descricao from AreaDeLazer where Ativo = 0";
-                return Connection.Query<ObterAreaDeLazer>(query).OrderBy(x => x.IdAreaDeLazer);
+                return Connection.Query<QueryAreaDeLazer>(query).OrderBy(x => x.IdAreaDeLazer);
             }
         }
     }

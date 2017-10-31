@@ -18,17 +18,17 @@ namespace Condominio.Controllers
         public void AlterarUsuario(UsuarioFuncionario usuarioFuncionario) =>
             _usuarioFuncionarioRep.Atualizar(usuarioFuncionario);
 
-        public IEnumerable<ObterUsuarioFuncionario> ObterUsuarioFuncionarios()
+        public IEnumerable<QueryUsuarioFuncionario> ObterUsuarioFuncionarios()
             => _usuarioFuncionarioRep.ObterUsuarioFuncionarios();
 
-        public IEnumerable<ObterUsuarioFuncionario> ObterPorLoginFuncionariosUsuarios(string login, string senha)
+        public IEnumerable<QueryUsuarioFuncionario> ObterPorLoginFuncionariosUsuarios(string login, string senha)
             => _usuarioFuncionarioRep.ObterPorLoginUsuarioFuncionario(login, senha);
 
-        public IEnumerable<ObterUsuarioFuncionario> ObterPorIdObterUsuarioFuncionarios(int idUsuarioFuncionario)
+        public IEnumerable<QueryUsuarioFuncionario> ObterPorIdObterUsuarioFuncionarios(int idUsuarioFuncionario)
             =>
                 ObterUsuarioFuncionarios().Where(x => x.IdUsuario == idUsuarioFuncionario);
 
-        public IEnumerable<ObterUsuarioFuncionario> ObterPorCpfUsuarioFuncionarios(string cpf)
+        public IEnumerable<QueryUsuarioFuncionario> ObterPorCpfUsuarioFuncionarios(string cpf)
             => _usuarioFuncionarioRep.ObterUsuarioFuncionarios().Where(x => x.Cpf == cpf.Replace("-", ""));
     }
 }

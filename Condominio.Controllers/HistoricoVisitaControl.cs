@@ -20,7 +20,7 @@ namespace Condominio.Controllers
         public void AlterarHistoricoVisita(HistoricoVisita historicoVisita)
             => _historicoVisitaRepositorio.Alterar(historicoVisita);
 
-        public IEnumerable<ObterHistoricoVisita> ObterHistoricoVisitas()
+        public IEnumerable<QueryHistoricoVisita> ObterHistoricoVisitas()
         => _historicoVisitaRepositorio.ObterHistoricos();
 
     }

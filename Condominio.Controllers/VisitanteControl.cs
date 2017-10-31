@@ -20,7 +20,7 @@ namespace Condominio.Controllers
 
         public void DeletarVisitante(int id) => _visitanteRepositorio.Deletar(id);
 
-        public IEnumerable<ObterVisitante> ObterVisitantes()
+        public IEnumerable<QueryVisitante> ObterVisitantes()
         {
             return _visitanteRepositorio.ObterVisitantes();
         }

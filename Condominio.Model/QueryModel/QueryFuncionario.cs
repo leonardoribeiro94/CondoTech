@@ -3,7 +3,7 @@ using System;
 
 namespace Condominio.Model.QueryModel
 {
-    public class ObterFuncionario
+    public class QueryFuncionario
     {
         public int IdFuncionario { get; set; }
         public string Cargo { get; set; }

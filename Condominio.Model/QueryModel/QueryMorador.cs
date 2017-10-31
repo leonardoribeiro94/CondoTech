@@ -3,7 +3,7 @@ using Condominio.Model.Enum;
 
 namespace Condominio.Model.QueryModel
 {
-    public class ObterMorador
+    public class QueryMorador
     {
         public int IdMorador { get; set; }
         public string Nome { get; set; }

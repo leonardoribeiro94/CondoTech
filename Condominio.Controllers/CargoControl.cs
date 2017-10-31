@@ -13,6 +13,6 @@ namespace Condominio.Controllers
             _cargoRepositorio = new CargoRepositorio();
         }
 
-        public IEnumerable<ObterCargos> ObterCargo() => _cargoRepositorio.ObterCargos();
+        public IEnumerable<QueryCargos> ObterCargo() => _cargoRepositorio.ObterCargos();
     }
 }

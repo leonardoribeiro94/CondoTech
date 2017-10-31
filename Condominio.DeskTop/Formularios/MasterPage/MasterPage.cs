@@ -14,9 +14,9 @@ namespace Condominio.DeskTop.Formularios.MasterPage
 {
     public partial class FrmMaster : Form
     {
-        private readonly ObterUsuarioFuncionario _obterUsuarioFucnionario;
+        private readonly QueryUsuarioFuncionario _obterUsuarioFucnionario;
 
-        public FrmMaster(ObterUsuarioFuncionario usuarioFuncionario)
+        public FrmMaster(QueryUsuarioFuncionario usuarioFuncionario)
         {
             InitializeComponent();
 

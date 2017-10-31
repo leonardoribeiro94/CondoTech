@@ -26,7 +26,7 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public IEnumerable<ObterUsuarioFuncionario> ObterUsuarioFuncionarios()
+        public IEnumerable<QueryUsuarioFuncionario> ObterUsuarioFuncionarios()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
@@ -42,11 +42,11 @@ namespace Condominio.DataAccesLayer.Repositorios
                                         "from Funcionario f join Cargo c on c.IdCargo = f.IdCargo " +
                                         "join UsuarioFuncionario u on u.IdFuncionario = f.IdFuncionario";
 
-                return Connection.Query<ObterUsuarioFuncionario>(sqlQuery);
+                return Connection.Query<QueryUsuarioFuncionario>(sqlQuery);
             }
         }
 
-        public IEnumerable<ObterUsuarioFuncionario> ObterPorLoginUsuarioFuncionario(string login, string senha)
+        public IEnumerable<QueryUsuarioFuncionario> ObterPorLoginUsuarioFuncionario(string login, string senha)
         {
             using (Connection = new SqlConnection(StringConnection))
             {
@@ -63,7 +63,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                                         "and u.Senha = @senha " +
                                         "and f.Ativo = 0";
 
-                return Connection.Query<ObterUsuarioFuncionario>(sqlQuery, new { login, senha });
+                return Connection.Query<QueryUsuarioFuncionario>(sqlQuery, new { login, senha });
             }
         }
     }

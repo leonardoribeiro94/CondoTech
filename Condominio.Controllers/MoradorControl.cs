@@ -21,11 +21,11 @@ namespace Condominio.Controllers
 
         public void ExcluirMorador(int id) => _moradorRepositorio.Excluir(id);
 
-        public IEnumerable<ObterMorador> ObterMorador() => _moradorRepositorio.ObterMoradores();
+        public IEnumerable<QueryMorador> ObterMorador() => _moradorRepositorio.ObterMoradores();
 
-        public ICollection<ObterMorador> ObterMorador(string nome) => _moradorRepositorio.ObterMoradoresPorNome(nome);
+        public ICollection<QueryMorador> ObterMorador(string nome) => _moradorRepositorio.ObterMoradoresPorNome(nome);
 
-        public ICollection<ObterMorador> ObterMorador(string nome, DateTime nascimento) => _moradorRepositorio
+        public ICollection<QueryMorador> ObterMorador(string nome, DateTime nascimento) => _moradorRepositorio
             .ObterMoradoresPorNomeEDataDeNascimento(nome, nascimento);
 
     }

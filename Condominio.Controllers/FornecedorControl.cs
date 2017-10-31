@@ -20,6 +20,6 @@ namespace Condominio.Controllers
 
         public void ExcluirFornecedor(int idFornecedor) => _fornecedorRepositorio.Excluir(idFornecedor);
 
-        public IEnumerable<ObterFornecedores> ObterFornecedores() => _fornecedorRepositorio.ObterFornecedores();
+        public IEnumerable<QueryFornecedores> ObterFornecedores() => _fornecedorRepositorio.ObterFornecedores();
     }
 }

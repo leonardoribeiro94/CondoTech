@@ -59,12 +59,12 @@ namespace Condominio.DataAccesLayer.Repositorios
 
         }
 
-        public IEnumerable<ObterFornecedores> ObterFornecedores()
+        public IEnumerable<QueryFornecedores> ObterFornecedores()
         {
             using (Connection = new SqlConnection(StringConnection))
             {
                 const string sqlComando = "select * from Fornecedor where Ativo = 0";
-                return Connection.Query<ObterFornecedores>(sqlComando);
+                return Connection.Query<QueryFornecedores>(sqlComando);
             }
         }
     }
