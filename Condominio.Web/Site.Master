@@ -45,21 +45,36 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="~/Pages/Sindico/Funcionario/ConsultarFuncionario.aspx" runat="server">
-                                        Funcionário
+                                        <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Funcionários
                                     </a>
                                 </li>
+                                <li class="divider"></li>
                                 <li>
                                     <a href="~/Pages/Sindico/Informativo/ConsultarInformativo.aspx" runat="server">
-                                        Informativo
+                                        <i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp;Informativo
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="~/Pages/Morador/Denuncia/InserirDenuncia.aspx" runat="server">
+                                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Denúncia (morador)
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a runat="server" href="#">Consultas</a>
+                            <a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#">Consultas &nbsp;<span class="caret"></span></a>
                             <ul class="dropdown-menu"> 
-                                <li href="~/Pages/Sindico/Denuncia/ConsultaDenuncia.aspx" runat="server">
-                                    <a>Denúncia</a>
+                                <li>
+                                    <a href="~/Pages/Sindico/Denuncia/ConsultaDenuncia.aspx" runat="server">
+                                        <i class="fa fa-search" aria-hidden="true"></i>&nbsp;Denúncia
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="~/Pages/Morador/Informativo/ConsultaInformativo.aspx" runat="server">
+                                        <i class="fa fa-search" aria-hidden="true"></i>&nbsp;Informativo (morador)
+                                    </a>
                                 </li>
                             </ul>
                         </li>
