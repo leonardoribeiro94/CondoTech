@@ -173,6 +173,7 @@
     <Content Include="Content\bootstrap-datepicker.css.map" />
     <Content Include="Handler\VisualizacaoDeDocumento.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Pages\Morador\Denuncia\InserirDenuncia.aspx" />
     <Content Include="Pages\Morador\Informativo\ConsultaInformativo.aspx" />
     <Content Include="Pages\Sindico\Denuncia\ConsultaDenuncia.aspx" />
     <Content Include="Pages\Sindico\Funcionario\ConsultarFuncionario.aspx" />
@@ -311,6 +312,13 @@
     </Compile>
     <Compile Include="Handler\VisualizacaoDeDocumento.ashx.cs">
       <DependentUpon>VisualizacaoDeDocumento.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Morador\Denuncia\InserirDenuncia.aspx.cs">
+      <DependentUpon>InserirDenuncia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Morador\Denuncia\InserirDenuncia.aspx.designer.cs">
+      <DependentUpon>InserirDenuncia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Morador\Informativo\ConsultaInformativo.aspx.cs">
       <DependentUpon>ConsultaInformativo.aspx</DependentUpon>

@@ -37,3 +37,7 @@ textarea {
 .botao-margin-top {
     margin-top: 10px
 }
+
+.form-control, .file-upload {
+    margin-bottom: 10px
+}

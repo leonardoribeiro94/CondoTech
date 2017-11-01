@@ -32,7 +32,7 @@
                                 <asp:TextBox runat="server" ID="txtTitulo" CssClass="form-control" onkeyup="verificaCampo(txtTitulo, '#Titulo', 3);" placeholder="Titulo do informativo"></asp:TextBox>
                             </div>
 
-                            <div id="upload-documento" class="col-md-5" style="margin-top: 18px">
+                            <div id="upload-documento" class="col-md-5 .file-upload" style="margin-top: 18px">
                                 <asp:Label runat="server" CssClass="btn btn-info" AssociatedControlId="myFileUpload">
                                     <i class="fa fa-cloud-upload" aria-hidden="true"></i>&nbsp; Upload de Arquivo
                                     <input type="file" id="myFileUpload" runat="server" class="hidden" onchange="$('#upload-file-info').html(this.files[0].name)" />
