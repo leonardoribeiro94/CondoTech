@@ -1,5 +1,7 @@
-﻿using System;
-using Condominio.Model.Enum;
+﻿using Condominio.Model.Enum;
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Condominio.Model
 {
@@ -23,26 +25,32 @@ namespace Condominio.Model
         {
             Descricao = Descricao.ToUpper();
 
+            Celular = string.IsNullOrEmpty(Celular) ? null : Celular.Replace("(", "").Replace(")", "")
+                .Replace("-", "").Replace(" ", "");
+
             if (Descricao.Length < 5)
             {
                 throw new Exception("A quantidade de caracteres informados na descrição é inválida!");
             }
 
-
         }
 
-        private string ValidaCelular(string celular)
+        private bool ValidaEmail(string email)
         {
-            string newCel = null;
+            return
+                Regex.IsMatch(email,
+                    @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
+                    RegexOptions.IgnoreCase);
 
-            if (Celular.Length == 11)
-            {
-                newCel = celular.Replace("(", "").Replace(")", "").Replace("-", "");
-            }
-
-            return newCel;
         }
 
+        public void ValidaExtensaoDoAnexo(string nomeDoArquivo)
+        {
+            string[] extensoesValidas = { ".jpg", ".png" };
+
+            if (!extensoesValidas.Contains(nomeDoArquivo))
+                throw new Exception("Anexo inserido inválido, insira formatos png e jpg");
+        }
         #endregion
     }
 }

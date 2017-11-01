@@ -41,3 +41,7 @@ textarea {
 .form-control, .file-upload {
     margin-bottom: 10px
 }
+
+.modal-imagem-ajuste {
+   width: 100%;
+}

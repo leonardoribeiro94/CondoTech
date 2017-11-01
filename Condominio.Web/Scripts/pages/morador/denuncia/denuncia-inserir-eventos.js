@@ -1,10 +1,16 @@
 ﻿$(document).ready(function () {
-    controlaCheckbox();
+
+    $(window.ckbAnonimo).click(function () {
+        controlaCheckbox();
+    });
 });
 
 function controlaCheckbox() {
-    $(window.ckbAnonimo).is(":checked",
-        function () {
-            $(":input").prop("disabled", false);
-        });
+    if ($(window.ckbAnonimo).is(":checked") === true) {
+        $(":text").val("");
+        $("#div-toogle").fadeOut();
+    } else {
+        $("#div-toogle").fadeIn();
+    }
+
 }

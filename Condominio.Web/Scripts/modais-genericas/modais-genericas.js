@@ -24,8 +24,8 @@ function fn_ModalExibirImagem(imagem) {
         title: "<h4><b>Visualização da Imagem</b></h4>",
         message:
         "</hr>" +
-        "<div style='margin-left:100px'>" +
-        "<img src='" + imagem + "'class='img-thumbnail center-block'/>" +
+        "<div>" +
+        "<img src='" + imagem + "'class='modal-imagem-ajuste img-thumbnail center-block'/>" +
         "</div>" +
         "</br>",
         buttons:

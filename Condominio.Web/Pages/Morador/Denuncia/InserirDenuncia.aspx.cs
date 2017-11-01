@@ -2,6 +2,7 @@
 using Condominio.CrossCutting;
 using Condominio.Web.Components;
 using System;
+using System.IO;
 using System.Web.UI;
 
 namespace Condominio.Web.Pages.Morador.Denuncia
@@ -41,7 +42,11 @@ namespace Condominio.Web.Pages.Morador.Denuncia
 
                 if (myFileUpload.PostedFile.ContentLength > 0)
                 {
-                    denuncia.Imagem = ConverteArquivo.ParaByte(myFileUpload.PostedFile.InputStream);
+                    var fluxoDeArquivo = myFileUpload.PostedFile.InputStream;
+                    var tipoConteudo = Path.GetExtension(myFileUpload.PostedFile.FileName);
+
+                    denuncia.ValidaExtensaoDoAnexo(tipoConteudo);
+                    denuncia.Imagem = ConverteArquivo.ParaByte(fluxoDeArquivo);
                 }
 
                 denuncia.Descricao = txtObservacao.Value;

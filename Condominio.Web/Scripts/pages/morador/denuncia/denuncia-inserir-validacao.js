@@ -1,5 +1,5 @@
 ﻿function confirmarEnvio() {
-    var opcaobool = false;
+   
 
     new BootstrapDialog({
         type: BootstrapDialog.TYPE_DANGER,
@@ -14,20 +14,19 @@
             label: "<b>confirmar</b>",
             icon: "fa fa-check-square-o",
             cssClass: "btn btn-primary",
-            action: function () {
+            action: function (dialog) {
                 dialog.close();
-                opcaobool = true;
+                $(window.btnEnviarDenuncia).click();
             }
         },
         {
             label: "Cancelar",
             cssClass: "btn-default",
             action: function (dialog) {
-                opcaobool = false;
                 dialog.close();
             }
         }]
     }).open();
 
-    return opcaobool;
+    return false;
 }
