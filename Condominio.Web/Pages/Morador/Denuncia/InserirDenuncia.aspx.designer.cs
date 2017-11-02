@@ -13,15 +13,6 @@ namespace Condominio.Web.Pages.Morador.Denuncia {
     public partial class InserirDenuncia {
         
         /// <summary>
-        /// myFileUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile myFileUpload;
-        
-        /// <summary>
         /// ckbAnonimo control.
         /// </summary>
         /// <remarks>
@@ -29,6 +20,15 @@ namespace Condominio.Web.Pages.Morador.Denuncia {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox ckbAnonimo;
+        
+        /// <summary>
+        /// myFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile myFileUpload;
         
         /// <summary>
         /// txtNome control.

@@ -53,7 +53,8 @@ namespace Condominio.Web.Pages.Morador.Denuncia
                 denuncia.ValidaDados();
 
                 _denunciaControl.InserirDenuncia(denuncia);
-                Response.Redirect("~/Pages/Morador/Denuncia/InserirDenuncia.aspx", false);
+
+                _mensagens.MensagemDeInformacao("<h4><b>Denuncia</b> enviada!</h4>", Page);
             }
             catch (Exception exception)
             {

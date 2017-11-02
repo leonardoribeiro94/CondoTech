@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-md-12 well formulario">
                         <fieldset>
-                            <legend><b>Consultar</b> Denuncias
+                            <legend><b>Consultar</b> Funcionário
                                 <asp:LinkButton runat="server" ID="lkbInserir" OnClick="LkbInserir_OnClick"
                                     Text="<span class='btn-label'></span><b>Inserir</b>"
                                     CssClass="btn btn-default"></asp:LinkButton>

@@ -26,18 +26,18 @@
                         </fieldset>
 
                         <div class="row">
+                            <div class="col-md-5">
+                                <asp:CheckBox runat="server" Text="Anônimo" ID="ckbAnonimo" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
                             <div id="upload-documento" class="col-md-5 file-upload">
                                 <asp:Label runat="server" CssClass="btn btn-info" AssociatedControlID="myFileUpload">
                                     <i class="fa fa-cloud-upload" aria-hidden="true"></i>&nbsp; Upload de Imagem
                                     <input type="file" id="myFileUpload" runat="server" accept="image/jpg, image/png"  class="hidden" onchange="$('#upload-file-info').html(this.files[0].name)" />
                                 </asp:Label>
                                 <label class="label label-info" id="upload-file-info"></label>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-5">
-                                <asp:CheckBox runat="server" Text="Anônimo" ID="ckbAnonimo" />
                             </div>
                         </div>
 

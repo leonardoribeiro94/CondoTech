@@ -48,7 +48,7 @@ namespace Condominio.Web.Pages.Sindico.Informativo
                 var idInformativo = Convert.ToInt32(ViewState["IdInformativo"]);
                 var funcionario = _informativoControl.ObterInformativosPorId(idInformativo);
 
-                txtTitulo.Text = funcionario.Nome;
+                txtTitulo.Text = funcionario.Titulo;
                 txtObservacao.Value = funcionario.Descricao;
             }
         }

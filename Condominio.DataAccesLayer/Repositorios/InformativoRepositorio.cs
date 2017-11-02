@@ -24,6 +24,11 @@ namespace Condominio.DataAccesLayer.Repositorios
                 parametros.Add("@Documento", informativo.Documento);
                 parametros.Add("@Ativo", EntidadeAtiva.Ativo);
 
+                if (informativo.Documento == null)
+                {
+                    parametros.Add("@Documento", false);
+                }
+
                 Connection.Execute("Insert_Informativo", parametros, commandType: CommandStoredProcedure);
             }
         }

@@ -141,7 +141,7 @@ namespace Condominio.Web.Pages.Sindico.Informativo
                     var idInformativo = Convert.ToInt32(dataKey["IdInformativo"]);
                     var funcionario = _informativoControl.ObterInformativosPorId(idInformativo);
 
-                    if (funcionario.Documento != null)
+                    if (funcionario.Documento != null & funcionario.Documento.Length > 1)
                     {
                         VisualizacaoDeDocumento.DocumentArray = funcionario.Documento;
                         VisualizacaoDeDocumento.TipoOpcaoHandler = VisualizacaoDeDocumento.OpcaoHandler.Show;
@@ -150,7 +150,7 @@ namespace Condominio.Web.Pages.Sindico.Informativo
                     }
                     else
                     {
-                        _mensagens.MensagemDeExcessao("Anexo de documento inexistente!", Page);
+                        _mensagens.MensagemDeExcessao("<b>Anexo de documento inexistente!</b>!", Page);
                     }
                 }
             }

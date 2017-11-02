@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.Web", "Condomini
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Condominio.CrossCutting", "Condominio.CrossCutting\Condominio.CrossCutting.csproj", "{249506A6-D024-4BD8-B82B-9C4359297335}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{5C8CDF1B-1A31-4995-A415-3E97F3983212}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Condominio.DataBase", "Condominio.DataBase\Condominio.DataBase.sqlproj", "{C21BFE63-3F2E-4E81-9814-E44CE02936CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,12 @@ Global
 		{249506A6-D024-4BD8-B82B-9C4359297335}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{249506A6-D024-4BD8-B82B-9C4359297335}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{249506A6-D024-4BD8-B82B-9C4359297335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C21BFE63-3F2E-4E81-9814-E44CE02936CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C21BFE63-3F2E-4E81-9814-E44CE02936CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C21BFE63-3F2E-4E81-9814-E44CE02936CE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C21BFE63-3F2E-4E81-9814-E44CE02936CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C21BFE63-3F2E-4E81-9814-E44CE02936CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C21BFE63-3F2E-4E81-9814-E44CE02936CE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +70,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F35C6E99-E92B-423B-B638-650C641ED069} = {2B6635D3-E07D-4093-B46D-F5BCD2C7845C}
 		{A98B306C-98EE-45DE-ADA8-2C6F7D41062A} = {2B6635D3-E07D-4093-B46D-F5BCD2C7845C}
+		{C21BFE63-3F2E-4E81-9814-E44CE02936CE} = {5C8CDF1B-1A31-4995-A415-3E97F3983212}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BFEAC80D-780D-41B1-87D0-7D160C62CE8F}

@@ -5,6 +5,7 @@ using Condominio.Model.QueryModel;
 using Dapper;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -24,6 +25,11 @@ namespace Condominio.DataAccesLayer.Repositorios
                 parametros.Add("@Descricao", denuncia.Descricao);
                 parametros.Add("@DataDenuncia", DateTime.Now);
                 parametros.Add("@Ativo", EntidadeAtiva.Ativo);
+
+                if (denuncia.Imagem == null)
+                {
+                    parametros.Add("@Imagem", false);
+                }
 
                 Connection.Execute("Insert_Denuncia", parametros, commandType: CommandStoredProcedure);
             }
