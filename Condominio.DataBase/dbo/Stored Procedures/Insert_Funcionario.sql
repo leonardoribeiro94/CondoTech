@@ -1,4 +1,4 @@
-﻿CREATE procedure [dbo].[Insert_Funcionario]
+﻿create procedure [dbo].[Insert_Funcionario]
 
 @IdCargo int,
 @Nome varchar(50),

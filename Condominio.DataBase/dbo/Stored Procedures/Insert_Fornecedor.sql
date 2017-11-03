@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[Insert_Fornecedor]
+﻿create PROCEDURE [dbo].[Insert_Fornecedor]
 
 @Nome varchar(80),
 @Cnpj char(14),
