@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Condominio.Web._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Condominio.Web.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <link href="<%=ResolveClientUrl("Content/default.css")%>" rel="stylesheet" />
@@ -25,8 +25,6 @@
                                 <li><a href="#about">Sobre</a></li>
                                 <li><a href="#services">Serviços</a></li>
                                 <li><a href="#portfolio">Lazer</a></li>
-                                <%--<li><a href="#pricing">PRICING</a></li>--%>
-                                <%--<li><a href="#contact">CONTACT</a></li>--%>
                             </ul>
                         </div>
                     </div>
@@ -35,17 +33,10 @@
                 <div class="jumbotron text-center">
                     <h1>CondoFamily</h1>
                     <p>Especializados em conforto para família</p>
-                    <form>
-                        <div class="col-md-5">
-                            <div class="input-group">
-                                <input type="email" class="form-control" size="50" placeholder="Email Address" required/>
-                                <div class="input-group-btn">
-                                    <button type="button" class="btn btn-danger">Subscribe</button>
-                                </div>
-                            </div>
-                        </div>
 
-                    </form>
+                    <div class="col-md-12">
+                        <button type="button" data-toggle="modal" data-target="#modalLogin" class="btn btn-danger">Área Particular</button>
+                    </div>
                 </div>
 
                 <!-- Container (About Section) -->
@@ -74,10 +65,10 @@
                         <div class="col-sm-8">
                             <h2>Our Values</h2>
                             <br>
-                            <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
+                            <h4><strong>Missão:</strong> Nossa missão lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
                             <br>
                             <p>
-                                <strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                <strong>Visão:</strong> Nossa visão Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             </p>
                         </div>
@@ -92,17 +83,17 @@
                     <div class="row slideanim">
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-off logo-small"></span>
-                            <h4>POWER</h4>
+                            <h4>Força</h4>
                             <p>Lorem ipsum dolor sit amet..</p>
                         </div>
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-heart logo-small"></span>
-                            <h4>LOVE</h4>
+                            <h4>Amor</h4>
                             <p>Lorem ipsum dolor sit amet..</p>
                         </div>
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-lock logo-small"></span>
-                            <h4>JOB DONE</h4>
+                            <h4>Trabalho duro</h4>
                             <p>Lorem ipsum dolor sit amet..</p>
                         </div>
                     </div>
@@ -193,104 +184,48 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Container (Pricing Section) -->
-                <%--<div id="pricing" class="container-fluid">
-  <div class="text-center">
-    <h2>Pricing</h2>
-    <h4>Choose a payment plan that works for you</h4>
-  </div>
-  <div class="row slideanim">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Basic</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>20</strong> Lorem</p>
-          <p><strong>15</strong> Ipsum</p>
-          <p><strong>5</strong> Dolor</p>
-          <p><strong>2</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$19</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>      
-    </div>     
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Pro</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>50</strong> Lorem</p>
-          <p><strong>25</strong> Ipsum</p>
-          <p><strong>10</strong> Dolor</p>
-          <p><strong>5</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$29</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>      
-    </div>       
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Premium</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>100</strong> Lorem</p>
-          <p><strong>50</strong> Ipsum</p>
-          <p><strong>25</strong> Dolor</p>
-          <p><strong>10</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$49</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>      
-    </div>    
-  </div>
-</div>--%>
-
-                <!-- Container (Contact Section) -->
-                <%--<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>--%>
             </body>
         </ContentTemplate>
     </asp:UpdatePanel>
 
+    <div class="modal fade" style="margin-top: 30px" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header btn-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp; 
+                                <b>Login</b></h3>
+
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <label class="control-label"><b>Login</b>:</label>
+                                <asp:TextBox CssClass="form-control" ID="txtLogin" runat="server"/>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="message-text" class="control-label">senha:</label>
+                                <asp:TextBox CssClass="form-control" type="password" ID="txtSenha" runat="server"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <button type="button" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp; Login</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <a href="#">Esqueceu sua senha?</a>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
