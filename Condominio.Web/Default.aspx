@@ -207,7 +207,7 @@
                                 <asp:TextBox CssClass="form-control" ID="txtLogin" runat="server"/>
                             </div>
                             <div class="col-md-5">
-                                <label for="message-text" class="control-label">senha:</label>
+                                <label class="control-label">senha:</label>
                                 <asp:TextBox CssClass="form-control" type="password" ID="txtSenha" runat="server"/>
                             </div>
                         </div>
@@ -223,9 +223,10 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
     </div>
+    
+    <asp:Button runat="server" ID="btnLogin" OnClick="btnLogin_OnClick"/>
 </asp:Content>

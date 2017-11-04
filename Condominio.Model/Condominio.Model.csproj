@@ -70,6 +70,7 @@
     <Compile Include="QueryModel\QueryInformativo.cs" />
     <Compile Include="QueryModel\QueryMorador.cs" />
     <Compile Include="QueryModel\QueryUsuarioFuncionario.cs" />
+    <Compile Include="QueryModel\QueryUsuarioMorador.cs" />
     <Compile Include="QueryModel\QueryVisitante.cs" />
     <Compile Include="Regimento.cs" />
     <Compile Include="ReservaAreaDeLazer.cs" />
