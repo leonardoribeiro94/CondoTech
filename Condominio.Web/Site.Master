@@ -4,125 +4,141 @@
 
 <html lang="en">
 <head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CondoTech</title>
-    
-    
-    <link href="<%=ResolveClientUrl("Content/bootstrap.min.css")%>" rel="stylesheet") />
-    <link href="<%=ResolveClientUrl("Content/font-awesome.min.css")%>" rel="stylesheet" />
-    <link href="<%=ResolveClientUrl("Content/Site.css")%>" rel="stylesheet" />
-    
-    <script src="<%=ResolveClientUrl("Scripts/jquery-1.10.2.min.js")%>"></script>
-    <script src="<%=ResolveClientUrl("Scripts/bootstrap.min.js")%>"></script>
-    <script src="<%=ResolveClientUrl("Scripts/bootstrap-dialog.js")%>"></script>
-    <script src="<%=ResolveClientUrl("Scripts/jquery.maskedinput.min.js")%>"></script>
-    
-    <script src="<%=ResolveClientUrl("Scripts/modais-genericas/modais-genericas.js")%>"></script>
-    <script src="<%=ResolveClientUrl("Scripts/compartilhado/validacao-de-campos.js")%>"></script>
-    <script src="<%=ResolveClientUrl("~/Scripts/compartilhado/visualizacao-documento.js")%>"></script>
-   
-    
-    <asp:ContentPlaceHolder ID="Head" runat="server">
-    </asp:ContentPlaceHolder>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>CondoTech</title>
+
+
+	<link href="<%=ResolveClientUrl("Content/bootstrap.min.css")%>" rel="stylesheet" />
+	<link href="<%=ResolveClientUrl("Content/font-awesome.min.css")%>" rel="stylesheet" />
+	<link href="<%=ResolveClientUrl("Content/Site.css")%>" rel="stylesheet" />
+
+	<script src="<%=ResolveClientUrl("Scripts/jquery-1.10.2.min.js")%>"></script>
+	<script src="<%=ResolveClientUrl("Scripts/bootstrap.min.js")%>"></script>
+	<script src="<%=ResolveClientUrl("Scripts/bootstrap-dialog.js")%>"></script>
+	<script src="<%=ResolveClientUrl("Scripts/jquery.maskedinput.min.js")%>"></script>
+
+	<script src="<%=ResolveClientUrl("Scripts/modais-genericas/modais-genericas.js")%>"></script>
+	<script src="<%=ResolveClientUrl("Scripts/compartilhado/validacao-de-campos.js")%>"></script>
+	<script src="<%=ResolveClientUrl("~/Scripts/compartilhado/visualizacao-documento.js")%>"></script>
+
+
+	<asp:ContentPlaceHolder ID="Head" runat="server">
+	</asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">CondoTech</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Cadastrar &nbsp;<span class="caret"></span></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="~/Pages/Sindico/Funcionario/ConsultarFuncionario.aspx" runat="server">
-                                        <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Funcionários
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="~/Pages/Sindico/Informativo/ConsultarInformativo.aspx" runat="server">
-                                        <i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp;Informativo
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="~/Pages/Morador/Denuncia/InserirDenuncia.aspx" runat="server">
-                                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Denúncia (morador)
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#">Consultas &nbsp;<span class="caret"></span></a>
-                            <ul class="dropdown-menu"> 
-                                <li>
-                                    <a href="~/Pages/Sindico/Denuncia/ConsultaDenuncia.aspx" runat="server">
-                                        <i class="fa fa-search" aria-hidden="true"></i>&nbsp;Denúncia
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="~/Pages/Morador/Informativo/ConsultaInformativo.aspx" runat="server">
-                                        <i class="fa fa-search" aria-hidden="true"></i>&nbsp;Informativo (morador)
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a runat="server" href="#">Área de Lazer</a></li>
-                    </ul>
-                    
-                    <ul class="nav navbar-nav navbar-right">
-                            <li id="Manual">
-                                <a href="#"><i class="fa fa-file-text"></i>&nbsp;Manual</a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <asp:Label ID="lblNome" runat="server" CssClass="label label-primary"></asp:Label>&nbsp;<b class="caret"></b></a>
-                                <ul class="dropdown-menu" style="padding: 15px; min-width: 250px;">
-                                    <li>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <asp:Label runat="server" for="lbUsuario" Style="color: Black;"><b>Usuário:</b></asp:Label><br />
-                                                    <asp:Label runat="server" ID="lbUsuario"></asp:Label>
-                                                </div>
-                                                <div class="form-group">
-                                                    <asp:Label for="lbEmail" runat="server"><b>Email:</b></asp:Label><br />
-                                                    <asp:Label runat="server" ID="lbEmail"></asp:Label>
-                                                </div>
-                                                </div>
-                                        </div>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <asp:LinkButton ID="lbtnSair" runat="server" Text="Sair"
-                                            CssClass="btn btn-labeled btn-default btn-block"></asp:LinkButton>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - CondoTech</p>
-            </footer>
-        </div>
+	<form runat="server">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" runat="server" href="~/">CondoTech</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<asp:Panel runat="server" ID="panelSindico" visible="False">
+							<li>
+								<a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Cadastrar &nbsp;<span class="caret"></span></b></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="~/Pages/Sindico/Funcionario/ConsultarFuncionario.aspx" runat="server">
+											<i class="fa fa-users" aria-hidden="true"></i>&nbsp;Funcionários
+										</a>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<a href="~/Pages/Sindico/Informativo/ConsultarInformativo.aspx" runat="server">
+											<i class="fa fa-bullhorn" aria-hidden="true"></i>&nbsp;Informativo
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#">Consultas &nbsp;<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="~/Pages/Sindico/Denuncia/ConsultaDenuncia.aspx" runat="server">
+											<i class="fa fa-search" aria-hidden="true"></i>&nbsp;Denúncia
+										</a>
+									</li>
+								</ul>
+							</li>
+						</asp:Panel>
 
-    </form>
+
+						<asp:Panel runat="server" ID="panelMorador" visible="False">
+							<li>
+								<a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Cadastrar &nbsp;<span class="caret"></span></b></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="~/Pages/Morador/Denuncia/InserirDenuncia.aspx" runat="server">
+											<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;Denúncia (morador)
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#">Consultas &nbsp;<span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="~/Pages/Morador/Informativo/ConsultaInformativo.aspx" runat="server">
+											<i class="fa fa-search" aria-hidden="true"></i>&nbsp;Informativo (morador)
+										</a>
+									</li>
+								</ul>
+							</li>
+						</asp:Panel>
+
+
+						<li><a runat="server" href="#">Área de Lazer</a></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li id="Manual">
+							<a href="#"><i class="fa fa-file-text"></i>&nbsp;Manual</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<asp:Label ID="lblNome" runat="server" CssClass="label label-primary"></asp:Label>&nbsp;<b class="caret"></b></a>
+							<ul class="dropdown-menu" style="padding: 15px; min-width: 250px;">
+								<li>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+												<asp:Label runat="server" for="lbUsuario" Style="color: Black;"><b>Usuário:</b></asp:Label><br />
+												<asp:Label runat="server" ID="lbUsuario"></asp:Label>
+											</div>
+											<div class="form-group">
+												<asp:Label for="lbEmail" runat="server"><b>Email:</b></asp:Label><br />
+												<asp:Label runat="server" ID="lbEmail"></asp:Label>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<asp:LinkButton ID="lbtnSair" runat="server" Text="Sair"
+										CssClass="btn btn-labeled btn-default btn-block"></asp:LinkButton>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container body-content">
+			<asp:ContentPlaceHolder ID="MainContent" runat="server">
+			</asp:ContentPlaceHolder>
+			<hr />
+			<footer>
+				<p>&copy; <%: DateTime.Now.Year %> - CondoTech</p>
+			</footer>
+		</div>
+
+	</form>
 </body>
 </html>

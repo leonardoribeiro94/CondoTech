@@ -22,6 +22,24 @@ namespace Condominio.Web {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Head;
         
         /// <summary>
+        /// panelSindico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelSindico;
+        
+        /// <summary>
+        /// panelMorador control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panelMorador;
+        
+        /// <summary>
         /// lblNome control.
         /// </summary>
         /// <remarks>

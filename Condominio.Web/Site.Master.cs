@@ -9,7 +9,7 @@ namespace Condominio.Web
         {
             if (!IsPostBack)
             {
-
+                //validar codigo da sessão para liberar usuarios
             }
         }
     }

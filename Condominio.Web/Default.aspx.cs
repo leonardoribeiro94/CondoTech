@@ -1,25 +1,83 @@
 ﻿using Condominio.Controllers;
-using Condominio.Model;
+using Condominio.Model.Enum;
 using Condominio.Web.Components;
 using System;
+using System.Linq;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Condominio.Web
 {
     public partial class Default : Page
     {
-        private readonly Mensagens _mensagens;
         private readonly UsuarioFuncionarioControl _funcionarioControl;
-        private readonly UsuarioMorador _morador;
+        private readonly UsuarioMoradorControl _moradorControl;
+        private readonly Mensagens _mensagens;
+
+        public Default()
+        {
+            _funcionarioControl = new UsuarioFuncionarioControl();
+            _moradorControl = new UsuarioMoradorControl();
+            _mensagens = new Mensagens();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            }
         }
 
         protected void btnLogin_OnClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var login = txtLogin.Text.Trim();
+                var senha = txtSenha.Text.Trim();
+
+                var dataFuncionario = _funcionarioControl.ObterPorLoginFuncionariosUsuarios(login, senha).FirstOrDefault();
+                var dataMorador = _moradorControl.ObterUsuarioMoradorPorLogin(login, senha);
+
+                if (dataFuncionario != null)
+                {
+                    var cargoFuncionario = dataFuncionario.Cargo.ToLower();
+
+                    if (cargoFuncionario.Equals("sindico"))
+                    {
+                        var panelSindico = (Panel)Master?.FindControl("panelSindico");
+                        if (panelSindico != null) panelSindico.Visible = true;
+
+                        Session.Add("usuarioLogado", dataFuncionario.IdUsuario);
+                        Response.Redirect("~/Pages/Sindico/Informativo/ConsultarInformativo.aspx", false);
+                    }
+                    else
+                    {
+                        _mensagens.MensagemDeInformacao("Não foi possível realizar login," +
+                                                        " verifique sua senha ou informe o Administrador do sistema", Page);
+                    }
+                }
+
+                else if (dataMorador != null)
+                {
+                    if (dataMorador.Ativo != EntidadeAtiva.Inativo)
+                    {
+                        var panelMorador = (Panel)Master?.FindControl("panelMorador");
+                        if (panelMorador != null) panelMorador.Visible = true;
+
+                        Session.Add("usuarioLogado", dataMorador.IdUsuario);
+                    }
+                    else
+                    {
+                        _mensagens.MensagemDeInformacao("Não foi possível realizar login," +
+                                                        " verifique sua senha ou informe o Administrador do sistema", Page);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
         }
     }
 }

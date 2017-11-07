@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Condominio.Web.Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Condominio.Web.Default" EnableEventValidation="false"%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <link href="<%=ResolveClientUrl("Content/default.css")%>" rel="stylesheet" />
@@ -204,17 +204,17 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <label class="control-label"><b>Login</b>:</label>
-                                <asp:TextBox CssClass="form-control" ID="txtLogin" runat="server"/>
+                                <asp:TextBox CssClass="form-control" ID="txtLogin" runat="server" />
                             </div>
                             <div class="col-md-5">
                                 <label class="control-label">senha:</label>
-                                <asp:TextBox CssClass="form-control" type="password" ID="txtSenha" runat="server"/>
+                                <asp:TextBox CssClass="form-control" type="password" ID="txtSenha" runat="server" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-8">
-                                <button type="button" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp; Login</button>
+                                <asp:Button runat="server" CssClass="btn btn-primary" OnClick="btnLogin_OnClick" Text="Login"/>
                             </div>
                         </div>
                         <div class="row">
@@ -227,6 +227,5 @@
             </div>
         </div>
     </div>
-    
-    <asp:Button runat="server" ID="btnLogin" OnClick="btnLogin_OnClick"/>
+
 </asp:Content>
