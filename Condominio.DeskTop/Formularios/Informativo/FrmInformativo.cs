@@ -1,4 +1,5 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
 using Condominio.DeskTop.Componentes;
 using System;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace Condominio.DeskTop.Formularios.Informativo
 
                 informativo.ValidaDados();
                 _informativoController.InserirInformativo(informativo);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 VoltarParaTelaDeConsulta();
             }
@@ -68,7 +69,7 @@ namespace Condominio.DeskTop.Formularios.Informativo
 
                 informativo.ValidaDados();
                 _informativoController.AtualizarInformativo(informativo);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 VoltarParaTelaDeConsulta();
             }
@@ -82,13 +83,13 @@ namespace Condominio.DeskTop.Formularios.Informativo
         {
             try
             {
-                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistemaDesktop.Questao);
+                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistema.Questao);
 
                 if (opcao == DialogResult.OK)
                 {
                     var idInformativo = Convert.ToInt32(txtCodigo.Text);
                     _informativoController.DeletarInformativo(idInformativo);
-                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                     VoltarParaTelaDeConsulta();
                 }

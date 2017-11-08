@@ -1,8 +1,9 @@
-﻿using Condominio.DeskTop.Componentes;
+﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Condominio.Controllers;
 
 namespace Condominio.DeskTop.Formularios.Denuncia
 {
@@ -26,7 +27,7 @@ namespace Condominio.DeskTop.Formularios.Denuncia
             }
             catch (Exception exception)
             {
-                CaixaDeMensagem.MensagemDeErro($"{MensagensDoSistemaDesktop.ImagemInvalida} \n Erro:" + exception.Message);
+                CaixaDeMensagem.MensagemDeErro($"{MensagensDoSistema.ImagemInvalida} \n Erro:" + exception.Message);
             }
         }
 
@@ -56,7 +57,7 @@ namespace Condominio.DeskTop.Formularios.Denuncia
                 if (opcao == DialogResult.OK)
                 {
                     denunciaController.InserirDenuncia(denuncia);
-                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                     LimparCampos();
                 }

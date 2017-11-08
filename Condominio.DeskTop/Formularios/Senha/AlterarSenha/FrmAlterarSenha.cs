@@ -1,4 +1,5 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
 using Condominio.DeskTop.Componentes;
 using Condominio.Model;
 using Condominio.Model.QueryModel;
@@ -39,7 +40,7 @@ namespace Condominio.DeskTop.Formularios.Senha.AlterarSenha
                 usuarioFuncionario.Id = _obterUsuarioFuncionario.IdUsuario;
                 usuarioFuncionario.Senha = novaSenha;
                 usuarioFuncionarioCtrl.AlterarUsuario(usuarioFuncionario);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 Hide();
             }

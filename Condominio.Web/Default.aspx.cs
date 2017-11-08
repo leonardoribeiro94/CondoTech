@@ -1,4 +1,5 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
 using Condominio.Model.Enum;
 using Condominio.Web.Components;
 using System;
@@ -53,8 +54,7 @@ namespace Condominio.Web
                     }
                     else
                     {
-                        _mensagens.MensagemDeInformacao("Não foi possível realizar login," +
-                                                        " verifique sua senha ou informe o Administrador do sistema", Page);
+                        _mensagens.MensagemDeInformacao(MensagensDoSistema.LoginNaoPermitido, Page);
                     }
                 }
 
@@ -69,8 +69,7 @@ namespace Condominio.Web
                     }
                     else
                     {
-                        _mensagens.MensagemDeInformacao("Não foi possível realizar login," +
-                                                        " verifique sua senha ou informe o Administrador do sistema", Page);
+                        _mensagens.MensagemDeInformacao(MensagensDoSistema.LoginNaoPermitido, Page);
                     }
                 }
             }

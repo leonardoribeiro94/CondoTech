@@ -1,4 +1,5 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
 using Condominio.DeskTop.Componentes;
 using Condominio.DeskTop.Formularios.MasterPage;
 using Condominio.DeskTop.Formularios.Senha.RecuperacaoSenha;
@@ -45,8 +46,7 @@ namespace Condominio.DeskTop.Formularios.Login
 
                 else
                 {
-                    CaixaDeMensagem.MensagemDeErro("Não foi possível realizar login," +
-                                                   " verifique sua senha ou informe o Administrador do sistema");
+                    CaixaDeMensagem.MensagemDeErro(MensagensDoSistema.LoginNaoPermitido);
                 }
             }
             catch (Exception exception)

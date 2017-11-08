@@ -1,4 +1,5 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
 using Condominio.DeskTop.Componentes;
 using Condominio.Model;
 using System;
@@ -77,7 +78,7 @@ namespace Condominio.DeskTop.Formularios.Visitante.NovaVisita
                     ? historicoVisita.DataSaida : Convert.ToDateTime(txtSaida.Text);
 
                 _historicoVisitaController.InserirHistoricoVisita(historicoVisita);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimpaCampos();
                 CarregaDataGrid();
@@ -106,7 +107,7 @@ namespace Condominio.DeskTop.Formularios.Visitante.NovaVisita
                     ? historicoVisita.DataSaida : Convert.ToDateTime(txtSaida.Text);
 
                 _historicoVisitaController.AlterarHistoricoVisita(historicoVisita);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimpaCampos();
                 CarregaDataGrid();

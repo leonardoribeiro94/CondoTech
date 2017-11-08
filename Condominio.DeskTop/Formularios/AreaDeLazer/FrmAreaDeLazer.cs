@@ -1,4 +1,5 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
 using Condominio.DeskTop.Componentes;
 using System;
 using System.Drawing;
@@ -42,7 +43,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             }
             catch (Exception exception)
             {
-                CaixaDeMensagem.MensagemDeErro($"{MensagensDoSistemaDesktop.ImagemInvalida} \n Erro:" + exception.Message);
+                CaixaDeMensagem.MensagemDeErro($"{MensagensDoSistema.ImagemInvalida} \n Erro:" + exception.Message);
             }
         }
 
@@ -59,7 +60,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
 
                 areaDeLazer.ValidaDados();
                 _areaDeLazerCtrl.InserirAreaDeLazer(areaDeLazer);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimpaCampos();
                 CarregaGridAreaDeLazer();
@@ -78,12 +79,12 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
             {
                 var idAreaDeLazer = Convert.ToInt32(txtCodigo.Text);
 
-                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistemaDesktop.Questao);
+                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistema.Questao);
 
                 if (opcao == DialogResult.OK)
                 {
                     _areaDeLazerCtrl.DeletarAreaDeLazer(idAreaDeLazer);
-                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                     LimpaCampos();
                     CarregaGridAreaDeLazer();
@@ -132,7 +133,7 @@ namespace Condominio.DeskTop.Formularios.AreaDeLazer
                 areaDeLazer.Descricao = txtDescricao.Text;
                 areaDeLazer.Imagem = ObterArray.PictureBox(picAreaDeLazer);
                 _areaDeLazerCtrl.AlterarAreaDeLazer(areaDeLazer);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimpaCampos();
                 CarregaGridAreaDeLazer();

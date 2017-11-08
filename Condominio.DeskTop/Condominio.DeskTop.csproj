@@ -50,11 +50,6 @@
   <ItemGroup>
     <Compile Include="Componentes\CaixaDeMensagem.cs" />
     <Compile Include="Componentes\LimparControles.cs" />
-    <Compile Include="Componentes\MensagensDoSistemaDesktop.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MensagensDoSistemaDesktop.resx</DependentUpon>
-    </Compile>
     <Compile Include="Componentes\ObterArray.cs" />
     <Compile Include="Formularios\Senha\AlterarSenha\FrmAlterarSenha.cs">
       <SubType>Form</SubType>
@@ -129,10 +124,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Componentes\MensagensDoSistemaDesktop.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>MensagensDoSistemaDesktop.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Senha\AlterarSenha\FrmAlterarSenha.resx">
       <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
 using Condominio.DeskTop.Componentes;
 using System;
 using System.Drawing;
@@ -48,7 +49,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
                 visitante.ValidaImagem();
                 visitante.ValidaDados();
                 _visitanteController.InserirVisitante(visitante);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimparCampos();
                 CarregaDataGrid();
@@ -76,7 +77,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
                 visitante.ValidaImagem();
                 visitante.ValidaDados();
                 _visitanteController.AlterarVisitante(visitante);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimparCampos();
                 CarregaDataGrid();
@@ -92,13 +93,13 @@ namespace Condominio.DeskTop.Formularios.Visitante
         {
             try
             {
-                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistemaDesktop.Questao);
+                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistema.Questao);
 
                 if (opcao == DialogResult.OK)
                 {
                     var idVisitante = Convert.ToInt32(txtCodigo.Text);
                     _visitanteController.DeletarVisitante(idVisitante);
-                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                     LimparCampos();
                     CarregaDataGrid();

@@ -1,9 +1,10 @@
-﻿using Condominio.DeskTop.Componentes;
+﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
+using Condominio.DeskTop.Componentes;
+using Condominio.Model.Enum;
 using System;
 using System.Linq;
 using System.Windows.Forms;
-using Condominio.Controllers;
-using Condominio.Model.Enum;
 
 namespace Condominio.DeskTop.Formularios.Morador
 {
@@ -92,7 +93,7 @@ namespace Condominio.DeskTop.Formularios.Morador
 
                 morador.ValidaDados();
                 _moradorController.AlterarMorador(morador);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimparCampos();
                 CarregaGridViewMorador();
@@ -114,7 +115,7 @@ namespace Condominio.DeskTop.Formularios.Morador
                 {
                     var codigoMorador = Convert.ToInt32(txtCodigo.Text);
                     _moradorController.ExcluirMorador(codigoMorador);
-                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                     LimparCampos();
                     CarregaGridViewMorador();

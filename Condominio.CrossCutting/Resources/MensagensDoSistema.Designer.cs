@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Condominio.DeskTop.Componentes {
+namespace Condominio.CrossCutting.Resources {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace Condominio.DeskTop.Componentes {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class MensagensDoSistemaDesktop {
+    public class MensagensDoSistema {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal MensagensDoSistemaDesktop() {
+        internal MensagensDoSistema() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Condominio.DeskTop.Componentes.MensagensDoSistemaDesktop", typeof(MensagensDoSistemaDesktop).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Condominio.CrossCutting.Resources.MensagensDoSistema", typeof(MensagensDoSistema).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Condominio.DeskTop.Componentes {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Condominio.DeskTop.Componentes {
         /// <summary>
         ///   Looks up a localized string similar to Atenção usuário!.
         /// </summary>
-        internal static string Atencao {
+        public static string Atencao {
             get {
                 return ResourceManager.GetString("Atencao", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Condominio.DeskTop.Componentes {
         /// <summary>
         ///   Looks up a localized string similar to Ops! Algo inesperado aconteceu.
         /// </summary>
-        internal static string Erro {
+        public static string Erro {
             get {
                 return ResourceManager.GetString("Erro", resourceCulture);
             }
@@ -81,16 +81,25 @@ namespace Condominio.DeskTop.Componentes {
         /// <summary>
         ///   Looks up a localized string similar to Verifique se o arquivo escolhido é realmente uma imagem.
         /// </summary>
-        internal static string ImagemInvalida {
+        public static string ImagemInvalida {
             get {
                 return ResourceManager.GetString("ImagemInvalida", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Não foi possível realizar login,  verifique sua senha ou informe o Administrador do sistema.
+        /// </summary>
+        public static string LoginNaoPermitido {
+            get {
+                return ResourceManager.GetString("LoginNaoPermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deseja realmente executar esta função!.
         /// </summary>
-        internal static string Questao {
+        public static string Questao {
             get {
                 return ResourceManager.GetString("Questao", resourceCulture);
             }
@@ -99,7 +108,7 @@ namespace Condominio.DeskTop.Componentes {
         /// <summary>
         ///   Looks up a localized string similar to Operação realizada!.
         /// </summary>
-        internal static string Sucesso {
+        public static string Sucesso {
             get {
                 return ResourceManager.GetString("Sucesso", resourceCulture);
             }

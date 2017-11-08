@@ -12,6 +12,8 @@
 	<link href="<%=ResolveClientUrl("Content/bootstrap.min.css")%>" rel="stylesheet" />
 	<link href="<%=ResolveClientUrl("Content/font-awesome.min.css")%>" rel="stylesheet" />
 	<link href="<%=ResolveClientUrl("Content/Site.css")%>" rel="stylesheet" />
+    
+    
 
 	<script src="<%=ResolveClientUrl("Scripts/jquery-1.10.2.min.js")%>"></script>
 	<script src="<%=ResolveClientUrl("Scripts/bootstrap.min.js")%>"></script>

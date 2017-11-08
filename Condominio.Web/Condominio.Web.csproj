@@ -131,6 +131,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Image\background.jpg" />
     <Content Include="Content\bootstrap-datepicker.css" />
     <Content Include="Content\bootstrap-datepicker.min.css" />
     <Content Include="Content\bootstrap-datepicker.standalone.css" />
@@ -145,6 +146,7 @@
     <Content Include="Content\default.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\home.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -173,6 +175,7 @@
     <Content Include="Content\bootstrap-datepicker.css.map" />
     <Content Include="Handler\VisualizacaoDeDocumento.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Pages\Home.aspx" />
     <Content Include="Pages\Morador\Denuncia\InserirDenuncia.aspx" />
     <Content Include="Pages\Morador\Informativo\ConsultaInformativo.aspx" />
     <Content Include="Pages\Sindico\Denuncia\ConsultaDenuncia.aspx" />
@@ -315,6 +318,13 @@
     </Compile>
     <Compile Include="Handler\VisualizacaoDeDocumento.ashx.cs">
       <DependentUpon>VisualizacaoDeDocumento.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Morador\Denuncia\InserirDenuncia.aspx.cs">
       <DependentUpon>InserirDenuncia.aspx</DependentUpon>
