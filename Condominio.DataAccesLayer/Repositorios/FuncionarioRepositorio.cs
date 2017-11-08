@@ -63,19 +63,19 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string queryString = "SELECT [f].[IdFuncionario]," +
-                                                  "[f].[Nome]," +
-                                                  "[f].[DataDeNascimento]," +
-                                                  "[f].[Telefone]," +
-                                                  "[f].[Celular]," +
-                                                  "[f].[Email]," +
-                                                  "[f].[Cpf]," +
-                                                  "[f].[Ativo]," +
-                                                  "[c].[Nome] AS 'Cargo'" +
-                                                  "FROM Funcionario f " +
-                                                  "INNER JOIN Cargo c " +
-                                                  "ON f.IdCargo = c.IdCargo " +
-                                                  "AND f.Ativo = 0";
+                const string queryString = @"SELECT [f].[IdFuncionario],
+                                                  [f].[Nome],
+                                                  [f].[DataDeNascimento],
+                                                  [f].[Telefone],
+                                                  [f].[Celular],
+                                                  [f].[Email],
+                                                  [f].[Cpf],
+                                                  [f].[Ativo],
+                                                  [c].[Nome] AS 'Cargo'
+                                                  FROM Funcionario f 
+                                                  INNER JOIN Cargo c 
+                                                  ON f.IdCargo = c.IdCargo
+                                                  AND f.Ativo = 0";
 
                 return Connection.Query<QueryFuncionario>(queryString);
             }

@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using Condominio.DataAccesLayer.Conexao;
+﻿using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
 using Condominio.Model.QueryModel;
 using Dapper;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace Condominio.DataAccesLayer.Repositorios
 {
@@ -48,12 +48,17 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string sqlcomando = "select h.IdHistoricoVisita, m.IdMorador, v.IdVisitante," +
-                                          "v.Nome as 'Visitante', m.Nome as 'Morador', " +
-                                          "h.DataEntrada, h.DataSaida, h.Descricao " +
-                                          "from HistoricoVisita h " +
-                                          "inner join Morador m on h.IdMorador = m.IdMorador " +
-                                          "inner join Visitante v on h.IdMorador = v.IdVisitante";
+                const string sqlcomando = @"select h.IdHistoricoVisita, 
+                                                   m.IdMorador, 
+                                                   v.IdVisitante,
+                                                   v.Nome as 'Visitante', 
+                                                   m.Nome as 'Morador', 
+                                                   h.DataEntrada, 
+                                                   h.DataSaida, 
+                                                   h.Descricao 
+                                          from HistoricoVisita h 
+                                          inner join Morador m on h.IdMorador = m.IdMorador 
+                                          inner join Visitante v on h.IdMorador = v.IdVisitante";
 
                 return Connection.Query<QueryHistoricoVisita>(sqlcomando).OrderBy(x => x.DataEntrada);
             }

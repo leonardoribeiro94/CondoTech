@@ -70,18 +70,18 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string sqlQuery = "select i.IdInformativo, " +
-                                        "f.Nome, " +
-                                        "c.Nome as 'Cargo', " +
-                                        "i.Titulo, " +
-                                        "i.Descricao, " +
-                                        "i.Ativo," +
-                                        "i.DataCadastro, " +
-                                        "i.Documento " +
-                                        "from Funcionario f " +
-                                        "join Cargo c on c.IdCargo = f.IdCargo " +
-                                        "join Informativo i on i.IdFuncionario = f.IdFuncionario " +
-                                        "where i.Ativo = 0";
+                const string sqlQuery = @"select i.IdInformativo,
+                                        f.Nome, 
+                                        c.Nome as 'Cargo',
+                                        i.Titulo, 
+                                        i.Descricao, 
+                                        i.Ativo,
+                                        i.DataCadastro, 
+                                        i.Documento 
+                                        from Funcionario f 
+                                        join Cargo c on c.IdCargo = f.IdCargo 
+                                        join Informativo i on i.IdFuncionario = f.IdFuncionario 
+                                        where i.Ativo = 0";
 
                 return Connection.Query<QueryInformativo>(sqlQuery);
             }
