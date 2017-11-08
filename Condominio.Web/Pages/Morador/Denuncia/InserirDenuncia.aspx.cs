@@ -17,13 +17,14 @@ namespace Condominio.Web.Pages.Morador.Denuncia
         {
             _denunciaControl = new DenunciaControl();
             _mensagens = new Mensagens();
+
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-
+                ValidaSessao.Funcionario(Page);
             }
         }
 

@@ -26,7 +26,7 @@ namespace Condominio.Web
         {
             if (!IsPostBack)
             {
-
+                Session.Clear();
             }
         }
 
@@ -46,11 +46,9 @@ namespace Condominio.Web
 
                     if (cargoFuncionario.Equals("sindico"))
                     {
-                        var panelSindico = (Panel)Master?.FindControl("panelSindico");
-                        if (panelSindico != null) panelSindico.Visible = true;
-
-                        Session.Add("usuarioLogado", dataFuncionario.IdUsuario);
-                        Response.Redirect("~/Pages/Sindico/Informativo/ConsultarInformativo.aspx", false);
+                        Session.Add("tipoUsuarioLogado", TipoUsuario.Funcionario);
+                        Session.Add("idFuncionarioUsuarioLogado", dataFuncionario.IdFuncionario);
+                        Redirecionamento.TelaHome(Page);
                     }
                     else
                     {
@@ -65,7 +63,9 @@ namespace Condominio.Web
                         var panelMorador = (Panel)Master?.FindControl("panelMorador");
                         if (panelMorador != null) panelMorador.Visible = true;
 
-                        Session.Add("usuarioLogado", dataMorador.IdUsuario);
+                        Session.Add("tipoUsuarioLogado", TipoUsuario.Morador);
+                        Session.Add("idMoradorLogado", dataMorador.IdMorador);
+                        Redirecionamento.TelaHome(Page);
                     }
                     else
                     {

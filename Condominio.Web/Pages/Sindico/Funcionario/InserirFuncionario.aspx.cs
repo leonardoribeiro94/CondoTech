@@ -25,6 +25,7 @@ namespace Condominio.Web.Pages.Sindico.Funcionario
             {
                 if (!IsPostBack)
                 {
+                    ValidaSessao.Funcionario(Page);
                     CarregaDadosDaSessao();
                     CarregarDropDownListCargo();
                 }

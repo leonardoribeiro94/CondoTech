@@ -26,6 +26,7 @@ namespace Condominio.Web.Pages.Sindico.Informativo
             {
                 if (!IsPostBack)
                 {
+                    ValidaSessao.Funcionario(Page);
                     PreencherGridInformativo();
                 }
             }

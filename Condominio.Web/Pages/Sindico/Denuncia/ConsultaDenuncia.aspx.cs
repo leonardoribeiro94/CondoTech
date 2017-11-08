@@ -25,6 +25,7 @@ namespace Condominio.Web.Pages.Sindico.Denuncia
             {
                 if (!IsPostBack)
                 {
+                    ValidaSessao.Funcionario(Page);
                     CarregaGridDenuncia();
                 }
 

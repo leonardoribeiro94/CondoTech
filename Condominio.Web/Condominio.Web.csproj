@@ -305,7 +305,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Components\Mensagens.cs" />
+    <Compile Include="Components\Redirecionamento.cs" />
     <Compile Include="Components\Services.cs" />
+    <Compile Include="Components\ValidaSessao.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
