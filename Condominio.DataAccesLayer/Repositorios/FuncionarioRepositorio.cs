@@ -73,8 +73,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                                                   [f].[Ativo],
                                                   [c].[Nome] AS 'Cargo'
                                                   FROM Funcionario f 
-                                                  INNER JOIN Cargo c 
-                                                  ON f.IdCargo = c.IdCargo
+                                                  INNER JOIN Cargo c ON f.IdCargo = c.IdCargo
                                                   AND f.Ativo = 0";
 
                 return Connection.Query<QueryFuncionario>(queryString);

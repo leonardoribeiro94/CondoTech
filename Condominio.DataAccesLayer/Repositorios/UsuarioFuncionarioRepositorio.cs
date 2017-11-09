@@ -50,18 +50,18 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string sqlQuery = "select u.IdUsuario, " +
-                                        "f.IdFuncionario, " +
-                                        "f.Nome, " +
-                                        "c.Nome as 'Cargo', " +
-                                        "u.Senha," +
-                                        "u.SenhaTemporaria, " +
-                                        "u.Ativo " +
-                                        "from Funcionario f join Cargo c on c.IdCargo = f.IdCargo " +
-                                        "join UsuarioFuncionario u on u.IdFuncionario = f.IdFuncionario " +
-                                        "Where u.Login = @login " +
-                                        "and u.Senha = @senha " +
-                                        "and f.Ativo = 0";
+                const string sqlQuery = @"select u.IdUsuario, 
+                                        f.IdFuncionario, 
+                                        f.Nome, 
+                                        c.Nome as 'Cargo', 
+                                        u.Senha,
+                                        u.SenhaTemporaria, 
+                                        u.Ativo 
+                                        from Funcionario f join Cargo c on c.IdCargo = f.IdCargo 
+                                        join UsuarioFuncionario u on u.IdFuncionario = f.IdFuncionario 
+                                        Where u.Login = @login 
+                                        and u.Senha = @senha 
+                                        and f.Ativo = 0";
 
                 return Connection.Query<QueryUsuarioFuncionario>(sqlQuery, new { login, senha });
             }

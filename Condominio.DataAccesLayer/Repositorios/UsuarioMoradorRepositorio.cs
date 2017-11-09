@@ -13,17 +13,17 @@ namespace Condominio.DataAccesLayer.Repositorios
             using (Connection = new SqlConnection(StringConnection))
             {
                 const string sqlQuery =
-                    "SELECT [u].[IdMorador]," +
-                           "[u].[IdMorador]," +
-                           "[u].[Login]," +
-                           "[u].[senha]," +
-                           "[m].[Nome]," +
-                           "[m].[Email]," +
-                           "[m].[DataDeNascimento]," +
-                           "[m].[Cpf] " +
-                    "FROM usuariomorador u " +
-                    "INNER JOIN morador m ON [u].[IdMorador] = [m].[IdMorador] " +
-                    "WHERE u.login = '@login' and u.senha = '@senha'";
+                    @"SELECT [u].[IdMorador],
+                           [u].[IdMorador],
+                           [u].[Login],
+                           [u].[senha],
+                           [m].[Nome],
+                           [m].[Email],
+                           [m].[DataDeNascimento],
+                           [m].[Cpf]
+                           FROM usuariomorador u  +
+                           INNER JOIN morador m ON [u].[IdMorador] = [m].[IdMorador]
+                           WHERE u.login = '@login' and u.senha = '@senha'";
 
                 return Connection.Query<QueryUsuarioMorador>(sqlQuery, new { login, senha }).FirstOrDefault();
             }

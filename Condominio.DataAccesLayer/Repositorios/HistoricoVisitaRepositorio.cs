@@ -56,9 +56,9 @@ namespace Condominio.DataAccesLayer.Repositorios
                                                    h.DataEntrada, 
                                                    h.DataSaida, 
                                                    h.Descricao 
-                                          from HistoricoVisita h 
-                                          inner join Morador m on h.IdMorador = m.IdMorador 
-                                          inner join Visitante v on h.IdMorador = v.IdVisitante";
+                                                   from HistoricoVisita h 
+                                                   inner join Morador m on h.IdMorador = m.IdMorador 
+                                                   inner join Visitante v on h.IdMorador = v.IdVisitante";
 
                 return Connection.Query<QueryHistoricoVisita>(sqlcomando).OrderBy(x => x.DataEntrada);
             }
