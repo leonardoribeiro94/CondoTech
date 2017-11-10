@@ -178,6 +178,7 @@
     <Content Include="Pages\Home.aspx" />
     <Content Include="Pages\Morador\Denuncia\InserirDenuncia.aspx" />
     <Content Include="Pages\Morador\Informativo\ConsultaInformativo.aspx" />
+    <Content Include="Pages\Morador\ReservaAreaDeLlazer\ConsultaAreaDeLazer.aspx" />
     <Content Include="Pages\Sindico\Denuncia\ConsultaDenuncia.aspx" />
     <Content Include="Pages\Sindico\Funcionario\ConsultarFuncionario.aspx" />
     <Content Include="Pages\Sindico\Funcionario\InserirFuncionario.aspx" />
@@ -268,6 +269,7 @@
     <Content Include="Scripts\pages\morador\denuncia\denuncia-inserir-eventos.js" />
     <Content Include="Scripts\pages\morador\denuncia\denuncia-inserir-mask.js" />
     <Content Include="Scripts\pages\morador\denuncia\denuncia-inserir-validacao.js" />
+    <Content Include="Scripts\pages\sindico\area-de-lazer\area-de-lazer-tab.js" />
     <Content Include="Scripts\pages\sindico\denuncia\denuncia-consultar-mask.js" />
     <Content Include="Scripts\pages\sindico\funcionario\funcionario-consulta-validacao.js" />
     <Content Include="Scripts\pages\sindico\funcionario\funcionario-Inserir-mask.js" />
@@ -341,6 +343,13 @@
     </Compile>
     <Compile Include="Pages\Morador\Informativo\ConsultaInformativo.aspx.designer.cs">
       <DependentUpon>ConsultaInformativo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Morador\ReservaAreaDeLlazer\ConsultaAreaDeLazer.aspx.cs">
+      <DependentUpon>ConsultaAreaDeLazer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Morador\ReservaAreaDeLlazer\ConsultaAreaDeLazer.aspx.designer.cs">
+      <DependentUpon>ConsultaAreaDeLazer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Sindico\Denuncia\ConsultaDenuncia.aspx.cs">
       <DependentUpon>ConsultaDenuncia.aspx</DependentUpon>

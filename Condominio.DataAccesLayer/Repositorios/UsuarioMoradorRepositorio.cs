@@ -21,9 +21,10 @@ namespace Condominio.DataAccesLayer.Repositorios
                            [m].[Email],
                            [m].[DataDeNascimento],
                            [m].[Cpf]
-                           FROM usuariomorador u  +
+                           FROM usuariomorador u
                            INNER JOIN morador m ON [u].[IdMorador] = [m].[IdMorador]
-                           WHERE u.login = '@login' and u.senha = '@senha'";
+                           WHERE u.login = @login and u.senha = @senha 
+                           AND u.Ativo = 0";
 
                 return Connection.Query<QueryUsuarioMorador>(sqlQuery, new { login, senha }).FirstOrDefault();
             }

@@ -64,7 +64,7 @@ namespace Condominio.Web
                         if (panelMorador != null) panelMorador.Visible = true;
 
                         Session.Add("tipoUsuarioLogado", TipoUsuario.Morador);
-                        Session.Add("idMoradorLogado", dataMorador.IdMorador);
+                        Session.Add("idMoradorUsuarioLogado", dataMorador.IdMorador);
                         Redirecionamento.TelaHome(Page);
                     }
                     else

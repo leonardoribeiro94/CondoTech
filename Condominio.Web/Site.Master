@@ -95,7 +95,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a runat="server" href="#">Área de Lazer</a></li>
+                            <li><a runat="server" href="~/Pages/Morador/ReservaAreaDeLlazer/ConsultaAreaDeLazer.aspx">Área de Lazer</a></li>
                         </ul>
                     </asp:Panel>
 
