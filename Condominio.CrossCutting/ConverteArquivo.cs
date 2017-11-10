@@ -28,6 +28,10 @@ namespace Condominio.CrossCutting
             var imagemParaBase64 = Convert.ToString("data:image/jpeg;base64," + Convert.ToBase64String(imagem));
             var novaImagem = javaScriptSerializer.Serialize(imagemParaBase64);
 
+            if (novaImagem.Length > javaScriptSerializer.MaxJsonLength)
+            {
+                throw new Exception("A imagem selecionada é incompatível, altere a imagem para uma semelhante de tamanho menor");
+            }
 
             return novaImagem;
         }

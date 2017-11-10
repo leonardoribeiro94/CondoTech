@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using Condominio.DataAccesLayer.Conexao;
+﻿using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
 using Condominio.Model.Enum;
 using Condominio.Model.QueryModel;
 using Dapper;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace Condominio.DataAccesLayer.Repositorios
 {
@@ -23,6 +23,8 @@ namespace Condominio.DataAccesLayer.Repositorios
                 Connection.Execute("Insert_AreaDeLazer", parameters, commandType: CommandStoredProcedure);
             }
         }
+
+
 
         public void Atualizar(AreaDeLazer areaDeLazer)
         {
@@ -56,6 +58,15 @@ namespace Condominio.DataAccesLayer.Repositorios
             {
                 string query = "Select IdAreaDeLazer,imagem ,Nome, descricao from AreaDeLazer where Ativo = 0";
                 return Connection.Query<QueryAreaDeLazer>(query).OrderBy(x => x.IdAreaDeLazer);
+            }
+        }
+
+        public QueryAreaDeLazer ObterAreaDeLazerPorId(int id)
+        {
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                return ObterAreasDeLazer()
+                    .FirstOrDefault(x => x.IdAreaDeLazer.Equals(id));
             }
         }
     }

@@ -27,18 +27,17 @@
                             </div>
                         </div>
                         <br />
-                        <ul class="nav nav-tabs" id="minhaTab">
-                            <li class="active"><a data-target="#gridAreasDeLazer" data-toggle="tab">Áreas de lazer</a></li>
-                            <li><a data-target="#gridAreasDeLazerReservadas" data-toggle="tab">Minhas reservas</a></li>
+                        <ul class="nav nav-pills" id="minhaTab">
+                            <li class="active"><a href="#gridAreasDeLazer" data-toggle="tab"><strong>Áreas de lazer</strong></a></li>
+                            <li><a href="#gridAreasDeLazerReservadas" data-toggle="tab"><strong>Minhas reservas</strong></a></li>
                         </ul>
                         <!--GRID AREAS DE LAZER-->
-                        <div class="tab-pane" id="gridAreasDeLazer">
-                            <h1>GRID AREAS DE LAZER</h1>
+                        <div class="tab-pane fade in active" id="gridAreasDeLazer">
                             <div class="row">
                                 <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
                                     <asp:UpdatePanel runat="server">
                                         <ContentTemplate>
-                                            <asp:GridView ID="grvAreaDeLazer" runat="server" DataKeyNames="IdInformativo" CssClass="table table-responsive bs-pagination"
+                                            <asp:GridView ID="grvAreaDeLazer" runat="server" DataKeyNames="IdAreaDeLazer" CssClass="table table-responsive bs-pagination"
                                                 PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
                                                 GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="grvAreaDeLazer_OnPageIndexChanging">
                                                 <Columns>
@@ -51,7 +50,14 @@
                                                     <asp:TemplateField>
                                                         <ItemStyle></ItemStyle>
                                                         <ItemTemplate>
-                                                            <asp:LinkButton runat="server" ID="lblDownload" title="Download de Anexo" Text="<span class='btn-label-'><i class='fa fa-download' aria-hidden='true'></i>"></asp:LinkButton>
+                                                            <asp:LinkButton runat="server" ID="lblExibeImagem" OnClick="lblExibeImagem_OnClick" title="Imagem da Área de Lazer" Text="<span class='btn-label-'><i class='fa fa-picture-o' aria-hidden='true'></i></span>"></asp:LinkButton>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+
+                                                    <asp:TemplateField>
+                                                        <ItemStyle></ItemStyle>
+                                                        <ItemTemplate>
+                                                            <asp:LinkButton runat="server" ID="lblDownload" title="Solicitar Agendamento" Text="<span class='btn-label-'><i class='fa fa-calendar-check-o' aria-hidden='true'></i></span>"></asp:LinkButton>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 
@@ -70,47 +76,46 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!--GRID AREAS RESERVADAS-->
-                       <div class="tab-pane" id="gridAreasDeLazerReservadas">
-                            <h1>GRID AREAS RESERVADAS</h1>
-                             <div class="row">
-                            <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
-                                <asp:UpdatePanel runat="server">
-                                    <ContentTemplate>
-                                        <asp:GridView ID="GridAreasDeLazerReservadas" runat="server" DataKeyNames="IdInformativo" CssClass="table table-responsive bs-pagination"
-                                            PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
-                                            GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="GridAreasDeLazerReservadas_OnPageIndexChanging">
-                                            <Columns>
-                                                <asp:BoundField DataField="IdAreaDeLazer" HeaderText="Código" />
-                                                <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                                                <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
-                                                <asp:BoundField DataField="Ativo" HeaderText="Ativo" />
-                                                <asp:BoundField DataField="Nome" HeaderText="Informante" />
+                        <div class="tab-pane fade" id="gridAreasDeLazerReservadas">
+                            <div class="row">
+                                <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
+                                    <asp:UpdatePanel runat="server">
+                                        <ContentTemplate>
+                                            <asp:GridView ID="GridAreasDeLazerReservadas" runat="server" DataKeyNames="IdInformativo" CssClass="table table-responsive bs-pagination"
+                                                PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
+                                                GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="GridAreasDeLazerReservadas_OnPageIndexChanging">
+                                                <Columns>
+                                                    <asp:BoundField DataField="IdAreaDeLazer" HeaderText="Código" />
+                                                    <asp:BoundField DataField="Nome" HeaderText="Nome" />
+                                                    <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
+                                                    <asp:BoundField DataField="DataSolicitacao" DataFormatString="{0:dd/MM/yyyy}"/>
+                                                    <asp:BoundField DataField="Status" HeaderText="Status" />
+                                                    
+                                                    <asp:TemplateField>
+                                                        <ItemStyle></ItemStyle>
+                                                        <ItemTemplate>
+                                                            <asp:LinkButton runat="server" ID="lbtnCancelarAgendamento" title="Cancelar meu pedido" Text="<span class='btn-label-'><i class='fa fa-calendar-times-o' aria-hidden='true'></i>"></asp:LinkButton>
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
 
-                                                <asp:TemplateField>
-                                                    <ItemStyle></ItemStyle>
-                                                    <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lblDownload" title="Download de Anexo" Text="<span class='btn-label-'><i class='fa fa-download' aria-hidden='true'></i>"></asp:LinkButton>
-                                                    </ItemTemplate>
-                                                </asp:TemplateField>
+                                                </Columns>
 
-                                            </Columns>
-
-                                            <EmptyDataTemplate>
-                                                <div>
-                                                    <div class="row">
-                                                        <h2 class="text-muted"><i><b>Nenhum</b> resultado</i></h2>
+                                                <EmptyDataTemplate>
+                                                    <div>
+                                                        <div class="row">
+                                                            <h2 class="text-muted"><i><b>Nenhum</b> resultado</i></h2>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </EmptyDataTemplate>
-                                        </asp:GridView>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
+                                                </EmptyDataTemplate>
+                                            </asp:GridView>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                       
+
                         <asp:UpdateProgress ID="UpdateProgress1" runat="server" DynamicLayout="false" DisplayAfter="1">
                             <ProgressTemplate>
                                 <div class="text-muted navbar-fixed-bottom" style="margin-bottom: 50px; margin-left: 10px">
