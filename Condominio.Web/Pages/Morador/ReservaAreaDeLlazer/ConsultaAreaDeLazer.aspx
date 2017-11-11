@@ -57,7 +57,7 @@
                                                     <asp:TemplateField>
                                                         <ItemStyle></ItemStyle>
                                                         <ItemTemplate>
-                                                            <asp:LinkButton runat="server" ID="lblDownload" title="Solicitar Agendamento" Text="<span class='btn-label-'><i class='fa fa-calendar-check-o' aria-hidden='true'></i></span>"></asp:LinkButton>
+                                                            <asp:LinkButton runat="server" ID="lblSolicitaReserva" OnClick="lblSolicitaReserva_OnClick" title="Solicitar Reserva" Text="<span class='btn-label-'><i class='fa fa-calendar-check-o' aria-hidden='true'></i></span>"></asp:LinkButton>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
 

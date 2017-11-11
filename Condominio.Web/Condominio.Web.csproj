@@ -179,6 +179,7 @@
     <Content Include="Pages\Morador\Denuncia\InserirDenuncia.aspx" />
     <Content Include="Pages\Morador\Informativo\ConsultaInformativo.aspx" />
     <Content Include="Pages\Morador\ReservaAreaDeLlazer\ConsultaAreaDeLazer.aspx" />
+    <Content Include="Pages\Morador\ReservaAreaDeLlazer\InserirReservaDeAreasDeLazer.aspx" />
     <Content Include="Pages\Sindico\Denuncia\ConsultaDenuncia.aspx" />
     <Content Include="Pages\Sindico\Funcionario\ConsultarFuncionario.aspx" />
     <Content Include="Pages\Sindico\Funcionario\InserirFuncionario.aspx" />
@@ -350,6 +351,13 @@
     </Compile>
     <Compile Include="Pages\Morador\ReservaAreaDeLlazer\ConsultaAreaDeLazer.aspx.designer.cs">
       <DependentUpon>ConsultaAreaDeLazer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Morador\ReservaAreaDeLlazer\InserirReservaDeAreasDeLazer.aspx.cs">
+      <DependentUpon>InserirReservaDeAreasDeLazer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Morador\ReservaAreaDeLlazer\InserirReservaDeAreasDeLazer.aspx.designer.cs">
+      <DependentUpon>InserirReservaDeAreasDeLazer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Sindico\Denuncia\ConsultaDenuncia.aspx.cs">
       <DependentUpon>ConsultaDenuncia.aspx</DependentUpon>

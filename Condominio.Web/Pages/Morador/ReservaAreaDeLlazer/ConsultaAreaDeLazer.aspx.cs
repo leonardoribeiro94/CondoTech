@@ -1,14 +1,14 @@
 ﻿using Condominio.Controllers;
+using Condominio.CrossCutting;
 using Condominio.Web.Components;
 using System;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Condominio.CrossCutting;
 
 namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
 {
-    public partial class ConsultaAreaDeLazer : System.Web.UI.Page
+    public partial class ConsultaAreaDeLazer : Page
     {
         private readonly AreaDeLazerControl _areaDeLazerCtrl;
         private readonly Mensagens _mensagens;
@@ -42,15 +42,17 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
             throw new NotImplementedException();
         }
 
-        protected void CarregaAreaDeLazer()
-        {
-            grvAreaDeLazer.DataSource = _areaDeLazerCtrl.ObterAreaDeLazer().ToList();
-            grvAreaDeLazer.DataBind();
-        }
-
         protected void GridAreasDeLazerReservadas_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                grvAreaDeLazer.PageIndex = e.NewPageIndex;
+                CarregaAreaDeLazer();
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
         }
 
         protected void lblExibeImagem_OnClick(object sender, EventArgs e)
@@ -61,7 +63,7 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
 
                 var gridViewRow = Services.ObterLinhaDeDados(sender, grvAreaDeLazer);
                 var dataKey = grvAreaDeLazer.DataKeys[gridViewRow.RowIndex];
-                var idAreaDeLazer = Convert.ToInt32(dataKey["IdAreaDeLazer"]);
+                var idAreaDeLazer = Convert.ToInt32(dataKey?["IdAreaDeLazer"]);
 
                 areaDeLazer.Imagem = _areaDeLazerCtrl.ObterAreaDeLazerPorId(idAreaDeLazer).Imagem;
                 var novaImagem = ConverteArquivo.ParaImagem(areaDeLazer.Imagem);
@@ -71,8 +73,21 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
             }
             catch (Exception exception)
             {
-               _mensagens.MensagemDeExcessao(exception.Message,Page);
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
             }
         }
+
+        protected void lblSolicitaReserva_OnClick(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Pages/Morador/");
+        }
+
+        private void CarregaAreaDeLazer()
+        {
+            grvAreaDeLazer.DataSource = _areaDeLazerCtrl.ObterAreaDeLazer().ToList();
+            grvAreaDeLazer.DataBind();
+        }
     }
+
+
 }
