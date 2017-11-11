@@ -59,6 +59,7 @@
     <Compile Include="Repositorios\InformativoRepositorio.cs" />
     <Compile Include="Repositorios\MoradorRepositorio.cs" />
     <Compile Include="Repositorios\RegimentoRepositorio.cs" />
+    <Compile Include="Repositorios\ReservaAreaDeLazerRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioFuncionarioRepositorio.cs" />
     <Compile Include="Repositorios\UsuarioMoradorRepositorio.cs" />
     <Compile Include="Repositorios\VisitanteRepositorio.cs" />

@@ -69,6 +69,7 @@
     <Compile Include="QueryModel\QueryHistoricoVisita.cs" />
     <Compile Include="QueryModel\QueryInformativo.cs" />
     <Compile Include="QueryModel\QueryMorador.cs" />
+    <Compile Include="QueryModel\QueryReservaAreaDeLazer.cs" />
     <Compile Include="QueryModel\QueryUsuarioFuncionario.cs" />
     <Compile Include="QueryModel\QueryUsuarioMorador.cs" />
     <Compile Include="QueryModel\QueryVisitante.cs" />

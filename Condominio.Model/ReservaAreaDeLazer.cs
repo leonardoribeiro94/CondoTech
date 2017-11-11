@@ -5,11 +5,12 @@ namespace Condominio.Model
 {
     public class ReservaAreaDeLazer : Entidade
     {
-        public int IdMorador { get; set; }
         public int IdAreaDeLazer { get; set; }
-        public string Descricao { get; set; }
+        public string IdMorador { get; set; }
         public DateTime DataReserva { get; set; }
-        public StatusReservaAreaDeLazer StatusReservaAreaDeLazer { get; set; }
+        public DateTime DataSolicitacaoDoPedido { get; set; }
+        public string Descricao { get; set; }
+        public StatusReservaAreaDeLazer Status { get; set; }
 
         private void ValidaDataDeAgendaValida()
         {

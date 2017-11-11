@@ -4,6 +4,7 @@
     {
         Analise,
         Aprovado,
-        Reprovado
+        Reprovado,
+        Cancelado
     }
 }

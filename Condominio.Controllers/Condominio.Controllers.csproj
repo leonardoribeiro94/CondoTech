@@ -50,6 +50,7 @@
     <Compile Include="InformativoControl.cs" />
     <Compile Include="MoradorControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservaAreaDeLazerControl.cs" />
     <Compile Include="UsuarioFuncionarioControl.cs" />
     <Compile Include="UsuarioMoradorControl.cs" />
     <Compile Include="VisitanteControl.cs" />
