@@ -88,7 +88,7 @@ namespace Condominio.Web.Pages.Sindico.Funcionario
             if (Session["IdFuncionario"] != null)
             {
                 ViewState.Add("IdFuncionario", Session["IdFuncionario"]);
-                Session.Clear();
+                Session.Remove("IdFuncionario");
 
                 var idFuncionario = Convert.ToInt32(ViewState["IdFuncionario"]);
                 var data = _funcionarioControl.ListarFuncionariosPorId(idFuncionario);

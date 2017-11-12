@@ -1,4 +1,5 @@
-﻿using Condominio.DataAccesLayer.Conexao;
+﻿using System;
+using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
 using Condominio.Model.Enum;
 using Condominio.Model.QueryModel;
@@ -16,14 +17,14 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                var parametros = new
+                var parametros = new DynamicParameters();
                 {
-                    reservaAreaDeLazer.IdAreaDeLazer,
-                    reservaAreaDeLazer.IdMorador,
-                    reservaAreaDeLazer.Descricao,
-                    reservaAreaDeLazer.DataReserva,
-                    reservaAreaDeLazer.DataSolicitacaoDoPedido,
-                    StatusReservaAreaDeLazer.Analise
+                    parametros.Add("@IdAreaDeLazer", reservaAreaDeLazer.IdAreaDeLazer);
+                    parametros.Add("@IdMorador", reservaAreaDeLazer.IdMorador);
+                    parametros.Add("@Descricao", reservaAreaDeLazer.Descricao);
+                    parametros.Add("@DataReserva", reservaAreaDeLazer.DataReserva);
+                    parametros.Add("@DataSolicitacao", DateTime.Now);
+                    parametros.Add("@Status", StatusReservaAreaDeLazer.Analise);
                 };
 
                 Connection.Execute("Insert_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);
@@ -32,15 +33,17 @@ namespace Condominio.DataAccesLayer.Repositorios
 
         public void Alterar(ReservaAreaDeLazer reservaAreaDeLazer)
         {
-            var parametros = new
+            var parametros = new DynamicParameters();
             {
-                reservaAreaDeLazer.IdAreaDeLazer,
-                reservaAreaDeLazer.IdMorador,
-                reservaAreaDeLazer.Descricao,
-                reservaAreaDeLazer.DataReserva,
-                reservaAreaDeLazer.DataSolicitacaoDoPedido,
-                reservaAreaDeLazer.Status
+                parametros.Add("@IdReservaAreaDeLazer", reservaAreaDeLazer.Id);
+                parametros.Add("@IdAreaDeLazer", reservaAreaDeLazer.IdAreaDeLazer);
+                parametros.Add("@IdMorador", reservaAreaDeLazer.IdMorador);
+                parametros.Add("@Descricao", reservaAreaDeLazer.Descricao);
+                parametros.Add("@DataReserva", reservaAreaDeLazer.DataReserva);
+                parametros.Add("@DataSolicitacao", reservaAreaDeLazer.DataSolicitacaoDoPedido);
+                parametros.Add("@Status", StatusReservaAreaDeLazer.Analise);
             };
+
 
             Connection.Execute("Update_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);
         }

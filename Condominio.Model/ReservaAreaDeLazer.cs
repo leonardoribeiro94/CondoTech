@@ -6,7 +6,7 @@ namespace Condominio.Model
     public class ReservaAreaDeLazer : Entidade
     {
         public int IdAreaDeLazer { get; set; }
-        public string IdMorador { get; set; }
+        public int IdMorador { get; set; }
         public DateTime DataReserva { get; set; }
         public DateTime DataSolicitacaoDoPedido { get; set; }
         public string Descricao { get; set; }

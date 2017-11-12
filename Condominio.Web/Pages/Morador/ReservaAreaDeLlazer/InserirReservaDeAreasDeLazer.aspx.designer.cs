@@ -31,12 +31,39 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl spanNomeDaArea;
         
         /// <summary>
-        /// hdnIdAreaDeLazer control.
+        /// txtDataReserva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hdnIdAreaDeLazer;
+        protected global::System.Web.UI.WebControls.TextBox txtDataReserva;
+        
+        /// <summary>
+        /// txtObservacao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtObservacao;
+        
+        /// <summary>
+        /// btnInserir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnInserir;
+        
+        /// <summary>
+        /// btnSolicitarPedido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSolicitarPedido;
     }
 }

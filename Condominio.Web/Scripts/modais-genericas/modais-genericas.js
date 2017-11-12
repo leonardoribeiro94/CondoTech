@@ -17,6 +17,23 @@
     });
 }
 
+function fn_informacao(mensagemDeExcessao) {
+    BootstrapDialog.show({
+        type: BootstrapDialog.TYPE_WARNING,
+        title: "<h4><b>Atenção!</b></h4>",
+        message:"<br><br>"
+            + "Mensagem: <h3>" + mensagemDeExcessao+"</h3>",
+        buttons:
+        [{
+            label: "Close",
+            action: function (dialog) {
+                dialog.close();
+            }
+        }]
+
+    });
+}
+
 
 function fn_ModalExibirImagem(imagem) {
     BootstrapDialog.show({

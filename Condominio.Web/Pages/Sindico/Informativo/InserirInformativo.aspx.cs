@@ -44,7 +44,7 @@ namespace Condominio.Web.Pages.Sindico.Informativo
             if (Session["IdInformativo"] != null)
             {
                 ViewState.Add("IdInformativo", Session["IdInformativo"]);
-                Session.Clear();
+                Session.Remove("IdInformativo");
 
                 var idInformativo = Convert.ToInt32(ViewState["IdInformativo"]);
                 var funcionario = _informativoControl.ObterInformativosPorId(idInformativo);

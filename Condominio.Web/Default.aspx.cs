@@ -72,6 +72,11 @@ namespace Condominio.Web
                         _mensagens.MensagemDeInformacao(MensagensDoSistema.LoginNaoPermitido, Page);
                     }
                 }
+
+                else
+                {
+                    _mensagens.MensagemDeExcessao(MensagensDoSistema.LoginNaoPermitido, Page);
+                }
             }
             catch (Exception exception)
             {

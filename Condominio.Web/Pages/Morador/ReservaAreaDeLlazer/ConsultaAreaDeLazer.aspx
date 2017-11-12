@@ -37,7 +37,7 @@
                                 <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
                                     <asp:UpdatePanel runat="server">
                                         <ContentTemplate>
-                                            <asp:GridView ID="grvAreaDeLazer" runat="server" DataKeyNames="IdAreaDeLazer" CssClass="table table-responsive bs-pagination"
+                                            <asp:GridView ID="grvAreaDeLazer" runat="server" DataKeyNames="IdAreaDeLazer, Nome" CssClass="table table-responsive bs-pagination"
                                                 PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
                                                 GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="grvAreaDeLazer_OnPageIndexChanging">
                                                 <Columns>
@@ -45,7 +45,6 @@
                                                     <asp:BoundField DataField="Nome" HeaderText="Nome" />
                                                     <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
                                                     <asp:BoundField DataField="Ativo" HeaderText="Ativo" />
-                                                    <asp:BoundField DataField="Nome" HeaderText="Informante" />
 
                                                     <asp:TemplateField>
                                                         <ItemStyle></ItemStyle>
@@ -83,7 +82,7 @@
                                 <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
                                     <asp:UpdatePanel runat="server">
                                         <ContentTemplate>
-                                            <asp:GridView ID="GridAreasDeLazerReservadas" runat="server" DataKeyNames="IdInformativo" CssClass="table table-responsive bs-pagination"
+                                            <asp:GridView ID="grvAreasDeLazerReservadas" runat="server" DataKeyNames="IdInformativo" CssClass="table table-responsive bs-pagination"
                                                 PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
                                                 GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="GridAreasDeLazerReservadas_OnPageIndexChanging">
                                                 <Columns>

@@ -34,20 +34,20 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
 
         protected void grvAreaDeLazer_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            throw new NotImplementedException();
+            grvAreaDeLazer.PageIndex = e.NewPageIndex;
+            CarregaAreaDeLazer();
         }
 
         protected void lkbPesquisar_OnClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+
         }
 
         protected void GridAreasDeLazerReservadas_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             try
             {
-                grvAreaDeLazer.PageIndex = e.NewPageIndex;
-                CarregaAreaDeLazer();
+
             }
             catch (Exception exception)
             {
@@ -79,7 +79,10 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
 
         protected void lblSolicitaReserva_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pages/Morador/");
+            var datakey = Services.AddSession(sender, grvAreaDeLazer);
+            Session.Add("IdAreaDeLazer", datakey["IdAreaDeLazer"]);
+            Session.Add("NomeAreaDeLazer", datakey["Nome"]);
+            Response.Redirect("~/Pages/Morador/ReservaAreaDeLlazer/InserirReservaDeAreasDeLazer.aspx", false);
         }
 
         private void CarregaAreaDeLazer()
