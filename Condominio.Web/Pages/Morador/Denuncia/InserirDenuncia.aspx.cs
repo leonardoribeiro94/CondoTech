@@ -24,7 +24,7 @@ namespace Condominio.Web.Pages.Morador.Denuncia
         {
             if (!IsPostBack)
             {
-                ValidaSessao.Funcionario(Page);
+                ValidaSessao.Morador(Page);
             }
         }
 

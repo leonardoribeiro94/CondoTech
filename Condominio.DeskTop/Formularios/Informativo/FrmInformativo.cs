@@ -142,6 +142,8 @@ namespace Condominio.DeskTop.Formularios.Informativo
         private void CarregaGridView()
         {
             dgvInformativo.DataSource = _informativoController.ObterInformativos().ToList();
+            dgvInformativo.Columns[0].HeaderText = @"Código";
+            dgvInformativo.Columns[6].Visible = false;
         }
 
         private void LimparCampos()

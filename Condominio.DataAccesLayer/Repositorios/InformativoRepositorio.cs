@@ -76,8 +76,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                                         i.Titulo, 
                                         i.Descricao, 
                                         i.Ativo,
-                                        i.DataCadastro, 
-                                        i.Documento 
+                                        i.DataCadastro                                        
                                         from Funcionario f 
                                         join Cargo c on c.IdCargo = f.IdCargo 
                                         join Informativo i on i.IdFuncionario = f.IdFuncionario 
