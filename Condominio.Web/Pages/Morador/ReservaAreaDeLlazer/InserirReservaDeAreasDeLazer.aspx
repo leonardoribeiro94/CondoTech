@@ -22,7 +22,7 @@
                                     <label class="control-label"><b>Data da Solicitacao</b></label>
                                     <asp:UpdatePanel runat="server">
                                         <ContentTemplate>
-                                            <asp:TextBox runat="server" ID="txtDataReserva" CssClass="form-control" placeholder="dd/mm/aaaa"></asp:TextBox>
+                                            <asp:TextBox runat="server" ID="txtDataReserva" CssClass="form-control campo-data" placeholder="dd/mm/aaaa"></asp:TextBox>
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
 

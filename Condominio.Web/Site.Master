@@ -23,6 +23,7 @@
     <script src="<%=ResolveClientUrl("Scripts/modais-genericas/modais-genericas.js")%>"></script>
     <script src="<%=ResolveClientUrl("Scripts/compartilhado/validacao-de-campos.js")%>"></script>
     <script src="<%=ResolveClientUrl("~/Scripts/compartilhado/visualizacao-documento.js")%>"></script>
+    <script src="<%=ResolveClientUrl("Scripts/compartilhado/mascara-generica.js")%>"></script>
 
 
     <asp:ContentPlaceHolder ID="Head" runat="server">
@@ -105,6 +106,7 @@
                             <a href="#"><i class="fa fa-file-text"></i>&nbsp;Manual</a>
                         </li>
                         <li class="dropdown">
+
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <asp:Label ID="lblNome" runat="server" CssClass="label label-primary"></asp:Label>&nbsp;<b class="caret"></b></a>
                             <ul class="dropdown-menu" style="padding: 15px; min-width: 250px;">
@@ -113,11 +115,11 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <asp:Label runat="server" for="lbUsuario" Style="color: Black;"><b>Usuário:</b></asp:Label><br />
-                                                <asp:Label runat="server" ID="lbUsuario"></asp:Label>
+                                                <asp:Label runat="server" ID="lblUsuario"></asp:Label>
                                             </div>
                                             <div class="form-group">
                                                 <asp:Label for="lbEmail" runat="server"><b>Email:</b></asp:Label><br />
-                                                <asp:Label runat="server" ID="lbEmail"></asp:Label>
+                                                <asp:Label runat="server" ID="lblEmail"></asp:Label>
                                             </div>
                                         </div>
                                     </div>
@@ -128,6 +130,7 @@
                                         CssClass="btn btn-labeled btn-default btn-block"></asp:LinkButton>
                                 </li>
                             </ul>
+
                         </li>
                     </ul>
                 </div>

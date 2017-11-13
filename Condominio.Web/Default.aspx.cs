@@ -48,6 +48,9 @@ namespace Condominio.Web
                     {
                         Session.Add("tipoUsuarioLogado", TipoUsuario.Funcionario);
                         Session.Add("idFuncionarioUsuarioLogado", dataFuncionario.IdFuncionario);
+                        Session.Add("nomeUsuario", dataFuncionario.Nome);
+                        Session.Add("emailUsuario", dataFuncionario.Email);
+
                         Redirecionamento.TelaHome(Page);
                     }
                     else
@@ -65,6 +68,8 @@ namespace Condominio.Web
 
                         Session.Add("tipoUsuarioLogado", TipoUsuario.Morador);
                         Session.Add("idMoradorUsuarioLogado", dataMorador.IdMorador);
+                        Session.Add("nomeUsuario", dataMorador.Nome);
+                        Session.Add("emailUsuario", dataMorador.Email);
                         Redirecionamento.TelaHome(Page);
                     }
                     else

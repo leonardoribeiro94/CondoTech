@@ -24,6 +24,10 @@ namespace Condominio.Web
                     panelSindico.Visible = false;
                     panelMorador.Visible = true;
                 }
+
+                lblNome.Text = Convert.ToString(Session["nomeUsuario"]);
+                lblUsuario.Text = Convert.ToString(Session["nomeUsuario"]);
+                lblEmail.Text = Convert.ToString(Session["emailUsuario"]);
             }
         }
 

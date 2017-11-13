@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-md-12 well formulario">
                         <fieldset>
-                            <legend><b>Reserva</b> Área de Lazer;
+                            <legend><b>Reserva</b> Área de Lazer
                             </legend>
                         </fieldset>
                         <div class="row">

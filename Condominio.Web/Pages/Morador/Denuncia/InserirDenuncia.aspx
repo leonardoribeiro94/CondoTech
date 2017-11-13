@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="InserirDenuncia.aspx.cs" Inherits="Condominio.Web.Pages.Morador.Denuncia.InserirDenuncia" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-    <script src="<%=ResolveClientUrl("~/Scripts/pages/morador/denuncia/denuncia-inserir-mask.js")%>"></script>
     <script src="<%=ResolveClientUrl("~/Scripts/pages/morador/denuncia/denuncia-inserir-eventos.js")%>"></script>
     <script src="<%=ResolveClientUrl("~/Scripts/pages/morador/denuncia/denuncia-inserir-validacao.js")%>"></script>
     <script>
@@ -46,13 +45,13 @@
                                 <div class="col-md-5">
                                     <div id="nome">
                                         <label class="control-label"><b>Nome</b></label>
-                                        <asp:TextBox runat="server" ID="txtNome" onkeyup="verificaCampo(txtNome, '#nome', 5);" placeholder="Insira o nome" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="txtNome" onkeyup="verificaCampo(txtNome, '#nome', 5);" placeholder="Insira o nome" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div id="celular">
                                         <label class="control-label"><b>Celular</b></label>
-                                        <asp:TextBox runat="server" ID="txtCelular" onkeyup="verificaCampo(txtCelular, '#celular', 11);" placeholder="(00)000000000" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control campo-celular" ID="txtCelular" onkeyup="verificaCampo(txtCelular, '#celular', 11);" placeholder="(00)000000000" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +59,7 @@
                                 <div class="col-md-12 control-label">
                                     <div id="email">
                                         <label class="control-label"><b>E-mail</b></label>
-                                        <asp:TextBox runat="server" ID="txtEmail" onkeyup="verificaCampo(txtEmail, '#email', 5);" placeholder="exemploemail@gmail.com" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="txtEmail" onkeyup="verificaCampo(txtEmail, '#email', 5);" placeholder="exemploemail@gmail.com" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
 

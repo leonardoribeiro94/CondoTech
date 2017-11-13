@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConsultaDenuncia.aspx.cs" Inherits="Condominio.Web.Pages.Sindico.Denuncia.ConsultaDenuncia" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <script src="<%=ResolveClientUrl("~/Scripts/bootstrap-pagination/bs.pagination.min.js")%>"></script>
-    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/denuncia/denuncia-consultar-mask.js")%>"></script>
     
     <script>
         var txtDataInicio = "#<%=txtDataInicio.ClientID%>";
@@ -22,11 +21,11 @@
                             <div class="col-md-8">
                                 <div class="col-md-5">
                                     <asp:Label runat="server" for="txtDataInicio" class="control-label"><b>Data Início: </b></asp:Label>
-                                    <asp:TextBox runat="server" ID="txtDataInicio" CssClass="form-control" placeholder="00/00/00000"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtDataInicio" CssClass="form-control campo-data" placeholder="00/00/00000"></asp:TextBox>
                                 </div>
-                                <div class="col-md-5">
+                                <div  class="col-md-5">
                                     <asp:Label runat="server" for="txtDataFim" class="control-label"><b>Data Fim: </b></asp:Label>
-                                    <asp:TextBox runat="server" ID="txtDataFim" CssClass="form-control" placeholder="00/00/00000"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtDataFim" CssClass="form-control campo-data" placeholder="00/00/00000"></asp:TextBox>
                                 </div>
 
                                 <div class="col-md-4" style="margin-top: 15px">
