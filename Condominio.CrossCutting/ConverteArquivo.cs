@@ -1,16 +1,25 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Web.Script.Serialization;
 
 namespace Condominio.CrossCutting
 {
     public static class ConverteArquivo
     {
+        private static readonly JavaScriptSerializer JavaScriptSerializer = new JavaScriptSerializer();
+
         public static byte[] ParaByte(Stream fileStream)
         {
             using (var binaryReader = new BinaryReader(fileStream))
             {
+
                 byte[] byteArray = binaryReader.ReadBytes(Convert.ToInt32(fileStream.Length));
+
+                if (byteArray.Length > JavaScriptSerializer.MaxJsonLength)
+                {
+                    throw new Exception("A imagem selecionada é incompatível, altere a imagem para uma semelhante de tamanho menor");
+                }
 
                 if (fileStream.Length > 0)
                 {
@@ -23,15 +32,17 @@ namespace Condominio.CrossCutting
 
         public static string ParaImagem(byte[] imagem)
         {
-            var javaScriptSerializer = new JavaScriptSerializer();
+
 
             var imagemParaBase64 = Convert.ToString("data:image/jpeg;base64," + Convert.ToBase64String(imagem));
-            var novaImagem = javaScriptSerializer.Serialize(imagemParaBase64);
+            var tamanhoImagem = imagemParaBase64.ToArray().Length;
 
-            if (novaImagem.Length > javaScriptSerializer.MaxJsonLength)
+            if (tamanhoImagem > JavaScriptSerializer.MaxJsonLength)
             {
-                throw new Exception("A imagem selecionada é incompatível, altere a imagem para uma semelhante de tamanho menor");
+                throw new Exception("A imagem selecionada é muito grande e não pode ser exibida! contacte o administrador.");
             }
+
+            var novaImagem = JavaScriptSerializer.Serialize(imagemParaBase64.ToArray());
 
             return novaImagem;
         }

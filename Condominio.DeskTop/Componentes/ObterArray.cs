@@ -1,5 +1,7 @@
-﻿using System.Drawing.Imaging;
+﻿using System;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Condominio.DeskTop.Componentes
@@ -10,10 +12,12 @@ namespace Condominio.DeskTop.Componentes
         {
             using (var memoryStream = new MemoryStream())
             {
-                if (picture.Image != null)
-                {
-                    picture.Image.Save(memoryStream, ImageFormat.Bmp);
-                }
+                picture.Image?.Save(memoryStream, ImageFormat.Bmp);
+                var imagemParaBase64 = Convert.ToString("data:image/jpeg;base64," + Convert.ToBase64String(memoryStream.ToArray()));
+                var larguraArray = imagemParaBase64.ToArray().Length;
+
+                if (larguraArray > 2097152)
+                    throw new Exception("Imagem muito grande! por favor selecione uma nova imagem");
 
                 return memoryStream.ToArray();
             }
