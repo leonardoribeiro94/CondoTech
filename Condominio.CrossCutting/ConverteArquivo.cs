@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Condominio.CrossCutting.Resources;
+using System;
 using System.IO;
 using System.Linq;
 using System.Web.Script.Serialization;
@@ -32,19 +33,11 @@ namespace Condominio.CrossCutting
 
         public static string ParaImagem(byte[] imagem)
         {
-
-
             var imagemParaBase64 = Convert.ToString("data:image/jpeg;base64," + Convert.ToBase64String(imagem));
             var tamanhoImagem = imagemParaBase64.ToArray().Length;
 
-            if (tamanhoImagem > JavaScriptSerializer.MaxJsonLength)
-            {
-                throw new Exception("A imagem selecionada é muito grande e não pode ser exibida! contacte o administrador.");
-            }
-
-            var novaImagem = JavaScriptSerializer.Serialize(imagemParaBase64.ToArray());
-
-            return novaImagem;
+            return tamanhoImagem < JavaScriptSerializer.MaxJsonLength ? JavaScriptSerializer.Serialize(imagemParaBase64.ToArray())
+                : throw new Exception(MensagensDoSistema.ImagemMuitoGrande);
         }
     }
 }

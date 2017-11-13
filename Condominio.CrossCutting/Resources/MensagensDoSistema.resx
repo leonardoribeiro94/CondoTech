@@ -129,6 +129,10 @@
     <value>Verifique se o arquivo escolhido é realmente uma imagem</value>
     <comment>Mensagem exibida quando o usuário insere um conteúdo que não seja uma imagem válida.</comment>
   </data>
+  <data name="ImagemMuitoGrande" xml:space="preserve">
+    <value>Imagem selecionada é grande demais para ser armazenada, por favor selecione uma imagem inferior a 2 MB.</value>
+    <comment>Mensagem exibida quando o usuário tenta inserir uma imagem maior doque pode ser exibida pelo javascript serialize.</comment>
+  </data>
   <data name="LoginNaoPermitido" xml:space="preserve">
     <value>Não foi possível realizar login,  verifique sua senha ou informe o Administrador do sistema</value>
     <comment>Mensagem exibida quando o login não é autenticado com sucesso!</comment>

@@ -19,7 +19,7 @@ namespace Condominio.CrossCutting.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class MensagensDoSistema {
@@ -84,6 +84,15 @@ namespace Condominio.CrossCutting.Resources {
         public static string ImagemInvalida {
             get {
                 return ResourceManager.GetString("ImagemInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Imagem selecionada é grande demais para ser armazenada, por favor selecione uma imagem inferior a 2 MB..
+        /// </summary>
+        public static string ImagemMuitoGrande {
+            get {
+                return ResourceManager.GetString("ImagemMuitoGrande", resourceCulture);
             }
         }
         

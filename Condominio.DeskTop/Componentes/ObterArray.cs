@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Condominio.CrossCutting.Resources;
+using System;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
@@ -16,10 +17,7 @@ namespace Condominio.DeskTop.Componentes
                 var imagemParaBase64 = Convert.ToString("data:image/jpeg;base64," + Convert.ToBase64String(memoryStream.ToArray()));
                 var larguraArray = imagemParaBase64.ToArray().Length;
 
-                if (larguraArray > 2097152)
-                    throw new Exception("Imagem muito grande! por favor selecione uma nova imagem");
-
-                return memoryStream.ToArray();
+                return larguraArray < 2097152 ? memoryStream.ToArray() : throw new Exception(MensagensDoSistema.ImagemMuitoGrande);
             }
         }
     }
