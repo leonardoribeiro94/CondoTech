@@ -48,7 +48,7 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string sqlcomando = @"select h.IdHistoricoVisita, 
+                const string sqlcomando = @"SELECT h.IdHistoricoVisita, 
                                                    m.IdMorador, 
                                                    v.IdVisitante,
                                                    v.Nome as 'Visitante', 
@@ -56,9 +56,9 @@ namespace Condominio.DataAccesLayer.Repositorios
                                                    h.DataEntrada, 
                                                    h.DataSaida, 
                                                    h.Descricao 
-                                                   from HistoricoVisita h 
-                                                   inner join Morador m on h.IdMorador = m.IdMorador 
-                                                   inner join Visitante v on h.IdMorador = v.IdVisitante";
+                                                   FROM HistoricoVisita h 
+                                                   INNER JOIN Morador m on h.IdMorador = m.IdMorador 
+                                                   INNER JOIN Visitante v on h.IdVisitante = v.IdVisitante";
 
                 return Connection.Query<QueryHistoricoVisita>(sqlcomando).OrderBy(x => x.DataEntrada);
             }
