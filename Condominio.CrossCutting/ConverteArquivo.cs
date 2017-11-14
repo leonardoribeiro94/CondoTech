@@ -33,11 +33,13 @@ namespace Condominio.CrossCutting
 
         public static string ParaImagem(byte[] imagem)
         {
+            JavaScriptSerializer.MaxJsonLength = int.MaxValue;
             var imagemParaBase64 = Convert.ToString("data:image/jpeg;base64," + Convert.ToBase64String(imagem));
             var tamanhoImagem = imagemParaBase64.ToArray().Length;
-
-            return tamanhoImagem < JavaScriptSerializer.MaxJsonLength ? JavaScriptSerializer.Serialize(imagemParaBase64.ToArray())
+            var retorno = tamanhoImagem < JavaScriptSerializer.MaxJsonLength ? JavaScriptSerializer.Serialize(imagemParaBase64)
                 : throw new Exception(MensagensDoSistema.ImagemMuitoGrande);
+
+            return retorno;
         }
     }
 }
