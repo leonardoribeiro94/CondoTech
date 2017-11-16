@@ -18,7 +18,7 @@ idareadelazer = @IdAreaDeLazer,
 descricao = @Descricao, 
 datasolicitacao = @DataSolicitacao, 
 datareserva = @DataReserva, 
-status = @Status 
+StatusReserva = @Status 
 
 WHERE 
 idreservaareadelazer = @IdReservaAreaDeLazer

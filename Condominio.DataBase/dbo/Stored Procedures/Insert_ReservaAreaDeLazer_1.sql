@@ -15,7 +15,7 @@ idareadelazer,
 descricao,
 datasolicitacao,
 datareserva,
-status)
+StatusReserva)
 
 VALUES(@IdMorador,
 @IdAreaDeLazer,

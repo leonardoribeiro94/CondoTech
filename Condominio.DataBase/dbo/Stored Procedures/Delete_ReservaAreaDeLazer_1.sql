@@ -9,7 +9,7 @@ BEGIN
 
 UPDATE [dbo].[reservaareadelazer] 
 SET 
- status = @Status 
+ StatusReserva = @Status 
 
 WHERE 
  idreservaareadelazer = @IdReservaAreaDeLazer
