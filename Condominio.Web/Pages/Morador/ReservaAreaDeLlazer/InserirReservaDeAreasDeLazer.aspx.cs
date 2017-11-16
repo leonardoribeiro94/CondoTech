@@ -2,10 +2,12 @@
 using Condominio.Model;
 using Condominio.Web.Components;
 using System;
+using System.Web.Script.Serialization;
+using System.Web.UI;
 
 namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
 {
-    public partial class InserirReservaDeAreasDeLazer : System.Web.UI.Page
+    public partial class InserirReservaDeAreasDeLazer : Page
     {
         private readonly ReservaAreaDeLazerControl _reservaAreaDeLazerControl;
         private readonly Mensagens _mensagens;
@@ -22,6 +24,7 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
             {
                 ValidaSessao.Morador(Page);
                 CarregaDadosDaSessao();
+                VerificaDatasJaAgendadas();
             }
         }
 
@@ -60,6 +63,20 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
                     };
 
                 _reservaAreaDeLazerControl.InserirReservarAreaDeLazer(reservaArea);
+                Response.Redirect("~/Pages/Morador/ReservaAreaDeLazer/ConsultaAreaDeLazer.aspx", false);
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
+
+        private void VerificaDatasJaAgendadas()
+        {
+            try
+            {
+                var serialize = new JavaScriptSerializer().Serialize("26/06/2018");
+                ScriptManager.RegisterStartupScript(Page, GetType(), "campodatablock", $"dataCalendario({serialize});", true);
             }
             catch (Exception exception)
             {
