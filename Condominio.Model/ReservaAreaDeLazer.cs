@@ -10,16 +10,6 @@ namespace Condominio.Model
         public DateTime DataReserva { get; set; }
         public DateTime DataSolicitacaoDoPedido { get; set; }
         public string Descricao { get; set; }
-        public StatusReservaAreaDeLazer Status { get; set; }
-
-        private void ValidaDataDeAgendaValida()
-        {
-            var dataAceitavel = DataReserva >= DataReserva.AddMonths(1);
-
-            if (!dataAceitavel)
-            {
-                throw new Exception("Escolha uma data a partir do mês seguinte");
-            }
-        }
+        public StatusReserva Status { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Condominio.Model.Enum
 {
-    public enum StatusReservaAreaDeLazer
+    public enum StatusReserva
     {
         Reservado,
         Cancelado

@@ -1,6 +1,7 @@
 ﻿using Condominio.DataAccesLayer.Repositorios;
 using Condominio.Model;
 using Condominio.Model.QueryModel;
+using System;
 using System.Collections.Generic;
 
 namespace Condominio.Controllers
@@ -17,22 +18,32 @@ namespace Condominio.Controllers
         public void InserirReservarAreaDeLazer(ReservaAreaDeLazer reserva)
             => _reservaAreaRepositorio.Inserir(reserva);
 
+
         public void AlterarReservaAreaDeLazer(ReservaAreaDeLazer reserva)
             => _reservaAreaRepositorio.Alterar(reserva);
+
 
         public void DeletarReservaAreaDeLazer(int idReserva)
             => _reservaAreaRepositorio.Deletar(idReserva);
 
+
         public ICollection<QueryReservaAreaDeLazer> ObterReservasDeaAreaDeLazer()
             => _reservaAreaRepositorio.ObterReservasAreaDeLazer();
+
 
         public ICollection<QueryReservaAreaDeLazer> ObterReservasPorNomedeMorador(string nome)
             => _reservaAreaRepositorio.ObterAreasDeLazerPorNomeMorador(nome);
 
+
         public IEnumerable<QueryReservaAreaDeLazer> ObterAreasDeLazerPorIdMorador(int id)
             => _reservaAreaRepositorio.ObterAreasDeLazerPorIdMorador(id);
 
+
         public QueryReservaAreaDeLazer ObterReservasPorId(int id)
             => _reservaAreaRepositorio.ObteReservaAreaDeLazerPorId(id);
+
+
+        public ICollection<DateTime> ObterDatasDaReservaDeUmaAreaDeLazerPorId(int id)
+            => _reservaAreaRepositorio.ObterDatasDaReservaDeUmaAreaDeLazerPorId(id);
     }
 }

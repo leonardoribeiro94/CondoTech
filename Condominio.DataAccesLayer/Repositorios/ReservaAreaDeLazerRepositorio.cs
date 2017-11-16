@@ -24,7 +24,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                     parametros.Add("@Descricao", reservaAreaDeLazer.Descricao);
                     parametros.Add("@DataReserva", reservaAreaDeLazer.DataReserva);
                     parametros.Add("@DataSolicitacao", DateTime.Now);
-                    parametros.Add("@Status", StatusReservaAreaDeLazer.Reservado);
+                    parametros.Add("@Status", StatusReserva.Reservado);
                 };
 
                 Connection.Execute("Insert_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);
@@ -41,7 +41,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                 parametros.Add("@Descricao", reservaAreaDeLazer.Descricao);
                 parametros.Add("@DataReserva", reservaAreaDeLazer.DataReserva);
                 parametros.Add("@DataSolicitacao", reservaAreaDeLazer.DataSolicitacaoDoPedido);
-                parametros.Add("@Status", StatusReservaAreaDeLazer.Reservado);
+                parametros.Add("@Status", StatusReserva.Reservado);
             };
 
 
@@ -53,7 +53,7 @@ namespace Condominio.DataAccesLayer.Repositorios
             var parametros = new
             {
                 idReserva,
-                StatusReservaAreaDeLazer.Cancelado
+                StatusReserva.Cancelado
             };
 
             Connection.Execute("Insert_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);
@@ -95,6 +95,14 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             return ObterReservasAreaDeLazer()
                 .Where(x => x.NomeMorador.Contains(nome)).ToList();
+        }
+
+        public ICollection<DateTime> ObterDatasDaReservaDeUmaAreaDeLazerPorId(int id)
+        {
+            return ObterReservasAreaDeLazer()
+                .Where(x => x.Status.Equals(StatusReserva.Reservado)
+                 && x.IdAreaDeLazer.Equals(id))
+                .Select(x => x.DataReserva).ToList();
         }
     }
 }

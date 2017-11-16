@@ -13,6 +13,6 @@ namespace Condominio.Model.QueryModel
         public string Descricao { get; set; }
         public DateTime DataReserva { get; set; }
         public DateTime DataSolicitacao { get; set; }
-        public StatusReservaAreaDeLazer Status { get; set; }
+        public StatusReserva Status { get; set; }
     }
 }

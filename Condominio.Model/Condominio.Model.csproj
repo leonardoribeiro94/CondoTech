@@ -50,7 +50,7 @@
     </Compile>
     <Compile Include="Denuncia.cs" />
     <Compile Include="Entidade.cs" />
-    <Compile Include="Enum\StatusReservaAreaDeLazer.cs" />
+    <Compile Include="Enum\StatusReserva.cs" />
     <Compile Include="Enum\EntidadeAtiva.cs" />
     <Compile Include="Enum\SenhaTemporaria.cs" />
     <Compile Include="Enum\TipoUsuario.cs" />

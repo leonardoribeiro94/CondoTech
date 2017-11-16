@@ -2,6 +2,7 @@
 using Condominio.Model;
 using Condominio.Web.Components;
 using System;
+using System.Linq;
 using System.Web.Script.Serialization;
 using System.Web.UI;
 
@@ -18,22 +19,23 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
             _mensagens = new Mensagens();
         }
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 ValidaSessao.Morador(Page);
                 CarregaDadosDaSessao();
-                VerificaDatasJaAgendadas();
+                SelecionaDatasReservadas();
             }
         }
 
 
-
         protected void lkbVoltar_OnClick(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pages/Morador/ReservaAreaDeLlazer/ConsultaAreaDeLazer.aspx", false);
+            RedirecionaPagina();
         }
+
 
         private void CarregaDadosDaSessao()
         {
@@ -47,6 +49,7 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
                 ViewState.Add("idAreaDeLazer", idAreaDeLazer);
             }
         }
+
 
         protected void btnSolicitarPedido_OnClick(object sender, EventArgs e)
         {
@@ -63,7 +66,7 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
                     };
 
                 _reservaAreaDeLazerControl.InserirReservarAreaDeLazer(reservaArea);
-                Response.Redirect("~/Pages/Morador/ReservaAreaDeLazer/ConsultaAreaDeLazer.aspx", false);
+                RedirecionaPagina();
             }
             catch (Exception exception)
             {
@@ -71,17 +74,29 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
             }
         }
 
-        private void VerificaDatasJaAgendadas()
+
+        private void SelecionaDatasReservadas()
         {
             try
             {
-                var serialize = new JavaScriptSerializer().Serialize("26/06/2018");
+                var idAreaDeLazer = Convert.ToInt32(Session["IdAreaDeLazer"]);
+                var datasDeReservaDaAreaDeLazer = _reservaAreaDeLazerControl
+                    .ObterDatasDaReservaDeUmaAreaDeLazerPorId(idAreaDeLazer)
+                    .ToArray();
+
+                var serialize = new JavaScriptSerializer().Serialize(datasDeReservaDaAreaDeLazer);
                 ScriptManager.RegisterStartupScript(Page, GetType(), "campodatablock", $"dataCalendario({serialize});", true);
             }
             catch (Exception exception)
             {
                 _mensagens.MensagemDeExcessao(exception.Message, Page);
             }
+        }
+
+
+        private void RedirecionaPagina()
+        {
+            Response.Redirect("~/Pages/Morador/ReservaAreaDeLlazer/ConsultaAreaDeLazer.aspx", false);
         }
     }
 }

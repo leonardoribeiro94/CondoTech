@@ -91,6 +91,7 @@ namespace Condominio.Web.Pages.Sindico.Informativo
             }
         }
 
+
         private void RedirecionaParaTelaDeConsulta()
         {
             Response.Redirect("~/Pages/Sindico/Informativo/ConsultarInformativo.aspx", false);
