@@ -1,9 +1,9 @@
-﻿using System;
-using Condominio.DataAccesLayer.Conexao;
+﻿using Condominio.DataAccesLayer.Conexao;
 using Condominio.Model;
 using Condominio.Model.Enum;
 using Condominio.Model.QueryModel;
 using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -85,7 +85,7 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public ICollection<QueryReservaAreaDeLazer> ObterAreasDeLazerPorMorador(int idMorador)
+        public ICollection<QueryReservaAreaDeLazer> ObterAreasDeLazerPorIdMorador(int idMorador)
         {
             return ObterReservasAreaDeLazer()
                 .Where(x => x.IdMorador.Equals(idMorador)).ToList();
