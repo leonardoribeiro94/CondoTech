@@ -24,7 +24,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                     parametros.Add("@Descricao", reservaAreaDeLazer.Descricao);
                     parametros.Add("@DataReserva", reservaAreaDeLazer.DataReserva);
                     parametros.Add("@DataSolicitacao", DateTime.Now);
-                    parametros.Add("@Status", StatusReservaAreaDeLazer.Analise);
+                    parametros.Add("@Status", StatusReservaAreaDeLazer.Reservado);
                 };
 
                 Connection.Execute("Insert_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);
@@ -41,7 +41,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                 parametros.Add("@Descricao", reservaAreaDeLazer.Descricao);
                 parametros.Add("@DataReserva", reservaAreaDeLazer.DataReserva);
                 parametros.Add("@DataSolicitacao", reservaAreaDeLazer.DataSolicitacaoDoPedido);
-                parametros.Add("@Status", StatusReservaAreaDeLazer.Analise);
+                parametros.Add("@Status", StatusReservaAreaDeLazer.Reservado);
             };
 
 
@@ -53,7 +53,7 @@ namespace Condominio.DataAccesLayer.Repositorios
             var parametros = new
             {
                 idReserva,
-                StatusReservaAreaDeLazer.Analise
+                StatusReservaAreaDeLazer.Cancelado
             };
 
             Connection.Execute("Insert_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);

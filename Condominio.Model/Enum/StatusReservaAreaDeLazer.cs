@@ -2,9 +2,7 @@
 {
     public enum StatusReservaAreaDeLazer
     {
-        Analise,
-        Aprovado,
-        Reprovado,
+        Reservado,
         Cancelado
     }
 }
