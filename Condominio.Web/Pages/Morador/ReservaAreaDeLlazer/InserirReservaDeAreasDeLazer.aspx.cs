@@ -79,7 +79,7 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
         {
             try
             {
-                var idAreaDeLazer = Convert.ToInt32(Session["IdAreaDeLazer"]);
+                var idAreaDeLazer = Convert.ToInt32(ViewState["idAreaDeLazer"]);
                 var datasDeReservaDaAreaDeLazer = _reservaAreaDeLazerControl
                     .ObterDatasDaReservaDeUmaAreaDeLazerPorId(idAreaDeLazer)
                     .ToArray();

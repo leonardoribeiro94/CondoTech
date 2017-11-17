@@ -14,7 +14,7 @@ function dataCalendario(datas) {
      $(".calendario").mask("99/99/9999").datepicker({
         language: "pt-BR",
         format: "dd/mm/yyyy",
-        datesDisabled: [datas],
+        datesDisabled: datas,
         orientation: "bottom left",
         startDate: 1 + "/" + mes + "/" + data.getFullYear()
     });

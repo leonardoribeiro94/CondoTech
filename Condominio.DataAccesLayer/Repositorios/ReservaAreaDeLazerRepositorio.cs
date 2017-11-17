@@ -25,7 +25,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                     parametros.Add("@DataReserva", reservaAreaDeLazer.DataReserva);
                     parametros.Add("@DataSolicitacao", DateTime.Now);
                     parametros.Add("@Status", StatusReserva.Reservado);
-                };
+                }
 
                 Connection.Execute("Insert_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);
             }
@@ -62,16 +62,20 @@ namespace Condominio.DataAccesLayer.Repositorios
         public ICollection<QueryReservaAreaDeLazer> ObterReservasAreaDeLazer()
         {
             const string sqlQuery =
-                @"SELECT [r].[IdReservaAreaDeLazer] as IdReserva,
-	                     [a].[Nome] as NomeAreaDeLazer,
-	                     [m].[Nome] as NomeMorador,
-	                     [r].[DataReserva] as DataReserva,
-	                     [r].[Descricao] as Descricao,
-	                     [r].[Status] as Status
+                @"select r.IdReservaAreaDeLazer as IdReserva,
+	                     a.Nome as NomeAreaDeLazer,
+	                     m.Nome as NomeMorador,
+	                     r.DataReserva as DataReserva,
+	                     r.Descricao as Descricao,
+	                     r.StatusReserva as Status
 	     
-                    FROM ReservaAreaDeLazer [r]
-                         JOIN Morador [m] ON [r].[IdMorador] = [m].[IdMorador]
-                         JOIN AreaDeLazer [a] ON [a].[IdAreaDeLazer] = [r].[IdAreaDeLazer]";
+                    FROM ReservaAreaDeLazer r
+                         JOIN Morador m 
+                         ON 
+                         r.IdMorador = m.IdMorador
+                         JOIN AreaDeLazer a 
+                         ON 
+                         a.IdAreaDeLazer = r.IdAreaDeLazer";
 
             return Connection.Query<QueryReservaAreaDeLazer>(sqlQuery)
                 .OrderBy(x => x.DataSolicitacao).ToList();
@@ -87,22 +91,31 @@ namespace Condominio.DataAccesLayer.Repositorios
 
         public ICollection<QueryReservaAreaDeLazer> ObterAreasDeLazerPorIdMorador(int idMorador)
         {
-            return ObterReservasAreaDeLazer()
-                .Where(x => x.IdMorador.Equals(idMorador)).ToList();
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                return ObterReservasAreaDeLazer()
+               .Where(x => x.IdMorador.Equals(idMorador)).ToList();
+            }
         }
 
         public ICollection<QueryReservaAreaDeLazer> ObterAreasDeLazerPorNomeMorador(string nome)
         {
-            return ObterReservasAreaDeLazer()
-                .Where(x => x.NomeMorador.Contains(nome)).ToList();
+            using (Connection)
+            {
+                return ObterReservasAreaDeLazer()
+               .Where(x => x.NomeMorador.Contains(nome)).ToList();
+            }
         }
 
         public ICollection<DateTime> ObterDatasDaReservaDeUmaAreaDeLazerPorId(int id)
         {
-            return ObterReservasAreaDeLazer()
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                return ObterReservasAreaDeLazer()
                 .Where(x => x.Status.Equals(StatusReserva.Reservado)
                  && x.IdAreaDeLazer.Equals(id))
                 .Select(x => x.DataReserva).ToList();
+            }
         }
     }
 }
