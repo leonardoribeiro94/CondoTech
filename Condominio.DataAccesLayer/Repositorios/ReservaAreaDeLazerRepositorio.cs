@@ -42,8 +42,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                 parametros.Add("@DataReserva", reservaAreaDeLazer.DataReserva);
                 parametros.Add("@DataSolicitacao", reservaAreaDeLazer.DataSolicitacaoDoPedido);
                 parametros.Add("@Status", StatusReserva.Reservado);
-            };
-
+            }
 
             Connection.Execute("Update_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);
         }
@@ -96,7 +95,8 @@ namespace Condominio.DataAccesLayer.Repositorios
             using (Connection = new SqlConnection(StringConnection))
             {
                 return ObterReservasAreaDeLazer()
-               .Where(x => x.IdMorador.Equals(idMorador)).ToList();
+               .Where(x => x.IdMorador.Equals(idMorador)
+               && x.Status.Equals(StatusReserva.Reservado)).ToList();
             }
         }
 
