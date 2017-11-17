@@ -43,7 +43,7 @@ namespace Condominio.Controllers
             => _reservaAreaRepositorio.ObteReservaAreaDeLazerPorId(id);
 
 
-        public ICollection<DateTime> ObterDatasDaReservaDeUmaAreaDeLazerPorId(int id)
+        public ICollection<string> ObterDatasDaReservaDeUmaAreaDeLazerPorId(int id)
             => _reservaAreaRepositorio.ObterDatasDaReservaDeUmaAreaDeLazerPorId(id);
     }
 }

@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Web.Script.Serialization;
 using System.Web.UI;
+using WebGrease.Css.Extensions;
 
 namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
 {
@@ -37,20 +38,6 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
         }
 
 
-        private void CarregaDadosDaSessao()
-        {
-            if (Session["IdAreaDeLazer"] != null)
-            {
-
-                var idAreaDeLazer = Convert.ToString(Session["IdAreaDeLazer"]);
-                spanNomeDaArea.InnerText = Convert.ToString(Session["NomeAreaDeLazer"]);
-                Session.Remove("IdAreaDeLazer");
-
-                ViewState.Add("idAreaDeLazer", idAreaDeLazer);
-            }
-        }
-
-
         protected void btnSolicitarPedido_OnClick(object sender, EventArgs e)
         {
             try
@@ -58,9 +45,9 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
                 var reservaArea =
                     new ReservaAreaDeLazer
                     {
-                        IdAreaDeLazer = Convert.ToInt32(ViewState["idAreaDeLazer"]),
+                        IdAreaDeLazer = Convert.ToInt32(ViewState["IdAreaDeLazer"]),
                         IdMorador = Convert.ToInt32(Session["idMoradorUsuarioLogado"]),
-                        DataReserva = Convert.ToDateTime(txtDataReserva.Text),
+                        DataReserva = Convert.ToDateTime(txtDataReserva.Text).Date,
                         Descricao = Convert.ToString(txtObservacao.Value),
                         DataSolicitacaoDoPedido = DateTime.Now
                     };
@@ -75,17 +62,32 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
         }
 
 
+        private void CarregaDadosDaSessao()
+        {
+            if (Session["IdAreaDeLazer"] != null)
+            {
+
+                var idAreaDeLazer = Convert.ToString(Session["IdAreaDeLazer"]);
+                spanNomeDaArea.InnerText = Convert.ToString(Session["NomeAreaDeLazer"]);
+                Session.Remove("IdAreaDeLazer");
+
+                ViewState.Add("IdAreaDeLazer", idAreaDeLazer);
+            }
+        }
+
         private void SelecionaDatasReservadas()
         {
             try
             {
-                var idAreaDeLazer = Convert.ToInt32(ViewState["idAreaDeLazer"]);
-                var datasDeReservaDaAreaDeLazer = _reservaAreaDeLazerControl
-                    .ObterDatasDaReservaDeUmaAreaDeLazerPorId(idAreaDeLazer)
-                    .ToArray();
+                var idAreaDeLazer = Convert.ToInt32(ViewState["IdAreaDeLazer"]);
+                var datasDeReservaDaAreaDeLazer = _reservaAreaDeLazerControl.ObterDatasDaReservaDeUmaAreaDeLazerPorId(idAreaDeLazer).ToArray();
 
-                var serialize = new JavaScriptSerializer().Serialize(datasDeReservaDaAreaDeLazer);
-                ScriptManager.RegisterStartupScript(Page, GetType(), "campodatablock", $"dataCalendario({serialize});", true);
+                if (datasDeReservaDaAreaDeLazer.Length > 0)
+                {
+                    var serialize = new JavaScriptSerializer().Serialize(datasDeReservaDaAreaDeLazer);
+                    ScriptManager.RegisterStartupScript(Page, GetType(), "campodatablock", $"dataCalendario({serialize});", true);
+                }
+
             }
             catch (Exception exception)
             {

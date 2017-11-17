@@ -62,7 +62,7 @@ namespace Condominio.DataAccesLayer.Repositorios
         public ICollection<QueryReservaAreaDeLazer> ObterReservasAreaDeLazer()
         {
             const string sqlQuery =
-                @"select r.IdReservaAreaDeLazer as IdReserva,
+                @"SELECT r.IdReservaAreaDeLazer as IdReserva,
 	                     a.Nome as NomeAreaDeLazer,
 	                     m.Nome as NomeMorador,
 	                     r.DataReserva as DataReserva,
@@ -107,14 +107,20 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public ICollection<DateTime> ObterDatasDaReservaDeUmaAreaDeLazerPorId(int id)
+        public ICollection<string> ObterDatasDaReservaDeUmaAreaDeLazerPorId(int id)
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                return ObterReservasAreaDeLazer()
-                .Where(x => x.Status.Equals(StatusReserva.Reservado)
-                 && x.IdAreaDeLazer.Equals(id))
-                .Select(x => x.DataReserva).ToList();
+                const string sqlQuery = @"SELECT DataReserva
+                                          FROM ReservaAreaDeLazer
+                                          WHERE IdAreaDeLazer = @id";
+
+                var listaDatas = new List<string>();
+
+                Connection.Query<DateTime>(sqlQuery, new { id }).ToList()
+                    .ForEach(x => listaDatas.Add(Convert.ToDateTime(x.Date).ToShortDateString()));
+
+                return listaDatas;
             }
         }
     }

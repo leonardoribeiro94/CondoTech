@@ -4,7 +4,7 @@
     [IdAreaDeLazer]        INT           NOT NULL,
     [Descricao]            VARCHAR (MAX) NULL,
     [DataSolicitacao]      DATETIME      NOT NULL,
-    [DataReserva]          DATETIME      NOT NULL,
+    [DataReserva]          DATE      NOT NULL,
     [StatusReserva]               BIT           NOT NULL,
     CONSTRAINT [PK_ReservaAreaDeLazer] PRIMARY KEY CLUSTERED ([IdReservaAreaDeLazer] ASC),
     CONSTRAINT [FK_ReservaAreaDeLazer_AreaDeLazer] FOREIGN KEY ([IdMorador]) REFERENCES [dbo].[AreaDeLazer] ([IdAreaDeLazer]),
