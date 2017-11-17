@@ -63,8 +63,10 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             const string sqlQuery =
                 @"SELECT r.IdReservaAreaDeLazer as IdReserva,
+                         r.IdAreaDeLazer,
 	                     a.Nome as NomeAreaDeLazer,
 	                     m.Nome as NomeMorador,
+                         m.IdMorador,
 	                     r.DataReserva as DataReserva,
 	                     r.Descricao as Descricao,
 	                     r.StatusReserva as Status
