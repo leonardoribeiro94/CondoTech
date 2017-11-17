@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConsultaAreaDeLazer.aspx.cs" Inherits="Condominio.Web.Pages.Morador.ReservaAreaDeLlazer.ConsultaAreaDeLazer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
+    <script src="<%=ResolveClientUrl("~/Scripts/pages/morador/reserva-area-de-lazer/reserva-area-de-lazer-consultar-validacao.js")%>"></script>
+    <script>
+        var btnCancelaReserva = "#<%=btnCancelaReserva.ClientID%>";
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager runat="server" EnablePageMethods="True"></asp:ScriptManager>
@@ -96,7 +100,7 @@
                                                         <asp:TemplateField>
                                                             <ItemStyle></ItemStyle>
                                                             <ItemTemplate>
-                                                                <asp:LinkButton runat="server" ID="lbtnCancelarAgendamento" title="Cancelar meu pedido" Text="<span class='btn-label-'><i class='fa fa-calendar-times-o' aria-hidden='true'></i>"></asp:LinkButton>
+                                                                <asp:LinkButton runat="server" ID="lbtnCancelarAgendamento" OnClientClick="validaOperacao(); return false;"  title="Cancelar meu pedido" Text="<span class='btn-label-'><i class='fa fa-calendar-times-o' aria-hidden='true'></i>"></asp:LinkButton>
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
 
@@ -126,6 +130,9 @@
                         </asp:UpdateProgress>
                     </div>
                 </div>
+                
+                <asp:Button runat="server" ID="btnCancelaReserva" CssClass="hidden"  OnClick="btnCancelaReserva_OnClick"/>
+
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

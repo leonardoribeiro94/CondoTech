@@ -12,6 +12,7 @@
     <link href="<%=ResolveClientUrl("Content/bootstrap.min.css")%>" rel="stylesheet" />
     <link href="<%=ResolveClientUrl("Content/font-awesome.min.css")%>" rel="stylesheet" />
     <link href="<%=ResolveClientUrl("Content/bootstrap-datepicker.css")%>" rel="stylesheet" />
+    <link href="<%=ResolveClientUrl("Content/bootstrap-dialog.css")%>" rel="stylesheet" />
     <link href="<%=ResolveClientUrl("Content/Site.css")%>" rel="stylesheet" />
 
 

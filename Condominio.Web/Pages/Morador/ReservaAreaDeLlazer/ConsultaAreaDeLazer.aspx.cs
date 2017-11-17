@@ -119,5 +119,18 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
             grvAreasDeLazerReservadas.DataSource = _reservaAreaDeLazerControl.ObterAreasDeLazerPorIdMorador(idMoradorLogado);
             grvAreasDeLazerReservadas.DataBind();
         }
+
+
+        protected void btnCancelaReserva_OnClick(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
     }
 }

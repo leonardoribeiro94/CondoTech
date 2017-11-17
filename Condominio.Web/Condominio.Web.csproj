@@ -271,6 +271,7 @@
     <Content Include="Scripts\pages\morador\denuncia\denuncia-inserir-eventos.js" />
     <Content Include="Scripts\pages\morador\denuncia\denuncia-inserir-mask.js" />
     <Content Include="Scripts\pages\morador\denuncia\denuncia-inserir-validacao.js" />
+    <Content Include="Scripts\pages\morador\reserva-area-de-lazer\reserva-area-de-lazer-consultar-validacao.js" />
     <Content Include="Scripts\pages\morador\reserva-area-de-lazer\reserva-area-de-lazer-inserir-validacao.js" />
     <Content Include="Scripts\pages\morador\reserva-area-de-lazer\reserva-area-de-lazer-mask.js" />
     <Content Include="Scripts\pages\morador\reserva-area-de-lazer\reserva-area-de-lazer.js" />
