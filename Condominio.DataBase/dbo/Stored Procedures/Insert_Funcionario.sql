@@ -12,14 +12,14 @@
 AS
 BEGIN
 
-insert into [dbo].[Funcionario]([dbo].[Funcionario].[IdCargo],
-				        [dbo].[Funcionario].[Nome], 
-						[dbo].[Funcionario].[DataDeNascimento], 
-						[dbo].[Funcionario].[Telefone],
-						[dbo].[Funcionario].[Celular],
-						[dbo].[Funcionario].[Email],
-						[dbo].[Funcionario].[Cpf],
-						[dbo].[Funcionario].[Ativo])
+insert into [dbo].[Funcionario]([IdCargo],
+				        [Nome], 
+						[DataDeNascimento], 
+						[Telefone],
+						[Celular],
+						[Email],
+						[Cpf],
+						[Ativo])
 						values(@IdCargo,
 						       @Nome,
 							   @DataDeNascimento,
@@ -32,11 +32,11 @@ insert into [dbo].[Funcionario]([dbo].[Funcionario].[IdCargo],
 declare @SetIdentity int;
 set @SetIdentity = (select @@IDENTITY);
 
- INSERT INTO [dbo].[UsuarioFuncionario]([dbo].[UsuarioFuncionario].[IdFuncionario],
-                            [dbo].[UsuarioFuncionario].[Login],
-							[dbo].[UsuarioFuncionario].[senha],
-							[dbo].[UsuarioFuncionario].[SenhaTemporaria],
-							[dbo].[UsuarioFuncionario].[Ativo])
+ INSERT INTO [dbo].[UsuarioFuncionario]([IdFuncionario],
+                            [Login],
+							[senha],
+							[SenhaTemporaria],
+							[Ativo])
 		              VALUES(@SetIdentity,
 					         @Cpf,
 							 'funcionario@123',

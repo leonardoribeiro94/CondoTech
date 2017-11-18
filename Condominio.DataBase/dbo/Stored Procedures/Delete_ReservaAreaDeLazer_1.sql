@@ -12,6 +12,6 @@ SET
  StatusReserva = @Status 
 
 WHERE 
- idreservaareadelazer = @IdReservaAreaDeLazer
+ IdReservaAreaDeLazer = @IdReservaAreaDeLazer
 
 END

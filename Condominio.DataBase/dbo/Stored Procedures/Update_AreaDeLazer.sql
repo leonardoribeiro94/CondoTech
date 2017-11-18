@@ -4,7 +4,7 @@
 @Imagem varbinary(max) = null,
 @Nome varchar(50),
 @Descricao varchar(max),
-@Ativo char(8)
+@Ativo bit
 )
 
 AS

@@ -1,4 +1,4 @@
-﻿create PROCEDURE [dbo].[Insert_Fornecedor]
+﻿CREATE PROCEDURE [dbo].[Insert_Fornecedor]
 
 @Nome varchar(80),
 @Cnpj char(14),
@@ -12,13 +12,13 @@ AS
 
 BEGIN
 
-INSERT INTO [dbo].[Fornecedor]([dbo].[Fornecedor].[Nome],
-					   [dbo].[Fornecedor].[Cnpj],
-					   [dbo].[Fornecedor].[Telefone],
-					   [dbo].[Fornecedor].[Celular],
-					   [dbo].[Fornecedor].[Email],
-					   [dbo].[Fornecedor].[Descricao],
-					   [dbo].[Fornecedor].[Ativo])
+INSERT INTO [dbo].[Fornecedor]([Nome],
+					   [Cnpj],
+					   [Telefone],
+					   [Celular],
+					   [Email],
+					   [Descricao],
+					   [Ativo])
 			    VALUES (@nome,
 						@Cnpj,
 						@Telefone,

@@ -3,7 +3,7 @@
 @Nome varchar(50),
 @Descricao varchar(max),
 @Imagem varbinary(max),
-@Ativo char(8)
+@Ativo bit
 )
 
 AS

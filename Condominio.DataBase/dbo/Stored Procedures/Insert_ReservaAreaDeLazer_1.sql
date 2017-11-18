@@ -4,12 +4,12 @@
 @IdAreaDeLazer int,
 @Descricao varchar(max),
 @DataSolicitacao datetime,
-@DataReserva datetime,
+@DataReserva date,
 @Status bit
 
 AS
 BEGIN
-INSERT INTO [dbo].[reservaareadelazer]
+INSERT INTO [dbo].[ReservaAreaDeLazer]
 (idmorador,
 idareadelazer,
 descricao,
