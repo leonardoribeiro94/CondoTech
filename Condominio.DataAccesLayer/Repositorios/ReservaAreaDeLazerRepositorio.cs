@@ -49,13 +49,17 @@ namespace Condominio.DataAccesLayer.Repositorios
 
         public void Deletar(int idReserva)
         {
-            var parametros = new
+            using (Connection = new SqlConnection(StringConnection))
             {
-                idReserva,
-                StatusReserva.Cancelado
-            };
+                var parametros = new DynamicParameters();
+                {
+                    parametros.Add("@IdReservaAreaDeLazer", idReserva);
+                    parametros.Add("@Status", StatusReserva.Cancelado);
+                }
 
-            Connection.Execute("Insert_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);
+                Connection.Execute("Delete_ReservaAreaDeLazer", parametros, commandType: CommandType.StoredProcedure);
+            }
+
         }
 
         public ICollection<QueryReservaAreaDeLazer> ObterReservasAreaDeLazer()
@@ -67,6 +71,7 @@ namespace Condominio.DataAccesLayer.Repositorios
 	                     m.Nome as NomeMorador,
                          m.IdMorador,
 	                     r.DataReserva as DataReserva,
+                         r.DataSolicitacao,
 	                     r.Descricao as Descricao,
 	                     r.StatusReserva as Status
 	     
@@ -115,11 +120,17 @@ namespace Condominio.DataAccesLayer.Repositorios
             {
                 const string sqlQuery = @"SELECT DataReserva
                                           FROM ReservaAreaDeLazer
-                                          WHERE IdAreaDeLazer = @id";
+                                          WHERE IdAreaDeLazer = @id 
+                                          AND StatusReserva = @status";
+                var parametros = new
+                {
+                    id,
+                    status = StatusReserva.Reservado
+                };
 
                 var listaDatas = new List<string>();
 
-                Connection.Query<DateTime>(sqlQuery, new { id }).ToList()
+                Connection.Query<DateTime>(sqlQuery, parametros).ToList()
                     .ForEach(x => listaDatas.Add(Convert.ToDateTime(x.Date).ToShortDateString()));
 
                 return listaDatas;

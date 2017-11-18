@@ -5,7 +5,6 @@ using System;
 using System.Linq;
 using System.Web.Script.Serialization;
 using System.Web.UI;
-using WebGrease.Css.Extensions;
 
 namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
 {
@@ -74,6 +73,7 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
                 ViewState.Add("IdAreaDeLazer", idAreaDeLazer);
             }
         }
+
 
         private void SelecionaDatasReservadas()
         {

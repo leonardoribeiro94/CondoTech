@@ -91,16 +91,17 @@
                                                     PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
                                                     GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="GridAreasDeLazerReservadas_OnPageIndexChanging">
                                                     <Columns>
-                                                        <asp:BoundField DataField="IdAreaDeLazer" HeaderText="Código" />
+                                                        <asp:BoundField DataField="IdReserva" HeaderText="Código Reserva" />
                                                         <asp:BoundField DataField="NomeAreaDeLazer" HeaderText="Nome" />
                                                         <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
-                                                        <asp:BoundField DataField="DataSolicitacao" DataFormatString="{0:dd/MM/yyyy}" />
+                                                        <asp:BoundField DataField="DataReserva" HeaderText="Data Reserva"  DataFormatString="{0:dd/MM/yyyy}" />
+                                                        <asp:BoundField DataField="DataSolicitacao" HeaderText="Data Solicitação"  DataFormatString="{0:dd/MM/yyyy}" />
                                                         <asp:BoundField DataField="Status" HeaderText="Status" />
 
                                                         <asp:TemplateField>
                                                             <ItemStyle></ItemStyle>
                                                             <ItemTemplate>
-                                                                <asp:LinkButton runat="server" ID="lbtnCancelarAgendamento" OnClientClick="validaOperacao(); return false;"  title="Cancelar meu pedido" Text="<span class='btn-label-'><i class='fa fa-calendar-times-o' aria-hidden='true'></i>"></asp:LinkButton>
+                                                                <asp:LinkButton runat="server" ID="lbtnCancelarAgendamento"  OnClick="lbtnCancelarAgendamento_OnClick" title="Cancelar meu pedido" Text="<span class='btn-label-'><i class='fa fa-calendar-times-o' aria-hidden='true'></i>"></asp:LinkButton>
                                                             </ItemTemplate>
                                                         </asp:TemplateField>
 

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Condominio.DataAccesLayer.Repositorios;
+﻿using Condominio.DataAccesLayer.Repositorios;
 using Condominio.Model;
 using Condominio.Model.QueryModel;
+using System;
+using System.Collections.Generic;
 
 namespace Condominio.Controllers
 {

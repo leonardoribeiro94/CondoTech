@@ -3,6 +3,7 @@ using Condominio.CrossCutting;
 using Condominio.Web.Components;
 using System;
 using System.Linq;
+using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -121,11 +122,40 @@ namespace Condominio.Web.Pages.Morador.ReservaAreaDeLlazer
         }
 
 
+        protected void lbtnCancelarAgendamento_OnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                var javascript = new JavaScriptSerializer();
+                var gridViewRow = Services.ObterLinhaDeDados(sender, grvAreasDeLazerReservadas);
+                var dataKey = grvAreasDeLazerReservadas.DataKeys[gridViewRow.RowIndex];
+
+                if (dataKey != null)
+                {
+                    var idFuncionario = Convert.ToInt32(dataKey["IdReserva"]);
+                    var idSerializado = javascript.Serialize(idFuncionario);
+
+                    ViewState.Add("IdReserva", Convert.ToInt32(idSerializado));
+
+                    ScriptManager.RegisterClientScriptBlock(Page, GetType(),
+                        "validaCancelamentoReserva", "validaOperacao()", true);
+                }
+            }
+            catch (Exception exception)
+            {
+                _mensagens.MensagemDeExcessao(exception.Message, Page);
+            }
+        }
+
+
         protected void btnCancelaReserva_OnClick(object sender, EventArgs e)
         {
             try
             {
+                var idReserva = Convert.ToInt32(ViewState["IdReserva"]);
 
+                _reservaAreaDeLazerControl.DeletarReservaAreaDeLazer(idReserva);
+                Response.Redirect("~/Pages/Morador/ReservaAreaDeLlazer/ConsultaAreaDeLazer.aspx", false);
             }
             catch (Exception exception)
             {

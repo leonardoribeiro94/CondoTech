@@ -4,6 +4,7 @@
     <script src="<%=ResolveClientUrl("~/Scripts/pages/morador/reserva-area-de-lazer/reserva-area-de-lazer-inserir-validacao.js")%>"></script>
     
     <script>
+        var txtDataReserva = "#<%=txtDataReserva.ClientID%>";
         var btnSolicitarPedido = "#<%=btnSolicitarPedido.ClientID%>";
     </script>
     
