@@ -72,6 +72,9 @@
                                             <i class="fa fa-search" aria-hidden="true"></i>&nbsp;Denúncia
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="#" runat="server">Reservas Áreas de Lazer</a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
