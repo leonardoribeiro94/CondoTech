@@ -32,9 +32,9 @@ insert into [Funcionario]([IdCargo],
 declare @SetIdentity int;
 set @SetIdentity = (select @@IDENTITY);
 
- INSERT INTO [dbo].[UsuarioFuncionario]([IdFuncionario],
+ INSERT INTO [UsuarioFuncionario]([IdFuncionario],
                             [Login],
-							[senha],
+							[Senha],
 							[SenhaTemporaria],
 							[Ativo])
 		              VALUES(@SetIdentity,

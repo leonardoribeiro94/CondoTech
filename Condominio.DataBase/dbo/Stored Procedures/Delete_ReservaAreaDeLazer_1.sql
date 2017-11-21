@@ -7,7 +7,7 @@
 AS
 BEGIN
 
-UPDATE [reservaareadelazer] 
+UPDATE [ReservaAreaDeLazer] 
 SET 
  StatusReserva = @Status 
 

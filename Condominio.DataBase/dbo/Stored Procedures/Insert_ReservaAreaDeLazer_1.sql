@@ -10,11 +10,11 @@
 AS
 BEGIN
 INSERT INTO [ReservaAreaDeLazer]
-(idmorador,
-idareadelazer,
-descricao,
-datasolicitacao,
-datareserva,
+(IdMorador,
+IdAreaDeLazer,
+Descricao,
+DataSolicitacao,
+DataReserva,
 StatusReserva)
 
 VALUES(@IdMorador,

@@ -13,11 +13,11 @@ BEGIN
 
 UPDATE [ReservaAreaDeLazer] 
 SET 
-idmorador = @IdMorador, 
-idareadelazer = @IdAreaDeLazer, 
-descricao = @Descricao, 
-datasolicitacao = @DataSolicitacao, 
-datareserva = @DataReserva, 
+IdMorador = @IdMorador, 
+IdAreaDeLazer = @IdAreaDeLazer, 
+Descricao = @Descricao, 
+DataSolicitacao = @DataSolicitacao, 
+DataReserva = @DataReserva, 
 StatusReserva = @Status 
 
 WHERE 
