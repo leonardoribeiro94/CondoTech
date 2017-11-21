@@ -11,7 +11,7 @@
 AS
 BEGIN
 
-UPDATE [dbo].[ReservaAreaDeLazer] 
+UPDATE [ReservaAreaDeLazer] 
 SET 
 idmorador = @IdMorador, 
 idareadelazer = @IdAreaDeLazer, 

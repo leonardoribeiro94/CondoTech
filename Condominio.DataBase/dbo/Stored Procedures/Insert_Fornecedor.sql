@@ -12,7 +12,7 @@ AS
 
 BEGIN
 
-INSERT INTO [dbo].[Fornecedor]([Nome],
+INSERT INTO [Fornecedor]([Nome],
 					   [Cnpj],
 					   [Telefone],
 					   [Celular],

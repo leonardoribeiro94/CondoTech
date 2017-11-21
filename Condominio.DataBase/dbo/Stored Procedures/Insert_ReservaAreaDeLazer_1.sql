@@ -9,7 +9,7 @@
 
 AS
 BEGIN
-INSERT INTO [dbo].[ReservaAreaDeLazer]
+INSERT INTO [ReservaAreaDeLazer]
 (idmorador,
 idareadelazer,
 descricao,

@@ -12,7 +12,7 @@
 AS
 BEGIN
 
-insert into [dbo].[Funcionario]([IdCargo],
+insert into [Funcionario]([IdCargo],
 				        [Nome], 
 						[DataDeNascimento], 
 						[Telefone],

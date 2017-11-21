@@ -7,7 +7,7 @@
 AS
 BEGIN
 
-UPDATE [dbo].[reservaareadelazer] 
+UPDATE [reservaareadelazer] 
 SET 
  StatusReserva = @Status 
 
