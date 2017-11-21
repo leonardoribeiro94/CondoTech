@@ -73,7 +73,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" runat="server">Reservas Áreas de Lazer</a>
+                                        <a href="~/Pages/Sindico/ReservasAreaDeLazer/ConsultarReservasAreaDeLazer.aspx" runat="server">Reservas Áreas de Lazer</a>
                                     </li>
                                 </ul>
                             </li>

@@ -13,13 +13,13 @@ namespace Condominio.Web.Pages.Sindico.ReservasAreaDeLazer {
     public partial class ConsultarReservasAreaDeLazer {
         
         /// <summary>
-        /// txtNomeMorador control.
+        /// txtCodigoReserva control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeMorador;
+        protected global::System.Web.UI.WebControls.TextBox txtCodigoReserva;
         
         /// <summary>
         /// lkbPesquisar control.

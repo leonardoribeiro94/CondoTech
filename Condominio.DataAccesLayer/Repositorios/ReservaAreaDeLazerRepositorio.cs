@@ -64,12 +64,17 @@ namespace Condominio.DataAccesLayer.Repositorios
 
         public ICollection<QueryReservaAreaDeLazer> ObterReservasAreaDeLazer()
         {
-            const string sqlQuery =
-                @"SELECT r.IdReservaAreaDeLazer as IdReserva,
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                const string sqlQuery =
+                 @"SELECT r.IdReservaAreaDeLazer as IdReserva,
                          r.IdAreaDeLazer,
 	                     a.Nome as NomeAreaDeLazer,
 	                     m.Nome as NomeMorador,
+                         m.Cpf,
                          m.IdMorador,
+                         m.Email,
+	                     m.Telefone,
 	                     r.DataReserva as DataReserva,
                          r.DataSolicitacao,
 	                     r.Descricao as Descricao,
@@ -83,17 +88,19 @@ namespace Condominio.DataAccesLayer.Repositorios
                          ON 
                          a.IdAreaDeLazer = r.IdAreaDeLazer";
 
-            return Connection.Query<QueryReservaAreaDeLazer>(sqlQuery)
-                .OrderBy(x => x.DataSolicitacao).ToList();
+                return Connection.Query<QueryReservaAreaDeLazer>(sqlQuery)
+                    .OrderBy(x => x.DataSolicitacao).ToList();
+            }
         }
 
-        public QueryReservaAreaDeLazer ObteReservaAreaDeLazerPorId(int id)
+        public ICollection<QueryReservaAreaDeLazer> ObteReservaAreaDeLazerPorId(int id)
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                return ObterReservasAreaDeLazer().FirstOrDefault(x => x.IdReserva.Equals(id));
+                return ObterReservasAreaDeLazer().Where(x => x.IdReserva.Equals(id)).ToList();
             }
         }
+
 
         public ICollection<QueryReservaAreaDeLazer> ObterAreasDeLazerPorIdMorador(int idMorador)
         {

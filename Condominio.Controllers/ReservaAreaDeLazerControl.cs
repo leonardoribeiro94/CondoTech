@@ -1,7 +1,6 @@
 ﻿using Condominio.DataAccesLayer.Repositorios;
 using Condominio.Model;
 using Condominio.Model.QueryModel;
-using System;
 using System.Collections.Generic;
 
 namespace Condominio.Controllers
@@ -39,7 +38,7 @@ namespace Condominio.Controllers
             => _reservaAreaRepositorio.ObterAreasDeLazerPorIdMorador(id);
 
 
-        public QueryReservaAreaDeLazer ObterReservasPorId(int id)
+        public ICollection<QueryReservaAreaDeLazer> ObterReservasPorId(int id)
             => _reservaAreaRepositorio.ObteReservaAreaDeLazerPorId(id);
 
 

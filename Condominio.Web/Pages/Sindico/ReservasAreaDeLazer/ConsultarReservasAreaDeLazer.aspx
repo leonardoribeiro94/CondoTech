@@ -16,8 +16,8 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="col-md-5">
-                                    <asp:Label runat="server" for="txtNomeMorador" class="control-label"><b>Nome Morador: </b></asp:Label>
-                                    <asp:TextBox runat="server" ID="txtNomeMorador" CssClass="form-control" placeholder="Insira o nome do funcionário"></asp:TextBox>
+                                    <asp:Label runat="server" for="txtCodigoReserva" class="control-label"><b>Código da Reserva: </b></asp:Label>
+                                    <asp:TextBox runat="server" ID="txtCodigoReserva" CssClass="form-control" placeholder="Insira o cóodigo da reserva"></asp:TextBox>
                                 </div>
 
                                 <div class="col-md-4" style="margin-top: 15px">
@@ -35,19 +35,21 @@
                                             PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
                                             GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="grvReserva_OnPageIndexChanging">
                                             <Columns>
-                                                <asp:BoundField DataField="IdFuncionario" HeaderText="Código">
-                                                    <ItemStyle CssClass="HideColumnGridView"></ItemStyle>
-                                                    <HeaderStyle CssClass="HideColumnGridView"></HeaderStyle>
-                                                </asp:BoundField>
-                                                <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                                                <asp:BoundField DataField="Cargo" HeaderText="Cargo" />
-                                                <asp:BoundField DataField="DataDeNascimento" HeaderText="Nascimento" DataFormatString="{0:dd/MM/yyyy}" />
-                                                <asp:BoundField DataField="Telefone" HeaderText="Telefone" />
-                                                <asp:BoundField DataField="Celular" HeaderText="Celular" />
-                                                <asp:BoundField DataField="Email" HeaderText="E-mail" />
-                                                <asp:BoundField DataField="Ativo" HeaderText="Ativo" />
+                                                <asp:BoundField DataField="IdReserva" HeaderText="Código Reserva"/>
+                                                <asp:BoundField DataField="NomeMorador" HeaderText="Morador" />
+                                                <asp:BoundField DataField="Cpf" HeaderText="CPF" />
+                                                <asp:BoundField DataField="NomeAreaDeLazer" HeaderText="Area de Lazer"/>
+                                                <asp:BoundField DataField="DataReserva" HeaderText="Data Reserva" DataFormatString="{0:dd/MM/yyyy}"/>
+                                                <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
+                                                
+                                                <asp:TemplateField>
+                                                    <ItemStyle Width="20px"></ItemStyle>
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton runat="server" ID="lbtnDetalhes" title="Editar" OnClick="lbtnDetalhes_OnClick" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
                                             </Columns>
-
+                                            
                                             <EmptyDataTemplate>
                                                 <div>
                                                     <div class="row">
@@ -68,6 +70,26 @@
                             </ProgressTemplate>
                         </asp:UpdateProgress>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Some text in the modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+      
                 </div>
             </div>
 
