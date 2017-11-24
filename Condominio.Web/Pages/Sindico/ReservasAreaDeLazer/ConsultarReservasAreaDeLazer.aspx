@@ -31,7 +31,7 @@
                             <div class="table-responsive col-xs-12 col-sm-12 col-md-12">
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
-                                        <asp:GridView ID="grvReserva" runat="server" CssClass="table table-responsive bs-pagination"
+                                        <asp:GridView ID="grvReserva" runat="server" DataKeyNames="IdReserva" CssClass="table table-responsive bs-pagination"
                                             PagerSettings-Mode="NumericFirstLast" PagerSettings-FirstPageText="Primeira" PagerSettings-LastPageText="Última"
                                             GridLines="None" AutoGenerateColumns="False" AllowPaging="True" PageSize="5" OnPageIndexChanging="grvReserva_OnPageIndexChanging">
                                             <Columns>

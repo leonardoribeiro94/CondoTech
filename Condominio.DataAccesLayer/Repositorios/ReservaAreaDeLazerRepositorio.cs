@@ -143,5 +143,23 @@ namespace Condominio.DataAccesLayer.Repositorios
                 return listaDatas;
             }
         }
+
+        public ICollection<QueryMorador> ObterDadosDoMoradorSolicitanteDaReservaPorId(int idReserva)
+        {
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                const string sqlQuery = @"SELECT [m].Nome,
+	                                             [m].Cpf,
+	                                             [m].Email,
+	                                             [m].Telefone
+                                                 FROM Morador [m]
+                                                 JOIN ReservaAreaDeLazer [r] ON m.IdMorador = [r].IdMorador
+                                                 WHERE 
+                                                 [r].IdReservaAreaDeLazer = @idReserva";
+
+
+                return Connection.Query<QueryMorador>(sqlQuery, new { idReserva }).ToList();
+            }
+        }
     }
 }
