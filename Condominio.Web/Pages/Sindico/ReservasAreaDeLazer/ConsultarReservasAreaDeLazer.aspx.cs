@@ -1,7 +1,6 @@
 ﻿using Condominio.Controllers;
 using Condominio.Web.Components;
 using System;
-using System.Linq;
 using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -75,13 +74,12 @@ namespace Condominio.Web.Pages.Sindico.ReservasAreaDeLazer
                 {
                     var idReserva = Convert.ToInt32(dataKey["IdReserva"]);
                     var dados = _reservaAreaDeLazerCtrl.
-                                       ObterDadosDoMoradorSolicitanteDaReservaPorId(idReserva).ToArray();
-
-                    var idSerializado = javascript.Serialize(dados);
+                                       ObterDadosDoMoradorSolicitanteDaReservaPorId(idReserva);
+                    var dadosSerializados = javascript.Serialize(dados);
 
 
                     ScriptManager.RegisterClientScriptBlock(Page, GetType(),
-                        "modaldeleteFuncionario", "confirmarExcluir()", true);
+                               "modalExibirDadosMorador", $"modalDadosMorador({dadosSerializados})", true);
                 }
             }
             catch (Exception exception)

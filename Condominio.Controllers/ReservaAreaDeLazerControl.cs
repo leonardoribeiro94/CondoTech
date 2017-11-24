@@ -45,7 +45,7 @@ namespace Condominio.Controllers
         public ICollection<string> ObterDatasDaReservaDeUmaAreaDeLazerPorId(int id)
             => _reservaAreaRepositorio.ObterDatasDaReservaDeUmaAreaDeLazerPorId(id);
 
-        public ICollection<QueryMorador> ObterDadosDoMoradorSolicitanteDaReservaPorId(int idReserva)
+        public QueryMorador ObterDadosDoMoradorSolicitanteDaReservaPorId(int idReserva)
             => _reservaAreaRepositorio.ObterDadosDoMoradorSolicitanteDaReservaPorId(idReserva);
     }
 }

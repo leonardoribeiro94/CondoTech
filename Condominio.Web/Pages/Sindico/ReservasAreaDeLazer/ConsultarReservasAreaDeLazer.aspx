@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConsultarReservasAreaDeLazer.aspx.cs" Inherits="Condominio.Web.Pages.Sindico.ReservasAreaDeLazer.ConsultarReservasAreaDeLazer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-    
+    <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/reserva-area-de-lazer/modal-morador.js")%>"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager runat="server" EnablePageMethods="True"></asp:ScriptManager>

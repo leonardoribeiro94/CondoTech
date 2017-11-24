@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ConsultarFuncionario.aspx.cs" Inherits="Condominio.Web.Pages.Sindico.Funcionario.ConsultarFuncionario" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
-    <script src="<%=ResolveClientUrl("~/Scripts/bootstrap-pagination/bs.pagination.min.js")%>"></script>
     <script src="<%=ResolveClientUrl("~/Scripts/pages/sindico/funcionario/funcionario-consulta-validacao.js")%>"></script>
     
     <script>

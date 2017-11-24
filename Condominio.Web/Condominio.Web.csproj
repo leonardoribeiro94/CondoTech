@@ -283,6 +283,7 @@
     <Content Include="Scripts\pages\sindico\funcionario\funcionario-inserir-validacao.js" />
     <Content Include="Scripts\pages\sindico\informativo\informativo-inserir-validacao.js" />
     <Content Include="Scripts\pages\sindico\informativo\informativo-consulta-validacao.js" />
+    <Content Include="Scripts\pages\sindico\reserva-area-de-lazer\modal-morador.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />

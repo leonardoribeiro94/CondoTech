@@ -23,6 +23,7 @@
     <script src="<%=ResolveClientUrl("Scripts/jquery.maskedinput.min.js")%>"></script>
     <script src="<%=ResolveClientUrl("Scripts/bootstrap-datepicker.js")%>"></script>
     <script src="<%=ResolveClientUrl("Scripts/locales/bootstrap-datepicker.pt-BR.min.js")%>"></script>
+    <script src="<%=ResolveClientUrl("~/Scripts/bootstrap-pagination/bs.pagination.min.js")%>"></script>
 
     <script src="<%=ResolveClientUrl("Scripts/modais-genericas/modais-genericas.js")%>"></script>
     <script src="<%=ResolveClientUrl("Scripts/compartilhado/validacao-de-campos.js")%>"></script>

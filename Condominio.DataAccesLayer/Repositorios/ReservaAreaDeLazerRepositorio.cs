@@ -144,7 +144,7 @@ namespace Condominio.DataAccesLayer.Repositorios
             }
         }
 
-        public ICollection<QueryMorador> ObterDadosDoMoradorSolicitanteDaReservaPorId(int idReserva)
+        public QueryMorador ObterDadosDoMoradorSolicitanteDaReservaPorId(int idReserva)
         {
             using (Connection = new SqlConnection(StringConnection))
             {
@@ -158,7 +158,7 @@ namespace Condominio.DataAccesLayer.Repositorios
                                                  [r].IdReservaAreaDeLazer = @idReserva";
 
 
-                return Connection.Query<QueryMorador>(sqlQuery, new { idReserva }).ToList();
+                return Connection.Query<QueryMorador>(sqlQuery, new { idReserva }).FirstOrDefault();
             }
         }
     }
