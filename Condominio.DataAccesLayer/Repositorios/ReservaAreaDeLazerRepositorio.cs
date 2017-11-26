@@ -66,7 +66,7 @@ namespace Condominio.DataAccesLayer.Repositorios
         {
             using (Connection = new SqlConnection(StringConnection))
             {
-                const string sqlQuery =
+                var sqlQuery =
                  @"SELECT r.IdReservaAreaDeLazer as IdReserva,
                          r.IdAreaDeLazer,
 	                     a.Nome as NomeAreaDeLazer,
@@ -86,9 +86,12 @@ namespace Condominio.DataAccesLayer.Repositorios
                          r.IdMorador = m.IdMorador
                          JOIN AreaDeLazer a 
                          ON 
-                         a.IdAreaDeLazer = r.IdAreaDeLazer";
+                         a.IdAreaDeLazer = r.IdAreaDeLazer
+                    
+                   WHERE r.StatusReserva = @status";
 
-                return Connection.Query<QueryReservaAreaDeLazer>(sqlQuery)
+                var parametro = new { status = StatusReserva.Reservado };
+                return Connection.Query<QueryReservaAreaDeLazer>(sqlQuery, parametro)
                     .OrderBy(x => x.DataSolicitacao).ToList();
             }
         }
