@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Condominio.Web.Default" EnableEventValidation="false"%>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Condominio.Web.Default" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
     <link href="<%=ResolveClientUrl("Content/default.css")%>" rel="stylesheet" />
@@ -31,8 +31,8 @@
                 </nav>
 
                 <div class="jumbotron text-center">
-                    <h1>CondoFamily</h1>
-                    <p>Especializados em conforto para família</p>
+                    <h1>Condotech</h1>
+                    <p>Especializados em conforto e tecnologia para condomínios</p>
 
                     <div class="col-md-12">
                         <button type="button" data-toggle="modal" data-target="#modalLogin" class="btn btn-danger">Área Particular</button>
@@ -43,13 +43,16 @@
                 <div id="about" class="container-fluid">
                     <div class="row">
                         <div class="col-sm-8">
-                            <h2>Sobre a compania</h2>
+                            <h2>Sobre o CondoTech</h2>
                             <br>
-                            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
+                            <h4>Com o Condotech você não apenas gerencia seu condomínio, mas sim, cria agilidade no serviço e comodidade para verificar e ficar por dentro de todas as novidades de onde mora!.</h4>
                             <br>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Nós do Condotech nos empenhamos, para oferecer uma experiência completa de recursos e informação para você que se interessa sobre vida em condomínio.
+
+                                E foi pensando nisso que demos mais um passo para facilitar a gestão de condomínios: criamos o CondoTech Web. Essa ferramenta do ajuda o dia a dia do seu condomínio a ser mais ágil, com mais comunicação e com mais sentimento de vizinhança.
+
+                                O CondoTech web foi feito para você, com muito empenho, pelas mais empenhadas pessoas. Aproveite!!</p>
                             <br>
-                            <button class="btn btn-default btn-lg">Get in Touch</button>
                         </div>
                         <div class="col-sm-4">
                             <span class="glyphicon glyphicon-signal logo"></span>
@@ -63,13 +66,12 @@
                             <span class="glyphicon glyphicon-globe logo slideanim"></span>
                         </div>
                         <div class="col-sm-8">
-                            <h2>Our Values</h2>
+                            <h2>Nóssos valores</h2>
                             <br>
-                            <h4><strong>Missão:</strong> Nossa missão lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
+                            <h4><strong>Missão:</strong> Nossa missão é proporcionar aos nossos clientes a melhor experiência de gererenciamento de condominios automatizado.</h4>
                             <br>
                             <p>
-                                <strong>Visão:</strong> Nossa visão Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                <strong>Visão:</strong> Nossa visão é ajudar a todos que realmente se importam com a informação de seu lar a mantê-la segura e protegida.
                             </p>
                         </div>
                     </div>
@@ -82,38 +84,38 @@
                     <br>
                     <div class="row slideanim">
                         <div class="col-sm-4">
-                            <span class="glyphicon glyphicon-off logo-small"></span>
-                            <h4>Força</h4>
-                            <p>Lorem ipsum dolor sit amet..</p>
-                        </div>
-                        <div class="col-sm-4">
-                            <span class="glyphicon glyphicon-heart logo-small"></span>
-                            <h4>Amor</h4>
-                            <p>Lorem ipsum dolor sit amet..</p>
-                        </div>
-                        <div class="col-sm-4">
                             <span class="glyphicon glyphicon-lock logo-small"></span>
-                            <h4>Trabalho duro</h4>
-                            <p>Lorem ipsum dolor sit amet..</p>
+                            <h4>Segurança</h4>
+                            <p>Somente usuários previamente aprovados têm acesso protegido ao site do condomínio.</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class="glyphicon glyphicon-bullhorn logo-small"></span>
+                            <h4>Informativos</h4>
+                            <p>Mantenha todos os moradores informados sobre o que acontece no condomínio</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class="glyphicon glyphicon-calendar logo-small"></span>
+                            <h4>Eventos</h4>
+                            <p>Adicione eventos, crie e reserve facilmente espaços para salão de festas, quadras, etc.</p>
                         </div>
                     </div>
                     <br>
                     <br>
                     <div class="row slideanim">
                         <div class="col-sm-4">
-                            <span class="glyphicon glyphicon-leaf logo-small"></span>
-                            <h4>GREEN</h4>
-                            <p>Lorem ipsum dolor sit amet..</p>
+                            <span class="glyphicon glyphicon-file logo-small"></span>
+                            <h4>Documentos</h4>
+                            <p>Organize e disponibilize documentos como Regimento Interno, Convenção, Atas, etc.</p>
                         </div>
                         <div class="col-sm-4">
-                            <span class="glyphicon glyphicon-certificate logo-small"></span>
-                            <h4>CERTIFIED</h4>
-                            <p>Lorem ipsum dolor sit amet..</p>
+                            <span class="glyphicon glyphicon-user logo-small"></span>
+                            <h4>Funcionários</h4>
+                            <p>Cadastre os funcionários do condomínio e informe cargos e permissões de acessos...</p>
                         </div>
                         <div class="col-sm-4">
-                            <span class="glyphicon glyphicon-wrench logo-small"></span>
-                            <h4 style="color: #303030;">HARD WORK</h4>
-                            <p>Lorem ipsum dolor sit amet..</p>
+                            <span class="glyphicon glyphicon-exclamation-sign logo-small"></span>
+                            <h4 style="color: #303030;">Denúncias</h4>
+                            <p>Tenha um registro de todas as denúncias, que acontecem em seu condomínio...</p>
                         </div>
                     </div>
                 </div>
@@ -160,7 +162,7 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <h4>"This company is the best. I am so happy with the result!"<br>
+                                <h4>"Este sistema é o melhor. Estou muito feliz com os resultados!"<br>
                                     <span>Michael Roe, Vice President, Comment Box</span></h4>
                             </div>
                             <div class="item">
@@ -214,7 +216,7 @@
 
                         <div class="row">
                             <div class="col-md-8">
-                                <asp:Button runat="server" CssClass="btn btn-primary" OnClick="btnLogin_OnClick" Text="Login"/>
+                                <asp:Button runat="server" CssClass="btn btn-primary" OnClick="btnLogin_OnClick" Text="Login" />
                             </div>
                         </div>
                         <div class="row">
