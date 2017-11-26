@@ -45,13 +45,12 @@ namespace Condominio.DataAccesLayer.Repositorios
                 parametros.Add("@DataCadastro", DateTime.Now);
                 parametros.Add("@Ativo", EntidadeAtiva.Ativo);
 
-                if (informativo.Documento != null)
-                {
-                    parametros.Add("@Documento", informativo.Documento);
-                }
-
-
                 Connection.Execute("Update_Informativo", parametros, commandType: CommandStoredProcedure);
+            }
+
+            if (informativo.Documento != null)
+            {
+                AtualizarDocumento(informativo.Id, informativo.Documento);
             }
         }
 
@@ -94,6 +93,35 @@ namespace Condominio.DataAccesLayer.Repositorios
         public IEnumerable<QueryInformativo> ObterInformativoPorTitulo(string valor)
         {
             return ObterInformativo().Where(x => x.Titulo.ToLower().Contains(valor.ToLower()));
+        }
+
+        public byte[] ObterDocumentoInformativo(int idInformativo)
+        {
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                const string sqlQuery =
+                    @"SELECT Documento 
+                      FROM Informativo 
+                      WHERE IdInformativo = @idInformativo";
+
+                var dado = Connection.Query<QueryInformativo>(sqlQuery, new { idInformativo }).SingleOrDefault();
+
+                return dado.Documento;
+            }
+        }
+
+        private void AtualizarDocumento(int id, byte[] documento)
+        {
+            using (Connection = new SqlConnection(StringConnection))
+            {
+                const string sqlQuery =
+                    @"UPDATE Informativo SET Documento = @documento 
+                      WHERE IdInformativo = @id ";
+
+                var parametros = new { documento, id };
+
+                Connection.Execute(sqlQuery, parametros);
+            }
         }
     }
 }

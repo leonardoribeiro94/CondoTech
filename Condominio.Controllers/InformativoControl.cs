@@ -27,5 +27,8 @@ namespace Condominio.Controllers
 
         public IEnumerable<QueryInformativo> ObterInformativoPorTitulo(string titulo) =>
             _informativo.ObterInformativoPorTitulo(titulo);
+
+        public byte[] ObterDocumentoInformativo(int idInformativo) 
+            => _informativo.ObterDocumentoInformativo(idInformativo);
     }
 }

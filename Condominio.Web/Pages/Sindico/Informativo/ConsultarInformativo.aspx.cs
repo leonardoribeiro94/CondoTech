@@ -140,12 +140,13 @@ namespace Condominio.Web.Pages.Sindico.Informativo
                 if (dataKey != null)
                 {
                     var idInformativo = Convert.ToInt32(dataKey["IdInformativo"]);
-                    var informativo = _informativoControl.ObterInformativosPorId(idInformativo);
+                    var documento = _informativoControl.ObterDocumentoInformativo(idInformativo);
 
-                    if (informativo.Documento != null)
+                    if (!documento.Length.Equals(0))
                     {
-                        VisualizacaoDeDocumento.DocumentArray = informativo.Documento;
+                        VisualizacaoDeDocumento.DocumentArray = documento;
                         VisualizacaoDeDocumento.TipoOpcaoHandler = VisualizacaoDeDocumento.OpcaoHandler.Show;
+
                         ScriptManager.RegisterStartupScript(Page, GetType(), "abrirDocumentoWeb", "abrirDocumento()",
                             true);
                     }
