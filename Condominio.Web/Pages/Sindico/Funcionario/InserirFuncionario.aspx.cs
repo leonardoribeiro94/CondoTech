@@ -61,7 +61,7 @@ namespace Condominio.Web.Pages.Sindico.Funcionario
 
                 funcionario.ValidaDados();
 
-                if (ViewState["IdFuncionario"].Equals(null))
+                if (ViewState["IdFuncionario"] == null)
                 {
                     _funcionarioControl.InserirFuncionario(funcionario);
                 }
