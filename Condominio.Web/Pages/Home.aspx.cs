@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Condominio.Web.Components;
+using System;
 
 namespace Condominio.Web.Pages
 {
@@ -6,7 +7,10 @@ namespace Condominio.Web.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ValidaSessao.ValidaSessaoExistente(Page);
+            }
         }
     }
 }

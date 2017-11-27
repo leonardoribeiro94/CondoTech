@@ -32,7 +32,7 @@
 
                 <div class="jumbotron text-center">
                     <h1>Condotech</h1>
-                    <p>Especializados em conforto e tecnologia para condomínios</p>
+                    <p>Especializados em agilidade e tecnologia para condomínios</p>
 
                     <div class="col-md-12">
                         <button type="button" data-toggle="modal" data-target="#modalLogin" class="btn btn-danger">Área Particular</button>

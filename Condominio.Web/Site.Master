@@ -44,7 +44,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">CondoTech</a>
+                    <a class="navbar-brand" runat="server" href="~/Pages/Home.aspx">CondoTech</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <asp:Panel runat="server" ID="panelSindico" Visible="False">

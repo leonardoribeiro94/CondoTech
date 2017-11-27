@@ -15,5 +15,16 @@ namespace Condominio.Web.Components
             if (page.Session["idMoradorUsuarioLogado"] == null)
                 Redirecionamento.TelaDefault(page);
         }
+
+        public static void ValidaSessaoExistente(Page page)
+        {
+            var sessaoMorador = page.Session["idMoradorUsuarioLogado"];
+            var sessaoFuncionario = page.Session["idFuncionarioUsuarioLogado"];
+
+            if (sessaoMorador == null && sessaoFuncionario == null)
+            {
+                Redirecionamento.TelaDefault(page);
+            }
+        }
     }
 }
