@@ -1,18 +1,19 @@
-﻿using System;
+﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
+using Condominio.DeskTop.Componentes;
+using Condominio.Model;
+using Condominio.Model.QueryModel;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using Condominio.DeskTop.Componentes;
-using Controller;
-using Model;
-using Model.QueryModel;
 
 namespace Condominio.DeskTop.Formularios.Senha.AlterarSenha
 {
     public partial class FrmAlterarSenha : Form
     {
-        private readonly ObterUsuarioFuncionario _obterUsuarioFuncionario;
+        private readonly QueryUsuarioFuncionario _obterUsuarioFuncionario;
 
-        public FrmAlterarSenha(ObterUsuarioFuncionario obterUsuarioFuncionario)
+        public FrmAlterarSenha(QueryUsuarioFuncionario obterUsuarioFuncionario)
         {
             InitializeComponent();
 
@@ -23,7 +24,7 @@ namespace Condominio.DeskTop.Formularios.Senha.AlterarSenha
         {
             try
             {
-                var usuarioFuncionarioCtrl = new UsuarioFuncionarioController();
+                var usuarioFuncionarioCtrl = new UsuarioFuncionarioControl();
                 var usuarioFuncionario = new UsuarioFuncionario();
 
                 var senhaAntiga = txtSenhaAnterior.Text;
@@ -39,7 +40,7 @@ namespace Condominio.DeskTop.Formularios.Senha.AlterarSenha
                 usuarioFuncionario.Id = _obterUsuarioFuncionario.IdUsuario;
                 usuarioFuncionario.Senha = novaSenha;
                 usuarioFuncionarioCtrl.AlterarUsuario(usuarioFuncionario);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 Hide();
             }

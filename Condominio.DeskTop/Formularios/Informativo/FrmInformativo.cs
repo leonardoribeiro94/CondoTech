@@ -1,5 +1,6 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
+﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,14 +10,14 @@ namespace Condominio.DeskTop.Formularios.Informativo
     public partial class FrmInformativo : Form
     {
         private readonly int _idFuncionario;
-        private readonly InformativoController _informativoController;
+        private readonly InformativoControl _informativoController;
 
         public FrmInformativo(int idFuncionario)
         {
             InitializeComponent();
 
             _idFuncionario = idFuncionario;
-            _informativoController = new InformativoController();
+            _informativoController = new InformativoControl();
         }
 
         private void FrmInformativo_Load(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace Condominio.DeskTop.Formularios.Informativo
 
                 informativo.ValidaDados();
                 _informativoController.InserirInformativo(informativo);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 VoltarParaTelaDeConsulta();
             }
@@ -68,7 +69,7 @@ namespace Condominio.DeskTop.Formularios.Informativo
 
                 informativo.ValidaDados();
                 _informativoController.AtualizarInformativo(informativo);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 VoltarParaTelaDeConsulta();
             }
@@ -82,13 +83,13 @@ namespace Condominio.DeskTop.Formularios.Informativo
         {
             try
             {
-                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistemaDesktop.Questao);
+                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistema.Questao);
 
                 if (opcao == DialogResult.OK)
                 {
                     var idInformativo = Convert.ToInt32(txtCodigo.Text);
                     _informativoController.DeletarInformativo(idInformativo);
-                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                     VoltarParaTelaDeConsulta();
                 }
@@ -141,6 +142,8 @@ namespace Condominio.DeskTop.Formularios.Informativo
         private void CarregaGridView()
         {
             dgvInformativo.DataSource = _informativoController.ObterInformativos().ToList();
+            dgvInformativo.Columns[0].HeaderText = @"Código";
+            dgvInformativo.Columns[6].Visible = false;
         }
 
         private void LimparCampos()

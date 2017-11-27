@@ -49,15 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Componentes\CaixaDeMensagem.cs" />
-    <Compile Include="Componentes\ConverteArquivo.cs" />
     <Compile Include="Componentes\LimparControles.cs" />
-    <Compile Include="Componentes\MensagensDoSistemaDesktop.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MensagensDoSistemaDesktop.resx</DependentUpon>
-    </Compile>
     <Compile Include="Componentes\ObterArray.cs" />
-    <Compile Include="Componentes\ServicoDeEmail.cs" />
     <Compile Include="Formularios\Senha\AlterarSenha\FrmAlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,10 +124,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Componentes\MensagensDoSistemaDesktop.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>MensagensDoSistemaDesktop.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Senha\AlterarSenha\FrmAlterarSenha.resx">
       <DependentUpon>FrmAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,16 +166,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Controller\Controller.csproj">
-      <Project>{ff40064f-07f8-411b-a2fe-6ad1c4738233}</Project>
-      <Name>Controller</Name>
+    <ProjectReference Include="..\Condominio.Controllers\Condominio.Controllers.csproj">
+      <Project>{feb2e690-78a8-4163-9ade-93365ad8f819}</Project>
+      <Name>Condominio.Controllers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{d5882775-6636-4ca5-9771-5fd192d984e9}</Project>
-      <Name>Model</Name>
+    <ProjectReference Include="..\Condominio.CrossCutting\Condominio.CrossCutting.csproj">
+      <Project>{249506a6-d024-4bd8-b82b-9c4359297335}</Project>
+      <Name>Condominio.CrossCutting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Condominio.Model\Condominio.Model.csproj">
+      <Project>{d3b049e5-42f5-461c-830a-1c585d0a118a}</Project>
+      <Name>Condominio.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

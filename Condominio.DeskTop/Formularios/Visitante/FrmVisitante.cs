@@ -1,5 +1,6 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
+﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Drawing;
 using System.IO;
@@ -12,7 +13,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
 {
     public partial class FrmVisitante : Form
     {
-        private readonly VisitanteController _visitanteController = new VisitanteController();
+        private readonly VisitanteControl _visitanteController = new VisitanteControl();
 
         public FrmVisitante()
         {
@@ -48,7 +49,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
                 visitante.ValidaImagem();
                 visitante.ValidaDados();
                 _visitanteController.InserirVisitante(visitante);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimparCampos();
                 CarregaDataGrid();
@@ -76,7 +77,7 @@ namespace Condominio.DeskTop.Formularios.Visitante
                 visitante.ValidaImagem();
                 visitante.ValidaDados();
                 _visitanteController.AlterarVisitante(visitante);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimparCampos();
                 CarregaDataGrid();
@@ -92,13 +93,13 @@ namespace Condominio.DeskTop.Formularios.Visitante
         {
             try
             {
-                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistemaDesktop.Questao);
+                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistema.Questao);
 
                 if (opcao == DialogResult.OK)
                 {
                     var idVisitante = Convert.ToInt32(txtCodigo.Text);
                     _visitanteController.DeletarVisitante(idVisitante);
-                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                     LimparCampos();
                     CarregaDataGrid();

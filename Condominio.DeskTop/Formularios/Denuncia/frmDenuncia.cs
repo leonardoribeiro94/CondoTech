@@ -1,5 +1,6 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
+﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -26,7 +27,7 @@ namespace Condominio.DeskTop.Formularios.Denuncia
             }
             catch (Exception exception)
             {
-                CaixaDeMensagem.MensagemDeErro($"{MensagensDoSistemaDesktop.ImagemInvalida} \n Erro:" + exception.Message);
+                CaixaDeMensagem.MensagemDeErro($"{MensagensDoSistema.ImagemInvalida} \n Erro:" + exception.Message);
             }
         }
 
@@ -35,7 +36,7 @@ namespace Condominio.DeskTop.Formularios.Denuncia
             try
             {
                 var denuncia = new Model.Denuncia();
-                var denunciaController = new DenunciaController();
+                var denunciaController = new DenunciaControl();
 
                 if (!ckbAnonimo.Checked)
                 {
@@ -49,14 +50,14 @@ namespace Condominio.DeskTop.Formularios.Denuncia
 
                 denuncia.ValidaDados();
 
-                const string mensagem = "O conteúdo informado será enviado e análizado pelos administradores do condomínio. " +
+                const string mensagem = "O conteúdo informado será enviado e analizado pelos administradores do condomínio. " +
                                "\n deseja continuar?";
 
                 var opcao = CaixaDeMensagem.MensagemDeQuestao(mensagem);
                 if (opcao == DialogResult.OK)
                 {
                     denunciaController.InserirDenuncia(denuncia);
-                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                     LimparCampos();
                 }
@@ -87,8 +88,16 @@ namespace Condominio.DeskTop.Formularios.Denuncia
 
         private void LimparCampos()
         {
-            picDenuncia.Image = Image.FromFile(@"../PictureImages/picture-2.png");
-            LimparControles.Limpar(groupBoxDados);
+            try
+            {
+                picDenuncia.Image = Image.FromFile(@"../PictureImages/picture-2.png");
+                LimparControles.Limpar(groupBoxDados);
+            }
+            catch (Exception exception)
+            {
+                CaixaDeMensagem.MensagemDeErro(exception.Message);
+            }
+
         }
     }
 }

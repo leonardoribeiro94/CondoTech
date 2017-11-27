@@ -1,5 +1,6 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
+﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
+using Condominio.DeskTop.Componentes;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,7 +9,7 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
 {
     public partial class FrmFornecedor : Form
     {
-        private readonly FornecedorController _fornecedorController = new FornecedorController();
+        private readonly FornecedorControl _fornecedorController = new FornecedorControl();
 
         public FrmFornecedor()
         {
@@ -43,7 +44,7 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
 
                 fornecedor.ValidaDados();
                 _fornecedorController.InserirFornecedor(fornecedor);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
                 LimparCampos();
                 CarregarFornecedores();
 
@@ -72,7 +73,7 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
 
                 fornecedor.ValidaDados();
                 _fornecedorController.AlterarFornecedor(fornecedor);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimparCampos();
                 CarregarFornecedores();
@@ -125,13 +126,13 @@ namespace Condominio.DeskTop.Formularios.Fornecedor
         {
             try
             {
-                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistemaDesktop.Questao);
+                var opcao = CaixaDeMensagem.MensagemDeQuestao(MensagensDoSistema.Questao);
 
                 if (opcao == DialogResult.OK)
                 {
                     var idFornecedor = Convert.ToInt32(txtCodigo.Text);
                     _fornecedorController.ExcluirFornecedor(idFornecedor);
-                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                    CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                     LimparCampos();
                     CarregarFornecedores();

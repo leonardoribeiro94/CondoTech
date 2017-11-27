@@ -1,6 +1,7 @@
-﻿using Condominio.DeskTop.Componentes;
-using Controller;
-using Model;
+﻿using Condominio.Controllers;
+using Condominio.CrossCutting.Resources;
+using Condominio.DeskTop.Componentes;
+using Condominio.Model;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,7 +10,7 @@ namespace Condominio.DeskTop.Formularios.Visitante.NovaVisita
 {
     public partial class FrmNovaVisita : Form
     {
-        private readonly HistoricoVisitaController _historicoVisitaController = new HistoricoVisitaController();
+        private readonly HistoricoVisitaControl _historicoVisitaController = new HistoricoVisitaControl();
 
         public FrmNovaVisita()
         {
@@ -77,7 +78,7 @@ namespace Condominio.DeskTop.Formularios.Visitante.NovaVisita
                     ? historicoVisita.DataSaida : Convert.ToDateTime(txtSaida.Text);
 
                 _historicoVisitaController.InserirHistoricoVisita(historicoVisita);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimpaCampos();
                 CarregaDataGrid();
@@ -106,7 +107,7 @@ namespace Condominio.DeskTop.Formularios.Visitante.NovaVisita
                     ? historicoVisita.DataSaida : Convert.ToDateTime(txtSaida.Text);
 
                 _historicoVisitaController.AlterarHistoricoVisita(historicoVisita);
-                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistemaDesktop.Sucesso);
+                CaixaDeMensagem.MensagemDeSucesso(MensagensDoSistema.Sucesso);
 
                 LimpaCampos();
                 CarregaDataGrid();
@@ -152,7 +153,7 @@ namespace Condominio.DeskTop.Formularios.Visitante.NovaVisita
         #region Metodos
         private void CarregaComboBoxMorador()
         {
-            var moradorCtrl = new MoradorController();
+            var moradorCtrl = new MoradorControl();
             cmbMorador.DataSource = moradorCtrl.ObterMorador().OrderBy(x => x.Nome).ToList();
             cmbMorador.ValueMember = "IdMorador";
             cmbMorador.DisplayMember = "Nome";
@@ -160,7 +161,7 @@ namespace Condominio.DeskTop.Formularios.Visitante.NovaVisita
 
         private void CarregaComboBoxVisitante()
         {
-            var visitanteCtrl = new VisitanteController();
+            var visitanteCtrl = new VisitanteControl();
 
             cmbVisitante.DataSource = visitanteCtrl.ObterVisitantes().OrderBy(x => x.Nome).ToList();
             cmbVisitante.ValueMember = "IdVisitante";

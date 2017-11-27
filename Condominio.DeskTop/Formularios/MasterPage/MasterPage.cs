@@ -4,19 +4,19 @@ using Condominio.DeskTop.Formularios.Fornecedor;
 using Condominio.DeskTop.Formularios.Informativo;
 using Condominio.DeskTop.Formularios.Login;
 using Condominio.DeskTop.Formularios.Morador;
+using Condominio.DeskTop.Formularios.Senha.AlterarSenha;
 using Condominio.DeskTop.Formularios.Visitante;
 using Condominio.DeskTop.Formularios.Visitante.NovaVisita;
-using Model.QueryModel;
+using Condominio.Model.QueryModel;
 using System.Windows.Forms;
-using Condominio.DeskTop.Formularios.Senha.AlterarSenha;
 
 namespace Condominio.DeskTop.Formularios.MasterPage
 {
     public partial class FrmMaster : Form
     {
-        private readonly ObterUsuarioFuncionario _obterUsuarioFucnionario;
+        private readonly QueryUsuarioFuncionario _obterUsuarioFucnionario;
 
-        public FrmMaster(ObterUsuarioFuncionario usuarioFuncionario)
+        public FrmMaster(QueryUsuarioFuncionario usuarioFuncionario)
         {
             InitializeComponent();
 

@@ -1,0 +1,47 @@
+﻿/* Mova o conteúdo porque temos uma barra de navegação fixa de 50px de altura */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Elemento de acondicionamento */
+/* Define um preenchimento básico para evitar que o conteúdo atinja as bordas */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/* Responsive: Comprimidos para retrato e para cima */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+.formulario {
+    margin-top: 60px
+}
+
+.botao-margin-top {
+    margin-top: 10px
+}
+
+.form-control, .file-upload {
+    margin-bottom: 10px
+}
+
+.modal-imagem-ajuste {
+   width: 100%;
+}

@@ -240,3 +240,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+*.refactorlog
+/Condominio.DataBase/Condominio.DataBase.jfm
+/Condominio.DataAccesLayer/Properties
+/Condominio.DataAccesLayer/app.config
