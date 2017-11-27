@@ -18,13 +18,13 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#myPage">Logo</a>
+                            <a class="navbar-brand" href="#myPage"><strong>Condotech</strong></a>
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="#about">Sobre</a></li>
                                 <li><a href="#services">Serviços</a></li>
-                                <li><a href="#portfolio">Lazer</a></li>
+                                <li><a href="#portfolio">Clientes</a></li>
                             </ul>
                         </div>
                     </div>
@@ -47,11 +47,11 @@
                             <br>
                             <h4>Com o Condotech você não apenas gerencia seu condomínio, mas sim, cria agilidade no serviço e comodidade para verificar e ficar por dentro de todas as novidades de onde mora!.</h4>
                             <br>
-                            <p>Nós do Condotech nos empenhamos, para oferecer uma experiência completa de recursos e informação para você que se interessa sobre vida em condomínio.
-
+                            <p>
+                                Nós do Condotech nos empenhamos, para oferecer uma experiência completa de recursos e informação para você que se interessa sobre vida em condomínio.
                                 E foi pensando nisso que demos mais um passo para facilitar a gestão de condomínios: criamos o CondoTech Web. Essa ferramenta do ajuda o dia a dia do seu condomínio a ser mais ágil, com mais comunicação e com mais sentimento de vizinhança.
-
-                                O CondoTech web foi feito para você, com muito empenho, pelas mais empenhadas pessoas. Aproveite!!</p>
+                                O CondoTech web foi feito para você, com muito empenho, pelas mais competentes pessoas. Aproveite!!
+                            </p>
                             <br>
                         </div>
                         <div class="col-sm-4">
@@ -122,34 +122,6 @@
 
                 <!-- Container (Portfolio Section) -->
                 <div id="portfolio" class="container-fluid text-center bg-grey">
-                    <h2>Portfolio</h2>
-                    <br>
-                    <h4>Lazer</h4>
-                    <div class="row text-center slideanim">
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="paris.jpg" alt="Paris" width="400" height="300">
-                                <p><strong>Paris</strong></p>
-                                <p>Yes, we built Paris</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="newyork.jpg" alt="New York" width="400" height="300">
-                                <p><strong>New York</strong></p>
-                                <p>We built New York</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="thumbnail">
-                                <img src="sanfran.jpg" alt="San Francisco" width="400" height="300">
-                                <p><strong>San Francisco</strong></p>
-                                <p>Yes, San Fran is ours</p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-
                     <h2>O que nossos clientes dizem</h2>
                     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
                         <!-- Indicators -->
@@ -163,15 +135,15 @@
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
                                 <h4>"Este sistema é o melhor. Estou muito feliz com os resultados!"<br>
-                                    <span>Michael Roe, Vice President, Comment Box</span></h4>
+                                    <span>Antônio Roe, Vice Presidente empresarial, Condominio Família</span></h4>
                             </div>
                             <div class="item">
-                                <h4>"One word... WOW!!"<br>
-                                    <span>John Doe, Salesman, Rep Inc</span></h4>
+                                <h4>"Atende realmente o que preciso... Fácil e simples!!"<br>
+                                    <span>John Cena, Síndico, WWE Condomínio Esportivo</span></h4>
                             </div>
                             <div class="item">
-                                <h4>"Could I... BE any more happy with this company?"<br>
-                                    <span>Chandler Bing, Actor, FriendsAlot</span></h4>
+                                <h4>"Estou realmente feliz com o sistema, os moradores acham demais!"<br>
+                                    <span>Ching Ling, Síndico, Condomínio Liberdade</span></h4>
                             </div>
                         </div>
 
@@ -217,11 +189,6 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <asp:Button runat="server" CssClass="btn btn-primary" OnClick="btnLogin_OnClick" Text="Login" />
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-5">
-                                <a href="#">Esqueceu sua senha?</a>
                             </div>
                         </div>
                     </form>
