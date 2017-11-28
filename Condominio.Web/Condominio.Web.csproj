@@ -16,7 +16,7 @@
     <RootNamespace>Condominio.Web</RootNamespace>
     <AssemblyName>Condominio.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -459,7 +459,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49293</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/Condominio.Web</IISUrl>
+          <IISUrl>http://localhost:49293/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
