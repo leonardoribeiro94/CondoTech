@@ -45,7 +45,7 @@
                                                 <asp:TemplateField>
                                                     <ItemStyle Width="20px"></ItemStyle>
                                                     <ItemTemplate>
-                                                        <asp:LinkButton runat="server" ID="lbtnDetalhes" title="Editar" OnClick="lbtnDetalhes_OnClick" Text="<span class='btn-label-'><i class='fa fa-pencil' aria-hidden='true'></i></i></span>"></asp:LinkButton>
+                                                        <asp:LinkButton runat="server" ID="lbtnDetalhes" title="Detalhes do morador" OnClick="lbtnDetalhes_OnClick" Text="<span class='btn-label-'><i class='fa fa-list-ul' aria-hidden='true'></i></i></span>"></asp:LinkButton>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
                                             </Columns>
