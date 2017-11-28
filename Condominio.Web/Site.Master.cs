@@ -17,12 +17,16 @@ namespace Condominio.Web
                 if (usuarioLogado.Equals(TipoUsuario.Funcionario))
                 {
                     panelSindico.Visible = true;
+                    liManualSindico.Visible = true;
                     panelMorador.Visible = false;
+                    liManualMorador.Visible = false;
                 }
                 else
                 {
                     panelSindico.Visible = false;
+                    liManualSindico.Visible = false;
                     panelMorador.Visible = true;
+                    liManualMorador.Visible = true;
                 }
 
                 lblNome.Text = Convert.ToString(Session["nomeUsuario"]);

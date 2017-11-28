@@ -40,6 +40,24 @@ namespace Condominio.Web {
         protected global::System.Web.UI.WebControls.Panel panelMorador;
         
         /// <summary>
+        /// liManualMorador control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liManualMorador;
+        
+        /// <summary>
+        /// liManualSindico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liManualSindico;
+        
+        /// <summary>
         /// lblNome control.
         /// </summary>
         /// <remarks>
