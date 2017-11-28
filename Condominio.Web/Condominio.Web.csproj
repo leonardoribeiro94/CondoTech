@@ -174,6 +174,8 @@
     <Content Include="Content\bootstrap-datepicker.min.css.map" />
     <Content Include="Content\bootstrap-datepicker.css.map" />
     <Content Include="Handler\VisualizacaoDeDocumento.ashx" />
+    <Content Include="App_Pdf\Manual Morador.pdf" />
+    <Content Include="App_Pdf\Manual Síndico.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\Home.aspx" />
     <Content Include="Pages\Morador\Denuncia\InserirDenuncia.aspx" />
