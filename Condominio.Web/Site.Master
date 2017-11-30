@@ -66,6 +66,16 @@
                                 </ul>
                             </li>
                             <li>
+                                <a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#">Relatório &nbsp;<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="~/Pages/Sindico/Relatorios/RelatorioDenuncia.aspx" runat="server">
+                                            <i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Denúncia
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
                                 <a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#">Consultas &nbsp;<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li>
