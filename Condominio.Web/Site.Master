@@ -65,16 +65,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li>
-                                <a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#">Relatório &nbsp;<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="~/Pages/Sindico/Relatorios/RelatorioDenuncia.aspx" runat="server">
-                                            <i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Denúncia
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+
                             <li>
                                 <a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#">Consultas &nbsp;<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -85,6 +76,17 @@
                                     </li>
                                     <li>
                                         <a href="~/Pages/Sindico/ReservasAreaDeLazer/ConsultarReservasAreaDeLazer.aspx" runat="server">Reservas Áreas de Lazer</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a runat="server" class="dropdown-toggle" data-toggle="dropdown" href="#">Relatório &nbsp;<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="~/Pages/Sindico/Relatorios/RelatorioDenuncia.aspx" runat="server">
+                                            <i class="fa fa-line-chart" aria-hidden="true"></i>&nbsp;Denúncia
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
@@ -116,18 +118,11 @@
                             </li>
                             <li><a runat="server" href="~/Pages/Morador/ReservaAreaDeLlazer/ConsultaAreaDeLazer.aspx">Área de Lazer</a></li>
                         </ul>
+
                     </asp:Panel>
 
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li runat="server" id="liManualMorador" visible="False">
-                            <a href="../App_Pdf/Manual Morador.pdf" target="_blank"><i class="fa fa-file-text"></i>&nbsp;Manual</a>
-                        </li>
-
-                        <li runat="server" id="liManualSindico" visible="False">
-                            <a href="../App_Pdf/Manual Síndico.pdf" target="_blank"><i class="fa fa-file-text"></i>&nbsp;Manual</a>
-                        </li>
-
                         <li class="dropdown">
 
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -144,6 +139,12 @@
                                                 <asp:Label for="lbEmail" runat="server"><b>Email:</b></asp:Label><br />
                                                 <asp:Label runat="server" ID="lblEmail"></asp:Label>
                                             </div>
+                                            <div runat="server" ID="divManualSindico" class="form-group">
+                                                <a href="../App_Pdf/Manual Síndico.pdf" target="_blank"><i class="fa fa-file-text"></i>&nbsp;Manual</a>
+                                            </div>
+                                            <div class="form-group" runat="server" ID="divManualMorador">
+                                                <a href="../App_Pdf/Manual Morador.pdf" target="_blank"><i class="fa fa-file-text"></i>&nbsp;Manual</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -153,7 +154,6 @@
                                         CssClass="btn btn-labeled btn-default btn-block"></asp:LinkButton>
                                 </li>
                             </ul>
-
                         </li>
                     </ul>
                 </div>
