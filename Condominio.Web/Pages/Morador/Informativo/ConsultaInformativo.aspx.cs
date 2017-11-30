@@ -56,11 +56,11 @@ namespace Condominio.Web.Pages.Morador.Informativo
                 if (dataKey != null)
                 {
                     var idInformativo = Convert.ToInt32(dataKey["IdInformativo"]);
-                    var funcionario = _informativoControl.ObterInformativosPorId(idInformativo);
+                    var documento = _informativoControl.ObterDocumentoInformativo(idInformativo);
 
-                    if (funcionario.Documento != null)
+                    if (documento != null)
                     {
-                        VisualizacaoDeDocumento.DocumentArray = funcionario.Documento;
+                        VisualizacaoDeDocumento.DocumentArray = documento;
                         VisualizacaoDeDocumento.TipoOpcaoHandler = VisualizacaoDeDocumento.OpcaoHandler.Show;
                         ScriptManager.RegisterStartupScript(Page, GetType(), "abrirDocumentoWeb", "abrirDocumento()",
                             true);

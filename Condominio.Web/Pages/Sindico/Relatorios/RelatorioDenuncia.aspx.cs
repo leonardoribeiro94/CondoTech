@@ -29,7 +29,7 @@ namespace Condominio.Web.Pages.Sindico.Relatorios
             {
                 var denunciaControl = new DenunciaControl();
                 var dataInicio = Convert.ToDateTime(txtDataInicio.Text);
-                var dataFim = Convert.ToDateTime(txtDataFinal.Text);
+                var dataFim = Convert.ToDateTime(txtDataFinal.Text).AddDays(1);
 
                 var dados = denunciaControl.ObterDenunciasPorData(dataInicio, dataFim).ToList();
 
