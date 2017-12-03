@@ -117,7 +117,7 @@ namespace Condominio.Web.Pages.Sindico.Informativo
             {
                 var idInformativo = Convert.ToInt32(ViewState["IdFuncionario"]);
                 _informativoControl.DeletarInformativo(idInformativo);
-                Response.Redirect("~/Pages/Sindico/Informativo/ConsultarInformativo.aspx.", false);
+                Response.Redirect("~/Pages/Sindico/Informativo/ConsultarInformativo.aspx", false);
             }
             catch (Exception exception)
             {

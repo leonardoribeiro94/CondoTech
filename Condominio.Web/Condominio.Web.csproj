@@ -176,6 +176,7 @@
     <Content Include="Handler\VisualizacaoDeDocumento.ashx" />
     <Content Include="App_Pdf\Manual Morador.pdf" />
     <Content Include="App_Pdf\Manual Síndico.pdf" />
+    <Content Include="Handler\RelatorioDenuncia.ashx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Pages\Home.aspx" />
     <Content Include="Pages\Morador\Denuncia\InserirDenuncia.aspx" />
@@ -187,6 +188,7 @@
     <Content Include="Pages\Sindico\Funcionario\InserirFuncionario.aspx" />
     <Content Include="Pages\Sindico\Informativo\ConsultarInformativo.aspx" />
     <Content Include="Pages\Sindico\Informativo\InserirInformativo.aspx" />
+    <Content Include="Pages\Sindico\Relatorios\RelatorioDenuncia.aspx" />
     <Content Include="Pages\Sindico\ReservasAreaDeLazer\ConsultarReservasAreaDeLazer.aspx" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap-datepicker.min.js" />
@@ -285,6 +287,7 @@
     <Content Include="Scripts\pages\sindico\funcionario\funcionario-inserir-validacao.js" />
     <Content Include="Scripts\pages\sindico\informativo\informativo-inserir-validacao.js" />
     <Content Include="Scripts\pages\sindico\informativo\informativo-consulta-validacao.js" />
+    <Content Include="Scripts\pages\sindico\relatorio\relatorio-denuncia.js" />
     <Content Include="Scripts\pages\sindico\reserva-area-de-lazer\modal-morador.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -329,6 +332,9 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\RelatorioDenuncia.ashx.cs">
+      <DependentUpon>RelatorioDenuncia.ashx</DependentUpon>
     </Compile>
     <Compile Include="Handler\VisualizacaoDeDocumento.ashx.cs">
       <DependentUpon>VisualizacaoDeDocumento.ashx</DependentUpon>
@@ -402,6 +408,13 @@
     </Compile>
     <Compile Include="Pages\Sindico\Informativo\InserirInformativo.aspx.designer.cs">
       <DependentUpon>InserirInformativo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sindico\Relatorios\RelatorioDenuncia.aspx.cs">
+      <DependentUpon>RelatorioDenuncia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Sindico\Relatorios\RelatorioDenuncia.aspx.designer.cs">
+      <DependentUpon>RelatorioDenuncia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Sindico\ReservasAreaDeLazer\ConsultarReservasAreaDeLazer.aspx.cs">
       <DependentUpon>ConsultarReservasAreaDeLazer.aspx</DependentUpon>
