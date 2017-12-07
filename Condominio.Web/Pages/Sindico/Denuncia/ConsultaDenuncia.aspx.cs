@@ -66,7 +66,7 @@ namespace Condominio.Web.Pages.Sindico.Denuncia
                     !string.IsNullOrEmpty(txtDataFim.Text))
                 {
                     var dataInicio = Convert.ToDateTime(txtDataInicio.Text);
-                    var dataFim = Convert.ToDateTime(txtDataFim.Text);
+                    var dataFim = Convert.ToDateTime(txtDataFim.Text).AddDays(1);
 
                     grvDenuncia.DataSource = _denunciaControl.ObterDenunciasPorData(dataInicio, dataFim).ToList();
                     grvDenuncia.DataBind();
