@@ -50,7 +50,7 @@ namespace Condominio.Model
 
             if (opcaoEmail.Equals(false))
             {
-                throw new Exception("O CNPJ informado inválido!");
+                throw new Exception("O E-mail informado inválido!");
             }
         }
 
@@ -84,6 +84,7 @@ namespace Condominio.Model
             digito = digito + resto;
             return cnpj.EndsWith(digito);
         }
+
         private bool ValidaEmail(string email)
         {
             return
