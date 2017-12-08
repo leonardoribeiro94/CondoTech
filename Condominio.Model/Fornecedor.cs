@@ -84,6 +84,7 @@ namespace Condominio.Model
             digito = digito + resto;
             return cnpj.EndsWith(digito);
         }
+
         private bool ValidaEmail(string email)
         {
             return
