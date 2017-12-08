@@ -50,7 +50,7 @@ namespace Condominio.Model
 
             if (opcaoEmail.Equals(false))
             {
-                throw new Exception("O CNPJ informado inválido!");
+                throw new Exception("O E-mail informado inválido!");
             }
         }
 
